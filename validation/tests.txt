@@ -1,0 +1,18 @@
+test_clock_missing_seconds_and_drift (test_core.AnalysisTest.test_clock_missing_seconds_and_drift) ... ok
+test_drop_is_visible (test_core.AnalysisTest.test_drop_is_visible) ... ok
+test_measured_template_phase_invariance (test_core.AnalysisTest.test_measured_template_phase_invariance) ... ok
+test_short_burst_lo_correction (test_core.AnalysisTest.test_short_burst_lo_correction) ... ok
+test_burst_width_and_starvation (test_core.PIOTest.test_burst_width_and_starvation) ... ok
+test_memory_capacity (test_core.PIOTest.test_memory_capacity) ... ok
+test_no_clock_edges_lost (test_core.PIOTest.test_no_clock_edges_lost) ... ok
+test_bounded_oversize (test_core.ProtocolTest.test_bounded_oversize) ... ok
+test_chunked_noise_and_corruption (test_core.ProtocolTest.test_chunked_noise_and_corruption) ... ok
+test_config_frame (test_core.ProtocolTest.test_config_frame) ... ok
+test_servo_count_fault (test_core.ProtocolTest.test_servo_count_fault) ... ok
+test_servo_simulated_convergence_and_loss (test_core.ProtocolTest.test_servo_simulated_convergence_and_loss) ... ok
+test_utc_flags (test_core.ProtocolTest.test_utc_flags) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.291s
+
+OK

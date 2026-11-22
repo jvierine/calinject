@@ -1,0 +1,15 @@
+{
+  "revision": "A",
+  "status": "unbuilt engineering prototype",
+  "quantity": 5,
+  "kicad_version": "10.0.8",
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "software_tests_passed": 13,
+  "hardware_tests_performed": false,
+  "case_fit_printed": false,
+  "component_estimate_usd_per_board": 86.95,
+  "board_sha256": "7f5eb7b44cc8a942254ccc86342cf7fbd73e148f22fd09274041de5ffff95ed1"
+}

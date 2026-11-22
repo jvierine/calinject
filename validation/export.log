@@ -1,0 +1,32 @@
+Found 0 violations
+Saved ERC Report to validation/erc.json
+Found 0 violations
+Found 0 unconnected items
+Found 0 schematic parity issues
+Saved DRC Report to validation/drc.json
+Plotted to 'docs/schematic.pdf'.
+Done.
+Plotted to 'manufacturing/gerbers/calinject-F_Cu.gtl'.
+Plotted to 'manufacturing/gerbers/calinject-In1_Cu.g1'.
+Plotted to 'manufacturing/gerbers/calinject-In2_Cu.g2'.
+Plotted to 'manufacturing/gerbers/calinject-B_Cu.gbl'.
+Plotted to 'manufacturing/gerbers/calinject-F_Paste.gtp'.
+Plotted to 'manufacturing/gerbers/calinject-F_Silkscreen.gto'.
+Plotted to 'manufacturing/gerbers/calinject-B_Silkscreen.gbo'.
+Plotted to 'manufacturing/gerbers/calinject-F_Mask.gts'.
+Plotted to 'manufacturing/gerbers/calinject-B_Mask.gbs'.
+Plotted to 'manufacturing/gerbers/calinject-Edge_Cuts.gm1'.
+Created file 'manufacturing/gerbers/calinject-PTH.drl'
+Created file 'manufacturing/gerbers/calinject-NPTH.drl'
+Created file 'manufacturing/gerbers/calinject-PTH-drl_map.pdf'.
+Created file 'manufacturing/gerbers/calinject-NPTH-drl_map.pdf'.
+Done.
+Wrote position data to 'manufacturing/calinject-top.pos'.
+Successfully created IPC-D-356 file
+Plotted to 'docs/assembly-top.pdf'.
+Done.
+Plotted to 'docs/copper-layers.pdf'.
+Done.
+STEP file 'mechanical/pcb-only.step' created.
+
+Export time 0.110 s

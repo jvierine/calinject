@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "Calinject")(type "KiCad")(uri "${KIPRJMOD}/Calinject.pretty")(options "")(descr "Calinject footprints")))

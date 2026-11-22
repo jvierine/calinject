@@ -1,0 +1,9 @@
+*.pdf binary
+*.png binary
+*.xlsx binary
+*.zip binary
+*.stl binary
+*.3mf binary
+*.h5 binary
+*.d356 -text -diff
+*.step -text -diff

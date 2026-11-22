@@ -1,0 +1,15 @@
+node_modules
+references/
+variants/
+__pycache__/
+*.pyc
+*.kicad_prl
+*-backups/
+*.inspect.ndjson
+dist/
+validation/*.png
+validation/*-drc.json
+validation/router.log
+validation/workbooks.log
+cad/*.dsn
+cad/*.ses

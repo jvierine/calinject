@@ -1,0 +1,5534 @@
+{
+  "revision": "A",
+  "width_mm": 90,
+  "height_mm": 65,
+  "parts": [
+    {
+      "ref": "H1",
+      "value": "M3",
+      "fp": "Mount_M3_H1",
+      "x": 4,
+      "y": 4,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "",
+          "x": 0,
+          "y": 0,
+          "w": 3.2,
+          "h": 3.2,
+          "net": null,
+          "kind": "np_thru_hole",
+          "drill": 3.2,
+          "label": ""
+        }
+      ],
+      "mpn": "M3 screw",
+      "maker": "Mechanical",
+      "section": "Mechanical",
+      "cost": 0,
+      "body": [
+        6,
+        6
+      ],
+      "note": "",
+      "assembly": "MECHANICAL"
+    },
+    {
+      "ref": "H2",
+      "value": "M3",
+      "fp": "Mount_M3_H2",
+      "x": 86,
+      "y": 4,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "",
+          "x": 0,
+          "y": 0,
+          "w": 3.2,
+          "h": 3.2,
+          "net": null,
+          "kind": "np_thru_hole",
+          "drill": 3.2,
+          "label": ""
+        }
+      ],
+      "mpn": "M3 screw",
+      "maker": "Mechanical",
+      "section": "Mechanical",
+      "cost": 0,
+      "body": [
+        6,
+        6
+      ],
+      "note": "",
+      "assembly": "MECHANICAL"
+    },
+    {
+      "ref": "H3",
+      "value": "M3",
+      "fp": "Mount_M3_H3",
+      "x": 4,
+      "y": 61,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "",
+          "x": 0,
+          "y": 0,
+          "w": 3.2,
+          "h": 3.2,
+          "net": null,
+          "kind": "np_thru_hole",
+          "drill": 3.2,
+          "label": ""
+        }
+      ],
+      "mpn": "M3 screw",
+      "maker": "Mechanical",
+      "section": "Mechanical",
+      "cost": 0,
+      "body": [
+        6,
+        6
+      ],
+      "note": "",
+      "assembly": "MECHANICAL"
+    },
+    {
+      "ref": "H4",
+      "value": "M3",
+      "fp": "Mount_M3_H4",
+      "x": 86,
+      "y": 61,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "",
+          "x": 0,
+          "y": 0,
+          "w": 3.2,
+          "h": 3.2,
+          "net": null,
+          "kind": "np_thru_hole",
+          "drill": 3.2,
+          "label": ""
+        }
+      ],
+      "mpn": "M3 screw",
+      "maker": "Mechanical",
+      "section": "Mechanical",
+      "cost": 0,
+      "body": [
+        6,
+        6
+      ],
+      "note": "",
+      "assembly": "MECHANICAL"
+    },
+    {
+      "ref": "U1",
+      "value": "RP2040-Zero",
+      "fp": "RP2040_Zero_U1",
+      "x": 17,
+      "y": 12,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -7.62,
+          "y": -10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "USB5",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "5V"
+        },
+        {
+          "n": "2",
+          "x": -7.62,
+          "y": -7.62,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GND"
+        },
+        {
+          "n": "3",
+          "x": -7.62,
+          "y": -5.08,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "3V3D",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "3V3"
+        },
+        {
+          "n": "4",
+          "x": -7.62,
+          "y": -2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "LEVEL_ADC",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP29"
+        },
+        {
+          "n": "5",
+          "x": -7.62,
+          "y": 0.0,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP28"
+        },
+        {
+          "n": "6",
+          "x": -7.62,
+          "y": 2.539999999999999,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP27"
+        },
+        {
+          "n": "7",
+          "x": -7.62,
+          "y": 5.08,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP26"
+        },
+        {
+          "n": "8",
+          "x": -7.62,
+          "y": 7.620000000000001,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP15"
+        },
+        {
+          "n": "9",
+          "x": -7.62,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP14"
+        },
+        {
+          "n": "10",
+          "x": -5.08,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP13"
+        },
+        {
+          "n": "11",
+          "x": -2.54,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP12"
+        },
+        {
+          "n": "12",
+          "x": 0.0,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "TCXO_COUNT",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP11"
+        },
+        {
+          "n": "13",
+          "x": 2.54,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "PPS",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP10"
+        },
+        {
+          "n": "14",
+          "x": 5.08,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "REFPPS_OE_N",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP9"
+        },
+        {
+          "n": "15",
+          "x": 7.62,
+          "y": 10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "BURST_GATE",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP8"
+        },
+        {
+          "n": "16",
+          "x": 7.62,
+          "y": 7.62,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "ATT_LE",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP7"
+        },
+        {
+          "n": "17",
+          "x": 7.62,
+          "y": 5.08,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "ATT_CLK",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP6"
+        },
+        {
+          "n": "18",
+          "x": 7.62,
+          "y": 2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "ATT_DATA",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP5"
+        },
+        {
+          "n": "19",
+          "x": 7.62,
+          "y": 0.0,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "REF10_OE_N",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP4"
+        },
+        {
+          "n": "20",
+          "x": 7.62,
+          "y": -2.539999999999999,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "I2C_SCL",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP3"
+        },
+        {
+          "n": "21",
+          "x": 7.62,
+          "y": -5.08,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "I2C_SDA",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP2"
+        },
+        {
+          "n": "22",
+          "x": 7.62,
+          "y": -7.620000000000001,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GPS_TX",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP1"
+        },
+        {
+          "n": "23",
+          "x": 7.62,
+          "y": -10.16,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GPS_RX",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GP0"
+        }
+      ],
+      "mpn": "RP2040-Zero",
+      "maker": "Waveshare",
+      "section": "Controller",
+      "cost": 4.0,
+      "body": [
+        18,
+        23.5
+      ],
+      "note": "Genuine module. Factory fits 2.54-mm headers and solders module; USB-C faces north.",
+      "assembly": "FACTORY MODULE"
+    },
+    {
+      "ref": "U2",
+      "value": "AP2112K-3.3",
+      "fp": "SOT23_5_U2",
+      "x": 34,
+      "y": 9,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "IN"
+        },
+        {
+          "n": "2",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "3",
+          "x": -1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "EN"
+        },
+        {
+          "n": "4",
+          "x": 1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "NC"
+        },
+        {
+          "n": "5",
+          "x": 1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "OUT"
+        }
+      ],
+      "mpn": "AP2112K-3.3TRG1",
+      "maker": "Diodes Incorporated",
+      "section": "Power",
+      "cost": 0.3,
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U3",
+      "value": "AP2112K-3.3",
+      "fp": "SOT23_5_U3",
+      "x": 47,
+      "y": 9,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "IN"
+        },
+        {
+          "n": "2",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "3",
+          "x": -1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "EN"
+        },
+        {
+          "n": "4",
+          "x": 1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "NC"
+        },
+        {
+          "n": "5",
+          "x": 1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "OUT"
+        }
+      ],
+      "mpn": "AP2112K-3.3TRG1",
+      "maker": "Diodes Incorporated",
+      "section": "Power",
+      "cost": 0.3,
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "F1",
+      "value": "500mA",
+      "fp": "F_1206_F1",
+      "x": 29,
+      "y": 5,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.5,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "net": "USB5",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 1.5,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "1206L050/15YR",
+      "maker": "Littelfuse",
+      "section": "Power",
+      "cost": 0.5,
+      "body": [
+        3.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C1",
+      "value": "4u7",
+      "fp": "C_0603_C1",
+      "x": 34,
+      "y": 5,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C2",
+      "value": "4u7",
+      "fp": "C_0603_C2",
+      "x": 34,
+      "y": 13,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C3",
+      "value": "4u7",
+      "fp": "C_0603_C3",
+      "x": 47,
+      "y": 5,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "USB5F",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C4",
+      "value": "4u7",
+      "fp": "C_0603_C4",
+      "x": 47,
+      "y": 13,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U4",
+      "value": "MAX-M10S",
+      "fp": "MAX_M10S_U4",
+      "x": 68,
+      "y": 15,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -4.5,
+          "y": -4.4,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "2",
+          "x": -4.5,
+          "y": -3.3000000000000003,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GPS_TX",
+          "kind": "smd",
+          "drill": null,
+          "label": "TXD"
+        },
+        {
+          "n": "3",
+          "x": -4.5,
+          "y": -2.2,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GPS_RX",
+          "kind": "smd",
+          "drill": null,
+          "label": "RXD"
+        },
+        {
+          "n": "4",
+          "x": -4.5,
+          "y": -1.1,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "PPS",
+          "kind": "smd",
+          "drill": null,
+          "label": "TIMEPULSE"
+        },
+        {
+          "n": "5",
+          "x": -4.5,
+          "y": 0.0,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "EXTINT"
+        },
+        {
+          "n": "6",
+          "x": -4.5,
+          "y": 1.0999999999999996,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "V_BCKP"
+        },
+        {
+          "n": "7",
+          "x": -4.5,
+          "y": 2.2,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "V_IO"
+        },
+        {
+          "n": "8",
+          "x": -4.5,
+          "y": 3.3000000000000007,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC"
+        },
+        {
+          "n": "9",
+          "x": -4.5,
+          "y": 4.4,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "RESET_N"
+        },
+        {
+          "n": "10",
+          "x": 4.5,
+          "y": 4.4,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "11",
+          "x": 4.5,
+          "y": 3.3000000000000003,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GNSS_RF",
+          "kind": "smd",
+          "drill": null,
+          "label": "RF_IN"
+        },
+        {
+          "n": "12",
+          "x": 4.5,
+          "y": 2.2,
+          "w": 1.5,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "13",
+          "x": 4.5,
+          "y": 1.1,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "LNA_EN"
+        },
+        {
+          "n": "14",
+          "x": 4.5,
+          "y": 0.0,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC_RF"
+        },
+        {
+          "n": "15",
+          "x": 4.5,
+          "y": -1.0999999999999996,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "VIO_SEL"
+        },
+        {
+          "n": "16",
+          "x": 4.5,
+          "y": -2.2,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "SDA"
+        },
+        {
+          "n": "17",
+          "x": 4.5,
+          "y": -3.3000000000000007,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "SCL"
+        },
+        {
+          "n": "18",
+          "x": 4.5,
+          "y": -4.4,
+          "w": 1.5,
+          "h": 0.8,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "SAFEBOOT_N"
+        }
+      ],
+      "mpn": "MAX-M10S-00B",
+      "maker": "u-blox",
+      "section": "GNSS",
+      "cost": 11.42,
+      "body": [
+        9.7,
+        10.1
+      ],
+      "note": "TIMEPULSE must not be pulled low at startup; VIO_SEL floating selects 3.3V.",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C5",
+      "value": "100n",
+      "fp": "C_0603_C5",
+      "x": 59,
+      "y": 15,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C6",
+      "value": "4u7",
+      "fp": "C_0603_C6",
+      "x": 59,
+      "y": 19,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "J1",
+      "value": "GPS ANT",
+      "fp": "SMA_Amphenol_132134_J1",
+      "x": 82,
+      "y": 15,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2.05,
+          "h": 2.05,
+          "net": "ANT_RF",
+          "kind": "thru_hole",
+          "drill": 1.5,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        }
+      ],
+      "mpn": "BWSMA-KE-Z001",
+      "maker": "BAT WIRELESS",
+      "section": "GNSS",
+      "cost": 1.2,
+      "body": [
+        7.0,
+        7.0
+      ],
+      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "C7",
+      "value": "100p",
+      "fp": "C_0402_C7",
+      "x": 76,
+      "y": 15,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.5,
+          "y": 0,
+          "w": 0.55,
+          "h": 0.6,
+          "net": "GNSS_RF",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.5,
+          "y": 0,
+          "w": 0.55,
+          "h": 0.6,
+          "net": "ANT_RF",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM1555C1H101JA01D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "L1",
+      "value": "27n",
+      "fp": "L_0402_L1",
+      "x": 82,
+      "y": 21,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.5,
+          "y": 0,
+          "w": 0.55,
+          "h": 0.6,
+          "net": "ANT_BIAS",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.5,
+          "y": 0,
+          "w": 0.55,
+          "h": 0.6,
+          "net": "ANT_RF",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "LQW15AN27NG80D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.12,
+      "body": [
+        1.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "F2",
+      "value": "50mA",
+      "fp": "F_1206_F2",
+      "x": 70,
+      "y": 25,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.5,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 1.5,
+          "y": 0,
+          "w": 1.2,
+          "h": 1.8,
+          "net": "ANT_FUSED",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "1206L005/60WR",
+      "maker": "Littelfuse",
+      "section": "GNSS",
+      "cost": 0.5,
+      "body": [
+        3.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R1",
+      "value": "0",
+      "fp": "R_0603_R1",
+      "x": 77,
+      "y": 25,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ANT_FUSED",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ANT_BIAS",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-070RL",
+      "maker": "Yageo",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C8",
+      "value": "100n",
+      "fp": "C_0603_C8",
+      "x": 82,
+      "y": 27,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ANT_BIAS",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C9",
+      "value": "1n",
+      "fp": "C_0603_C9",
+      "x": 86,
+      "y": 27,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ANT_BIAS",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM1885C1H102JA01D",
+      "maker": "Murata",
+      "section": "GNSS",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "D1",
+      "value": "PESD5V0F1BLS",
+      "fp": "DFN1006_2_D1",
+      "x": 78,
+      "y": 21,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.35,
+          "y": 0,
+          "w": 0.45,
+          "h": 0.6,
+          "net": "ANT_RF",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.35,
+          "y": 0,
+          "w": 0.45,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "PESD5V0F1BLS,315",
+      "maker": "Nexperia",
+      "section": "GNSS",
+      "cost": 0.12,
+      "body": [
+        1.0,
+        0.6
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U5",
+      "value": "MCP4725A0",
+      "fp": "SOT23_6_U5",
+      "x": 38,
+      "y": 24,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "DAC_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "VOUT"
+        },
+        {
+          "n": "2",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "VSS"
+        },
+        {
+          "n": "3",
+          "x": -1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VDD"
+        },
+        {
+          "n": "4",
+          "x": 1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "I2C_SDA",
+          "kind": "smd",
+          "drill": null,
+          "label": "SDA"
+        },
+        {
+          "n": "5",
+          "x": 1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "I2C_SCL",
+          "kind": "smd",
+          "drill": null,
+          "label": "SCL"
+        },
+        {
+          "n": "6",
+          "x": 1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "A0"
+        }
+      ],
+      "mpn": "MCP4725A0T-E/CH",
+      "maker": "Microchip",
+      "section": "Reference",
+      "cost": 1.1,
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C10",
+      "value": "100n",
+      "fp": "C_0603_C10",
+      "x": 38,
+      "y": 20,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R2",
+      "value": "4k7",
+      "fp": "R_0603_R2",
+      "x": 29,
+      "y": 25,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "I2C_SDA",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3D",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-074K7L",
+      "maker": "Yageo",
+      "section": "Controller",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R3",
+      "value": "4k7",
+      "fp": "R_0603_R3",
+      "x": 32,
+      "y": 25,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "I2C_SCL",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3D",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-074K7L",
+      "maker": "Yageo",
+      "section": "Controller",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R4",
+      "value": "1k",
+      "fp": "R_0603_R4",
+      "x": 43,
+      "y": 24,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DAC_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DAC_FILT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071KL",
+      "maker": "Yageo",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C11",
+      "value": "4u7",
+      "fp": "C_0603_C11",
+      "x": 46,
+      "y": 27,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DAC_FILT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R5",
+      "value": "1k",
+      "fp": "R_0603_R5",
+      "x": 49,
+      "y": 24,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DAC_FILT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VCTRL",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071KL",
+      "maker": "Yageo",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C12",
+      "value": "4u7",
+      "fp": "C_0603_C12",
+      "x": 52,
+      "y": 27,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VCTRL",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R61A475KE15D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "Y1",
+      "value": "10MHz VCTCXO",
+      "fp": "ECS_3225_Y1",
+      "x": 57,
+      "y": 33,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.025,
+          "y": 0.85,
+          "w": 0.6,
+          "h": 1.2,
+          "net": "VCTRL",
+          "kind": "smd",
+          "drill": null,
+          "label": "VC"
+        },
+        {
+          "n": "2",
+          "x": 1.025,
+          "y": 0.85,
+          "w": 0.6,
+          "h": 1.2,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "3",
+          "x": 1.025,
+          "y": -0.85,
+          "w": 0.6,
+          "h": 1.2,
+          "net": "OSC_SINE",
+          "kind": "smd",
+          "drill": null,
+          "label": "OUT"
+        },
+        {
+          "n": "4",
+          "x": -1.025,
+          "y": -0.85,
+          "w": 0.6,
+          "h": 1.2,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VDD"
+        }
+      ],
+      "mpn": "ECS-VC-TXO32-S3-33-100-BN-TR",
+      "maker": "ECS",
+      "section": "Reference",
+      "cost": 12.71,
+      "body": [
+        3.2,
+        2.5
+      ],
+      "note": "Clipped sine, NOT CMOS. Vc restricted to 0.5..2.5 V; nominal 1.5 V.",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C13",
+      "value": "100n",
+      "fp": "C_0603_C13",
+      "x": 53,
+      "y": 31,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C14",
+      "value": "1n",
+      "fp": "C_0603_C14",
+      "x": 62,
+      "y": 32,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "OSC_SINE",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "SINE_BIASED",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM1885C1H102JA01D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R6",
+      "value": "10k",
+      "fp": "R_0603_R6",
+      "x": 62,
+      "y": 28,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VREF_HALF",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R7",
+      "value": "10k",
+      "fp": "R_0603_R7",
+      "x": 66,
+      "y": 28,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VREF_HALF",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C15",
+      "value": "100n",
+      "fp": "C_0603_C15",
+      "x": 65,
+      "y": 23,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VREF_HALF",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R8",
+      "value": "10k",
+      "fp": "R_0603_R8",
+      "x": 66,
+      "y": 32,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "SINE_BIASED",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "VREF_HALF",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U6",
+      "value": "TLV3501",
+      "fp": "SOT23_6_U6",
+      "x": 71,
+      "y": 32,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "VREF_HALF",
+          "kind": "smd",
+          "drill": null,
+          "label": "IN-"
+        },
+        {
+          "n": "2",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "V-"
+        },
+        {
+          "n": "3",
+          "x": -1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "SINE_BIASED",
+          "kind": "smd",
+          "drill": null,
+          "label": "IN+"
+        },
+        {
+          "n": "4",
+          "x": 1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "V+"
+        },
+        {
+          "n": "5",
+          "x": 1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "OUT"
+        },
+        {
+          "n": "6",
+          "x": 1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "SHDN"
+        }
+      ],
+      "mpn": "TLV3501AIDBVR",
+      "maker": "Texas Instruments",
+      "section": "Reference",
+      "cost": 2.2,
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C16",
+      "value": "100n",
+      "fp": "C_0603_C16",
+      "x": 75,
+      "y": 31,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R9",
+      "value": "330",
+      "fp": "R_0603_R9",
+      "x": 41,
+      "y": 35,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "TCXO_COUNT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-07330RL",
+      "maker": "Yageo",
+      "section": "Controller",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R10",
+      "value": "220",
+      "fp": "R_0603_R10",
+      "x": 72,
+      "y": 38,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DELAY_RC",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-07220RL",
+      "maker": "Yageo",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C17",
+      "value": "22p",
+      "fp": "C_0603_C17",
+      "x": 75,
+      "y": 41,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DELAY_RC",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM1885C1H220JA01D",
+      "maker": "Murata",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U7",
+      "value": "SN74LVC1G14",
+      "fp": "SOT23_5_U7",
+      "x": 68,
+      "y": 41,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": null,
+          "kind": "smd",
+          "drill": null,
+          "label": "NC"
+        },
+        {
+          "n": "2",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "DELAY_RC",
+          "kind": "smd",
+          "drill": null,
+          "label": "A"
+        },
+        {
+          "n": "3",
+          "x": -1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "4",
+          "x": 1.0,
+          "y": 0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "DELAY_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "Y"
+        },
+        {
+          "n": "5",
+          "x": 1.0,
+          "y": -0.95,
+          "w": 1.2,
+          "h": 0.6,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC"
+        }
+      ],
+      "mpn": "SN74LVC1G14DBVR",
+      "maker": "Texas Instruments",
+      "section": "Comb",
+      "cost": 0.12,
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C18",
+      "value": "100n",
+      "fp": "C_0603_C18",
+      "x": 64,
+      "y": 41,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U8",
+      "value": "SN74LVC2G08",
+      "fp": "VSSOP8_DCU_U8",
+      "x": 58,
+      "y": 41,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "1A"
+        },
+        {
+          "n": "2",
+          "x": -1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "DELAY_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "1B"
+        },
+        {
+          "n": "3",
+          "x": -1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "COMB_GATED",
+          "kind": "smd",
+          "drill": null,
+          "label": "2Y"
+        },
+        {
+          "n": "4",
+          "x": -1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "5",
+          "x": 1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "COMB_RAW",
+          "kind": "smd",
+          "drill": null,
+          "label": "2A"
+        },
+        {
+          "n": "6",
+          "x": 1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "BURST_GATE",
+          "kind": "smd",
+          "drill": null,
+          "label": "2B"
+        },
+        {
+          "n": "7",
+          "x": 1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "COMB_RAW",
+          "kind": "smd",
+          "drill": null,
+          "label": "1Y"
+        },
+        {
+          "n": "8",
+          "x": 1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC"
+        }
+      ],
+      "mpn": "SN74LVC2G08DCUR",
+      "maker": "Texas Instruments",
+      "section": "Comb",
+      "cost": 0.2,
+      "body": [
+        2.0,
+        2.0
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C19",
+      "value": "100n",
+      "fp": "C_0603_C19",
+      "x": 58,
+      "y": 37,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R11",
+      "value": "100k",
+      "fp": "R_0603_R11",
+      "x": 53,
+      "y": 38,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "BURST_GATE",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "maker": "Yageo",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R12",
+      "value": "49R9",
+      "fp": "R_0603_R12",
+      "x": 52,
+      "y": 42,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "COMB_GATED",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DRIVE50",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0749R9L",
+      "maker": "Yageo",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C20",
+      "value": "100n",
+      "fp": "C_0603_C20",
+      "x": 48,
+      "y": 42,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "DRIVE50",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71H104KA93D",
+      "maker": "Murata",
+      "section": "Comb",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R13",
+      "value": "96R5",
+      "fp": "R_0603_R13",
+      "x": 45,
+      "y": 39,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0796R5L",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R14",
+      "value": "71R5",
+      "fp": "R_0603_R14",
+      "x": 43,
+      "y": 42,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0771R5L",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R15",
+      "value": "96R5",
+      "fp": "R_0603_R15",
+      "x": 40,
+      "y": 39,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0796R5L",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U9",
+      "value": "PE4312",
+      "fp": "QFN20_4x4_EP_U9",
+      "x": 33,
+      "y": 43,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.95,
+          "y": -1.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_C16",
+          "kind": "smd",
+          "drill": null,
+          "label": "C16"
+        },
+        {
+          "n": "2",
+          "x": -1.95,
+          "y": -0.5,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "RF1"
+        },
+        {
+          "n": "3",
+          "x": -1.95,
+          "y": 0.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_DATA_R",
+          "kind": "smd",
+          "drill": null,
+          "label": "DATA"
+        },
+        {
+          "n": "4",
+          "x": -1.95,
+          "y": 0.5,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_CLK",
+          "kind": "smd",
+          "drill": null,
+          "label": "CLK"
+        },
+        {
+          "n": "5",
+          "x": -1.95,
+          "y": 1.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_LE",
+          "kind": "smd",
+          "drill": null,
+          "label": "LE"
+        },
+        {
+          "n": "6",
+          "x": -1.0,
+          "y": 1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VDD"
+        },
+        {
+          "n": "7",
+          "x": -0.5,
+          "y": 1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "PUP1"
+        },
+        {
+          "n": "8",
+          "x": 0.0,
+          "y": 1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "PUP2"
+        },
+        {
+          "n": "9",
+          "x": 0.5,
+          "y": 1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VDD"
+        },
+        {
+          "n": "10",
+          "x": 1.0,
+          "y": 1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "11",
+          "x": 1.95,
+          "y": 1.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "12",
+          "x": 1.95,
+          "y": 0.5,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "VSS_EXT"
+        },
+        {
+          "n": "13",
+          "x": 1.95,
+          "y": 0.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "P/S"
+        },
+        {
+          "n": "14",
+          "x": 1.95,
+          "y": -0.5,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "ATT_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "RF2"
+        },
+        {
+          "n": "15",
+          "x": 1.95,
+          "y": -1.0,
+          "w": 0.8,
+          "h": 0.28,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "C8"
+        },
+        {
+          "n": "16",
+          "x": 1.0,
+          "y": -1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "C4"
+        },
+        {
+          "n": "17",
+          "x": 0.5,
+          "y": -1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "C2"
+        },
+        {
+          "n": "18",
+          "x": 0.0,
+          "y": -1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "19",
+          "x": -0.5,
+          "y": -1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "C1"
+        },
+        {
+          "n": "20",
+          "x": -1.0,
+          "y": -1.95,
+          "w": 0.28,
+          "h": 0.8,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "C0.5"
+        },
+        {
+          "n": "21",
+          "x": 0,
+          "y": 0,
+          "w": 2.6,
+          "h": 2.6,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "EP"
+        }
+      ],
+      "mpn": "PE4312C-Z",
+      "maker": "pSemi",
+      "section": "Attenuator",
+      "cost": 4.4,
+      "body": [
+        4,
+        4
+      ],
+      "note": "Serial mode, parallel bits pulled high = 31.5 dB startup. 10k series on pins1,3.",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C21",
+      "value": "100n",
+      "fp": "C_0603_C21",
+      "x": 35,
+      "y": 48,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C22",
+      "value": "1n",
+      "fp": "C_0603_C22",
+      "x": 29,
+      "y": 48,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM1885C1H102JA01D",
+      "maker": "Murata",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R16",
+      "value": "10k",
+      "fp": "R_0603_R16",
+      "x": 28,
+      "y": 40,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_C16",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R17",
+      "value": "10k",
+      "fp": "R_0603_R17",
+      "x": 28,
+      "y": 43,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_DATA",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_DATA_R",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R18",
+      "value": "100k",
+      "fp": "R_0603_R18",
+      "x": 28,
+      "y": 46,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_LE",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "maker": "Yageo",
+      "section": "Attenuator",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C23",
+      "value": "100n",
+      "fp": "C_0603_C23",
+      "x": 40,
+      "y": 48,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "ATT_AC",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71H104KA93D",
+      "maker": "Murata",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R19",
+      "value": "61R9",
+      "fp": "R_0603_R19",
+      "x": 46,
+      "y": 47,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD20_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0761R9L",
+      "maker": "Yageo",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R20",
+      "value": "249",
+      "fp": "R_0603_R20",
+      "x": 51,
+      "y": 48,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD20_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD20_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-07249RL",
+      "maker": "Yageo",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R23",
+      "value": "61R9",
+      "fp": "R_0603_R23",
+      "x": 56,
+      "y": 47,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "PAD20_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0761R9L",
+      "maker": "Yageo",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "JP1",
+      "value": "LEVEL RANGE",
+      "fp": "Range_2x3_JP1",
+      "x": 64,
+      "y": 47,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -2.54,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "PAD20_IN",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "ATT_AC",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "2"
+        },
+        {
+          "n": "3",
+          "x": 2.54,
+          "y": -1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "PAD_BYPASS",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "3"
+        },
+        {
+          "n": "4",
+          "x": -2.54,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "PAD20_OUT",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "4"
+        },
+        {
+          "n": "5",
+          "x": 0,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "COUPLED",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "5"
+        },
+        {
+          "n": "6",
+          "x": 2.54,
+          "y": 1.27,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "PAD_BYPASS",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "6"
+        }
+      ],
+      "mpn": "2x 68000-103HLF + 2 shunts",
+      "maker": "Amphenol ICC",
+      "section": "RF path",
+      "cost": 0.2,
+      "body": [
+        7.62,
+        5.08
+      ],
+      "note": "Two shunts: LOW1-2 and4-5; HIGH2-3 and5-6. Never mix. LOW default. No pad branch attached in HIGH.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "T1",
+      "value": "PDC-20-3+",
+      "fp": "MiniCircuits_A01_T1",
+      "x": 48,
+      "y": 57,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 7.62,
+          "y": -2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "RF_TO_SDR",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "INPUT_TO_SDR"
+        },
+        {
+          "n": "2",
+          "x": 7.62,
+          "y": 2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GND"
+        },
+        {
+          "n": "3",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "COUPLED",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "COUPLED"
+        },
+        {
+          "n": "4",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "RF_FROM_ANT",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "OUTPUT_FROM_ANT"
+        },
+        {
+          "n": "5",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GND"
+        },
+        {
+          "n": "6",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": null,
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "NC"
+        },
+        {
+          "n": "7",
+          "x": -7.62,
+          "y": -2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GND"
+        },
+        {
+          "n": "8",
+          "x": -7.62,
+          "y": 2.54,
+          "w": 1.7,
+          "h": 1.7,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.0,
+          "label": "GND"
+        }
+      ],
+      "mpn": "PDC-20-3+",
+      "maker": "Mini-Circuits",
+      "section": "RF path",
+      "cost": 39.02,
+      "body": [
+        20.32,
+        10.16
+      ],
+      "note": "Package pin1 INPUT goes to SDR; pin4 OUTPUT goes to antenna. Manufacturer forward-coupled port used reciprocally.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "J2",
+      "value": "RF IN",
+      "fp": "SMA_Amphenol_132134_J2",
+      "x": 12,
+      "y": 56,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2.05,
+          "h": 2.05,
+          "net": "RF_IN",
+          "kind": "thru_hole",
+          "drill": 1.5,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        }
+      ],
+      "mpn": "BWSMA-KE-Z001",
+      "maker": "BAT WIRELESS",
+      "section": "RF path",
+      "cost": 1.2,
+      "body": [
+        7.0,
+        7.0
+      ],
+      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "J3",
+      "value": "TO SDR",
+      "fp": "SMA_Amphenol_132134_J3",
+      "x": 78,
+      "y": 56,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2.05,
+          "h": 2.05,
+          "net": "RF_OUT",
+          "kind": "thru_hole",
+          "drill": 1.5,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        }
+      ],
+      "mpn": "BWSMA-KE-Z001",
+      "maker": "BAT WIRELESS",
+      "section": "RF path",
+      "cost": 1.2,
+      "body": [
+        7.0,
+        7.0
+      ],
+      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "C24",
+      "value": "1u 50V",
+      "fp": "C_0805_C24",
+      "x": 23,
+      "y": 56,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.0,
+          "h": 1.4,
+          "net": "RF_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 1.0,
+          "y": 0,
+          "w": 1.0,
+          "h": 1.4,
+          "net": "RF_FROM_ANT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM21BR71H105KA12L",
+      "maker": "Murata",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        2.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C25",
+      "value": "1u 50V",
+      "fp": "C_0805_C25",
+      "x": 67,
+      "y": 56,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.0,
+          "y": 0,
+          "w": 1.0,
+          "h": 1.4,
+          "net": "RF_TO_SDR",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 1.0,
+          "y": 0,
+          "w": 1.0,
+          "h": 1.4,
+          "net": "RF_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM21BR71H105KA12L",
+      "maker": "Murata",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        2.0,
+        1.25
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R21",
+      "value": "1M",
+      "fp": "R_0603_R21",
+      "x": 18,
+      "y": 60,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "RF_IN",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071ML",
+      "maker": "Yageo",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R22",
+      "value": "1M",
+      "fp": "R_0603_R22",
+      "x": 72,
+      "y": 60,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "RF_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071ML",
+      "maker": "Yageo",
+      "section": "RF path",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "RV1",
+      "value": "10k LEVEL",
+      "fp": "Bourns_3362P_RV1",
+      "x": 12,
+      "y": 34,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "3V3D",
+          "kind": "thru_hole",
+          "drill": 0.9,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0,
+          "y": 2.54,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "LEVEL_ADC",
+          "kind": "thru_hole",
+          "drill": 0.9,
+          "label": "2"
+        },
+        {
+          "n": "3",
+          "x": 2.54,
+          "y": 0,
+          "w": 1.8,
+          "h": 1.8,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 0.9,
+          "label": "3"
+        }
+      ],
+      "mpn": "3362P-1-103LF",
+      "maker": "Bourns",
+      "section": "Controller",
+      "cost": 0.6,
+      "body": [
+        6.6,
+        6.6
+      ],
+      "note": "",
+      "assembly": "THT"
+    },
+    {
+      "ref": "C26",
+      "value": "100n",
+      "fp": "C_0603_C26",
+      "x": 18,
+      "y": 36,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "LEVEL_ADC",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Controller",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U10",
+      "value": "SN74LVC2G125",
+      "fp": "VSSOP8_DCU_U10",
+      "x": 83,
+      "y": 34,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "REF10_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "1OE_N"
+        },
+        {
+          "n": "2",
+          "x": -1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "1A"
+        },
+        {
+          "n": "3",
+          "x": -1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "U10_B",
+          "kind": "smd",
+          "drill": null,
+          "label": "2Y"
+        },
+        {
+          "n": "4",
+          "x": -1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "5",
+          "x": 1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "CLK10",
+          "kind": "smd",
+          "drill": null,
+          "label": "2A"
+        },
+        {
+          "n": "6",
+          "x": 1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "U10_A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1Y"
+        },
+        {
+          "n": "7",
+          "x": 1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "REF10_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "2OE_N"
+        },
+        {
+          "n": "8",
+          "x": 1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC"
+        }
+      ],
+      "mpn": "SN74LVC2G125DCUR",
+      "maker": "Texas Instruments",
+      "section": "Reference outputs",
+      "cost": 0.35,
+      "body": [
+        2.3,
+        2.0
+      ],
+      "note": "Parallel channels through individual49.9ohm resistors. OE high disables both. DC-coupled.",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "U11",
+      "value": "SN74LVC2G125",
+      "fp": "VSSOP8_DCU_U11",
+      "x": 18,
+      "y": 44,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "REFPPS_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "1OE_N"
+        },
+        {
+          "n": "2",
+          "x": -1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "PPS",
+          "kind": "smd",
+          "drill": null,
+          "label": "1A"
+        },
+        {
+          "n": "3",
+          "x": -1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "U11_B",
+          "kind": "smd",
+          "drill": null,
+          "label": "2Y"
+        },
+        {
+          "n": "4",
+          "x": -1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "GND"
+        },
+        {
+          "n": "5",
+          "x": 1.4,
+          "y": 0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "PPS",
+          "kind": "smd",
+          "drill": null,
+          "label": "2A"
+        },
+        {
+          "n": "6",
+          "x": 1.4,
+          "y": 0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "U11_A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1Y"
+        },
+        {
+          "n": "7",
+          "x": 1.4,
+          "y": -0.25,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "REFPPS_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "2OE_N"
+        },
+        {
+          "n": "8",
+          "x": 1.4,
+          "y": -0.75,
+          "w": 1.0,
+          "h": 0.3,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "VCC"
+        }
+      ],
+      "mpn": "SN74LVC2G125DCUR",
+      "maker": "Texas Instruments",
+      "section": "Reference outputs",
+      "cost": 0.35,
+      "body": [
+        2.3,
+        2.0
+      ],
+      "note": "Parallel channels through individual49.9ohm resistors. OE high disables both. DC-coupled.",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R24",
+      "value": "49R9",
+      "fp": "R_0603_R24",
+      "x": 79,
+      "y": 37,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "U10_A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0749R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R25",
+      "value": "49R9",
+      "fp": "R_0603_R25",
+      "x": 84,
+      "y": 36.599999999999994,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "U10_B",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0749R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R26",
+      "value": "24R9",
+      "fp": "R_0603_R26",
+      "x": 84,
+      "y": 38.199999999999996,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0724R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R27",
+      "value": "10k",
+      "fp": "R_0603_R27",
+      "x": 79,
+      "y": 33,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C27",
+      "value": "100n",
+      "fp": "C_0603_C27",
+      "x": 87,
+      "y": 31.6,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R28",
+      "value": "49R9",
+      "fp": "R_0603_R28",
+      "x": 23,
+      "y": 44,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "U11_A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0749R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R29",
+      "value": "49R9",
+      "fp": "R_0603_R29",
+      "x": 18,
+      "y": 47,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "U11_B",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0749R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R30",
+      "value": "24R9",
+      "fp": "R_0603_R30",
+      "x": 14,
+      "y": 47,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_SUM",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0724R9L",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R31",
+      "value": "10k",
+      "fp": "R_0603_R31",
+      "x": 23,
+      "y": 41,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_OE_N",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C28",
+      "value": "100n",
+      "fp": "C_0603_C28",
+      "x": 18,
+      "y": 40,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "J4",
+      "value": "10 MHz OUT",
+      "fp": "SMA_Amphenol_132134_J4",
+      "x": 84,
+      "y": 43,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2.05,
+          "h": 2.05,
+          "net": "REF10_OUT",
+          "kind": "thru_hole",
+          "drill": 1.5,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        }
+      ],
+      "mpn": "BWSMA-KE-Z001",
+      "maker": "BAT WIRELESS",
+      "section": "Reference outputs",
+      "cost": 1.2,
+      "body": [
+        7.0,
+        7.0
+      ],
+      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "J5",
+      "value": "1 PPS OUT",
+      "fp": "SMA_Amphenol_132134_J5",
+      "x": 7,
+      "y": 44,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 2.05,
+          "h": 2.05,
+          "net": "REFPPS_OUT",
+          "kind": "thru_hole",
+          "drill": 1.5,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": -2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": -2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        },
+        {
+          "n": "2",
+          "x": 2.54,
+          "y": 2.54,
+          "w": 2.25,
+          "h": 2.25,
+          "net": "GND",
+          "kind": "thru_hole",
+          "drill": 1.7,
+          "label": "2"
+        }
+      ],
+      "mpn": "BWSMA-KE-Z001",
+      "maker": "BAT WIRELESS",
+      "section": "Reference outputs",
+      "cost": 1.2,
+      "body": [
+        7.0,
+        7.0
+      ],
+      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "assembly": "THT"
+    },
+    {
+      "ref": "R32",
+      "value": "1M",
+      "fp": "R_0603_R32",
+      "x": 84,
+      "y": 49,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REF10_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071ML",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "R33",
+      "value": "1M",
+      "fp": "R_0603_R33",
+      "x": 8,
+      "y": 50,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "REFPPS_OUT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "RC0603FR-071ML",
+      "maker": "Yageo",
+      "section": "Reference outputs",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "TP1",
+      "value": "PPS",
+      "fp": "TestPoint_TP1",
+      "x": 52,
+      "y": 17,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "PPS",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    },
+    {
+      "ref": "TP2",
+      "value": "10M",
+      "fp": "TestPoint_TP2",
+      "x": 44,
+      "y": 32,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "TCXO_COUNT",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    },
+    {
+      "ref": "TP3",
+      "value": "GATE",
+      "fp": "TestPoint_TP3",
+      "x": 47,
+      "y": 35,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "BURST_GATE",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    },
+    {
+      "ref": "TP4",
+      "value": "VC",
+      "fp": "TestPoint_TP4",
+      "x": 56,
+      "y": 27,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "VCTRL",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    },
+    {
+      "ref": "TP5",
+      "value": "GND",
+      "fp": "TestPoint_TP5",
+      "x": 49,
+      "y": 17,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    },
+    {
+      "ref": "TP6",
+      "value": "3V3",
+      "fp": "TestPoint_TP6",
+      "x": 38,
+      "y": 16,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": 0,
+          "y": 0,
+          "w": 1.4,
+          "h": 1.4,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        }
+      ],
+      "mpn": "TESTPOINT",
+      "maker": "PCB",
+      "section": "Test",
+      "cost": 0,
+      "body": [
+        1.4,
+        1.4
+      ],
+      "note": "",
+      "assembly": "PCB"
+    }
+  ],
+  "ground_vias": [
+    {
+      "ref": "U2",
+      "pin": "2",
+      "x": 33.75,
+      "y": 9.0
+    },
+    {
+      "ref": "U3",
+      "pin": "2",
+      "x": 46.75,
+      "y": 9.0
+    },
+    {
+      "ref": "C1",
+      "pin": "2",
+      "x": 35.55,
+      "y": 5.0
+    },
+    {
+      "ref": "C2",
+      "pin": "2",
+      "x": 35.55,
+      "y": 13.0
+    },
+    {
+      "ref": "C3",
+      "pin": "2",
+      "x": 48.55,
+      "y": 5.0
+    },
+    {
+      "ref": "C4",
+      "pin": "2",
+      "x": 48.55,
+      "y": 13.0
+    },
+    {
+      "ref": "U4",
+      "pin": "1",
+      "x": 64.25,
+      "y": 10.6
+    },
+    {
+      "ref": "U4",
+      "pin": "10",
+      "x": 73.25,
+      "y": 19.4
+    },
+    {
+      "ref": "U4",
+      "pin": "12",
+      "x": 73.25,
+      "y": 17.2
+    },
+    {
+      "ref": "C5",
+      "pin": "2",
+      "x": 60.55,
+      "y": 15.0
+    },
+    {
+      "ref": "C6",
+      "pin": "2",
+      "x": 60.55,
+      "y": 19.0
+    },
+    {
+      "ref": "C8",
+      "pin": "2",
+      "x": 83.55,
+      "y": 27.0
+    },
+    {
+      "ref": "C9",
+      "pin": "2",
+      "x": 87.55,
+      "y": 27.0
+    },
+    {
+      "ref": "D1",
+      "pin": "2",
+      "x": 79.1,
+      "y": 21.0
+    },
+    {
+      "ref": "U5",
+      "pin": "2",
+      "x": 37.75,
+      "y": 24.0
+    },
+    {
+      "ref": "U5",
+      "pin": "6",
+      "x": 39.75,
+      "y": 23.05
+    },
+    {
+      "ref": "C10",
+      "pin": "2",
+      "x": 39.55,
+      "y": 20.0
+    },
+    {
+      "ref": "C11",
+      "pin": "2",
+      "x": 46.75,
+      "y": 26.2
+    },
+    {
+      "ref": "C12",
+      "pin": "2",
+      "x": 52.75,
+      "y": 26.2
+    },
+    {
+      "ref": "Y1",
+      "pin": "2",
+      "x": 58.775,
+      "y": 33.85
+    },
+    {
+      "ref": "C13",
+      "pin": "2",
+      "x": 54.55,
+      "y": 31.0
+    },
+    {
+      "ref": "R7",
+      "pin": "2",
+      "x": 67.55,
+      "y": 28.0
+    },
+    {
+      "ref": "C15",
+      "pin": "2",
+      "x": 66.55,
+      "y": 23.0
+    },
+    {
+      "ref": "U6",
+      "pin": "2",
+      "x": 70.75,
+      "y": 32.0
+    },
+    {
+      "ref": "U6",
+      "pin": "6",
+      "x": 72.75,
+      "y": 31.05
+    },
+    {
+      "ref": "C16",
+      "pin": "2",
+      "x": 76.55,
+      "y": 31.0
+    },
+    {
+      "ref": "C17",
+      "pin": "2",
+      "x": 75.75,
+      "y": 40.2
+    },
+    {
+      "ref": "U7",
+      "pin": "3",
+      "x": 67.75,
+      "y": 41.95
+    },
+    {
+      "ref": "C18",
+      "pin": "2",
+      "x": 65.55,
+      "y": 41.0
+    },
+    {
+      "ref": "U8",
+      "pin": "4",
+      "x": 57.2495,
+      "y": 42.125
+    },
+    {
+      "ref": "C19",
+      "pin": "2",
+      "x": 59.55,
+      "y": 37.0
+    },
+    {
+      "ref": "R11",
+      "pin": "2",
+      "x": 53.75,
+      "y": 37.2
+    },
+    {
+      "ref": "R13",
+      "pin": "2",
+      "x": 45.75,
+      "y": 38.2
+    },
+    {
+      "ref": "R15",
+      "pin": "2",
+      "x": 40.75,
+      "y": 38.2
+    },
+    {
+      "ref": "U9",
+      "pin": "7",
+      "x": 32.875,
+      "y": 45.5995
+    },
+    {
+      "ref": "U9",
+      "pin": "8",
+      "x": 32.625,
+      "y": 44.3005
+    },
+    {
+      "ref": "U9",
+      "pin": "10",
+      "x": 34.75,
+      "y": 44.95
+    },
+    {
+      "ref": "U9",
+      "pin": "11",
+      "x": 35.7,
+      "y": 44.0
+    },
+    {
+      "ref": "U9",
+      "pin": "12",
+      "x": 34.95,
+      "y": 44.25
+    },
+    {
+      "ref": "U9",
+      "pin": "18",
+      "x": 33.0,
+      "y": 41.8
+    },
+    {
+      "ref": "U9",
+      "pin": "21",
+      "x": 33.75,
+      "y": 43.0
+    },
+    {
+      "ref": "C21",
+      "pin": "2",
+      "x": 36.55,
+      "y": 48.0
+    },
+    {
+      "ref": "C22",
+      "pin": "2",
+      "x": 30.55,
+      "y": 48.0
+    },
+    {
+      "ref": "R18",
+      "pin": "2",
+      "x": 29.55,
+      "y": 46.0
+    },
+    {
+      "ref": "R19",
+      "pin": "2",
+      "x": 46.75,
+      "y": 46.2
+    },
+    {
+      "ref": "R23",
+      "pin": "2",
+      "x": 56.75,
+      "y": 46.2
+    },
+    {
+      "ref": "R21",
+      "pin": "2",
+      "x": 19.55,
+      "y": 60.0
+    },
+    {
+      "ref": "R22",
+      "pin": "2",
+      "x": 73.55,
+      "y": 60.0
+    },
+    {
+      "ref": "C26",
+      "pin": "2",
+      "x": 19.55,
+      "y": 36.0
+    },
+    {
+      "ref": "U10",
+      "pin": "4",
+      "x": 82.2495,
+      "y": 35.125
+    },
+    {
+      "ref": "U11",
+      "pin": "4",
+      "x": 17.2495,
+      "y": 45.125
+    },
+    {
+      "ref": "C27",
+      "pin": "2",
+      "x": 88.55,
+      "y": 31.6
+    },
+    {
+      "ref": "C28",
+      "pin": "2",
+      "x": 19.55,
+      "y": 40.0
+    },
+    {
+      "ref": "R32",
+      "pin": "2",
+      "x": 85.55,
+      "y": 49.0
+    },
+    {
+      "ref": "R33",
+      "pin": "2",
+      "x": 9.55,
+      "y": 50.0
+    },
+    {
+      "ref": "TP5",
+      "pin": "1",
+      "x": 49.75,
+      "y": 17.0
+    }
+  ]
+}
