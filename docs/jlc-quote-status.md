@@ -1,3 +1,5 @@
+> Historical Rev B upload. Rev C supersedes these files and requires a new Gerber/BOM/CPL upload. The prior draft must not be manufactured.
+
 # JLC quotation status — 2026-11-23
 
 Five complete Rev B assemblies, delivery to Hainan, China. Hardware unchanged;

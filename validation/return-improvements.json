@@ -2,59 +2,24 @@
   "added": [
     {
       "position_mm": [
-        58.8447,
-        35.5011
-      ],
-      "reason": "return for VCTRL"
-    },
-    {
-      "position_mm": [
-        52.0547,
-        29.5911
-      ],
-      "reason": "return for VCTRL"
-    },
-    {
-      "position_mm": [
-        79.2424,
-        35.3
-      ],
-      "reason": "return for U10_A"
-    },
-    {
-      "position_mm": [
-        85.8271,
-        33.6126
-      ],
-      "reason": "return for U10_A"
-    },
-    {
-      "position_mm": [
-        29.5591,
-        41.5645
-      ],
-      "reason": "return for ATT_IN"
-    },
-    {
-      "position_mm": [
-        35.8467,
-        39.027
-      ],
-      "reason": "return for ATT_IN"
-    },
-    {
-      "position_mm": [
-        28.1959,
-        41.2463
-      ],
-      "reason": "return for ATT_CLK"
-    },
-    {
-      "position_mm": [
-        26.0968,
-        44.3463
+        26.1771,
+        45.0393
       ],
       "reason": "return for ATT_LE"
+    },
+    {
+      "position_mm": [
+        35.4607,
+        16.425
+      ],
+      "reason": "return for 3V3A"
+    },
+    {
+      "position_mm": [
+        35.4316,
+        41.1091
+      ],
+      "reason": "return for 3V3A"
     },
     {
       "position_mm": [
@@ -65,17 +30,10 @@
     },
     {
       "position_mm": [
-        57.0996,
-        14.3012
+        84.4322,
+        48.0174
       ],
-      "reason": "return for PPS"
-    },
-    {
-      "position_mm": [
-        20.1041,
-        45.4162
-      ],
-      "reason": "return for PPS"
+      "reason": "return for REF10_OUT"
     },
     {
       "position_mm": [
@@ -86,45 +44,38 @@
     },
     {
       "position_mm": [
-        28.1287,
-        33.2728
+        20.8556,
+        45.8121
       ],
-      "reason": "return for REF10_OE_N"
+      "reason": "return for PPS"
     },
     {
       "position_mm": [
-        64.735,
-        37.3516
+        29.2314,
+        41.8495
       ],
-      "reason": "return for CLK10"
+      "reason": "return for ATT_IN"
     },
     {
       "position_mm": [
-        64.5846,
-        41.1123
+        38.3712,
+        40.3464
       ],
-      "reason": "return for DELAY_N"
+      "reason": "return for ATT_IN"
     },
     {
       "position_mm": [
-        50.6722,
-        37.7819
+        29.7943,
+        45.1213
       ],
-      "reason": "return for BURST_GATE"
+      "reason": "return for ATT_CLK"
     },
     {
       "position_mm": [
-        61.2673,
-        41.2813
+        6.3708,
+        50.8371
       ],
-      "reason": "return for BURST_GATE"
-    },
-    {
-      "position_mm": [
-        30.9398,
-        25.8854
-      ],
-      "reason": "return for I2C_SCL"
+      "reason": "return for REFPPS_OUT"
     },
     {
       "position_mm": [
@@ -135,17 +86,80 @@
     },
     {
       "position_mm": [
-        17.3469,
-        42.5139
+        23.2721,
+        41.9972
       ],
       "reason": "return for REFPPS_OE_N"
     },
     {
       "position_mm": [
-        20.8968,
-        41.6704
+        64.1799,
+        36.0709
       ],
-      "reason": "return for U11_A"
+      "reason": "return for CLK10"
+    },
+    {
+      "position_mm": [
+        75.6945,
+        33.0516
+      ],
+      "reason": "return for CLK10"
+    },
+    {
+      "position_mm": [
+        50.6722,
+        37.7819
+      ],
+      "reason": "return for BURST_GATE"
+    },
+    {
+      "position_mm": [
+        61.3172,
+        42.3538
+      ],
+      "reason": "return for BURST_GATE"
+    },
+    {
+      "position_mm": [
+        83.2517,
+        32.4314
+      ],
+      "reason": "return for REF10_OE_N"
+    },
+    {
+      "position_mm": [
+        79.4351,
+        35.4887
+      ],
+      "reason": "return for U10_A"
+    },
+    {
+      "position_mm": [
+        30.0885,
+        26.7584
+      ],
+      "reason": "return for I2C_SDA"
+    },
+    {
+      "position_mm": [
+        52.8433,
+        28.6371
+      ],
+      "reason": "return for VCTRL"
+    },
+    {
+      "position_mm": [
+        60.4373,
+        35.3511
+      ],
+      "reason": "return for VCTRL"
+    },
+    {
+      "position_mm": [
+        24.9153,
+        43.4788
+      ],
+      "reason": "return for ATT_DATA"
     },
     {
       "position_mm": [
@@ -205,13 +219,6 @@
     },
     {
       "position_mm": [
-        10,
-        63.5
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
         12,
         1.5
       ],
@@ -228,13 +235,6 @@
       "position_mm": [
         14,
         1.5
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        14,
-        63.5
       ],
       "reason": "perimeter stitch"
     },
@@ -548,13 +548,6 @@
     },
     {
       "position_mm": [
-        76,
-        63.5
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
         78,
         1.5
       ],
@@ -571,13 +564,6 @@
       "position_mm": [
         80,
         1.5
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        80,
-        63.5
       ],
       "reason": "perimeter stitch"
     },
@@ -716,13 +702,6 @@
     },
     {
       "position_mm": [
-        88.5,
-        13
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
         1.5,
         15
       ],
@@ -738,13 +717,6 @@
     {
       "position_mm": [
         1.5,
-        17
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        88.5,
         17
       ],
       "reason": "perimeter stitch"
@@ -898,50 +870,8 @@
     },
     {
       "position_mm": [
-        1.5,
-        41
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        88.5,
-        41
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        1.5,
-        43
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
         88.5,
         43
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        1.5,
-        45
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        88.5,
-        45
-      ],
-      "reason": "perimeter stitch"
-    },
-    {
-      "position_mm": [
-        1.5,
-        47
       ],
       "reason": "perimeter stitch"
     },
@@ -1108,13 +1038,6 @@
     },
     {
       "position_mm": [
-        64,
-        23.0
-      ],
-      "reason": "GNSS boundary stitch"
-    },
-    {
-      "position_mm": [
         66,
         5.0
       ],
@@ -1242,10 +1165,10 @@
   ],
   "unresolved": [
     {
-      "net": "REFPPS_OE_N",
+      "net": "I2C_SCL",
       "position_mm": [
-        20.959,
-        43.7982
+        25.5805,
+        23.6112
       ]
     }
   ]

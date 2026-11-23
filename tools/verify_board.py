@@ -11,6 +11,12 @@ for ref,p in expected.items():
  if abs(k.ToMM(f.GetPosition().x)-p['x'])>1e-5 or abs(k.ToMM(f.GetPosition().y)-p['y'])>1e-5:errors.append(ref+' placement')
  if (f.GetOrientationDegrees()-p['rot'])%360>1e-5:errors.append(ref+' rotation')
  if f.GetValue()!=p['value']:errors.append(ref+' value')
+ expected_pads=[]
+ for q in p['pads']:
+  angle=math.radians(p['rot']);x=p['x']+q['x']*math.cos(angle)+q['y']*math.sin(angle);y=p['y']-q['x']*math.sin(angle)+q['y']*math.cos(angle)
+  expected_pads.append((q['n'],round(x,4),round(y,4),round(q['w'],4),round(q['h'],4),round(q['drill'] or 0,4)))
+ actual_pads=[(a.GetNumber(),round(k.ToMM(a.GetPosition().x),4),round(k.ToMM(a.GetPosition().y),4),round(k.ToMM(a.GetSize().x),4),round(k.ToMM(a.GetSize().y),4),round(k.ToMM(a.GetDrillSize().x),4)) for a in f.Pads()]
+ if sorted(expected_pads)!=sorted(actual_pads):errors.append(ref+' pad geometry')
  for pad in f.Pads():
   q=next(q for q in p['pads'] if q['n']==pad.GetNumber())
   if q['kind']=='smd':
@@ -33,7 +39,7 @@ for name in ['drc','erc']:
  report=json.loads((ROOT/('validation/'+name+'.json')).read_text())
  findings=sum(len(s['violations']) for s in report['sheets']) if name=='erc' else sum(len(report[x]) for x in ['violations','unconnected_items','schematic_parity'])
  if findings:errors.append(name+' findings')
-result=dict(revision='B',board_sha256=hashlib.sha256(board.read_bytes()).hexdigest(),components=len(actual),smt_placements=len(placed),through_vias=len(vias),
+result=dict(revision='C',board_sha256=hashlib.sha256(board.read_bytes()).hexdigest(),components=len(actual),smt_placements=len(placed),through_vias=len(vias),
  checks=['manifest placement/value/net consistency','SMT pad copper/mask/paste layers','testpoint no-paste layers','ADP-2-1+ pin map','four-layer/all-through-via rules','minimum track width','CPL consistency','zero ERC/DRC/connectivity/parity findings'],errors=errors)
 (ROOT/'validation/manufacturing-checks.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2));assert not errors,errors

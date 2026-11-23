@@ -1,5 +1,5 @@
 {
-  "revision": "B",
+  "revision": "C",
   "width_mm": 90,
   "height_mm": 65,
   "parts": [
@@ -722,8 +722,8 @@
       "ref": "C4",
       "value": "4u7",
       "fp": "C_0603_C4",
-      "x": 47,
-      "y": 13,
+      "x": 50.6,
+      "y": 8.05,
       "rot": 0,
       "pads": [
         {
@@ -1065,8 +1065,8 @@
     {
       "ref": "J1",
       "value": "GPS ANT",
-      "fp": "SMA_Amphenol_132134_J1",
-      "x": 82,
+      "fp": "SMA_KWE_RA_J1",
+      "x": 86.4,
       "y": 15,
       "rot": 0,
       "pads": [
@@ -1074,67 +1074,67 @@
           "n": "1",
           "x": 0,
           "y": 0,
-          "w": 2.05,
-          "h": 2.05,
+          "w": 1.9,
+          "h": 1.9,
           "net": "ANT_RF",
           "kind": "thru_hole",
-          "drill": 1.5,
+          "drill": 1.2,
           "label": "1"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         }
       ],
-      "mpn": "BWSMA-KE-Z001",
-      "maker": "BAT WIRELESS",
+      "mpn": "SMA-KWE",
+      "maker": "Lian Xin Technology",
       "section": "GNSS",
-      "cost": 1.2,
+      "cost": 0.8,
       "body": [
-        7.0,
-        7.0
+        6.0,
+        6.0
       ],
-      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "note": "C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.",
       "assembly": "THT"
     },
     {
@@ -1391,7 +1391,7 @@
     },
     {
       "ref": "D1",
-      "value": "PESD5V0F1BLS",
+      "value": "PESD5V0F1BL",
       "fp": "DFN1006_2_D1",
       "x": 78,
       "y": 21,
@@ -1420,7 +1420,7 @@
           "label": "2"
         }
       ],
-      "mpn": "PESD5V0F1BLS,315",
+      "mpn": "PESD5V0F1BL,315",
       "maker": "Nexperia",
       "section": "GNSS",
       "cost": 0.12,
@@ -1814,17 +1814,17 @@
     {
       "ref": "Y1",
       "value": "10MHz VCTCXO",
-      "fp": "ECS_3225_Y1",
+      "fp": "KDS_DSA321SDN_Y1",
       "x": 64,
       "y": 34,
       "rot": 0,
       "pads": [
         {
           "n": "1",
-          "x": -1.025,
-          "y": 0.85,
-          "w": 0.6,
-          "h": 1.2,
+          "x": -1.12,
+          "y": 0.7,
+          "w": 0.78,
+          "h": 0.9,
           "net": "VCTRL",
           "kind": "smd",
           "drill": null,
@@ -1832,10 +1832,10 @@
         },
         {
           "n": "2",
-          "x": 1.025,
-          "y": 0.85,
-          "w": 0.6,
-          "h": 1.2,
+          "x": 1.12,
+          "y": 0.7,
+          "w": 0.78,
+          "h": 0.9,
           "net": "GND",
           "kind": "smd",
           "drill": null,
@@ -1843,10 +1843,10 @@
         },
         {
           "n": "3",
-          "x": 1.025,
-          "y": -0.85,
-          "w": 0.6,
-          "h": 1.2,
+          "x": 1.12,
+          "y": -0.7,
+          "w": 0.78,
+          "h": 0.9,
           "net": "OSC_SINE",
           "kind": "smd",
           "drill": null,
@@ -1854,25 +1854,25 @@
         },
         {
           "n": "4",
-          "x": -1.025,
-          "y": -0.85,
-          "w": 0.6,
-          "h": 1.2,
+          "x": -1.12,
+          "y": -0.7,
+          "w": 0.78,
+          "h": 0.9,
           "net": "3V3A",
           "kind": "smd",
           "drill": null,
           "label": "VDD"
         }
       ],
-      "mpn": "ECS-VC-TXO32-S3-33-100-BN-TR",
-      "maker": "ECS",
+      "mpn": "1XTV10000MDA",
+      "maker": "KDS Daishinku",
       "section": "Reference",
-      "cost": 12.71,
+      "cost": 1.067,
       "body": [
         3.2,
         2.5
       ],
-      "note": "Clipped sine, NOT CMOS. Vc restricted to 0.5..2.5 V; nominal 1.5 V.",
+      "note": "C253701. Clipped sine; Vc 0.5..2.5V, nominal1.5V. Positive pull +/-8..15ppm. Control input >=500k. Respect KDS bottom copper keepout; calibrate tuning slope.",
       "assembly": "SMT"
     },
     {
@@ -2370,8 +2370,8 @@
           "label": "2"
         }
       ],
-      "mpn": "GRM1885C1H220JA01D",
-      "maker": "Murata",
+      "mpn": "CL10C220JB8NNNC",
+      "maker": "Samsung Electro-Mechanics",
       "section": "Comb",
       "cost": 0.04,
       "body": [
@@ -2500,7 +2500,7 @@
     },
     {
       "ref": "U8",
-      "value": "SN74LVC2G08",
+      "value": "74LVC2G08",
       "fp": "VSSOP8_DCU_U8",
       "x": 58,
       "y": 41,
@@ -2595,12 +2595,12 @@
           "label": "VCC"
         }
       ],
-      "mpn": "SN74LVC2G08DCUR",
-      "maker": "Texas Instruments",
+      "mpn": "74LVC2G08DC,125",
+      "maker": "Nexperia",
       "section": "Comb",
       "cost": 0.2,
       "body": [
-        2.0,
+        2.3,
         2.0
       ],
       "note": "",
@@ -3604,8 +3604,8 @@
           "label": "6"
         }
       ],
-      "mpn": "2x 68000-103HLF + 2 shunts",
-      "maker": "Amphenol ICC",
+      "mpn": "2x FG-PZ2.54-1-03P + 2x C100114",
+      "maker": "FG / BOOMELE",
       "section": "RF path",
       "cost": 0.2,
       "body": [
@@ -3704,151 +3704,151 @@
     {
       "ref": "J2",
       "value": "RF IN",
-      "fp": "SMA_Amphenol_132134_J2",
+      "fp": "SMA_KWE_RA_J2",
       "x": 12,
-      "y": 56,
-      "rot": 0,
+      "y": 61.4,
+      "rot": 270,
       "pads": [
         {
           "n": "1",
           "x": 0,
           "y": 0,
-          "w": 2.05,
-          "h": 2.05,
+          "w": 1.9,
+          "h": 1.9,
           "net": "RF_IN",
           "kind": "thru_hole",
-          "drill": 1.5,
+          "drill": 1.2,
           "label": "1"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         }
       ],
-      "mpn": "BWSMA-KE-Z001",
-      "maker": "BAT WIRELESS",
+      "mpn": "SMA-KWE",
+      "maker": "Lian Xin Technology",
       "section": "RF path",
-      "cost": 1.2,
+      "cost": 0.8,
       "body": [
-        7.0,
-        7.0
+        6.0,
+        6.0
       ],
-      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "note": "C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.",
       "assembly": "THT"
     },
     {
       "ref": "J3",
       "value": "TO SDR",
-      "fp": "SMA_Amphenol_132134_J3",
+      "fp": "SMA_KWE_RA_J3",
       "x": 78,
-      "y": 56,
-      "rot": 0,
+      "y": 61.4,
+      "rot": 270,
       "pads": [
         {
           "n": "1",
           "x": 0,
           "y": 0,
-          "w": 2.05,
-          "h": 2.05,
+          "w": 1.9,
+          "h": 1.9,
           "net": "RF_OUT",
           "kind": "thru_hole",
-          "drill": 1.5,
+          "drill": 1.2,
           "label": "1"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         }
       ],
-      "mpn": "BWSMA-KE-Z001",
-      "maker": "BAT WIRELESS",
+      "mpn": "SMA-KWE",
+      "maker": "Lian Xin Technology",
       "section": "RF path",
-      "cost": 1.2,
+      "cost": 0.8,
       "body": [
-        7.0,
-        7.0
+        6.0,
+        6.0
       ],
-      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "note": "C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.",
       "assembly": "THT"
     },
     {
@@ -3940,7 +3940,7 @@
       "value": "1M",
       "fp": "R_0603_R21",
       "x": 18,
-      "y": 60,
+      "y": 57.5,
       "rot": 0,
       "pads": [
         {
@@ -4117,16 +4117,16 @@
     {
       "ref": "U10",
       "value": "SN74LVC2G125",
-      "fp": "VSSOP8_DCU_U10",
+      "fp": "SSOP8_DCT_U10",
       "x": 83,
       "y": 34,
       "rot": 0,
       "pads": [
         {
           "n": "1",
-          "x": -1.4,
-          "y": -0.75,
-          "w": 1.0,
+          "x": -1.7,
+          "y": -0.975,
+          "w": 1.6,
           "h": 0.3,
           "net": "REF10_OE_N",
           "kind": "smd",
@@ -4135,9 +4135,9 @@
         },
         {
           "n": "2",
-          "x": -1.4,
-          "y": -0.25,
-          "w": 1.0,
+          "x": -1.7,
+          "y": -0.32499999999999996,
+          "w": 1.6,
           "h": 0.3,
           "net": "CLK10",
           "kind": "smd",
@@ -4146,9 +4146,9 @@
         },
         {
           "n": "3",
-          "x": -1.4,
-          "y": 0.25,
-          "w": 1.0,
+          "x": -1.7,
+          "y": 0.32500000000000007,
+          "w": 1.6,
           "h": 0.3,
           "net": "U10_B",
           "kind": "smd",
@@ -4157,9 +4157,9 @@
         },
         {
           "n": "4",
-          "x": -1.4,
-          "y": 0.75,
-          "w": 1.0,
+          "x": -1.7,
+          "y": 0.9750000000000002,
+          "w": 1.6,
           "h": 0.3,
           "net": "GND",
           "kind": "smd",
@@ -4168,9 +4168,9 @@
         },
         {
           "n": "5",
-          "x": 1.4,
-          "y": 0.75,
-          "w": 1.0,
+          "x": 1.7,
+          "y": 0.975,
+          "w": 1.6,
           "h": 0.3,
           "net": "CLK10",
           "kind": "smd",
@@ -4179,9 +4179,9 @@
         },
         {
           "n": "6",
-          "x": 1.4,
-          "y": 0.25,
-          "w": 1.0,
+          "x": 1.7,
+          "y": 0.32499999999999996,
+          "w": 1.6,
           "h": 0.3,
           "net": "U10_A",
           "kind": "smd",
@@ -4190,9 +4190,9 @@
         },
         {
           "n": "7",
-          "x": 1.4,
-          "y": -0.25,
-          "w": 1.0,
+          "x": 1.7,
+          "y": -0.32500000000000007,
+          "w": 1.6,
           "h": 0.3,
           "net": "REF10_OE_N",
           "kind": "smd",
@@ -4201,9 +4201,9 @@
         },
         {
           "n": "8",
-          "x": 1.4,
-          "y": -0.75,
-          "w": 1.0,
+          "x": 1.7,
+          "y": -0.9750000000000002,
+          "w": 1.6,
           "h": 0.3,
           "net": "3V3A",
           "kind": "smd",
@@ -4211,30 +4211,30 @@
           "label": "VCC"
         }
       ],
-      "mpn": "SN74LVC2G125DCUR",
+      "mpn": "SN74LVC2G125DCTR",
       "maker": "Texas Instruments",
       "section": "Reference outputs",
       "cost": 0.35,
       "body": [
-        2.3,
-        2.0
+        2.8,
+        2.95
       ],
-      "note": "Parallel channels through individual49.9ohm resistors. OE high disables both. DC-coupled.",
+      "note": "Parallel channels through individual100ohm resistors. OE high disables both. DC-coupled. Active DCT package; do not fit obsolete DCU3 variant.",
       "assembly": "SMT"
     },
     {
       "ref": "U11",
       "value": "SN74LVC2G125",
-      "fp": "VSSOP8_DCU_U11",
+      "fp": "SSOP8_DCT_U11",
       "x": 18,
       "y": 44,
       "rot": 0,
       "pads": [
         {
           "n": "1",
-          "x": -1.4,
-          "y": -0.75,
-          "w": 1.0,
+          "x": -1.7,
+          "y": -0.975,
+          "w": 1.6,
           "h": 0.3,
           "net": "REFPPS_OE_N",
           "kind": "smd",
@@ -4243,9 +4243,9 @@
         },
         {
           "n": "2",
-          "x": -1.4,
-          "y": -0.25,
-          "w": 1.0,
+          "x": -1.7,
+          "y": -0.32499999999999996,
+          "w": 1.6,
           "h": 0.3,
           "net": "PPS",
           "kind": "smd",
@@ -4254,9 +4254,9 @@
         },
         {
           "n": "3",
-          "x": -1.4,
-          "y": 0.25,
-          "w": 1.0,
+          "x": -1.7,
+          "y": 0.32500000000000007,
+          "w": 1.6,
           "h": 0.3,
           "net": "U11_B",
           "kind": "smd",
@@ -4265,9 +4265,9 @@
         },
         {
           "n": "4",
-          "x": -1.4,
-          "y": 0.75,
-          "w": 1.0,
+          "x": -1.7,
+          "y": 0.9750000000000002,
+          "w": 1.6,
           "h": 0.3,
           "net": "GND",
           "kind": "smd",
@@ -4276,9 +4276,9 @@
         },
         {
           "n": "5",
-          "x": 1.4,
-          "y": 0.75,
-          "w": 1.0,
+          "x": 1.7,
+          "y": 0.975,
+          "w": 1.6,
           "h": 0.3,
           "net": "PPS",
           "kind": "smd",
@@ -4287,9 +4287,9 @@
         },
         {
           "n": "6",
-          "x": 1.4,
-          "y": 0.25,
-          "w": 1.0,
+          "x": 1.7,
+          "y": 0.32499999999999996,
+          "w": 1.6,
           "h": 0.3,
           "net": "U11_A",
           "kind": "smd",
@@ -4298,9 +4298,9 @@
         },
         {
           "n": "7",
-          "x": 1.4,
-          "y": -0.25,
-          "w": 1.0,
+          "x": 1.7,
+          "y": -0.32500000000000007,
+          "w": 1.6,
           "h": 0.3,
           "net": "REFPPS_OE_N",
           "kind": "smd",
@@ -4309,9 +4309,9 @@
         },
         {
           "n": "8",
-          "x": 1.4,
-          "y": -0.75,
-          "w": 1.0,
+          "x": 1.7,
+          "y": -0.9750000000000002,
+          "w": 1.6,
           "h": 0.3,
           "net": "3V3A",
           "kind": "smd",
@@ -4319,15 +4319,15 @@
           "label": "VCC"
         }
       ],
-      "mpn": "SN74LVC2G125DCUR",
+      "mpn": "SN74LVC2G125DCTR",
       "maker": "Texas Instruments",
       "section": "Reference outputs",
       "cost": 0.35,
       "body": [
-        2.3,
-        2.0
+        2.8,
+        2.95
       ],
-      "note": "Parallel channels through individual49.9ohm resistors. OE high disables both. DC-coupled.",
+      "note": "Parallel channels through individual100ohm resistors. OE high disables both. DC-coupled. Active DCT package; do not fit obsolete DCU3 variant.",
       "assembly": "SMT"
     },
     {
@@ -4460,7 +4460,7 @@
       "ref": "R27",
       "value": "10k",
       "fp": "R_0603_R27",
-      "x": 79,
+      "x": 78.4,
       "y": 33,
       "rot": 0,
       "pads": [
@@ -4503,7 +4503,7 @@
       "value": "100n",
       "fp": "C_0603_C27",
       "x": 87,
-      "y": 31.6,
+      "y": 31.4,
       "rot": 0,
       "pads": [
         {
@@ -4712,8 +4712,8 @@
       "ref": "C28",
       "value": "100n",
       "fp": "C_0603_C28",
-      "x": 18,
-      "y": 40,
+      "x": 16.2,
+      "y": 39.8,
       "rot": 0,
       "pads": [
         {
@@ -4753,8 +4753,8 @@
     {
       "ref": "J4",
       "value": "10 MHz OUT",
-      "fp": "SMA_Amphenol_132134_J4",
-      "x": 84,
+      "fp": "SMA_KWE_RA_J4",
+      "x": 86.4,
       "y": 43,
       "rot": 0,
       "pads": [
@@ -4762,142 +4762,142 @@
           "n": "1",
           "x": 0,
           "y": 0,
-          "w": 2.05,
-          "h": 2.05,
+          "w": 1.9,
+          "h": 1.9,
           "net": "REF10_OUT",
           "kind": "thru_hole",
-          "drill": 1.5,
+          "drill": 1.2,
           "label": "1"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         }
       ],
-      "mpn": "BWSMA-KE-Z001",
-      "maker": "BAT WIRELESS",
+      "mpn": "SMA-KWE",
+      "maker": "Lian Xin Technology",
       "section": "Reference outputs",
-      "cost": 1.2,
+      "cost": 0.8,
       "body": [
-        7.0,
-        7.0
+        6.0,
+        6.0
       ],
-      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "note": "C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.",
       "assembly": "THT"
     },
     {
       "ref": "J5",
       "value": "1 PPS OUT",
-      "fp": "SMA_Amphenol_132134_J5",
-      "x": 7,
+      "fp": "SMA_KWE_RA_J5",
+      "x": 3.6,
       "y": 44,
-      "rot": 0,
+      "rot": 180,
       "pads": [
         {
           "n": "1",
           "x": 0,
           "y": 0,
-          "w": 2.05,
-          "h": 2.05,
+          "w": 1.9,
+          "h": 1.9,
           "net": "REFPPS_OUT",
           "kind": "thru_hole",
-          "drill": 1.5,
+          "drill": 1.2,
           "label": "1"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": -2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": -2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": -2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": -2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         },
         {
           "n": "2",
-          "x": 2.54,
-          "y": 2.54,
-          "w": 2.25,
-          "h": 2.25,
+          "x": 2.1,
+          "y": 2.1,
+          "w": 2.0,
+          "h": 2.0,
           "net": "GND",
           "kind": "thru_hole",
-          "drill": 1.7,
+          "drill": 1.4,
           "label": "2"
         }
       ],
-      "mpn": "BWSMA-KE-Z001",
-      "maker": "BAT WIRELESS",
+      "mpn": "SMA-KWE",
+      "maker": "Lian Xin Technology",
       "section": "Reference outputs",
-      "cost": 1.2,
+      "cost": 0.8,
       "body": [
-        7.0,
-        7.0
+        6.0,
+        6.0
       ],
-      "note": "LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.",
+      "note": "C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.",
       "assembly": "THT"
     },
     {
@@ -5174,7 +5174,7 @@
       "ref": "C29",
       "value": "100n",
       "fp": "C_0603_C29",
-      "x": 37.599999999999994,
+      "x": 37.6,
       "y": 8.05,
       "rot": 0,
       "pads": [
@@ -5258,7 +5258,7 @@
       "ref": "C32",
       "value": "100n",
       "fp": "C_0603_C32",
-      "x": 34.461299999999994,
+      "x": 34.4613,
       "y": 24.4841,
       "rot": 180,
       "pads": [
@@ -5300,9 +5300,9 @@
       "ref": "C33",
       "value": "100n",
       "fp": "C_0603_C33",
-      "x": 17.849999999999998,
-      "y": 41.951,
-      "rot": 180,
+      "x": 19.6,
+      "y": 41.2,
+      "rot": 0,
       "pads": [
         {
           "n": "1",
@@ -5373,8 +5373,8 @@
     {
       "ref": "C4",
       "pin": "2",
-      "x": 48.55,
-      "y": 13.0
+      "x": 52.15,
+      "y": 8.05
     },
     {
       "ref": "U4",
@@ -5457,8 +5457,8 @@
     {
       "ref": "Y1",
       "pin": "2",
-      "x": 65.775,
-      "y": 34.85
+      "x": 65.87,
+      "y": 34.7
     },
     {
       "ref": "C13",
@@ -5626,7 +5626,7 @@
       "ref": "R21",
       "pin": "2",
       "x": 19.55,
-      "y": 60.0
+      "y": 57.5
     },
     {
       "ref": "R22",
@@ -5643,26 +5643,26 @@
     {
       "ref": "U10",
       "pin": "4",
-      "x": 82.2495,
-      "y": 35.125
+      "x": 82.05,
+      "y": 34.975
     },
     {
       "ref": "U11",
       "pin": "4",
-      "x": 17.2495,
-      "y": 45.125
+      "x": 17.05,
+      "y": 44.975
     },
     {
       "ref": "C27",
       "pin": "2",
       "x": 88.55,
-      "y": 31.6
+      "y": 31.4
     },
     {
       "ref": "C28",
       "pin": "2",
-      "x": 19.55,
-      "y": 40.0
+      "x": 17.75,
+      "y": 39.8
     },
     {
       "ref": "R32",
@@ -5681,6 +5681,30 @@
       "pin": "1",
       "x": 49.75,
       "y": 17.0
+    },
+    {
+      "ref": "C29",
+      "pin": "2",
+      "x": 39.15,
+      "y": 8.05
+    },
+    {
+      "ref": "C31",
+      "pin": "2",
+      "x": 62.075,
+      "y": 16.2495
+    },
+    {
+      "ref": "C32",
+      "pin": "2",
+      "x": 34.3108,
+      "y": 24.8591
+    },
+    {
+      "ref": "C33",
+      "pin": "2",
+      "x": 21.15,
+      "y": 41.2
     },
     {
       "x": 28,

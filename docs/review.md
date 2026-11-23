@@ -1,3 +1,5 @@
+> Historical Rev B review. Rev C changes the oscillator, buffer package, SMA geometry, routing and enclosure. Use the current [sourcing review](sourcing.md), CAD reports and [end-to-end model](end-to-end.md).
+
 # Rev B readiness review — 2026-11-23
 
 **Disposition: design package ready for a factory first-article build and quotation.** Known source/CAD issues identified in the Rev A review have been addressed. This is not a claim of measured hardware qualification; no physical board has yet been built. The factory test procedure is part of the first-article scope, followed by the remaining four boards after acceptance.

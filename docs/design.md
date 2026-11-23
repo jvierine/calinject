@@ -1,6 +1,6 @@
-# Rev B RF and timing design
+# Rev C RF and timing design
 
-Rev B is a complete design package for a factory-assembled first article. It uses an ADP-2-1+ SMT transformer combiner, with a specified signal-path band of **0.5–70 MHz** and approximately **3.2 dB receive-path loss**. Its internal winding is supplied by the component manufacturer; no user winding or soldering is required. It replaces Rev A's expensive directional coupler. Operation below 500 kHz is not specified.
+Rev C uses an ADP-2-1+ SMT transformer combiner, with a specified signal-path band of **0.5–70 MHz** and approximately **3.2 dB receive-path loss**. No user winding or soldering is required. Its horizontal SMAs exit the case walls. The KDS tunable TCXO, active TI DCT output buffers, Nexperia AND gate and standard headers replace the sourcing bottlenecks in Rev B. See [parts selection](sourcing.md). Operation below 500 kHz is not specified.
 
 ```mermaid
 flowchart LR
@@ -21,7 +21,7 @@ flowchart LR
 
 ## Reference and burst timing
 
-The ECS tunable TCXO supplies 10 MHz; a comparator converts its clipped sine to logic. The MCP4725 adjusts its control voltage through two RC sections. RP2040 PIO counts oscillator edges between GPS PPS edges; a slow frequency servo corrects the DAC every 64 seconds. Nominal counting resolution is 1/64 Hz at 10 MHz, before GPS/oscillator fluctuations. This controls average frequency and does not phase-lock 10 MHz to PPS.
+The KDS 1XTV10000MDA tunable TCXO supplies 10 MHz; a comparator converts its clipped sine to logic. The MCP4725 adjusts its control voltage through two RC sections. RP2040 PIO counts oscillator edges between GPS PPS edges; a slow frequency servo corrects the DAC every 64 seconds. Nominal counting resolution is 1/64 Hz at 10 MHz, before GPS/oscillator fluctuations. This controls average frequency and does not phase-lock 10 MHz to PPS. The positive tuning slope must be calibrated; KDS specifies ±8–15 ppm pull over 0.5–2.5 V and at least 500 kΩ control input. Top/Inner1 copper keepouts implement the manufacturer's bottom-clearance requirement.
 
 GPS generates a 10 ms logic PPS. Another PIO state machine generates the requested injection gate, default 100 µs. Width is adjustable from 1 to 900,000 µs, with separate continuous/mute modes. A descriptor authorizes one burst; software starvation cannot create repeated autonomous bursts. The first comb pulse is quantized by up to one 100 ns clock period after the gate. Host scheduling does not set the gate edge.
 

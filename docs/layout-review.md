@@ -1,6 +1,6 @@
 # Cable drivers, grounding and power review
 
-This review led to four additional local 100 nF capacitors, 177 additional ground vias, and revised reference-output ballast resistors. The native design is four layers; the two inner layers are continuous ground reference planes apart from normal pad/via antipads. Ground is not split into analog and digital islands.
+This review led to four additional local 100 nF capacitors, 177 additional ground vias, and revised reference-output ballast resistors. The native design is four layers; the two inner layers are ground reference planes apart from normal pad/via antipads and the KDS-required 2 × 2.5 mm keepout on In1 under Y1. In2 remains beneath that area at the required greater depth. Ground is not split into analog and digital islands.
 
 ## Reference cables and buffers
 
@@ -14,7 +14,7 @@ Both outputs use **DC coupling and series source termination**. No parallel RC A
 
 ## Layer changes and stitching
 
-The added return vias connect both internal ground planes near signal layer changes. All signal-via centers are within **1.5 mm** of a ground-plane transition except one slow REFPPS_OE_N control via, at **1.83 mm**. The exception is documented rather than forcing a clearance violation. The clock, comb and RF layer changes meet the 1.5 mm geometric target. These distances are geometric checks, not an extracted inductance or signal-integrity result.
+The added return vias connect both internal ground planes near signal layer changes. Rev C has 243 ground vias and 30 non-ground vias. All non-ground via centers are within **1.5 mm** of a ground-plane transition except one slow I2C_SCL control via, at **5.50 mm**. The exception is documented rather than forcing a clearance violation. The clock, comb and RF layer changes meet the 1.5 mm geometric target. These distances are geometric checks, not an extracted inductance or signal-integrity result.
 
 Additional nominal 2 mm-pitch stitching runs around the board perimeter and the GNSS boundary wherever clearance permits. Existing stitching separates the comb/clock region from the receiver path. Gaps remain at connectors, components and traces. The stitching connects reference planes; it is **not a continuous metal wall or an RF shield**, particularly without grounded outer-layer guard copper. The printed enclosure remains unshielded. Antenna isolation, clock feedthrough and emissions still require measurements; shielding cannot be claimed from via count or DRC.
 
@@ -22,7 +22,7 @@ Additional nominal 2 mm-pitch stitching runs around the board perimeter and the 
 
 The carrier uses **AP2112K LDOs**, not switching converters: one for the reference/RF circuitry and one for GNSS. The RP2040 module supplies its digital rail with its onboard regulator. The external USB supply may itself be a switching supply. LDOs do not eliminate high-frequency noise or ground coupling.
 
-New local capacitors are C29 at U2, C31 at U4, C32 at U5 and C33 at U11. Their supply-pad distances are 1.5–1.8 mm, with short top-layer connections and local ground vias. Existing regulator bulk capacitors remain. The GNSS regulator's existing output capacitor C4 remains 5.27 mm from its output pin; this is a layout compromise to verify for supply transients/stability. U10's existing C27 is 2.44 mm from its supply pin. Oscillator, comparator, comb and attenuator bypasses remain local. The machine-readable audit records each measured distance; proximity alone does not establish the complete supply-current loop impedance.
+New local capacitors are C29 at U2, C31 at U4, C32 at U5 and C33 at U11. Their supply-pad distances are 1.8–2.04 mm, with short top-layer connections and local ground vias. Existing regulator bulk capacitors remain. The GNSS regulator's output capacitor C4 has moved to 1.80 mm from its output pin. U10's C27 is 2.21 mm from its supply pin. Oscillator, comparator, comb and attenuator bypasses remain local. The machine-readable audit records each measured distance; proximity alone does not establish the complete supply-current loop impedance.
 
 **No ferrite beads separate the existing 3.3 V loads.** The reference/RF rail is separate from the module's digital rail, but it also powers the fast comb and reference-output buffers. Consequently it must not be described as a fully isolated AVDD supply. The RP2040's internal AVDD/DVDD implementation is on the purchased module. Adding a generic bead without a load/impedance model can introduce resonant peaking; if supply-induced oscillator jitter or muted spurs fail acceptance, a damped filtered oscillator/comparator branch or separate quiet LDO requires a circuit/layout revision and requalification. This release does not claim that rail-noise isolation has been measured or solved by the added bypasses.
 

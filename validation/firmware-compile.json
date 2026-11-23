@@ -31,7 +31,7 @@
   "total_pio_words": 20,
   "on_device_execution": false,
   "sources": {
-    "main.py": "25db8e09c69f7afad55fd1c03fc0f3b206c3d1b7cff2c7cf65e4e12ffc7cfdcf",
+    "main.py": "198adc9809b3264f9ae0b410fe9d4eecd2954f3a5a99acc2ec437dbf44759155",
     "protocol.py": "b40772342aef3b5a6995c069672a9bdc59bca1037b7ee974e0b06cc061ceb6d1",
     "settings.py": "bc57643a4f9ebf661bfc6c19f25d601fe2a562b5a66eff8f642fa193947c9811",
     "telemetry.py": "c581f263985ba8e9ef687eefdd1d7f0bdef230d7c9126e59e470cce1b361dc5d"

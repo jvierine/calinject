@@ -41,8 +41,19 @@ def render():
  raw=subprocess.check_output([interpreter,str(Path(__file__)),'--extract'],cwd=ROOT,text=True)
  d=json.loads(raw);pale='#f5f9f7';dark='#203b34';gold='#d9b553';red='#ba2838';blue='#3069b2'
  fig=plt.figure(figsize=(14,10.8),facecolor='white');ax=fig.add_axes([.025,.065,.95,.91])
- ax.set(xlim=(-1,91),ylim=(66,-1));ax.set_aspect('equal');ax.axis('off')
+ ax.set(xlim=(-10,100),ylim=(75,-1));ax.set_aspect('equal');ax.axis('off')
  ax.add_patch(Rectangle((0,0),90,65,facecolor=pale,edgecolor='#405c52',linewidth=1.7,joinstyle='round',zorder=0))
+ # Actual right-angle SMA dimensions from the reviewed connector drawing.
+ from matplotlib.patches import Polygon
+ import math
+ manifest=json.loads((ROOT/'cad/design.json').read_text())
+ for p in manifest['parts']:
+  if p['ref'] not in ['J1','J2','J3','J4','J5']:continue
+  angle=math.radians(p['rot'])
+  def point(x,y):return (p['x']+x*math.cos(angle)+y*math.sin(angle),p['y']-x*math.sin(angle)+y*math.cos(angle))
+  ax.add_patch(Polygon([point(x,y) for x,y in [(3,-3.1),(11.6,-3.1),(11.6,3.1),(3,3.1)]],closed=True,facecolor='#e5cc8a',edgecolor='#b18c32',linewidth=1.,zorder=2))
+  for x in [8.,8.7,9.4,10.1,10.8]:
+   a,c=point(x,-3.1),point(x,3.1);ax.plot([a[0],c[0]],[a[1],c[1]],color='#b18c32',lw=.6,zorder=3)
  for top,color in [(False,blue),(True,red)]:
   tt=[t for t in d['tracks'] if t['top']==top]
   col=LineCollection([[t['a'],t['b']] for t in tt],colors=color,linewidths=[t['width']*10.5 for t in tt],zorder=1 if not top else 2,capstyle='round',joinstyle='round')
@@ -65,7 +76,7 @@ def render():
   if label['text'] in ['U1','J1','J2','J3','J4','J5']:continue
   x,y=label['p'];ax.text(x,y,label['text'],color=dark,fontsize=8.5,ha='center',va='center',zorder=8,path_effects=[pe.withStroke(linewidth=2.3,foreground=pale)])
  # Functional port labels lie within the empty connector bodies / module area.
- for text,x,y,size in [('USB-C / RP2040',17,9,9),('GPS ANT',82,10.1,9),('RF IN',12,52,9),('TO SDR',78,52,9),('10 MHz OUT',81,46.8,9),('1 PPS OUT',7,39,9),('LEVEL',12,38.6,9),('CALINJECT · REV B · 90 × 65 mm',44,63.7,10)]:
+ for text,x,y,size in [('USB-C / RP2040',17,9,9),('GPS ANT',80,9.7,9),('RF IN',12,54.6,9),('TO SDR',78,54.6,9),('10 MHz OUT',78.5,50.4,9),('1 PPS OUT',5,38.5,8),('LEVEL',12,36.8,8),('CALINJECT · REV C · 90 × 65 mm',44,61.8,10)]:
   ax.text(x,y,text,color=dark,fontsize=size,fontweight='bold',ha='center',va='center',zorder=9,path_effects=[pe.withStroke(linewidth=2.6,foreground=pale)])
  fig.text(.50,.035,'Top view  ·  red: top copper  ·  blue: bottom copper  ·  gold: pads and vias',ha='center',color=dark,fontsize=10)
  for suffix in ['png','svg']:

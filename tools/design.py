@@ -1,4 +1,4 @@
-"""Calinject Rev B circuit and mechanical source of truth. Units: mm.
+"""Calinject Rev C circuit and mechanical source of truth. Units: mm.
 Pad geometries must remain tied to the named manufacturer package drawings.
 """
 from pathlib import Path
@@ -34,16 +34,18 @@ sot('U2','AP2112K-3.3',['USB5F','GND','USB5F',None,'3V3A'],34,9,'Power','AP2112K
 sot('U3','AP2112K-3.3',['USB5F','GND','USB5F',None,'3V3G'],47,9,'Power','AP2112K-3.3TRG1',.3)
 chip('F1','500mA','USB5','USB5F',29,5,'Power','F',size='1206',mpn='1206L050/15YR')
 cap('C1','USB5F',34,5,'Power','4u7');cap('C2','3V3A',34,13,'Power','4u7')
-cap('C3','USB5F',47,5,'Power','4u7');cap('C4','3V3G',47,13,'Power','4u7')
+cap('C3','USB5F',47,5,'Power','4u7');cap('C4','3V3G',50.6,8.05,'Power','4u7')
 # GNSS MAX-M10S. 18 lands, pitch 1.1 mm. Body 9.7 x 10.1.
 gn=['GND','GPS_TX','GPS_RX','PPS',None,'3V3G','3V3G','3V3G',None,'GND','GNSS_RF','GND',None,None,None,None,None,None]
 gp=[(-4.5,-4.4+1.1*i) for i in range(9)]+[(4.5,4.4-1.1*i) for i in range(9)]
 add('U4','MAX-M10S','MAX_M10S',68,15,[pad(i+1,*p,1.5,.8,gn[i]) for i,p in enumerate(gp)],'MAX-M10S-00B','u-blox','GNSS',11.42,body=(9.7,10.1),note='TIMEPULSE must not be pulled low at startup; VIO_SEL floating selects 3.3V.')
 cap('C5','3V3G',59,15,'GNSS');cap('C6','3V3G',59,19,'GNSS','4u7')
-# SMA vertical connectors chosen to avoid unknown edge launches. Amphenol 132134.
+# Commodity right-angle SMA, Lian Xin SMA-KWE C7498154. Barrel points local +X.
 def sma(ref,name,x,y,net,section):
- p=[pad(1,0,0,2.05,2.05,net,'thru_hole',1.5)]+[pad(2,dx,dy,2.25,2.25,'GND','thru_hole',1.7) for dx in [-2.54,2.54] for dy in [-2.54,2.54]]
- add(ref,name,'SMA_Amphenol_132134',x,y,p,'BWSMA-KE-Z001','BAT WIRELESS',section,1.2,body=(7.,7.),note='LCSC C496549. 5.08mm square pins, female contact. Amphenol132134 also fits. Vertical SMA exits lid.',assembly='THT')
+ positions={'J1':(86.4,15,0),'J2':(12,61.4,270),'J3':(78,61.4,270),'J4':(86.4,43,0),'J5':(3.6,44,180)}
+ x,y,rot=positions[ref]
+ p=[pad(1,0,0,1.9,1.9,net,'thru_hole',1.2)]+[pad(2,dx,dy,2.,2.,'GND','thru_hole',1.4) for dx in [-2.1,2.1] for dy in [-2.1,2.1]]
+ add(ref,name,'SMA_KWE_RA',x,y,p,'SMA-KWE','Lian Xin Technology',section,.8,rot=rot,body=(6.,6.),note='C7498154. Female SMA, horizontal barrel local+X; 4.2mm square legs,0.9mm pins. Tip11.6mm from signal-pin center, thread4mm. Axis6mm above PCB. Match exact drawing, not just SMA-KWE name.',assembly='THT')
 sma('J1','GPS ANT',82,15,'ANT_RF','GNSS')
 chip('C7','100p','GNSS_RF','ANT_RF',76,15,'GNSS','C',size='0402',mpn='GRM1555C1H101JA01D')
 chip('L1','27n','ANT_BIAS','ANT_RF',82,21,'GNSS','L',rot=90,size='0402',mpn='LQW15AN27NG80D')
@@ -53,7 +55,7 @@ chip('F2','50mA','3V3G','ANT_FUSED',70,25,'GNSS','F',size='1206',mpn='1206L005/6
 chip('R1','0','ANT_FUSED','ANT_BIAS',77,25,'GNSS',mpn='RC0603FR-070RL')
 cap('C8','ANT_BIAS',82,27,'GNSS');cap('C9','ANT_BIAS',86,27,'GNSS','1n')
 # RF ESD diode, 0201 package.
-add('D1','PESD5V0F1BLS','DFN1006_2',78,21,[pad(1,-.35,0,.45,.6,'ANT_RF'),pad(2,.35,0,.45,.6,'GND')],'PESD5V0F1BLS,315','Nexperia','GNSS',.12,body=(1.,.6))
+add('D1','PESD5V0F1BL','DFN1006_2',78,21,[pad(1,-.35,0,.45,.6,'ANT_RF'),pad(2,.35,0,.45,.6,'GND')],'PESD5V0F1BL,315','Nexperia','GNSS',.12,body=(1.,.6))
 # Reference: DAC -> two RC poles -> tunable oscillator.
 sot('U5','MCP4725A0',['DAC_OUT','GND','3V3A','I2C_SDA','I2C_SCL','GND'],38,24,'Reference','MCP4725A0T-E/CH',1.1)
 cap('C10','3V3A',38,20,'Reference')
@@ -63,7 +65,7 @@ chip('R4','1k','DAC_OUT','DAC_FILT',43,24,'Reference',mpn='RC0603FR-071KL')
 cap('C11','DAC_FILT',46,27,'Reference','4u7',90)
 chip('R5','1k','DAC_FILT','VCTRL',49,24,'Reference',mpn='RC0603FR-071KL')
 cap('C12','VCTRL',52,27,'Reference','4u7',90)
-add('Y1','10MHz VCTCXO','ECS_3225',57,33,[pad(1,-1.025,.85,.6,1.2,'VCTRL'),pad(2,1.025,.85,.6,1.2,'GND'),pad(3,1.025,-.85,.6,1.2,'OSC_SINE'),pad(4,-1.025,-.85,.6,1.2,'3V3A')],'ECS-VC-TXO32-S3-33-100-BN-TR','ECS','Reference',12.71,body=(3.2,2.5),note='Clipped sine, NOT CMOS. Vc restricted to 0.5..2.5 V; nominal 1.5 V.')
+add('Y1','10MHz VCTCXO','KDS_DSA321SDN',57,33,[pad(1,-1.12,.7,.78,.9,'VCTRL'),pad(2,1.12,.7,.78,.9,'GND'),pad(3,1.12,-.7,.78,.9,'OSC_SINE'),pad(4,-1.12,-.7,.78,.9,'3V3A')],'1XTV10000MDA','KDS Daishinku','Reference',1.067,body=(3.2,2.5),note='C253701. Clipped sine; Vc 0.5..2.5V, nominal1.5V. Positive pull +/-8..15ppm. Control input >=500k. Respect KDS bottom copper keepout; calibrate tuning slope.')
 cap('C13','3V3A',53,31,'Reference')
 chip('C14','1n','OSC_SINE','SINE_BIASED',62,32,'Reference','C',mpn='GRM1885C1H102JA01D')
 chip('R6','10k','3V3A','VREF_HALF',62,28,'Reference',mpn='RC0603FR-0710KL')
@@ -81,7 +83,7 @@ cap('C18','3V3A',71,37.8,'Comb')
 # DCU VSSOP8 pitch0.5: pins 1..4 down left,5..8 up right.
 np=['CLK10','DELAY_N','COMB_GATED','GND','COMB_RAW','BURST_GATE','COMB_RAW','3V3A']
 coords=[(-1.4,-.75+.5*i) for i in range(4)]+[(1.4,.75-.5*i) for i in range(4)]
-add('U8','SN74LVC2G08','VSSOP8_DCU',58,41,[pad(i+1,*p,1.,.3,np[i]) for i,p in enumerate(coords)],'SN74LVC2G08DCUR','Texas Instruments','Comb',.2,body=(2.,2.))
+add('U8','74LVC2G08','VSSOP8_DCU',58,41,[pad(i+1,*p,1.,.3,np[i]) for i,p in enumerate(coords)],'74LVC2G08DC,125','Nexperia','Comb',.2,body=(2.3,2.))
 cap('C19','3V3A',60.6,39,'Comb')
 chip('R11','100k','BURST_GATE','GND',53,38,'Comb',rot=90,mpn='RC0603FR-07100KL')
 chip('R12','49R9','COMB_GATED','DRIVE50',52,42,'Comb',mpn='RC0603FR-0749R9L')
@@ -103,14 +105,14 @@ chip('C23','100n','ATT_OUT','ATT_AC',40,48,'RF path','C',mpn='GRM188R71H104KA93D
 chip('R19','61R9','PAD20_IN','GND',46,47,'RF path',rot=90,mpn='RC0603FR-0761R9L')
 chip('R20','249','PAD20_IN','PAD20_OUT',51,48,'RF path',mpn='RC0603FR-07249RL')
 chip('R23','61R9','PAD20_OUT','GND',56,47,'RF path',rot=90,mpn='RC0603FR-0761R9L')
-add('JP1','LEVEL RANGE','Range_2x3',64,47,[pad(1,-2.54,-1.27,1.8,1.8,'PAD20_IN','thru_hole',1.),pad(2,0,-1.27,1.8,1.8,'ATT_AC','thru_hole',1.),pad(3,2.54,-1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.),pad(4,-2.54,1.27,1.8,1.8,'PAD20_OUT','thru_hole',1.),pad(5,0,1.27,1.8,1.8,'COUPLED','thru_hole',1.),pad(6,2.54,1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.)],'2x 68000-103HLF + 2 shunts','Amphenol ICC','RF path',.2,body=(7.62,5.08),assembly='THT',note='Two shunts: LOW1-2 and4-5; HIGH2-3 and5-6. Never mix. LOW default. No pad branch attached in HIGH.')
+add('JP1','LEVEL RANGE','Range_2x3',64,47,[pad(1,-2.54,-1.27,1.8,1.8,'PAD20_IN','thru_hole',1.),pad(2,0,-1.27,1.8,1.8,'ATT_AC','thru_hole',1.),pad(3,2.54,-1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.),pad(4,-2.54,1.27,1.8,1.8,'PAD20_OUT','thru_hole',1.),pad(5,0,1.27,1.8,1.8,'COUPLED','thru_hole',1.),pad(6,2.54,1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.)],'2x FG-PZ2.54-1-03P + 2x C100114','FG / BOOMELE','RF path',.2,body=(7.62,5.08),assembly='THT',note='Two shunts: LOW1-2 and4-5; HIGH2-3 and5-6. Never mix. LOW default. No pad branch attached in HIGH.')
 cpnets=['RF_TO_SDR','T1_LINK','RF_FROM_ANT','COUPLED','T1_LINK','GND']
 cpcoords=[(-2.54,2.54),(0,2.54),(2.54,2.54),(2.54,-2.54),(0,-2.54),(-2.54,-2.54)]
 add('T1','ADP-2-1+','MiniCircuits_CD636',48,57,[pad(i+1,*pt,1.65,2.54,cpnets[i]) for i,pt in enumerate(cpcoords)],'ADP-2-1+','Mini-Circuits','RF path',12.04,rot=180,body=(7.87,5.59),note='JLC C2683460. Sum1 to SDR; branch3 antenna; branch4 cal. Join2/5 and isolate from ground. Specified0.5..400MHz.')
 sma('J2','RF IN',12,56,'RF_IN','RF path');sma('J3','TO SDR',78,56,'RF_OUT','RF path')
 chip('C24','1u 50V','RF_IN','RF_FROM_ANT',23,56,'RF path','C',size='0805',mpn='GRM21BR71H105KA12L')
 chip('C25','1u 50V','RF_TO_SDR','RF_OUT',67,56,'RF path','C',size='0805',mpn='GRM21BR71H105KA12L')
-chip('R21','1M','RF_IN','GND',18,60,'RF path',mpn='RC0603FR-071ML')
+chip('R21','1M','RF_IN','GND',18,57.5,'RF path',mpn='RC0603FR-071ML')
 chip('R22','1M','RF_OUT','GND',72,60,'RF path',mpn='RC0603FR-071ML')
 # Manual level knob, read as DC only. All RF attenuation is inside PE4312.
 add('RV1','10k LEVEL','Bourns_3362P',12,34,[pad(1,-2.54,0,1.8,1.8,'3V3D','thru_hole',.9),pad(2,0,2.54,1.8,1.8,'LEVEL_ADC','thru_hole',.9),pad(3,2.54,0,1.8,1.8,'GND','thru_hole',.9)],'3362P-1-103LF','Bourns','Controller',.6,body=(6.6,6.6),assembly='THT')
@@ -121,18 +123,18 @@ cap('C26','LEVEL_ADC',18,36,'Controller')
 # outputs directly together. Disabled output is high impedance (1M bleed).
 for r,name,x,y,source,oe in [('U10','10 MHz',83,34,'CLK10','REF10_OE_N'),('U11','1 PPS',18,44,'PPS','REFPPS_OE_N')]:
  ns=[oe,source,r+'_B','GND',source,r+'_A',oe,'3V3A']
- coords=[(-1.4,-.75+.5*i) for i in range(4)]+[(1.4,.75-.5*i) for i in range(4)]
- add(r,'SN74LVC2G125','VSSOP8_DCU',x,y,[pad(i+1,*pt,1.,.3,ns[i]) for i,pt in enumerate(coords)],'SN74LVC2G125DCUR','Texas Instruments','Reference outputs',.35,body=(2.3,2.),note='Parallel channels through individual100ohm resistors. OE high disables both. DC-coupled.')
+ coords=[(-1.7,-.975+.65*i) for i in range(4)]+[(1.7,.975-.65*i) for i in range(4)]
+ add(r,'SN74LVC2G125','SSOP8_DCT',x,y,[pad(i+1,*pt,1.6,.3,ns[i]) for i,pt in enumerate(coords)],'SN74LVC2G125DCTR','Texas Instruments','Reference outputs',.35,body=(2.8,2.95),note='Parallel channels through individual100ohm resistors. OE high disables both. DC-coupled. Active DCT package; do not fit obsolete DCU3 variant.')
 chip('R24','100','U10_A','REF10_SUM',79,37,'Reference outputs',mpn='RC0603FR-07100RL')
 chip('R25','100','U10_B','REF10_SUM',84,36.6,'Reference outputs',mpn='RC0603FR-07100RL')
 chip('R26','0','REF10_SUM','REF10_OUT',84,38.2,'Reference outputs',mpn='RC0603FR-070RL')
-chip('R27','10k','REF10_OE_N','3V3A',79,33,'Reference outputs',mpn='RC0603FR-0710KL')
-cap('C27','3V3A',87,31.6,'Reference outputs')
+chip('R27','10k','REF10_OE_N','3V3A',78.4,33,'Reference outputs',mpn='RC0603FR-0710KL')
+cap('C27','3V3A',87,31.4,'Reference outputs')
 chip('R28','100','U11_A','REFPPS_SUM',23,44,'Reference outputs',mpn='RC0603FR-07100RL')
 chip('R29','100','U11_B','REFPPS_SUM',18,47,'Reference outputs',mpn='RC0603FR-07100RL')
 chip('R30','0','REFPPS_SUM','REFPPS_OUT',14,47,'Reference outputs',mpn='RC0603FR-070RL')
 chip('R31','10k','REFPPS_OE_N','3V3A',23,41,'Reference outputs',mpn='RC0603FR-0710KL')
-cap('C28','3V3A',18,40,'Reference outputs')
+cap('C28','3V3A',16.2,39.8,'Reference outputs')
 sma('J4','10 MHz OUT',84,43,'REF10_OUT','Reference outputs')
 sma('J5','1 PPS OUT',7,44,'REFPPS_OUT','Reference outputs')
 chip('R32','1M','REF10_OUT','GND',84,49,'Reference outputs',mpn='RC0603FR-071ML')
@@ -144,7 +146,7 @@ for i,(name,net,x,y) in enumerate([('PPS','PPS',52,17),('10M','TCXO_COUNT',44,32
 cap('C29','3V3A',37.600000,8.050000,'Power',rot=0)
 cap('C31','3V3G',61.700000,16.400000,'Power',rot=90)
 cap('C32','3V3A',34.461300,24.484100,'Power',rot=180)
-cap('C33','3V3A',17.850000,41.951000,'Power',rot=180)
+cap('C33','3V3A',19.6,41.2,'Power',rot=0)
 # Pin labels are explicit in schematics and independent of footprint orientation.
 labels={
 'U1':module_names,'U2':['IN','GND','EN','NC','OUT'],'U3':['IN','GND','EN','NC','OUT'],
@@ -164,6 +166,7 @@ for p in parts:
  if p['ref']=='L1':p['cost']=.12
  for i,pd in enumerate(p['pads']): pd['label']=labels.get(p['ref'],[str(q['n']) for q in p['pads']])[i]
 for p in parts:
+ if p['ref']=='C17':p['mpn']='CL10C220JB8NNNC';p['maker']='Samsung Electro-Mechanics'
  if p['ref']=='Y1':p['x'],p['y']=64,34
  if p['ref']=='C13':p['x'],p['y']=64,31.2
  if p['ref']=='C14':p['x'],p['y']=67.6,34
@@ -171,5 +174,5 @@ for p in parts:
 def world(p,q):
  t=math.radians(p['rot']);return p['x']+q['x']*math.cos(t)+q['y']*math.sin(t),p['y']-q['x']*math.sin(t)+q['y']*math.cos(t)
 if __name__=='__main__':
- (ROOT/'cad/design.json').write_text(json.dumps(dict(revision='B',width_mm=90,height_mm=65,parts=parts),indent=2)+'\n')
+ (ROOT/'cad/design.json').write_text(json.dumps(dict(revision='C',width_mm=90,height_mm=65,parts=parts),indent=2)+'\n')
  print(len(parts),'components; estimated component sum',sum(p['cost'] for p in parts))

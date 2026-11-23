@@ -1,8 +1,8 @@
-# Five-board Rev B cost basis
+# Five-board Rev C cost basis
 
 Currency: USD. Planning date: 2026-11-23. Quantity: five fully assembled, programmed boards, starting with one factory-qualified first article. No supplier has issued a quote.
 
-The component-manifest estimate is **$60.13 per board**, or **$300.65 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
+The component-manifest estimate is **$60.49 per board**, or **$300.45 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
 
 | Major item | Per-board allowance |
 |---|---:|
@@ -12,7 +12,7 @@ The component-manifest estimate is **$60.13 per board**, or **$300.65 for five**
 | PE4312 attenuator | $4.40 |
 | RP2040-Zero module | $4.00 |
 | Five SMA jacks | $6.00 |
-| Other components | $9.40 |
+| Other components | $9.56 |
 
 Replacing the $39.02 Rev A coupler saves approximately **$26.98 per board**. The under-$100 assembled target now leaves about $40 per board for non-component costs. It is more plausible, but remains unconfirmed at five units. Obtain an itemized turnkey quote; quote one-time RF/timing qualification separately from repeat assembly/programming/test. There is no evidence for a firm all-in price yet.
 

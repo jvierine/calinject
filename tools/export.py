@@ -24,5 +24,5 @@ run('pcb','export','ipcd356','-o','manufacturing/calinject.d356',board)
 run('pcb','export','pdf','--mode-single','--black-and-white','--scale','3','-o','docs/assembly-top.pdf','-l','F.Fab,Edge.Cuts','--sketch-pads-on-fab-layers',board)
 run('pcb','export','pdf','--mode-multipage','--scale','3','-o','docs/copper-layers.pdf','-l','F.Cu,In1.Cu,In2.Cu,B.Cu','--cl','Edge.Cuts',board)
 run('pcb','export','step','--board-only','--force','-o','mechanical/pcb-only.step',board)
-with zipfile.ZipFile(ROOT/'manufacturing/calinject-revB-gerbers.zip','w',zipfile.ZIP_DEFLATED) as z:
+with zipfile.ZipFile(ROOT/'manufacturing/calinject-revC-gerbers.zip','w',zipfile.ZIP_DEFLATED) as z:
  for p in sorted((ROOT/'manufacturing/gerbers').iterdir()):z.write(p,p.name)

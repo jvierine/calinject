@@ -1,5 +1,5 @@
 Drill report for calinject.kicad_pcb
-Created on 2026-11-23T10:22:46
+Created on 2026-11-23T13:34:37
 
 Copper Layer Stackup:
     =============================================================
@@ -12,13 +12,13 @@ Copper Layer Stackup:
 Drill file 'calinject-PTH.drl' contains
     plated through holes:
     =============================================================
-    T1  0.300mm  0.0118"  (284 holes))
+    T1  0.300mm  0.0118"  (273 holes))
     T2  0.900mm  0.0354"  (3 holes))
     T3  1.000mm  0.0394"  (29 holes))
-    T4  1.500mm  0.0591"  (5 holes))
-    T5  1.700mm  0.0669"  (20 holes))
+    T4  1.200mm  0.0472"  (5 holes))
+    T5  1.400mm  0.0551"  (20 holes))
 
-    Total plated holes count 341
+    Total plated holes count 330
 
 
 Drill file 'calinject-NPTH.drl' contains

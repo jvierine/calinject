@@ -1,9 +1,9 @@
 {
-  "revision": "B",
-  "board_sha256": "c3adfdaf79556abfe4d1c8a071691c3b49bd490b8aab9641205fc8faf4c34e84",
+  "revision": "C",
+  "board_sha256": "02fb0ca302f5a3c33a1f4cf9b5ffafa0d55d694ab1f4ccf1b489f04ba0df286e",
   "components": 99,
   "smt_placements": 81,
-  "through_vias": 284,
+  "through_vias": 273,
   "checks": [
     "manifest placement/value/net consistency",
     "SMT pad copper/mask/paste layers",

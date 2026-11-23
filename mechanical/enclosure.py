@@ -8,17 +8,18 @@ import numpy as np
 import manifold3d as m
 import trimesh
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'mechanical';W=104;D=79;H=20;wall=2.4;floor=2.4
-OX=7;OY=7;pcb_top=7.;lid_bottom=17.6
+OUT=ROOT/'mechanical';W=98;D=73;H=20;wall=2.4;floor=2.4
+OX=4;OY=4;pcb_top=7.;lid_bottom=13.
 
 def box(x,y,z,dx,dy,dz):return m.Manifold.cube((dx,dy,dz)).translate((x,y,z))
 def cyl(x,y,z,r,h):return m.Manifold.cylinder(h,r,r,48).translate((x,y,z))
 # Open tray, four separate lid screw towers outside the PCB footprint.
 base=box(0,0,0,W,D,lid_bottom)-box(wall,wall,floor,W-2*wall,D-2*wall,H)
-for x,y in [(4.3,4.3),(W-4.3,4.3),(4.3,D-4.3),(W-4.3,D-4.3)]:
- base+=cyl(x,y,floor,3.1,lid_bottom-floor)
- # 2.5-mm pilot for M3 plastic-thread or tapped machine screw; no heat insert required.
- base-=cyl(x,y,5,1.25,H)
+corners=[(2.5,2.5),(W-2.5,2.5),(2.5,D-2.5),(W-2.5,D-2.5)]
+for x,y in corners:
+ base+=cyl(x,y,floor,1.8,lid_bottom-floor)
+ # M2 lid screws; towers sit beyond the square PCB corners.
+ base-=cyl(x,y,3,.8,H)
 for x,y in [(4,4),(86,4),(4,61),(86,61)]:
  base+=cyl(OX+x,OY+y,floor,3,3.)
  base-=cyl(OX+x,OY+y,.8,1.25,6.)
@@ -26,19 +27,36 @@ for x,y in [(4,4),(86,4),(4,61),(86,61)]:
 # PCB module USB points north. Connector face near boardy=0.25; cable plug can enter cavity.
 base-=box(OX+17-7,-1,8.0,14,OY+2,8.5)
 # Tongue locates the lid; outer lip fits inside walls with0.3mm radial clearance.
-lid=box(0,0,lid_bottom,W,D,H-lid_bottom)
+lid=box(0,0,lid_bottom,W,D,H-lid_bottom)-box(wall,wall,lid_bottom-.1,W-2*wall,D-2*wall,H-wall-lid_bottom+.1)
 lip=box(wall+.3,wall+.3,lid_bottom-1.4,W-2*(wall+.3),D-2*(wall+.3),1.4)
 lip-=box(wall+1.6,wall+1.6,lid_bottom-1.5,W-2*(wall+1.6),D-2*(wall+1.6),2)
 # Clear the base screw towers from the locating tongue.
-for x,y in [(4.3,4.3),(W-4.3,4.3),(4.3,D-4.3),(W-4.3,D-4.3)]:lip-=cyl(x,y,15,3.4,5)
+for x,y in corners:lip-=cyl(x,y,lid_bottom-2,2.1,4)
 lid+=lip
-for x,y in [(4.3,4.3),(W-4.3,4.3),(4.3,D-4.3),(W-4.3,D-4.3)]:
- lid-=cyl(x,y,15,1.7,7)
- lid-=cyl(x,y,H-1.3,3.,2.)
-# Recessed SMA ports: 12-mm access holes allow the mating nut to reach the PCB jack.
-for x,y in [(82,15),(12,56),(78,56),(84,43),(7,44)]:lid-=cyl(OX+x,OY+y,15,6,8)
+for x,y in corners:
+ # Corner columns support the screw heads without bridging the hollow lid.
+ lid+=cyl(x,y,lid_bottom,1.8,H-lid_bottom)
+ lid-=cyl(x,y,lid_bottom-1,1.1,H-lid_bottom+2)
+ lid-=cyl(x,y,H-1.3,1.8,2.)
+# SMA-KWE axis is6mm above PCB. Split at that height: the PCB with
+# soldered connectors drops into U-shaped notches, then the lid closes them.
+ports=[('J1','right',15),('J4','right',43),('J5','left',44),('J2','bottom',12),('J3','bottom',78)]
+for ref,side,p in ports:
+ hole=m.Manifold.cylinder(wall+3,3.6,3.6,64)
+ if side=='right':hole=hole.rotate((0,90,0)).translate((W-wall-2,OY+p,13))
+ elif side=='left':hole=hole.rotate((0,90,0)).translate((-1,OY+p,13))
+ else:hole=hole.rotate((-90,0,0)).translate((OX+p,D-wall-2,13))
+ base-=hole;lid-=hole
+ # Outside nut relief makes the whole4mm thread accessible despite the case
+ # wall and PCB's0.5mm copper-to-edge clearance.
+ relief=m.Manifold.cylinder(1.,5.5,5.5,64)
+ if side=='right':relief=relief.rotate((0,90,0)).translate((W-.9,OY+p,13))
+ elif side=='left':relief=relief.rotate((0,90,0)).translate((-.1,OY+p,13))
+ else:relief=relief.rotate((-90,0,0)).translate((OX+p,D-.9,13))
+ base-=relief;lid-=relief
+lid-=box(OX+17-7,-1,8.0,14,OY+2,8.5)
 # Trimmer and controller BOOT/RESET access. These are tool holes, not decorative vents.
-lid-=cyl(OX+12,OY+34,15,2.4,8)
+lid-=cyl(OX+12,OY+34,lid_bottom-2,2.4,H)
 # Initial BOOT programming is done with lid removed.
 # Both pieces export in print orientation: external broad face flat on the bed.
 # Lid is inverted for support-free printing, with alignment lip pointing upward.
@@ -53,6 +71,22 @@ def export(s,name):
 assert (base ^ lid).volume()<1e-5, 'Case halves interfere'
 res=[export(base,'base'),export(lid_print,'lid')]
 res.append(dict(assembled_intersection_mm3=(base ^ lid).volume()))
+# Conservative solid proxies check wall clearance without claiming a full
+# component STEP assembly. Connector dimensions come from C7498154's drawing.
+pcb=box(OX,OY,pcb_top-1.6,90,65,1.6)
+for x,y in [(4,4),(86,4),(4,61),(86,61)]:pcb-=cyl(OX+x,OY+y,pcb_top-2,1.6,3)
+case=base+lid;fits=[]
+manifest=json.loads((ROOT/'cad/design.json').read_text())
+for p in manifest['parts']:
+ if p['ref'] not in ['J1','J2','J3','J4','J5']:continue
+ proxy=box(-3,-3,0,6,6,9.2)
+ proxy+=m.Manifold.cylinder(8.6,3.2,3.2,48).rotate((0,90,0)).translate((3,0,6))
+ proxy=proxy.rotate((0,0,-p['rot'])).translate((OX+p['x'],OY+p['y'],pcb_top))
+ collision=(case ^ proxy).volume()
+ assert collision<.01,(p['ref'],'case collision',collision)
+ fits.append(dict(connector=p['ref'],case_intersection_mm3=collision))
+collision=(case ^ pcb).volume();assert collision<.01,('PCB case collision',collision)
+res.append(dict(pcb_case_intersection_mm3=collision,connector_proxies=fits,scope='Nominal rigid geometry; print tolerances and actual components require first-article fit check'))
 # Orthographic depth-buffer preview. Per-pixel depth avoids painter-sort artifacts
 # on the large coplanar triangles surrounding the connector openings.
 from PIL import Image,ImageDraw,ImageFont

@@ -16,21 +16,21 @@ The hardware oscillator is never phase-reset by these commands. The existing ser
 
 ## Phase-noise budget
 
-The [ECS datasheet](https://ecsxtal.com/store/pdf/ECS-TXO32-S3.pdf) specifies these oscillator phase-noise points at 10 MHz. They apply to a continuous carrier; burst gating adds deterministic sidebands and must not be mistaken for oscillator phase noise.
+The KDS 1XTV10000MDA datasheet specifies a maximum of -135 dBc/Hz at 1 kHz offset. The remaining points below are an assumed sensitivity mask, and the +5 dB curve is an extra stress case. They are not a measured spectrum or manufacturer limits. They apply to a continuous carrier; burst gating adds deterministic sidebands and must not be mistaken for oscillator phase noise.
 
-| Offset | Typical at 10 MHz | Maximum column at 10 MHz | Ideal typical at 70 MHz |
+| Offset | Assumed mask at 10 MHz | Mask +5 dB stress | Ideal mask at 70 MHz |
 |---|---:|---:|---:|
-| 10 Hz | -90 dBc/Hz | -85 dBc/Hz | -73.1 dBc/Hz |
-| 100 Hz | -120 dBc/Hz | -115 dBc/Hz | -103.1 dBc/Hz |
-| 1000 Hz | -140 dBc/Hz | -135 dBc/Hz | -123.1 dBc/Hz |
-| 10000 Hz | -145 dBc/Hz | -140 dBc/Hz | -128.1 dBc/Hz |
-| 100000 Hz | -148 dBc/Hz | -143 dBc/Hz | -131.1 dBc/Hz |
+| 10 Hz | -85 dBc/Hz | -80 dBc/Hz | -68.1 dBc/Hz |
+| 100 Hz | -115 dBc/Hz | -110 dBc/Hz | -98.1 dBc/Hz |
+| 1000 Hz | -135 dBc/Hz | -130 dBc/Hz | -118.1 dBc/Hz |
+| 10000 Hz | -140 dBc/Hz | -135 dBc/Hz | -123.1 dBc/Hz |
+| 100000 Hz | -143 dBc/Hz | -138 dBc/Hz | -126.1 dBc/Hz |
 
 The nth harmonic multiplies phase fluctuations by n: phase-noise power rises by 20 log10(n), while the corresponding time jitter is unchanged. Comparator, logic, supply and buffer noise add to that. The model sweeps assumed 20 and 100 ps independent per-edge noise; neither is a guaranteed board jitter value. The time/phase relation uses Sφ(f) = 2 × 10^(L(f)/10) for the one-sided phase PSD.
 
 ![Continuous-carrier phase-noise budget](phase-noise.png)
 
-Log-log interpolation of the published points gives 1.63 ps typical and 2.90 ps using the maximum column, integrated only from 10 Hz to 100 kHz. These are interpolation calculations, not an integrated-jitter guarantee. Noise below 10 Hz, above 100 kHz and additive board noise are not bounded by those figures.
+Integration of the assumed mask gives 2.90 ps for the baseline mask and 5.16 ps using the +5 dB stress mask, integrated only from 10 Hz to 100 kHz. These are sensitivity calculations, not an integrated-jitter specification. Noise below 10 Hz, above 100 kHz and additive board noise are not bounded by those figures.
 
 ## What software tracking gains
 
@@ -42,11 +42,11 @@ For the 70 MHz meteor case, 20 dB electronic attenuation:
 
 | Burst | Marker RMS error | Science frequency RMS before reference tracking | After reference tracking |
 |---|---:|---:|---:|
-| 0.1 ms | 47 ns | 61.8 Hz | 61.7 Hz |
-| 1 ms | 63 ns | 1.93 Hz | 0.871 Hz |
-| 10 ms | 81 ns | 1.66 Hz | 0.143 Hz |
+| 0.1 ms | 55 ns | 57.8 Hz | 57.7 Hz |
+| 1 ms | 61 ns | 1.71 Hz | 0.937 Hz |
+| 10 ms | 82 ns | 1.56 Hz | 0.152 Hz |
 
-The reference-frequency estimate itself has 0.0033 Hz RMS error at 10 MHz in that modeled interval. Multiplying it by seven supplies the estimated actual 70 MHz pilot frequency for science-frequency recovery. Results include ±10% assumed tuning-gain sensitivity for this scenario; they do not bound arbitrary thermal histories, supply noise or tuning nonlinearity.
+The reference-frequency estimate itself has 0.0024 Hz RMS error at 10 MHz in that modeled interval. Multiplying it by seven supplies the estimated actual 70 MHz pilot frequency for science-frequency recovery. Results include ±10% assumed tuning-gain sensitivity for this scenario; they do not bound arbitrary thermal histories, supply noise or tuning nonlinearity.
 
 `host/tracking.py` integrates a piecewise-linear frequency track analytically, producing continuous phase and frequency at every knot. It never unwraps carrier phase across the 1 s gaps. The paired validation applies this correction to actual synthetic IQ using estimated sample times, then remeasures the science tone. Tests also check a chirp across knot boundaries. Continuous interpolation does not recover unobserved integer-cycle ambiguities or establish absolute carrier-phase coherence between bursts. The coherent frequency estimator avoids the isolated phase-unwrapping failures seen in the earlier averaging sweep, but still needs a properly isolated pilot and can select a strong interferer.
 

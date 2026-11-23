@@ -1,4 +1,4 @@
-"""Calinject Rev B firmware for MicroPython RP2040 (Waveshare RP2040-Zero).
+"""Calinject Rev C firmware for MicroPython RP2040 (Waveshare RP2040-Zero).
 PIO owns edge counting and gate timing; Python/USB latency cannot move the gate.
 Prototype firmware: execute the documented logic-analyzer acceptance tests.
 """

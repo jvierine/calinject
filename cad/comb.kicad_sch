@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "65ecf55d-3f5c-5ac2-85ea-159a11483526") (paper "A3") (title_block (title "CALINJECT / Comb") (date "2026-11-23") (rev "B"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "65ecf55d-3f5c-5ac2-85ea-159a11483526") (paper "A3") (title_block (title "CALINJECT / Comb") (date "2026-11-23") (rev "C"))
 (lib_symbols (symbol "Calinject:R10" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "R" (at 0 6.35 0) (effects (font (size 1.0 1.0))))
 (property "Value" "220" (at 0 8.89 0) (effects (font (size 1.0 1.0))))
@@ -36,7 +36,7 @@
 ))
 (symbol "Calinject:U8" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.0 1.0))))
-(property "Value" "SN74LVC2G08" (at 0 11.43 0) (effects (font (size 1.0 1.0))))
+(property "Value" "74LVC2G08" (at 0 11.43 0) (effects (font (size 1.0 1.0))))
 (symbol "U8_0_1" (rectangle (start -10.16 -6.35) (end 10.16 6.35) (stroke (width 0.2) (type default)) (fill (type background))))
 (symbol "U8_1_1"
 (pin input line (at -15.24 3.8099999999999996 0) (length 5.08) (name "1A" (effects (font (size .9 .9)))) (number "1" (effects (font (size .9 .9)))))
@@ -135,7 +135,7 @@
 (global_label "GND" (shape passive) (at 351.79 55.88 180) (effects (font (size .85 .85)) (justify left)) (uuid "47bc537b-995b-525a-a7c6-ea390917c566"))
 (symbol (lib_id "Calinject:U8") (at 50.8 114.30000000000001 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "4c984849-0fdb-5abd-b51b-633a219f8475")
 (property "Reference" "U8" (at 50.8 103.45000000000002 0) (effects (font (size 1 1))))
-(property "Value" "SN74LVC2G08" (at 50.8 105.95000000000002 0) (effects (font (size 1 1))))
+(property "Value" "74LVC2G08" (at 50.8 105.95000000000002 0) (effects (font (size 1 1))))
 (property "Footprint" "Calinject:VSSOP8_DCU_U8" (at 50.8 122.65 0) (effects (font (size 1 1)) (hide yes)))
 (pin "1" (uuid "aafa31f9-165e-5e03-8edd-10a2ef9e46bd"))
 (pin "2" (uuid "fe46552e-1607-5d2b-895f-6015ee902c7c"))

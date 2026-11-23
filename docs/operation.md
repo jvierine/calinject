@@ -1,6 +1,6 @@
 # Connections and host control
 
-These instructions apply to the Rev B transformer-combiner board.
+These instructions apply to the Rev C transformer-combiner board.
 
 ## Inline connection
 

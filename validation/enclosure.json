@@ -2,7 +2,7 @@
   {
     "name": "base",
     "watertight": true,
-    "volume_mm3": 33780.26544288577,
+    "volume_mm3": 25383.25400926659,
     "bounds_mm": [
       [
         0.0,
@@ -10,17 +10,17 @@
         0.0
       ],
       [
-        104.0,
-        79.0,
-        17.600000381469727
+        98.0,
+        73.0,
+        13.0
       ]
     ],
-    "triangles": 2772
+    "triangles": 3926
   },
   {
     "name": "lid",
     "watertight": true,
-    "volume_mm3": 18691.75687023871,
+    "volume_mm3": 20696.29096643333,
     "bounds_mm": [
       [
         0.0,
@@ -28,14 +28,40 @@
         0.0
       ],
       [
-        104.0,
-        79.0,
-        3.799999952316284
+        98.0,
+        73.0,
+        8.399999618530273
       ]
     ],
-    "triangles": 2900
+    "triangles": 3820
   },
   {
-    "assembled_intersection_mm3": -1.8487045661680357e-13
+    "assembled_intersection_mm3": 2.3285516149347822e-14
+  },
+  {
+    "pcb_case_intersection_mm3": 1.7816491012546953e-17,
+    "connector_proxies": [
+      {
+        "connector": "J1",
+        "case_intersection_mm3": 0.0
+      },
+      {
+        "connector": "J2",
+        "case_intersection_mm3": 0.0
+      },
+      {
+        "connector": "J3",
+        "case_intersection_mm3": 0.0
+      },
+      {
+        "connector": "J4",
+        "case_intersection_mm3": 0.0
+      },
+      {
+        "connector": "J5",
+        "case_intersection_mm3": 0.0
+      }
+    ],
+    "scope": "Nominal rigid geometry; print tolerances and actual components require first-article fit check"
   }
 ]

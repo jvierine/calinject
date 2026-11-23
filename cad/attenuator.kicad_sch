@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "e0a7272b-cb83-5cd2-8af5-59e2be70cd1e") (paper "A3") (title_block (title "CALINJECT / Attenuator") (date "2026-11-23") (rev "B"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "e0a7272b-cb83-5cd2-8af5-59e2be70cd1e") (paper "A3") (title_block (title "CALINJECT / Attenuator") (date "2026-11-23") (rev "C"))
 (lib_symbols (symbol "Calinject:R13" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "R" (at 0 6.35 0) (effects (font (size 1.0 1.0))))
 (property "Value" "61R9" (at 0 8.89 0) (effects (font (size 1.0 1.0))))

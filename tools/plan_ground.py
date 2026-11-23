@@ -14,7 +14,8 @@ for p,q,x,y,shape in pads:
  for r in [.75,1.,1.25,1.5,2.]:
   for ang in range(0,360,30):
    a=math.radians(ang);vx=round(x+r*math.cos(a),4);vy=round(y+r*math.sin(a),4)
-   copper=Point(vx,vy).buffer(.3).union(LineString([(x,y),(vx,vy)]).buffer(.125))
+   copper=Point(vx,vy).buffer(.3).union(LineString([(x,y),(vx,vy)]).buffer(.075 if p['ref']=='Y1' else .125))
+   if copper.intersects(box(63,32.75,65,35.25)):continue
    if not box(.5,.5,89.5,64.5).contains(copper):continue
    if any(copper.distance(other)<.2 for op,oq,ox,oy,other in pads if oq['net']!='GND'):continue
    if any(math.hypot(vx-hx,vy-hy)<.15+hd/2+.26 for hx,hy,hd in holes):continue

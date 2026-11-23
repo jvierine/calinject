@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "959d2699-d2ea-5bc9-952d-6d926cbaaec6") (paper "A3") (title_block (title "CALINJECT - GPS-timed 10 MHz comb") (date "2026-11-23") (rev "B"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "959d2699-d2ea-5bc9-952d-6d926cbaaec6") (paper "A3") (title_block (title "CALINJECT - GPS-timed 10 MHz comb") (date "2026-11-23") (rev "C"))
 (lib_symbols )
 (text "USB-C  ->  GNSS + TCXO servo  ->  10 MHz pulse comb  ->  attenuator  ->  directional injection" (at 30 20 0) (effects (font (size 2 2)) (justify left)) (uuid "b39b6d20-7baf-5364-adf5-c01bd475a822"))
 (sheet (at 25 45) (size 80 40) (stroke (width .2) (type default)) (fill (color 0 0 0 0)) (uuid "9d26588e-5861-53e9-b80a-69d2181d04c0") (property "Sheetname" "Controller" (at 25 43 0) (effects (font (size 1.5 1.5)) (justify left))) (property "Sheetfile" "controller.kicad_sch" (at 25 87 0) (effects (font (size 1 1)) (justify left))) (instances (project "calinject" (path "/959d2699-d2ea-5bc9-952d-6d926cbaaec6" (page "2")))))

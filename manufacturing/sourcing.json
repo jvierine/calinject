@@ -1,0 +1,128 @@
+{
+  "checked_date": "2026-11-23",
+  "policy": "Active mainstream families, stock depth, standard packages and reviewed alternatives before lowest price. Stock snapshots are not reservations. No automatic substitutions.",
+  "parts": {
+    "Y1": {
+      "mpn": "1XTV10000MDA",
+      "lcsc": "C253701",
+      "stock": 400,
+      "stock_source": "JLC Chrome search",
+      "url": "https://jlcpcb.com/partdetail/KDSDaishinku-1XTV10000MDA/C253701",
+      "manufacturer_family_url": "https://www.kds.info/products/dsa321sdn-2/"
+    },
+    "U8": {
+      "mpn": "74LVC2G08DC,125",
+      "lcsc": "C456135",
+      "stock": 3098,
+      "stock_source": "JLC Chrome search",
+      "url": "https://jlcpcb.com/partdetail/Nexperia-74LVC2G08DC125/C456135"
+    },
+    "U10": {
+      "mpn": "SN74LVC2G125DCTR",
+      "lcsc": "C206035",
+      "stock": 1944,
+      "stock_source": "JLC Chrome search",
+      "url": "https://jlcpcb.com/partdetail/TexasInstruments-SN74LVC2G125DCTR/C206035",
+      "lifecycle": "Active, TI official part details"
+    },
+    "U11": {
+      "mpn": "SN74LVC2G125DCTR",
+      "lcsc": "C206035",
+      "stock": 1944,
+      "stock_source": "JLC Chrome search",
+      "url": "https://jlcpcb.com/partdetail/TexasInstruments-SN74LVC2G125DCTR/C206035",
+      "lifecycle": "Active, TI official part details"
+    },
+    "C17": {
+      "mpn": "CL10C220JB8NNNC",
+      "lcsc": "C1653",
+      "url": "https://jlcpcb.com/partdetail/SamsungElectroMechanics-CL10C220JB8NNNC/C1653"
+    },
+    "D1": {
+      "mpn": "PESD5V0F1BL,315",
+      "lcsc": "C45961",
+      "stock": 123959,
+      "stock_source": "JLC Chrome search",
+      "url": "https://jlcpcb.com/partdetail/Nexperia-PESD5V0F1BL315/C45961"
+    },
+    "U4": {
+      "mpn": "MAX-M10S-00B",
+      "lcsc": "C4153167"
+    },
+    "U1": {
+      "mpn": "RP2040-Zero",
+      "lcsc": "C5350143"
+    },
+    "T1": {
+      "mpn": "ADP-2-1+",
+      "lcsc": "C2683460"
+    },
+    "J1": {
+      "mpn": "SMA-KWE",
+      "lcsc": "C7498154",
+      "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
+      "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
+      "stock": 8809
+    },
+    "J2": {
+      "mpn": "SMA-KWE",
+      "lcsc": "C7498154",
+      "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
+      "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
+      "stock": 8809
+    },
+    "J3": {
+      "mpn": "SMA-KWE",
+      "lcsc": "C7498154",
+      "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
+      "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
+      "stock": 8809
+    },
+    "J4": {
+      "mpn": "SMA-KWE",
+      "lcsc": "C7498154",
+      "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
+      "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
+      "stock": 8809
+    },
+    "J5": {
+      "mpn": "SMA-KWE",
+      "lcsc": "C7498154",
+      "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
+      "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
+      "stock": 8809
+    }
+  },
+  "materials": {
+    "header9": {
+      "mpn": "FG-PZ2.54-1-09P",
+      "maker": "FG",
+      "lcsc": "C25687201",
+      "stock": 2825
+    },
+    "header5": {
+      "mpn": "FG-PZ2.54-01-05P",
+      "maker": "FG",
+      "lcsc": "C42391439",
+      "stock": 934
+    },
+    "header3": {
+      "mpn": "FG-PZ2.54-1-03P",
+      "maker": "FG",
+      "lcsc": "C25687200",
+      "stock": 1911
+    },
+    "shunt": {
+      "mpn": "2.54Short Circuit Cap Closed",
+      "maker": "BOOMELE",
+      "lcsc": "C100114",
+      "stock": 242405
+    }
+  },
+  "unqualified_alternatives": {
+    "Y1": "HCI 9132S-M10.000Q33DT2Q C51822856: 50 stocked; same electrical pin functions but land pattern, pull gain and noise must be reviewed before fitting. ECS original remains electrically supported only by original footprint.",
+    "U8": "TI SN74LVC2G08DCUR/DCUT: same function and DCU geometry; available packaging variants must be rechecked. DCTR is not footprint compatible.",
+    "U10_U11": "Nexperia 74LVC2G125DP,125 C513290: 1427 stocked but different TSSOP geometry; not an approved drop-in. SN74LVC2G125DCU3 C2871792 rejected: Last Time Buy and only 56 stocked.",
+    "headers": "Standard 0.64 mm square pins, 2.54 mm pitch, 2.5 mm spacer, 3 mm solder tail, 6 mm mating pin. Match dimensions rather than importing proprietary header part numbers."
+  }
+}

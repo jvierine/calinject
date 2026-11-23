@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import { Workbook, SpreadsheetFile } from '@oai/artifact-tool';
 const root=process.env.CALINJECT_ROOT ? new URL('file://'+process.env.CALINJECT_ROOT.replace(/\/$/,'')+'/') : new URL('../',import.meta.url);
 const data=JSON.parse(await fs.readFile(new URL('cad/design.json',root),'utf8'));
+const sourcing=JSON.parse(await fs.readFile(new URL('manufacturing/sourcing.json',root),'utf8'));
 const jlc=process.argv.includes('--jlc');
 const out=jlc?'manufacturing/jlc-turnkey':'manufacturing';
 await fs.mkdir(new URL(out+'/',root),{recursive:true});
@@ -11,16 +12,17 @@ let parts=data.parts.filter(p=>!['PCB','MECHANICAL'].includes(p.assembly));
 if(jlc){
  parts=parts.filter(p=>p.ref!=='JP1');
  const add=(ref,value,mpn,maker,x,y,rot,fp)=>parts.push({ref,value,mpn,maker,x,y,rot,fp,assembly:'MANUAL ASSEMBLY'});
- add('U1_HL','U1 left 1x9 header','M20-9990946','Harwin',9.38,12,90,'Header_1x9_P2.54');
- add('U1_HR','U1 right 1x9 header','M20-9990946','Harwin',24.62,12,90,'Header_1x9_P2.54');
- add('U1_HB','U1 bottom 1x5 header','M20-9990546','Harwin',17,22.16,0,'Header_1x5_P2.54');
- for(const [ref,y] of [['JP1_A',45.73],['JP1_B',48.27]])add(ref,'JP1 1x3 header','68000-103HLF','Amphenol ICC',64,y,0,'Header_1x3_P2.54');
- for(const [ref,y] of [['JP1_S1',45.73],['JP1_S2',48.27]])add(ref,'Closed-top 2.54mm shunt; assembler propose matching part','ASSEMBLER TO PROPOSE','To be confirmed',62.73,y,0,'Shunt_P2.54');
+ const mat=(ref,key,value,x,y,rot,fp)=>{const m=sourcing.materials[key];add(ref,value,m.mpn,m.maker,x,y,rot,fp);parts.at(-1).lcsc=m.lcsc;};
+ mat('U1_HL','header9','U1 left 1x9 header',9.38,12,90,'Header_1x9_P2.54');
+ mat('U1_HR','header9','U1 right 1x9 header',24.62,12,90,'Header_1x9_P2.54');
+ mat('U1_HB','header5','U1 bottom 1x5 header',17,22.16,0,'Header_1x5_P2.54');
+ for(const [ref,y] of [['JP1_A',45.73],['JP1_B',48.27]])mat(ref,'header3','JP1 1x3 header',64,y,0,'Header_1x3_P2.54');
+ for(const [ref,y] of [['JP1_S1',45.73],['JP1_S2',48.27]])mat(ref,'shunt','Closed-top 2.54mm shunt',62.73,y,0,'Shunt_P2.54');
 }
 const groups=new Map();
 for(const p of parts){const key=p.mpn+'|'+p.value;const a=groups.get(key)||[];a.push(p);groups.set(key,a);}
 const bom=[['Designator','Comment','Footprint','Manufacturer','Manufacturer Part','Quantity','Assembly','LCSC Part #']];
-for(const g of groups.values()){let p=g[0];bom.push([g.map(x=>x.ref).join(','),p.value,p.fp.replace(/_[A-Z]+\d+$/,''),p.maker,p.ref==='JP1'?'68000-103HLF':p.mpn,p.ref==='JP1'?2:g.length,p.assembly,p.ref==='T1'?'C2683460':p.mpn==='BWSMA-KE-Z001'?'C496549':'']);}
+for(const g of groups.values()){let p=g[0];const selected=sourcing.parts[p.ref];if(selected&&selected.mpn!==p.mpn)throw Error('Sourcing/manifest mismatch '+p.ref);bom.push([g.map(x=>x.ref).join(','),p.value,p.fp.replace(/_[A-Z]+\d+$/,''),p.maker,p.ref==='JP1'?sourcing.materials.header3.mpn:p.mpn,p.ref==='JP1'?2:g.length,p.assembly,p.lcsc||selected?.lcsc||(p.mpn==='BWSMA-KE-Z001'?'C496549':'')]);}
 const cpl=[['Designator','Mid X (mm)','Mid Y (mm)','Layer','Rotation']];
 // JLC matches Comment and its own part column; use exact MPNs rather than
 // engineering shorthand such as "249", which its matcher interpreted as 2.49k.
@@ -41,7 +43,7 @@ for(const [name,rows,widths] of [['BOM',bom,[60,25,28,25,42,12,20,15]],['CPL',cp
  sh.getRangeByIndexes(0,0,1,rows[0].length).format={fill:'#254559',font:{bold:true,color:'#FFFFFF'},rowHeight:26};
  widths.forEach((w,i)=>sh.getRangeByIndexes(0,i,rows.length,1).format.columnWidth=w);sh.freezePanes.freezeRows(1);
  if(name==='BOM'&&!jlc){
-  const extra=[['Used with','Assembly material','Manufacturer / part','Quantity per board'],['U1','1x9 male header,2.54mm spacer','Harwin M20-9990946',2],['U1','1x5 male header,2.54mm spacer','Harwin M20-9990546',1],['JP1','2.54mm shorting shunt','Assembler to propose matching closed-top shunt',2]];
+  const extra=[['Used with','Assembly material','Manufacturer / part','Quantity per board'],['U1','1x9 male header,2.5mm spacer','FG '+sourcing.materials.header9.mpn,2],['U1','1x5 male header,2.5mm spacer','FG '+sourcing.materials.header5.mpn,1],['JP1','2.54mm shorting shunt','BOOMELE '+sourcing.materials.shunt.mpn,2]];
   const a=wb.worksheets.add('Assembly materials');a.getRange('A1:D4').values=extra;
   a.getUsedRange().format.font={name:'Arial',size:10};a.getUsedRange().format.rowHeight=24;
   a.getRange('A1:D1').format={fill:'#254559',font:{bold:true,color:'#FFFFFF'}};

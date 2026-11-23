@@ -4,7 +4,7 @@ A small USB-C powered board that adds GPS-timed calibration bursts to an SDR rec
 
 ![Calinject PCB layout](docs/board-layout.png)
 
-**Prototype, not yet built or tested on hardware.** This figure shows the current Rev B board with its lower-cost SMT transformer combiner.
+**Prototype, not yet built or tested on hardware.** Rev C uses commonly stocked parts and horizontal SMA connectors through the sides of the case.
 
 **Ready for a factory first-article build:** the revised CAD checks and software tests pass. The antenna path is specified for **0.5–70 MHz**, with about **3.2 dB loss**.
 
@@ -18,7 +18,7 @@ What it does:
 
 Connect it **after your antenna bias board and before the SDR**, with a separate active GPS antenna and USB-C power. The receiver ports block DC; disable the SDR's own bias tee. See the [connector guide](docs/port-guide.pdf).
 
-The aim is **five factory-assembled boards**, with no user soldering or winding. Parts are estimated at **about $60 per board**; the under-$100 assembled target still needs a factory quote. The first assembled board needs RF and timing tests before building the rest.
+The aim is **five factory-assembled boards**, with no user soldering or winding. Parts are estimated at **about $47 per board**; the under-$100 assembled target still needs a complete factory quote. The first assembled board needs RF and timing tests before building the rest.
 
 [Download all files](https://github.com/jvierine/calinject/releases) · [Connect and control](docs/operation.md) · [USB programming](firmware/README.md) · [Using the calibration](host/README.md) · [Print the case](mechanical/README.md)
 

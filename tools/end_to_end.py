@@ -17,9 +17,11 @@ OUT=ROOT/'validation/end-to-end';OUT.mkdir(exist_ok=True)
 RNG=np.random.default_rng(20261125)
 F0=10e6
 OFFSETS=np.array([10,100,1000,10000,100000.])
-TYP=np.array([-90,-120,-140,-145,-148.])
-SOURCE='https://ecsxtal.com/store/pdf/ECS-TXO32-S3.pdf'
+TYP=np.array([-85,-115,-135,-140,-143.])
+SOURCE='https://atta.szlcsc.com/upload/public/pdf/source/20190315/C253701_69B1AE3584D7A6F1B7B612113CD52085.pdf'
 ASSUMPTIONS=dict(source=SOURCE,phase_noise_typ_dbc_hz=TYP.tolist(),phase_noise_max_dbc_hz=(TYP+5).tolist(),offset_hz=OFFSETS.tolist(),phase_noise_below_10hz='Not specified: replaced by explicit slow FM/temperature stress model',above_100khz='Flat extrapolation to analysis Nyquist; not a specification',edge_jitter_rms_ps=[20,100],edge_jitter_note='Assumed independent timing error per 10MHz edge; not a comparator or board guarantee',adc_aperture_jitter_ps=10,pps_jitter_rms_ns=20,gate_sync_quantization_ns=8,first_pulse_delay_ns=[0,100],fixed_delay_us=12.345,noise_dbm_per_analysis_sample=-96,receiver_filters='Generic linear-phase 350kHz channel, NOT measured RTL/RX888 responses',rtl_lo_phase_noise_dbc_hz=[-65,-90,-110,-125,-130],rtl_lo_phase_noise_note='Illustrative sensitivity model, not an RTL-SDR specification',clock_ppm_initial=3,clock_drift_ppm_per_s=.002,rtl_lo_error_hz=100,rtl_lo_drift_hz_per_s=.02,oversampling=32,analysis_sample_rate_hz=1e6,burst_epochs=64)
+
+ASSUMPTIONS.update(oscillator='KDS 1XTV10000MDA',phase_noise_curve_status='ASSUMED sensitivity mask anchored at the KDS -135dBc/Hz maximum point at1kHz. All other offsets and +5dB stress are assumptions, not manufacturer limits.',control_input_ohm=500000,nominal_tuning_hz_per_volt=100,tuning_range_hz_per_volt=[80,150])
 
 def phase_psd(freq,mask=TYP,edge_ps=0,low=10):
     """One-sided rad^2/Hz: S_phi = 2 * 10**(L/10)."""
@@ -39,18 +41,18 @@ def phase_noise(size,fs,mask=TYP,edge_ps=0,rng=RNG):
 
 class Plant:
     """Actual Servo code plus exact two-pole loaded DAC filter/VCO plant.
-    The 100k control input is the datasheet minimum; tune slope is assumed.
+    The 500k control input is the KDS minimum; tune slope is assumed.
     Counter captures include quantization, rollover and PPS time jitter.
     """
-    def __init__(self,seconds=2400):
-        self.r=1000.;self.c=4.7e-6;self.load=100e3;self.kv=100.
+    def __init__(self,seconds=2400,kv=100.,load=500e3,initial_offset_hz=0.):
+        self.r=1000.;self.c=4.7e-6;self.load=load;self.kv=kv
         self.A=np.array([[-2/(self.r*self.c),1/(self.r*self.c)],[1/(self.r*self.c),-(1/self.r+1/self.load)/self.c]])
         self.B=np.array([1/(self.r*self.c),0.]);self.E=expm(self.A)
         self.inv=np.linalg.inv(self.A);self.eig=np.sort(np.linalg.eigvals(self.A))
         self.servo=Servo();v=1862*3.3/4096;self.state=-self.inv@self.B*v
         self.captures=[(2**32-100)&0xffffffff]
         self.zero=1.50;self.phase=[0.];self.states=[];self.codes=[];self.err=[];self.valid=[];self.modes=[]
-        self.thermal=.25*np.sin(2*np.pi*np.arange(seconds+1)/900)+np.cumsum(RNG.normal(0,.0008,seconds+1))
+        self.thermal=initial_offset_hz+.25*np.sin(2*np.pi*np.arange(seconds+1)/900)+np.cumsum(RNG.normal(0,.0008,seconds+1))
         self.servo.step((2**32-100)&0xffffffff,True)
         for second in range(seconds):
             self.states.append(self.state.copy());self.codes.append(self.servo.code)
@@ -269,7 +271,7 @@ def main():
         change=np.flatnonzero(np.diff(plant.codes)!=0)+1;transition=int(change[-1]);tt=transition+np.r_[[-1e-9],np.linspace(0,.15,1000)]
         phase,hz=plant.at(tt);g=h.create_group('steering');g['time_relative_s']=tt-transition;g['phase_error_cycles']=phase;g['frequency_error_hz']=hz
         phase_jump=float(abs(phase[1]-phase[0]));frequency_jump=float(abs(hz[1]-hz[0]))
-        checks=dict(phase_noise_variance_ratio=ratio,servo_phase_change_across_1ns_cycles=phase_jump,servo_frequency_change_across_1ns_hz=frequency_jump,loaded_filter_dc_gain=1/1.02,dac_update_count=len(change),phase_continuity_pass=phase_jump<1e-6 and frequency_jump<.002)
+        checks=dict(phase_noise_variance_ratio=ratio,servo_phase_change_across_1ns_cycles=phase_jump,servo_frequency_change_across_1ns_hz=frequency_jump,loaded_filter_dc_gain=1/(1+2*plant.r/plant.load),dac_update_count=len(change),phase_continuity_pass=phase_jump<1e-6 and frequency_jump<.002)
         if not checks['phase_continuity_pass']:raise AssertionError(checks)
         summary=dict(assumptions=ASSUMPTIONS,intrinsic_10hz_to_100khz_jitter_ps=integrated,checks=checks,cases=results,hardware_qualified=False)
         h.attrs['summary_json']=json.dumps(summary)

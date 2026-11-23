@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "79fb6896-a58e-56f6-8eed-e46b474f8a18") (paper "A3") (title_block (title "CALINJECT / Power") (date "2026-11-23") (rev "B"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "79fb6896-a58e-56f6-8eed-e46b474f8a18") (paper "A3") (title_block (title "CALINJECT / Power") (date "2026-11-23") (rev "C"))
 (lib_symbols (symbol "Calinject:U2" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "U" (at 0 7.62 0) (effects (font (size 1.0 1.0))))
 (property "Value" "AP2112K-3.3" (at 0 10.16 0) (effects (font (size 1.0 1.0))))

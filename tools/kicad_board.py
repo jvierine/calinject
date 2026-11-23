@@ -52,23 +52,34 @@ wire('GNSS_RF',[pos('U4',11),(73.5,18.3),(75.5,16.3),pos('C7',1)],.36)
 wire('ANT_RF',[pos('C7',2),pos('J1',1)],.36)
 wire('ATT_DATA_R',[pos('R17',2),pos('U9',3)],.2)
 wire('RF_OUT',[pos('R22',1),(71.2,56)],.2)
-wire('RF_IN',[pos('J2',1),pos('C24',1)],.36)
+wire('RF_IN',[pos('J2',1),(12,56),pos('C24',1)],.36)
+wire('RF_IN',[pos('R21',1),(17.2,56)],.2)
 wire('RF_FROM_ANT',[pos('C24',2),(32,54.46),pos('T1',3)],.36)
 wire('RF_TO_SDR',[pos('T1',1),(62,54.46),pos('C25',1)],.36)
 wire('T1_LINK',[pos('T1',2),pos('T1',5)],.3)
-wire('RF_OUT',[pos('C25',2),pos('J3',1)],.36)
+wire('RF_OUT',[pos('C25',2),(78,56),pos('J3',1)],.36)
 # Ground vias are validated against all pad and drill clearances by base-Python planner.
 for via in d.get('ground_vias',[]):
  pp=pos(via['ref'],via['pin']) if via.get('ref') else None;vx,vy=via['x'],via['y']
  vi=k.PCB_VIA(b);vi.SetPosition(v(vx,vy));vi.SetWidth(mm(.6));vi.SetDrill(mm(.3));vi.SetViaType(k.VIATYPE_THROUGH);vi.SetLayerPair(k.F_Cu,k.B_Cu);vi.SetNet(nets['GND']);b.Add(vi)
- if pp is not None:wire('GND',[pp,v(vx,vy)],.25)
+ if pp is not None:wire('GND',[pp,v(vx,vy)],.15 if via.get('ref')=='Y1' else .25)
+# KDS central-bottom copper keepout, exported to the outer-layer router.
+z=k.ZONE(b);z.SetLayer(k.F_Cu);z.SetIsRuleArea(True);z.SetZoneName('KDS bottom copper clearance')
+z.SetDoNotAllowTracks(True);z.SetDoNotAllowVias(True);z.SetDoNotAllowZoneFills(True);z.SetDoNotAllowPads(False)
+o=z.Outline();o.NewOutline()
+for x,y in [(63,32.75),(65,32.75),(65,35.25),(63,35.25)]:o.Append(mm(x),mm(y))
+b.Add(z)
 # Export before zones for autorouter. Ground vias allow cross-layer ground stitching.
-for txt,x,y,size in [('CALINJECT  REV B',40,63,.9),('GPS ANT 3V3',77,8,.8),('RF IN',12,51,.9),('TO SDR',79,51,.9),('USB-C',17,26,.8),('LEVEL',12,40,.8),('LOW / HIGH',64,51,.8),('10 MHz OUT',80,47.5,.8),('1 PPS OUT',7,39,.8)]:
+for txt,x,y,size in [('CALINJECT  REV C',40,63,.9),('GPS ANT 3V3',77,8,.8),('RF IN',12,51,.9),('TO SDR',79,51,.9),('USB-C',17,26,.8),('LEVEL',12,40,.8),('LOW / HIGH',64,51,.8),('10 MHz OUT',80,47.5,.8),('1 PPS OUT',7,39,.8)]:
  t=k.PCB_TEXT(b);t.SetText(txt);t.SetPosition(v(x,y));t.SetTextSize(v(size,size));t.SetTextThickness(mm(.12));t.SetLayer(k.F_SilkS);b.Add(t)
 b.SetFileName(str(root/'cad/calinject.kicad_pcb'));k.SaveBoard(b.GetFileName(),b)
 print('Saved',len(d['parts']),'components',len(nets),'nets')
 # KiCad DSN exporter includes geometry, nets and existing tracks.
 b.SetCopperLayerCount(2)
+# DSN has no pads-allowed exception for a keepout. Remove the KDS rule area
+# only from the routing export; it stays in the saved native PCB and is
+# enforced by final KiCad DRC (including the inner-layer counterpart).
+b.Remove(z)
 print('DSN',k.ExportSpecctraDSN(b,str(root/'cad/calinject.dsn')))
 b.SetCopperLayerCount(4)
 # Standalone footprint library extracted from the actual board.

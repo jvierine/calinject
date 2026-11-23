@@ -3,9 +3,21 @@
   "zones": [
     {
       "layers": [
+        "F.Cu"
+      ],
+      "net": ""
+    },
+    {
+      "layers": [
         "In1.Cu"
       ],
       "net": "GND"
+    },
+    {
+      "layers": [
+        "In1.Cu"
+      ],
+      "net": ""
     },
     {
       "layers": [
@@ -14,87 +26,71 @@
       "net": "GND"
     }
   ],
-  "ground_vias": 254,
+  "ground_vias": 243,
   "signal_vias": [
     {
-      "net": "REFPPS_OE_N",
+      "net": "I2C_SCL",
       "position_mm": [
-        20.959,
-        43.7982
+        25.5805,
+        23.6112
       ],
-      "nearest_ground_transition_mm": 1.829966669095371
+      "nearest_ground_transition_mm": 5.497902494588278
     },
     {
-      "net": "DELAY_N",
+      "net": "ATT_CLK",
       "position_mm": [
-        57.7718,
-        40.75
+        29.7943,
+        43.6213
       ],
-      "nearest_ground_transition_mm": 1.4708576715644521
+      "nearest_ground_transition_mm": 1.5
     },
     {
-      "net": "PPS",
+      "net": "BURST_GATE",
       "position_mm": [
-        49.4575,
-        18.3878
+        60.4173,
+        41.2813
       ],
-      "nearest_ground_transition_mm": 1.4182894944262947
-    },
-    {
-      "net": "U11_A",
-      "position_mm": [
-        18.2427,
-        44.1211
-      ],
-      "nearest_ground_transition_mm": 1.4121832211154468
-    },
-    {
-      "net": "U11_A",
-      "position_mm": [
-        20.418,
-        42.986
-      ],
-      "nearest_ground_transition_mm": 1.4000188570158583
-    },
-    {
-      "net": "I2C_SDA",
-      "position_mm": [
-        33.2802,
-        26.6039
-      ],
-      "nearest_ground_transition_mm": 1.3737209505572807
+      "nearest_ground_transition_mm": 1.400027235449368
     },
     {
       "net": "ATT_DATA",
       "position_mm": [
-        26.2296,
+        26.2309,
         43.0
       ],
-      "nearest_ground_transition_mm": 1.3528338885465572
+      "nearest_ground_transition_mm": 1.4000188570158616
     },
     {
-      "net": "CLK10",
+      "net": "U10_A",
       "position_mm": [
-        73.1172,
-        32.2405
+        80.6475,
+        36.1887
       ],
-      "nearest_ground_transition_mm": 1.245843525487848
+      "nearest_ground_transition_mm": 1.39996919966118
     },
     {
       "net": "3V3A",
       "position_mm": [
-        29.4895,
-        46.9464
+        31.5834,
+        45.9747
       ],
-      "nearest_ground_transition_mm": 0.9483318037480313
+      "nearest_ground_transition_mm": 1.3449927880847528
     },
     {
-      "net": "VCTRL",
+      "net": "U10_A",
       "position_mm": [
-        52.2023,
-        28.754
+        82.0984,
+        35.9315
       ],
-      "nearest_ground_transition_mm": 0.8500130410764298
+      "nearest_ground_transition_mm": 0.9577237649761006
+    },
+    {
+      "net": "REF10_OE_N",
+      "position_mm": [
+        76.6446,
+        33.0
+      ],
+      "nearest_ground_transition_mm": 0.9515001681555211
     },
     {
       "net": "BURST_GATE",
@@ -105,12 +101,12 @@
       "nearest_ground_transition_mm": 0.8500130410764298
     },
     {
-      "net": "ATT_CLK",
+      "net": "VCTRL",
       "position_mm": [
-        28.0483,
-        42.0834
+        52.9909,
+        27.8
       ],
-      "nearest_ground_transition_mm": 0.8500130410764293
+      "nearest_ground_transition_mm": 0.8500130410764298
     },
     {
       "net": "3V3A",
@@ -129,74 +125,82 @@
       "nearest_ground_transition_mm": 0.8500130410764293
     },
     {
-      "net": "I2C_SCL",
+      "net": "PPS",
       "position_mm": [
-        31.0874,
-        25.0483
+        21.0032,
+        44.975
       ],
-      "nearest_ground_transition_mm": 0.8500130410764285
+      "nearest_ground_transition_mm": 0.8500130410764293
+    },
+    {
+      "net": "REFPPS_OUT",
+      "position_mm": [
+        6.2232,
+        50.0
+      ],
+      "nearest_ground_transition_mm": 0.850013041076429
     },
     {
       "net": "REF10_OE_N",
       "position_mm": [
-        28.2763,
-        32.4357
+        82.4017,
+        32.4314
       ],
-      "nearest_ground_transition_mm": 0.8500120562680294
-    },
-    {
-      "net": "BURST_GATE",
-      "position_mm": [
-        60.4173,
-        41.2813
-      ],
-      "nearest_ground_transition_mm": 0.8500000000000014
+      "nearest_ground_transition_mm": 0.8500000000005824
     },
     {
       "net": "CLK10",
       "position_mm": [
-        64.735,
-        36.5016
+        74.8445,
+        33.0516
+      ],
+      "nearest_ground_transition_mm": 0.8500000000000085
+    },
+    {
+      "net": "I2C_SDA",
+      "position_mm": [
+        29.2385,
+        26.7584
+      ],
+      "nearest_ground_transition_mm": 0.8500000000000014
+    },
+    {
+      "net": "REFPPS_OE_N",
+      "position_mm": [
+        22.4221,
+        41.9972
+      ],
+      "nearest_ground_transition_mm": 0.8499999999999979
+    },
+    {
+      "net": "REF10_OUT",
+      "position_mm": [
+        83.5822,
+        48.0174
       ],
       "nearest_ground_transition_mm": 0.8499999999999943
     },
     {
-      "net": "DELAY_N",
+      "net": "ATT_IN",
       "position_mm": [
-        65.131,
-        41.7634
-      ],
-      "nearest_ground_transition_mm": 0.8499913310152067
-    },
-    {
-      "net": "PPS",
-      "position_mm": [
-        20.6505,
-        44.7651
-      ],
-      "nearest_ground_transition_mm": 0.8499906881842947
-    },
-    {
-      "net": "VCTRL",
-      "position_mm": [
-        58.2983,
-        34.85
+        39.0223,
+        39.8
       ],
       "nearest_ground_transition_mm": 0.8499906881842915
     },
     {
-      "net": "PPS",
+      "net": "ATT_LE",
       "position_mm": [
-        56.5532,
-        13.6501
+        25.6307,
+        44.3882
       ],
-      "nearest_ground_transition_mm": 0.8499906881842915
+      "nearest_ground_transition_mm": 0.8499906881842869
     },
     {
       "net": "ATT_IN",
       "position_mm": [
-        36.3931,
-        39.6781
+        29.8825,
+        42.3959
       ],
       "nearest_ground_transition_mm": 0.8499906881842869
     },
@@ -209,83 +213,91 @@
       "nearest_ground_transition_mm": 0.8499906881842869
     },
     {
-      "net": "U10_A",
+      "net": "VCTRL",
       "position_mm": [
-        85.4021,
-        34.3487
+        59.8909,
+        34.7
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842869
+    },
+    {
+      "net": "CLK10",
+      "position_mm": [
+        64.7263,
+        36.722
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842824
+    },
+    {
+      "net": "3V3A",
+      "position_mm": [
+        36.1968,
+        16.0
+      ],
+      "nearest_ground_transition_mm": 0.8499812997942963
+    },
+    {
+      "net": "3V3A",
+      "position_mm": [
+        35.8566,
+        41.8452
       ],
       "nearest_ground_transition_mm": 0.8499812997942944
     },
     {
-      "net": "REFPPS_OE_N",
+      "net": "3V3A",
       "position_mm": [
-        17.7719,
-        43.25
+        36.528,
+        43.8763
       ],
-      "nearest_ground_transition_mm": 0.8499812997942944
+      "nearest_ground_transition_mm": 0.8371891602260466
     },
     {
-      "net": "U10_A",
+      "net": "CLK10",
       "position_mm": [
-        78.9517,
-        36.0987
+        75.8782,
+        34.7334
       ],
-      "nearest_ground_transition_mm": 0.8499577518912376
+      "nearest_ground_transition_mm": 0.8308735162466157
     },
     {
-      "net": "ATT_LE",
+      "net": "PPS",
       "position_mm": [
-        26.3875,
-        45.145
+        60.646,
+        14.1863
       ],
-      "nearest_ground_transition_mm": 0.8499577518912363
-    },
-    {
-      "net": "ATT_IN",
-      "position_mm": [
-        29.8498,
-        42.3632
-      ],
-      "nearest_ground_transition_mm": 0.8499577518912297
-    },
-    {
-      "net": "I2C_SDA",
-      "position_mm": [
-        34.4879,
-        25.3962
-      ],
-      "nearest_ground_transition_mm": 0.8341666320346376
+      "nearest_ground_transition_mm": 0.8193434505749111
     }
   ],
   "decoupling": [
     {
       "ic": "U2",
       "capacitor": "C29",
-      "nearest_supply_pad_mm": 1.7999989999999997,
-      "capacitor_ground_via_mm": 0.7999999999999972
+      "nearest_supply_pad_mm": 1.7999999999999972,
+      "capacitor_ground_via_mm": 0.75
     },
     {
       "ic": "U3",
       "capacitor": "C4",
-      "nearest_supply_pad_mm": 5.26711495982383,
+      "nearest_supply_pad_mm": 1.7999999999999972,
       "capacitor_ground_via_mm": 0.75
     },
     {
       "ic": "U4",
       "capacitor": "C31",
       "nearest_supply_pad_mm": 1.800000000000275,
-      "capacitor_ground_via_mm": 0.7999997202499549
+      "capacitor_ground_via_mm": 0.7499834998184974
     },
     {
       "ic": "U5",
       "capacitor": "C32",
-      "nearest_supply_pad_mm": 1.8000399932782034,
-      "capacitor_ground_via_mm": 0.8000000000006221
+      "nearest_supply_pad_mm": 1.8000390273546856,
+      "capacitor_ground_via_mm": 0.7499834998184989
     },
     {
       "ic": "Y1",
       "capacitor": "C13",
-      "nearest_supply_pad_mm": 1.9629378492453597,
+      "nearest_supply_pad_mm": 2.1242410409367367,
       "capacitor_ground_via_mm": 0.75
     },
     {
@@ -315,14 +327,14 @@
     {
       "ic": "U10",
       "capacitor": "C27",
-      "nearest_supply_pad_mm": 2.441823089414953,
+      "nearest_supply_pad_mm": 2.2114757516192665,
       "capacitor_ground_via_mm": 0.75
     },
     {
       "ic": "U11",
       "capacitor": "C33",
-      "nearest_supply_pad_mm": 1.4999674996482406,
-      "capacitor_ground_via_mm": 0.6364012993394971
+      "nearest_supply_pad_mm": 2.034852574512459,
+      "capacitor_ground_via_mm": 0.75
     }
   ]
 }

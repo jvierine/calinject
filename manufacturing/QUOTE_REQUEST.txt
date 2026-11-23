@@ -1,4 +1,4 @@
-CALINJECT REV B — REQUEST FOR QUOTATION, NOT AN ORDER
+CALINJECT REV C — REQUEST FOR QUOTATION, NOT AN ORDER
 
 Please quote FIVE complete functional PCB assemblies, including component
 procurement, all SMT and through-hole soldering, controller-module installation,
@@ -7,7 +7,7 @@ No winding, soldering or programming is to be left for the customer.
 
 Use the ADP-2-1+ SMT combiner build supplied in this package. Intended signal
 path is 0.5–70 MHz, with approximately 3.2 dB receive-path loss. Do not use the
-old Rev A coupler files. Customer prints and fits the supplied case.
+old Rev A coupler or Rev B vertical-SMA files. Customer prints and fits the supplied case.
 
 Board: 90 x 65 mm, four layers, 1.6 mm, plated through vias, mixed SMT/THT.
 Confirm the proposed stack and nominal 50-ohm RF trace geometry before fabrication.

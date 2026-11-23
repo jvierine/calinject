@@ -18,7 +18,7 @@ class ReferenceObserver:
   # use explicit epoch differences to resolve extra whole counter rollovers.
   delta=(np.diff(np.asarray(counts,dtype=np.int64))%2**32).astype(float)
   observed=np.r_[0,np.cumsum(delta)]-F0*self.epochs
-  r=1000.;c=4.7e-6;load=100e3
+  r=1000.;c=4.7e-6;load=500e3
   self.A=np.array([[-2/(r*c),1/(r*c)],[1/(r*c),-(1/r+1/load)/c]])
   self.B=np.array([1/(r*c),0]);self.inv=np.linalg.inv(self.A);self.E=expm(self.A);self.eigen=np.sort(np.linalg.eigvals(self.A))
   state=-self.inv@self.B*(self.codes[0]*3.3/4096);states=[];area=[0.]

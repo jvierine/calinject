@@ -17,7 +17,7 @@
     "RP2040-Zero",
     1,
     "FACTORY MODULE",
-    ""
+    "C5350143"
   ],
   [
     "U2,U3",
@@ -57,7 +57,7 @@
     "MAX-M10S-00B",
     1,
     "SMT",
-    ""
+    "C4153167"
   ],
   [
     "C5,C8,C10,C13,C15,C16,C18,C19,C21,C26,C27,C28,C29,C31,C32,C33",
@@ -72,12 +72,12 @@
   [
     "J1",
     "GPS ANT",
-    "SMA_Amphenol_132134",
-    "BAT WIRELESS",
-    "BWSMA-KE-Z001",
+    "SMA_KWE_RA",
+    "Lian Xin Technology",
+    "SMA-KWE",
     1,
     "THT",
-    "C496549"
+    "C7498154"
   ],
   [
     "C7",
@@ -131,13 +131,13 @@
   ],
   [
     "D1",
-    "PESD5V0F1BLS",
+    "PESD5V0F1BL",
     "DFN1006_2",
     "Nexperia",
-    "PESD5V0F1BLS,315",
+    "PESD5V0F1BL,315",
     1,
     "SMT",
-    ""
+    "C45961"
   ],
   [
     "U5",
@@ -172,12 +172,12 @@
   [
     "Y1",
     "10MHz VCTCXO",
-    "ECS_3225",
-    "ECS",
-    "ECS-VC-TXO32-S3-33-100-BN-TR",
+    "KDS_DSA321SDN",
+    "KDS Daishinku",
+    "1XTV10000MDA",
     1,
     "SMT",
-    ""
+    "C253701"
   ],
   [
     "R6,R7,R8,R16,R17,R27,R31",
@@ -223,11 +223,11 @@
     "C17",
     "22p",
     "C_0603",
-    "Murata",
-    "GRM1885C1H220JA01D",
+    "Samsung Electro-Mechanics",
+    "CL10C220JB8NNNC",
     1,
     "SMT",
-    ""
+    "C1653"
   ],
   [
     "U7",
@@ -241,13 +241,13 @@
   ],
   [
     "U8",
-    "SN74LVC2G08",
+    "74LVC2G08",
     "VSSOP8_DCU",
-    "Texas Instruments",
-    "SN74LVC2G08DCUR",
+    "Nexperia",
+    "74LVC2G08DC,125",
     1,
     "SMT",
-    ""
+    "C456135"
   ],
   [
     "R11,R18",
@@ -313,8 +313,8 @@
     "JP1",
     "LEVEL RANGE",
     "Range_2x3",
-    "Amphenol ICC",
-    "68000-103HLF",
+    "FG / BOOMELE",
+    "FG-PZ2.54-1-03P",
     2,
     "THT",
     ""
@@ -332,22 +332,22 @@
   [
     "J2",
     "RF IN",
-    "SMA_Amphenol_132134",
-    "BAT WIRELESS",
-    "BWSMA-KE-Z001",
+    "SMA_KWE_RA",
+    "Lian Xin Technology",
+    "SMA-KWE",
     1,
     "THT",
-    "C496549"
+    "C7498154"
   ],
   [
     "J3",
     "TO SDR",
-    "SMA_Amphenol_132134",
-    "BAT WIRELESS",
-    "BWSMA-KE-Z001",
+    "SMA_KWE_RA",
+    "Lian Xin Technology",
+    "SMA-KWE",
     1,
     "THT",
-    "C496549"
+    "C7498154"
   ],
   [
     "C24,C25",
@@ -382,12 +382,12 @@
   [
     "U10,U11",
     "SN74LVC2G125",
-    "VSSOP8_DCU",
+    "SSOP8_DCT",
     "Texas Instruments",
-    "SN74LVC2G125DCUR",
+    "SN74LVC2G125DCTR",
     2,
     "SMT",
-    ""
+    "C206035"
   ],
   [
     "R24,R25,R28,R29",
@@ -402,21 +402,21 @@
   [
     "J4",
     "10 MHz OUT",
-    "SMA_Amphenol_132134",
-    "BAT WIRELESS",
-    "BWSMA-KE-Z001",
+    "SMA_KWE_RA",
+    "Lian Xin Technology",
+    "SMA-KWE",
     1,
     "THT",
-    "C496549"
+    "C7498154"
   ],
   [
     "J5",
     "1 PPS OUT",
-    "SMA_Amphenol_132134",
-    "BAT WIRELESS",
-    "BWSMA-KE-Z001",
+    "SMA_KWE_RA",
+    "Lian Xin Technology",
+    "SMA-KWE",
     1,
     "THT",
-    "C496549"
+    "C7498154"
   ]
 ]
