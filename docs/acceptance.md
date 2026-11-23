@@ -63,3 +63,9 @@ For each serial number return inspection results, power measurements, firmware i
 ## Additional power and cable checks
 
 Measure both reference outputs with representative 50 Ω and high-impedance instruments and 0.5–5 m coax cables. Capture edge overshoot/undershoot, channel sharing, and propagation delay. Do not infer actual buffer current from the ideal resistive simulation. Check LDO stability and start-up, GNSS acquisition/transmit load transients, and quiet-rail ripple with both reference outputs loaded and USB active. Record oscillator frequency/jitter and muted receiver spurs under those conditions; a failing result requires a revised filtered supply or shielding solution before the remaining boards are assembled. See the layout review for the shared analog/fast-logic rail and lack of ferrite isolation.
+
+## Phase noise and software reference tracking
+
+Measure the continuous 10 MHz reference and selected injected harmonics against an independent low-noise standard. Record phase-noise density at 10/100 Hz and 1/10/100 kHz offsets, both with the servo active and held at a fixed DAC code. Longer records are needed to examine the 64 s steering cycle and close-in drift. Separate burst-gating sidebands from random phase noise; use continuous mode for the underlying carrier measurement. Repeat with USB traffic, loaded reference outputs and representative supply/temperature changes. The TCXO datasheet curve does not include comparator, logic, buffer or board noise. No board phase-noise limit is established by the assumed 20/100 ps edge-jitter simulations.
+
+Calibrate DAC Hz/code and filter response before applying the simulated counter/DAC reference observer to real recordings. Verify the recovered reference frequency and software-corrected science frequency against independent measurements, including UTC labeling and sample-loss handling. A smooth software correction does not establish absolute carrier-phase coherence between bursts.
