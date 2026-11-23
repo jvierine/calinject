@@ -70,6 +70,8 @@ def render():
  fig.text(.50,.035,'Top view  ·  red: top copper  ·  blue: bottom copper  ·  gold: pads and vias',ha='center',color=dark,fontsize=10)
  for suffix in ['png','svg']:
   fig.savefig(ROOT/('docs/board-layout.'+suffix),dpi=180,facecolor='white')
+ svg=ROOT/'docs/board-layout.svg'
+ svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
  plt.close(fig)
  print('Rendered actual PCB:',len(d['tracks']),'tracks,',len(d['vias']),'vias,',len(d['pads']),'pads')
 
