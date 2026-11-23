@@ -1,5 +1,7 @@
 # Using the markers in SDR data
 
+For wiring, dependency installation and USB control examples, see [connections and host control](../docs/operation.md).
+
 Keep the USB HDF5 status log alongside the receiver recording. USB arrival timestamps are only useful for diagnostics; scheduling and buffering make them unsuitable as absolute sample timestamps.
 
 1. Record at least one in-band 10 MHz harmonic. A narrow RTL-SDR capture must include a harmonic inside its usable passband, away from DC spurs and the filter edge. A real-sampled RX888 capture must put the selected harmonic below Nyquist. Other comb harmonics can alias through imperfect anti-alias filtering.
