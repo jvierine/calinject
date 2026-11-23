@@ -28,6 +28,6 @@ New local capacitors are C29 at U2, C31 at U4, C32 at U5 and C33 at U11. Their s
 
 ## Verification and remaining checks
 
-The revised CAD must pass ERC, DRC, connectivity and schematic parity before fabrication. The layout audit checks the actual board, and cable-model decks/results accompany the other simulations. Neither is a substitute for measuring regulator stability, supply noise, cable edge behaviour, PPS delay, muted spurs and calibration-to-antenna leakage on the first article. Do not complete the remaining four boards before those tests pass.
+The revised CAD must pass ERC, DRC, connectivity and schematic parity before fabrication. The layout audit checks the actual board, and cable-model decks/results accompany the other simulations. Neither is a substitute for measuring regulator stability, supply noise, cable edge behaviour, PPS delay, muted spurs and calibration-to-antenna leakage on the first article. Qualify one received board before relying on the batch for measurements.
 
 References: [TI buffer datasheet](https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf), [Analog Devices ferrite filtering and damping guidance](https://www.analog.com/en/resources/app-notes/an-1368.html).

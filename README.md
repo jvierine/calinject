@@ -20,7 +20,7 @@ Runs from a **5 V USB-C supply without a computer**. Saved settings restore auto
 
 Connect it **after your antenna bias board and before the SDR**, with a separate active GPS antenna and USB-C power. The receiver ports block DC; disable the SDR's own bias tee. See the [connector guide](docs/port-guide.pdf).
 
-The aim is **five factory-assembled boards**, with no user soldering or winding. Parts are estimated at **about $47 per board**; the under-$100 assembled target still needs a complete factory quote. The first assembled board needs RF and timing tests before building the rest.
+JLC's current quote is **about $69 per fully assembled board at five units**, before shipping, tax and review adjustments. We load the firmware ourselves through USB-C; no user soldering or winding. Qualify one received board before relying on the batch. See the [quote](docs/cost.md).
 
 [Download all files](https://github.com/jvierine/calinject/releases) · [Connect and control](docs/operation.md) · [USB programming](firmware/README.md) · [Using the calibration](host/README.md) · [Print the case](mechanical/README.md)
 

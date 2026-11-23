@@ -1,6 +1,6 @@
 # First-article and production acceptance
 
-Status: **first-article measurements not yet performed**. This procedure is part of the factory quotation, not evidence that a board has passed. Request a first article before producing the rest of the batch. No RF test result may be replaced by an ideal circuit simulation.
+Status: **first-article measurements not yet performed**. The customer performs this procedure after receipt and USB-C programming; custom factory qualification is excluded from the assembly quote. Qualify one board before relying on the batch for measurements. No RF test result may be replaced by an ideal circuit simulation.
 
 ## Before applying power
 

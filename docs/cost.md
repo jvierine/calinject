@@ -1,21 +1,24 @@
-# Five-board Rev C cost basis
+# Five-board Rev C quote
 
-Currency: USD. Planning date: 2026-11-23. Quantity: five fully assembled, programmed boards, starting with one factory-qualified first article. No supplier has issued a quote.
+JLC's 2026-11-23 saved draft quotes **$340.81 for five fully assembled, unprogrammed boards**. Depaneling adds $3.31 outside the displayed total: **$344.12, or $68.82 per board**, before shipping, tax and any review adjustments. The customer loads firmware through USB-C and performs custom RF/GPS/timing tests.
 
-The component-manifest estimate is **$60.49 per board**, or **$300.45 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
-
-| Major item | Per-board allowance |
+| Included cost | Five boards, USD |
 |---|---:|
-| ADP-2-1+ SMT combiner | $12.04 |
-| Tunable ECS TCXO | $12.71 |
-| MAX-M10S GPS | $11.42 |
-| PE4312 attenuator | $4.40 |
-| RP2040-Zero module | $4.00 |
-| Five SMA jacks | $6.00 |
-| Other components | $9.56 |
+| PCB/options | 31.07 |
+| Parts, including procurement allowances | 210.17 |
+| Assembly setup | 25.75 |
+| Stencil | 8.27 |
+| Feeder loading | 52.70 |
+| SMT assembly | 3.15 |
+| Placement confirmation | 0.45 |
+| Hand soldering | 3.61 |
+| Manual assembly | 5.13 |
+| Packaging | 0.51 |
+| Depaneling | 3.31 |
+| **Subtotal** | **344.12** |
 
-Replacing the $39.02 Rev A coupler saves approximately **$26.98 per board**. The under-$100 assembled target now leaves about $40 per board for non-component costs. It is more plausible, but remains unconfirmed at five units. Obtain an itemized turnkey quote; quote one-time RF/timing qualification separately from repeat assembly/programming/test. There is no evidence for a firm all-in price yet.
+All 45 BOM rows match JLC inventory; no omissions or substitutions were accepted. Stock is not reserved. The quote remains subject to DFM, especially manual module/header/shunt installation and package rotations. Assembly remark is priced after review. No order or payment has been placed.
 
-The tradeoffs are a specified 500 kHz lower limit and about 3.2 dB antenna-path loss. Isolation is finite, so use a weak calibration level and qualify actual antenna leakage. No hand-wound parts or user electrical assembly are required.
+The under-$100 target looks achievable, but this is not a guaranteed delivered price. External GPS antenna, USB/SMA cables, optional terminator/combiner, receiver, case printing and screws are additional. The combiner adds about 3.2 dB receiver-path loss and has finite antenna isolation; those engineering tradeoffs remain unchanged.
 
-External GPS antenna, USB/SMA cables, optional terminator/external combiner, receiver, case printing and case screws are outside this parts estimate. See [sources](sources.md) and the [quote request](../manufacturing/QUOTE_REQUEST.txt).
+[Saved quote and review details](jlc-quote-status.md) · [Factory scope](../manufacturing/ASSEMBLY.md) · [USB-C programming](../firmware/README.md)

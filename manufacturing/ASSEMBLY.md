@@ -1,6 +1,6 @@
 # Full turnkey assembly specification
 
-Quote five complete functional PCBAs. The customer prints and fits the case. The supplier performs all electrical assembly and initial programming, including the purchased controller module, headers, five SMA jacks, trimmer and range shunts. No winding or customer soldering is required.
+Quote five fully electrically assembled PCBAs, supplied unprogrammed. The customer prints and fits the case. The supplier performs all electrical assembly, including the purchased controller module, headers, five SMA jacks, trimmer and range shunts. No winding or customer soldering is required.
 
 ## PCB and stack
 
@@ -28,12 +28,14 @@ The five SMA jacks are **Lian Xin SMA-KWE, C7498154**, female ordinary SMA, righ
 
 Y1 is **KDS 1XTV10000MDA / DSA321SDN, C253701**. Respect its central bottom copper keepout on top and Inner1. Vc must stay within 0.5–2.5 V. Measure the positive tuning slope on the first article, set it over USB and save it. Do not apply the old ECS phase-noise table to this oscillator. U10/U11 use the active **SN74LVC2G125DCTR SSOP-8, 0.65 mm pitch**; the old DCU 0.5 mm package is incompatible. U8 is Nexperia 74LVC2G08DC,125.
 
-J4 is 10 MHz OUT and J5 is 1 PPS OUT. Separate buffers default disabled in firmware and are included in functional acceptance. The LEVEL trimmer adjusts a DC ADC input. Ship with both JP1 shunts LOW and electronic attenuation at 31.5 dB.
+J4 is 10 MHz OUT and J5 is 1 PPS OUT. Separate buffers default disabled in firmware and are included in functional acceptance. The LEVEL trimmer adjusts a DC ADC input. Ship with both JP1 shunts LOW. Customer firmware initializes electronic attenuation to 31.5 dB.
 
 ## Programming, test and quote scope
 
-Follow `firmware/README.md` and `docs/acceptance.md`. Program and qualify one first article before completing the other four boards. Confirm factory test capability and cost in the quotation. Continuity testing alone does not qualify RF directionality or absolute timing.
+**Factory scope: assembly only, with normal fabrication/assembly inspection and electrical checks. Do not quote firmware loading, custom functional tests or RF/timing qualification.** The customer will perform initial USB-C programming, commissioning and the acceptance tests after receipt. No soldering or external programming adapter is needed.
 
-Provide proposed final BOM, availability, actual stackup, placement orientation preview, programming plan, test plan and itemized price before an order is placed. This package does not authorize procurement or manufacture. Initial programming and all assembly must be included; the end user receives complete electrically assembled units.
+Provide proposed final BOM, availability, actual stackup, placement orientation preview, normal inspection scope and itemized price before an order is placed. This package does not authorize procurement or manufacture. Include every SMT/THT part, the genuine controller module, headers and both range shunts; the customer receives complete electrically assembled units.
 
-Status indication uses the genuine RP2040-Zero's existing GP16 WS2812 RGB LED; do not fit an additional LED or change carrier wiring. Program **all five** application files including `status_led.py`. Test the board from USB-C power without a computer and verify startup green, acquisition amber, green PPS flashes in TRACKING and blinking red on faults. Check USB-C-to-C power with an ordinary 5 V source.
+Firmware and test files are included for the customer's use. Follow `firmware/README.md` to load MicroPython and all five application files, including `status_led.py`. Qualify one received board with `docs/acceptance.md` before relying on the batch for measurements. Normal factory continuity checks do not qualify RF isolation or absolute timing.
+
+Status indication uses the genuine RP2040-Zero's existing GP16 WS2812 RGB LED; do not fit an additional LED or change carrier wiring. The customer tests USB-C power-only operation and the RGB indicator after programming.

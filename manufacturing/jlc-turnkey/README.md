@@ -23,5 +23,4 @@ Factory must review manual placements against the native PCB and ASSEMBLY.md,
 including pin 1, header height and module USB orientation. These assembly aliases
 must not be treated as independent SMT placements during automated assembly.
 
-This upload is for a quote. Firmware loading, function testing and first-article
-RF/timing qualification remain subject to explicit factory capability review.
+This upload is for an assembly-only quote. Customer performs USB-C firmware loading and RF/timing qualification after receipt; no custom factory programming or function test is requested.

@@ -1,33 +1,28 @@
 CALINJECT REV C — REQUEST FOR QUOTATION, NOT AN ORDER
 
-Please quote FIVE complete functional PCB assemblies, including component
-procurement, all SMT and through-hole soldering, controller-module installation,
-headers/shunts, initial firmware loading, inspection and electrical testing.
-No winding, soldering or programming is to be left for the customer.
+Quote FIVE fully electrically assembled boards, supplied UNPROGRAMMED.
+Include procurement, all SMT/THT soldering, genuine Waveshare RP2040-Zero
+module installation, headers/shunts, ordinary inspection and electrical checks.
+No winding or soldering is to be left for the customer.
 
-Use the ADP-2-1+ SMT combiner build supplied in this package. Intended signal
-path is 0.5–70 MHz, with approximately 3.2 dB receive-path loss. Do not use the
-old Rev A coupler or Rev B vertical-SMA files. Customer prints and fits the supplied case.
+The customer will program the boards over USB-C and perform commissioning and
+RF/GNSS/timing tests. Do NOT include factory programming or custom function tests.
+Firmware/test files in the package are for customer use.
 
-Board: 90 x 65 mm, four layers, 1.6 mm, plated through vias, mixed SMT/THT.
-Confirm the proposed stack and nominal 50-ohm RF trace geometry before fabrication.
-Review ASSEMBLY.md, BOM.xlsx, CPL.xlsx, Gerbers, drill files, IPC netlist and
-native KiCad project. Include the supplementary U1 headers and JP1 shunts.
+Use the Rev C ADP-2-1+ SMT combiner build and five horizontal SMA-KWE jacks.
+Do not use old Rev A coupler or Rev B vertical-SMA files.
+Customer prints and fits the case. Delivery: Hainan, China.
 
-Please itemize:
-1. Parts and procurement overhead/MOQs, including controller module and combiner.
-2. PCB fabrication, stencil, setup, SMT/THT/module assembly and inspection.
-3. Firmware loading and basic functional test on each board.
-4. One-time first-article RF, GPS timing and servo qualification, as described in
-   docs/acceptance.md; identify tests you cannot perform and required fixtures.
-5. Per-board production test and measured calibration records.
-6. Shipping, tax, lead time and any minimum order quantities.
+Board: 90 x 65 mm, four layers, 1.6 mm, mixed SMT/THT, plated through vias.
+Confirm stack and nominal 50-ohm RF geometry before fabrication.
+Review ASSEMBLY.md, jlc-turnkey/BOM.xlsx and CPL.xlsx, Gerbers, drill files,
+IPC netlist and native KiCad project. Include U1 headers and JP1 shunts.
 
-Target is below USD100 per assembled board, but the current component estimate
-is about USD60 before assembly. Please report the real total and any proposed
-cost reductions without changing the approved band or leaving customer assembly.
+Itemize parts/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly,
+normal inspection/electrical checks, depaneling, shipping, tax and lead time.
+Target: under USD100 per assembled board; component planning estimate about
+USD47 before assembly. Report the real total without omitting required parts.
 
-Build and qualify one first article before completing the other four. Provide
-DFM findings, proposed final BOM, stackup, placement orientation preview and test
-plan for review. Do not silently substitute the VCTCXO, GNSS, RF parts or module.
-No purchase/manufacturing authorization is granted by this request.
+Provide DFM findings, final BOM/stock status, stack and placement preview.
+No substitutions or omissions without review. LOW range shunts installed.
+No procurement, purchase or manufacturing authorization is granted.

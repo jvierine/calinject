@@ -67,6 +67,6 @@ The 90 × 65 mm board has four layers, two inner ground planes and ordinary plat
 
 The nominal stack uses 0.20 mm outer dielectrics and 0.36 mm RF traces. The fabricator must confirm actual materials, pressed thickness and impedance, especially the 1.575 GHz GPS path. Digital leakage can bypass the gate/attenuator despite these layout improvements; measure muted spectra with USB and reference cables connected. The printed case is not an RF shield.
 
-The factory installs and programs the RP2040-Zero module and all THT parts. Separate regulators power GPS and reference/RF circuitry. GPS ANT supplies protected 3.3 V bias for a compatible antenna normally drawing at most 20 mA. The receiver ports are DC blocked; keep the existing antenna bias board ahead of RF IN and disable the SDR bias tee. See [factory instructions](../manufacturing/ASSEMBLY.md), [acceptance tests](acceptance.md) and [sources](sources.md).
+The factory installs the RP2040-Zero module and all THT parts. The customer loads firmware over USB-C. Separate regulators power GPS and reference/RF circuitry. GPS ANT supplies protected 3.3 V bias for a compatible antenna normally drawing at most 20 mA. The receiver ports are DC blocked; keep the existing antenna bias board ahead of RF IN and disable the SDR bias tee. See [factory instructions](../manufacturing/ASSEMBLY.md), [acceptance tests](acceptance.md) and [sources](sources.md).
 
 For the cable-driver, decoupling, power-isolation and ground-stitching audit, see [layout review](layout-review.md).
