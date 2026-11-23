@@ -7,7 +7,7 @@
   "unconnected_items": 0,
   "schematic_parity_issues": 0,
   "erc_violations": 0,
-  "software_tests_passed": 20,
+  "software_tests_passed": 24,
   "manufacturing_consistency_errors": [],
   "hardware_tests_performed": false,
   "case_fit_printed": false,
@@ -15,5 +15,8 @@
   "board_sha256": "c3adfdaf79556abfe4d1c8a071691c3b49bd490b8aab9641205fc8faf4c34e84",
   "layout_review": "docs/layout-review.md",
   "ground_vias": 254,
-  "cable_simulation": "validation/simulation/summary.json"
+  "cable_simulation": "validation/simulation/summary.json",
+  "end_to_end_report": "docs/end-to-end.md",
+  "end_to_end_cases": 23,
+  "end_to_end_checks": "validation/end-to-end/checks.json"
 }

@@ -1,0 +1,458 @@
+{
+  "profiles": [
+    {
+      "name": "HF25",
+      "fs": 64000000.0,
+      "fc": 25000000.0,
+      "center": 0,
+      "bits": 16,
+      "aliases": [
+        {
+          "harmonic": 1,
+          "rf_hz": 10000000.0,
+          "observed_alias_hz": 10000000.0,
+          "assumed_filter_loss_db": 7.286191209643272e-05,
+          "line_before_filter_dbm": -64.27307137460413
+        },
+        {
+          "harmonic": 2,
+          "rf_hz": 20000000.0,
+          "observed_alias_hz": 20000000.0,
+          "assumed_filter_loss_db": 0.2886372420460519,
+          "line_before_filter_dbm": -64.70894486370386
+        },
+        {
+          "harmonic": 3,
+          "rf_hz": 30000000.0,
+          "observed_alias_hz": 30000000.0,
+          "assumed_filter_loss_db": 9.963409174405157,
+          "line_before_filter_dbm": -65.45599085899823
+        },
+        {
+          "harmonic": 4,
+          "rf_hz": 40000000.0,
+          "observed_alias_hz": 24000000.0,
+          "assumed_filter_loss_db": 24.509799815083106,
+          "line_before_filter_dbm": -66.54979197198392
+        },
+        {
+          "harmonic": 5,
+          "rf_hz": 50000000.0,
+          "observed_alias_hz": 14000000.0,
+          "assumed_filter_loss_db": 36.12465963953142,
+          "line_before_filter_dbm": -68.0521187430453
+        },
+        {
+          "harmonic": 6,
+          "rf_hz": 60000000.0,
+          "observed_alias_hz": 4000000.0,
+          "assumed_filter_loss_db": 45.62546792226143,
+          "line_before_filter_dbm": -70.07161715309755
+        },
+        {
+          "harmonic": 7,
+          "rf_hz": 70000000.0,
+          "observed_alias_hz": 6000000.0,
+          "assumed_filter_loss_db": 53.65898246302099,
+          "line_before_filter_dbm": -72.81552656489012
+        },
+        {
+          "harmonic": 8,
+          "rf_hz": 80000000.0,
+          "observed_alias_hz": 16000000.0,
+          "assumed_filter_loss_db": 60.61800116529126,
+          "line_before_filter_dbm": -76.75014469026311
+        },
+        {
+          "harmonic": 9,
+          "rf_hz": 90000000.0,
+          "observed_alias_hz": 26000000.0,
+          "assumed_filter_loss_db": 66.75630100862045,
+          "line_before_filter_dbm": -83.35792156339062
+        },
+        {
+          "harmonic": 10,
+          "rf_hz": 100000000.0,
+          "observed_alias_hz": 28000000.0,
+          "assumed_filter_loss_db": 72.24719921821516,
+          "line_before_filter_dbm": -392.3125016218939
+        },
+        {
+          "harmonic": 11,
+          "rf_hz": 110000000.0,
+          "observed_alias_hz": 18000000.0,
+          "assumed_filter_loss_db": 77.21432126082317,
+          "line_before_filter_dbm": -85.10092507776862
+        },
+        {
+          "harmonic": 12,
+          "rf_hz": 120000000.0,
+          "observed_alias_hz": 8000000.0,
+          "assumed_filter_loss_db": 81.7489485141033,
+          "line_before_filter_dbm": -80.27196987137674
+        },
+        {
+          "harmonic": 13,
+          "rf_hz": 130000000.0,
+          "observed_alias_hz": 2000000.0,
+          "assumed_filter_loss_db": 85.92040124728668,
+          "line_before_filter_dbm": -78.1924328107417
+        },
+        {
+          "harmonic": 14,
+          "rf_hz": 140000000.0,
+          "observed_alias_hz": 12000000.0,
+          "assumed_filter_loss_db": 89.78256324530997,
+          "line_before_filter_dbm": -77.43115285898944
+        },
+        {
+          "harmonic": 15,
+          "rf_hz": 150000000.0,
+          "observed_alias_hz": 22000000.0,
+          "assumed_filter_loss_db": 93.37815004803235,
+          "line_before_filter_dbm": -77.59454383743855
+        },
+        {
+          "harmonic": 16,
+          "rf_hz": 160000000.0,
+          "observed_alias_hz": 32000000.0,
+          "assumed_filter_loss_db": 96.74159687898612,
+          "line_before_filter_dbm": -78.59099179854317
+        },
+        {
+          "harmonic": 17,
+          "rf_hz": 170000000.0,
+          "observed_alias_hz": 22000000.0,
+          "assumed_filter_loss_db": 99.90106952519267,
+          "line_before_filter_dbm": -80.52254419217046
+        },
+        {
+          "harmonic": 18,
+          "rf_hz": 180000000.0,
+          "observed_alias_hz": 12000000.0,
+          "assumed_filter_loss_db": 102.87989957197598,
+          "line_before_filter_dbm": -83.79379505249037
+        },
+        {
+          "harmonic": 19,
+          "rf_hz": 190000000.0,
+          "observed_alias_hz": 2000000.0,
+          "assumed_filter_loss_db": 105.69763107381192,
+          "line_before_filter_dbm": -89.84814339366069
+        },
+        {
+          "harmonic": 20,
+          "rf_hz": 200000000.0,
+          "observed_alias_hz": 8000000.0,
+          "assumed_filter_loss_db": 108.37079843909643,
+          "line_before_filter_dbm": -392.3125016218939
+        }
+      ],
+      "clipped_fraction": 0.0,
+      "fullscale_v": 0.0013671980599099236
+    },
+    {
+      "name": "HF50",
+      "fs": 128000000.0,
+      "fc": 50000000.0,
+      "center": 0,
+      "bits": 16,
+      "aliases": [
+        {
+          "harmonic": 1,
+          "rf_hz": 10000000.0,
+          "observed_alias_hz": 10000000.0,
+          "assumed_filter_loss_db": 1.778870289022015e-08,
+          "line_before_filter_dbm": -64.27307137460413
+        },
+        {
+          "harmonic": 2,
+          "rf_hz": 20000000.0,
+          "observed_alias_hz": 20000000.0,
+          "assumed_filter_loss_db": 7.286191209643272e-05,
+          "line_before_filter_dbm": -64.70894486370386
+        },
+        {
+          "harmonic": 3,
+          "rf_hz": 30000000.0,
+          "observed_alias_hz": 30000000.0,
+          "assumed_filter_loss_db": 0.009443371211274013,
+          "line_before_filter_dbm": -65.45599085899823
+        },
+        {
+          "harmonic": 4,
+          "rf_hz": 40000000.0,
+          "observed_alias_hz": 40000000.0,
+          "assumed_filter_loss_db": 0.2886372420460519,
+          "line_before_filter_dbm": -66.54979197198392
+        },
+        {
+          "harmonic": 5,
+          "rf_hz": 50000000.0,
+          "observed_alias_hz": 50000000.0,
+          "assumed_filter_loss_db": 3.0102999566398303,
+          "line_before_filter_dbm": -68.0521187430453
+        },
+        {
+          "harmonic": 6,
+          "rf_hz": 60000000.0,
+          "observed_alias_hz": 60000000.0,
+          "assumed_filter_loss_db": 9.963409174405157,
+          "line_before_filter_dbm": -70.07161715309755
+        },
+        {
+          "harmonic": 7,
+          "rf_hz": 70000000.0,
+          "observed_alias_hz": 58000000.0,
+          "assumed_filter_loss_db": 17.611299906029675,
+          "line_before_filter_dbm": -72.81552656489012
+        },
+        {
+          "harmonic": 8,
+          "rf_hz": 80000000.0,
+          "observed_alias_hz": 48000000.0,
+          "assumed_filter_loss_db": 24.509799815083106,
+          "line_before_filter_dbm": -76.75014469026311
+        },
+        {
+          "harmonic": 9,
+          "rf_hz": 90000000.0,
+          "observed_alias_hz": 38000000.0,
+          "assumed_filter_loss_db": 30.636453163445584,
+          "line_before_filter_dbm": -83.35792156339062
+        },
+        {
+          "harmonic": 10,
+          "rf_hz": 100000000.0,
+          "observed_alias_hz": 28000000.0,
+          "assumed_filter_loss_db": 36.12465963953142,
+          "line_before_filter_dbm": -392.3125016218939
+        },
+        {
+          "harmonic": 11,
+          "rf_hz": 110000000.0,
+          "observed_alias_hz": 18000000.0,
+          "assumed_filter_loss_db": 41.09105952635971,
+          "line_before_filter_dbm": -85.10092507776862
+        },
+        {
+          "harmonic": 12,
+          "rf_hz": 120000000.0,
+          "observed_alias_hz": 8000000.0,
+          "assumed_filter_loss_db": 45.62546792226143,
+          "line_before_filter_dbm": -80.27196987137674
+        },
+        {
+          "harmonic": 13,
+          "rf_hz": 130000000.0,
+          "observed_alias_hz": 2000000.0,
+          "assumed_filter_loss_db": 49.79684726597679,
+          "line_before_filter_dbm": -78.1924328107417
+        },
+        {
+          "harmonic": 14,
+          "rf_hz": 140000000.0,
+          "observed_alias_hz": 12000000.0,
+          "assumed_filter_loss_db": 53.65898246302099,
+          "line_before_filter_dbm": -77.43115285898944
+        },
+        {
+          "harmonic": 15,
+          "rf_hz": 150000000.0,
+          "observed_alias_hz": 22000000.0,
+          "assumed_filter_loss_db": 57.25455873836868,
+          "line_before_filter_dbm": -77.59454383743855
+        },
+        {
+          "harmonic": 16,
+          "rf_hz": 160000000.0,
+          "observed_alias_hz": 32000000.0,
+          "assumed_filter_loss_db": 60.61800116529126,
+          "line_before_filter_dbm": -78.59099179854317
+        },
+        {
+          "harmonic": 17,
+          "rf_hz": 170000000.0,
+          "observed_alias_hz": 42000000.0,
+          "assumed_filter_loss_db": 63.77747186492742,
+          "line_before_filter_dbm": -80.52254419217046
+        },
+        {
+          "harmonic": 18,
+          "rf_hz": 180000000.0,
+          "observed_alias_hz": 52000000.0,
+          "assumed_filter_loss_db": 66.75630100862045,
+          "line_before_filter_dbm": -83.79379505249037
+        },
+        {
+          "harmonic": 19,
+          "rf_hz": 190000000.0,
+          "observed_alias_hz": 62000000.0,
+          "assumed_filter_loss_db": 69.57403207306754,
+          "line_before_filter_dbm": -89.84814339366069
+        },
+        {
+          "harmonic": 20,
+          "rf_hz": 200000000.0,
+          "observed_alias_hz": 56000000.0,
+          "assumed_filter_loss_db": 72.24719921821516,
+          "line_before_filter_dbm": -392.3125016218939
+        }
+      ],
+      "clipped_fraction": 0.0,
+      "fullscale_v": 0.0013671980599099236
+    },
+    {
+      "name": "meteor",
+      "fs": 2000000.0,
+      "fc": 800000.0,
+      "center": 69970000.0,
+      "bits": 8,
+      "aliases": [
+        {
+          "harmonic": 1,
+          "rf_hz": 10000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 224.9812874215003,
+          "line_before_filter_dbm": -64.27307137460413
+        },
+        {
+          "harmonic": 2,
+          "rf_hz": 20000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 215.47432349407717,
+          "line_before_filter_dbm": -64.70894486370386
+        },
+        {
+          "harmonic": 3,
+          "rf_hz": 30000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 203.83729935217934,
+          "line_before_filter_dbm": -65.45599085899823
+        },
+        {
+          "harmonic": 4,
+          "rf_hz": 40000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 188.83161071444414,
+          "line_before_filter_dbm": -66.54979197198392
+        },
+        {
+          "harmonic": 5,
+          "rf_hz": 50000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 167.6745693454511,
+          "line_before_filter_dbm": -68.0521187430453
+        },
+        {
+          "harmonic": 6,
+          "rf_hz": 60000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 131.47262055836578,
+          "line_before_filter_dbm": -70.07161715309755
+        },
+        {
+          "harmonic": 7,
+          "rf_hz": 70000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 9.643274665532871e-16,
+          "line_before_filter_dbm": -72.81552656489012
+        },
+        {
+          "harmonic": 8,
+          "rf_hz": 80000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 131.78531352341724,
+          "line_before_filter_dbm": -76.75014469026311
+        },
+        {
+          "harmonic": 9,
+          "rf_hz": 90000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 167.8309154761959,
+          "line_before_filter_dbm": -83.35792156339062
+        },
+        {
+          "harmonic": 10,
+          "rf_hz": 100000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 188.9358414248445,
+          "line_before_filter_dbm": -392.3125016218939
+        },
+        {
+          "harmonic": 11,
+          "rf_hz": 110000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 203.9154723735794,
+          "line_before_filter_dbm": -85.10092507776862
+        },
+        {
+          "harmonic": 12,
+          "rf_hz": 120000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 215.53686190697587,
+          "line_before_filter_dbm": -80.27196987137674
+        },
+        {
+          "harmonic": 13,
+          "rf_hz": 130000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 225.03340276367163,
+          "line_before_filter_dbm": -78.1924328107417
+        },
+        {
+          "harmonic": 14,
+          "rf_hz": 140000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 233.06329672272574,
+          "line_before_filter_dbm": -77.43115285898944
+        },
+        {
+          "harmonic": 15,
+          "rf_hz": 150000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 240.01953958824177,
+          "line_before_filter_dbm": -77.59454383743855
+        },
+        {
+          "harmonic": 16,
+          "rf_hz": 160000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 246.15567157830856,
+          "line_before_filter_dbm": -78.59099179854317
+        },
+        {
+          "harmonic": 17,
+          "rf_hz": 170000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 251.64483381759402,
+          "line_before_filter_dbm": -80.52254419217046
+        },
+        {
+          "harmonic": 18,
+          "rf_hz": 180000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 256.61053511608554,
+          "line_before_filter_dbm": -83.79379505249037
+        },
+        {
+          "harmonic": 19,
+          "rf_hz": 190000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 261.1439782928059,
+          "line_before_filter_dbm": -89.84814339366069
+        },
+        {
+          "harmonic": 20,
+          "rf_hz": 200000000.0,
+          "observed_alias_hz": 30000.0,
+          "assumed_filter_loss_db": 265.31442906673607,
+          "line_before_filter_dbm": -392.3125016218939
+        }
+      ],
+      "clipped_fraction": 0.0,
+      "fullscale_v": 0.0002045354851541196
+    }
+  ],
+  "limitations": "Quantized native-rate demonstrations, generic filters and assumed gain. Noise flatness, ADC ENOB/DNL/INL, actual front-end gain/filtering and intermodulation require measured receiver models. Harmonics truncated at 200MHz; higher harmonics remain unmodeled."
+}

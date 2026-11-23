@@ -1,0 +1,24 @@
+{
+  "python": "3.13.1 | packaged by conda-forge | (main, Dec  5 2024, 08:44:03) [Clang 18.1.8 ]",
+  "numpy": "2.1.3",
+  "source_sha256": {
+    "tools/end_to_end.py": "5c0620e2b7e6b6d4c8531fdd76f2a8527c37f38ed6312a068d0814151e90e6f0",
+    "tools/simulate_reference_tracking.py": "6916cccb617914f0ab9aa716194e77f0c8227f3ad5e2840db3ec0a7a70d68e99",
+    "tools/simulate_broadband.py": "d9fdac96930fd120c091338657d62ff5da5292e93f94061a470794abe2284179",
+    "tools/validate_end_to_end.py": "809cf29c330e7ae1f10c88aab5c7c2c1dcb1d68d981bcce9132edfdeaf8a7bc9",
+    "tools/report_end_to_end.py": "d254c30a52568b524e4ab02c135ef3e9bf8938480f280718146cdbefa1bac079",
+    "tools/run_end_to_end.py": "09664f3d527de5edc1d94b8316adf7dd42283e0009b91a9b291469aa41dd6bbc",
+    "firmware/main.py": "25db8e09c69f7afad55fd1c03fc0f3b206c3d1b7cff2c7cf65e4e12ffc7cfdcf",
+    "firmware/protocol.py": "b40772342aef3b5a6995c069672a9bdc59bca1037b7ee974e0b06cc061ceb6d1",
+    "host/calibration.py": "fe56a9413b2fbbe8f80eb17c428930252077a49cc262b5e5fe1e00353609503b",
+    "host/tracking.py": "016b23f869e80d4e21fb1716ee8620b26c6ea60e846aa8fd0dffdc2ef38f67ff",
+    "cad/design.json": "8ea3a922a48711caa33e2ecaf4cc756798303c2d2e89b1b3524dd1e73580028b",
+    "cad/calinject.kicad_pcb": "c3adfdaf79556abfe4d1c8a071691c3b49bd490b8aab9641205fc8faf4c34e84"
+  },
+  "data_sha256": {
+    "results.h5": "191d0ee3ad52e43cf4583a55bf79106e1fc4fbb734143f4eb3f5ab033bd4ddd4",
+    "reference-tracking.h5": "8a62bc9b33837d8d5ce99a7ce0b016a3acc8c9855078b9fcd217d7430490740d",
+    "paired-validation.h5": "271e68005372e48a0b78901155b153100d4fd1dbd36cdba36ac3de5676ee427c",
+    "broadband.h5": "d83e23a4839cccc514da781c8de68fc86e5c776043635440157ee84a57b8fe2a"
+  }
+}

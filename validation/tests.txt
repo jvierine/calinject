@@ -11,6 +11,10 @@ test_config_frame (test_core.ProtocolTest.test_config_frame) ... ok
 test_servo_count_fault (test_core.ProtocolTest.test_servo_count_fault) ... ok
 test_servo_simulated_convergence_and_loss (test_core.ProtocolTest.test_servo_simulated_convergence_and_loss) ... ok
 test_utc_flags (test_core.ProtocolTest.test_utc_flags) ... ok
+test_chirp_correction_and_no_knot_phase_steps (test_tracking.TrackingTest.test_chirp_correction_and_no_knot_phase_steps) ... ok
+test_coherent_estimator_with_phase_outlier (test_tracking.TrackingTest.test_coherent_estimator_with_phase_outlier) ... ok
+test_endpoint_hold_and_invalid_inputs (test_tracking.TrackingTest.test_endpoint_hold_and_invalid_inputs) ... ok
+test_reference_observer_across_counter_rollover (test_tracking.TrackingTest.test_reference_observer_across_counter_rollover) ... ok
 test_corrupt_or_unknown_schema_uses_safe_defaults (test_transport.SettingsTest.test_corrupt_or_unknown_schema_uses_safe_defaults) ... ok
 test_invalid_setting_cannot_replace_good_file (test_transport.SettingsTest.test_invalid_setting_cannot_replace_good_file) ... ok
 test_round_trip_and_atomic_temp_file (test_transport.SettingsTest.test_round_trip_and_atomic_temp_file) ... ok
@@ -20,6 +24,6 @@ test_stalled_host_is_bounded_and_does_not_write (test_transport.TransportTest.te
 test_write_checks_capacity_for_every_byte (test_transport.TransportTest.test_write_checks_capacity_for_every_byte) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 0.528s
+Ran 24 tests in 0.574s
 
 OK

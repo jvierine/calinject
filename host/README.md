@@ -23,3 +23,11 @@ conda run -n base python host/calibration.py markers.h5 --nominal-fs 64000000 --
 ```
 
 The result stores a local sample/UTC anchor, fitted rate, rate error in ppm and residual samples. This is an analysis utility, not an RTL-SDR/RX888 capture driver or an automatic end-to-end timing solution. Preserve native receiver files and their discontinuity metadata. Full-band long recordings need a streaming extraction stage around these bounded-snippet helpers.
+
+## Frequency and phase tracking
+
+`tone_frequency_robust(iq, fs)` acquires an isolated tone with an FFT and refines its frequency by maximizing coherent power. It avoids phase unwrapping within noisy bursts; inspect its coherence and confirm it selected the intended harmonic. It still requires trimmed transients and a single isolated tone. The original phase-slope estimator remains available for comparison.
+
+`tracking.FrequencyTrack(seconds, offset_hz)` integrates a piecewise-linear frequency history analytically; `track.correct(iq, seconds)` removes that phase from complex samples. Knots should be timestamped at burst/window midpoints. This is an offline interpolator using future knots; it holds the endpoint frequency outside the knot span. It provides a continuous correction, without recovering unobserved inter-burst phase or resolving integer-cycle ambiguity. Keep times relative to a nearby origin to preserve floating-point precision.
+
+The [end-to-end model](../docs/end-to-end.md) also prototypes a 64 s GPS-counter/DAC observer for the actual reference frequency. That observer currently lives in the simulation tools; it assumes calibrated tuning gain and RC dynamics and is not an automatic capture-processing pipeline.

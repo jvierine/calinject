@@ -1,0 +1,14 @@
+{
+  "scope": "Assertions on specified behavioral scenarios, not hardware qualification",
+  "checks": {
+    "normal_markers_under_1us": true,
+    "normal_average_clock_error_under_0_01ppm": true,
+    "sample_drop_flagged": true,
+    "overload_flagged": true,
+    "source_phase_normalization": true,
+    "steering_phase_continuity": true,
+    "numerical_32x_to_64x_under_25ns": true,
+    "reference_observer_error_under_0_03hz": true
+  },
+  "all_pass": true
+}

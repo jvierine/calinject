@@ -6,6 +6,7 @@ import argparse,json
 import numpy as np
 import h5py
 from scipy.signal import fftconvolve,find_peaks
+from scipy.optimize import minimize_scalar
 
 def match_template(samples,template,min_spacing,threshold=.6):
     """Find a measured/calibrated burst template. Returns its start sample indices.
@@ -50,6 +51,29 @@ def tone_frequency(iq,fs):
     phase=np.unwrap(np.angle(x));t=np.arange(len(x))/fs
     a,b=np.polyfit(t,phase,1);res=phase-(a*t+b)
     return dict(baseband_hz=float(a/(2*np.pi)),phase_residual_rms_rad=float(np.sqrt(np.mean(res**2))))
+
+def tone_frequency_robust(iq,fs):
+    """Single-tone coherent fit without phase unwrapping, within one burst.
+    FFT acquisition followed by continuous-frequency periodogram maximization.
+    Caller must isolate the tone and trim transients. It can still select an
+    interferer or alias; coherence is diagnostic, not an automatic validity flag.
+    """
+    x=np.asarray(iq)
+    if x.ndim!=1 or len(x)<8 or not np.iscomplexobj(x) or not np.isfinite(x).all() or not np.isfinite(fs) or fs<=0 or np.vdot(x,x).real<=0:
+        raise ValueError('finite nonzero complex tone and positive sample rate required')
+    nfft=2**int(np.ceil(np.log2(4*len(x))))
+    spec=np.fft.fft(x*np.hanning(len(x)),nfft)
+    initial=np.fft.fftfreq(nfft,1/fs)[np.argmax(abs(spec))]
+    t=(np.arange(len(x))-(len(x)-1)/2)/fs
+    # Work in units of FFT bins to avoid optimization tolerance scaling with
+    # the RF/baseband frequency. Keep the unwindowed coherent-fit objective.
+    def objective(bin_offset):
+        return -abs(np.sum(x*np.exp(-2j*np.pi*(initial+bin_offset*fs/len(x))*t)))**2
+    fit=minimize_scalar(objective,bounds=(-1,1),method='bounded',options={'xatol':1e-10})
+    frequency=initial+fit.x*fs/len(x)
+    demod=x*np.exp(-2j*np.pi*frequency*t);amplitude=np.mean(demod)
+    residual=np.angle(demod*np.conj(amplitude))
+    return dict(baseband_hz=float(frequency),phase_residual_rms_rad=float(np.sqrt(np.mean(residual**2))),coherence=float(abs(amplitude)/np.sqrt(np.mean(abs(x)**2))))
 
 def rf_frequency(baseband_hz,measured_pilot_baseband_hz,pilot_rf_hz):
     """f_RF = f_pilot_RF + (f_BB - f_pilot_BB), after sample-rate correction.

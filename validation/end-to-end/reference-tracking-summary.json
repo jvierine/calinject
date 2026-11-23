@@ -1,0 +1,498 @@
+{
+  "method": "64s centered quadratic phase fit after subtracting reconstructed DAC phase; offline/noncausal",
+  "gain_sensitivity": [
+    -0.1,
+    0,
+    0.1
+  ],
+  "truth_used_for_estimation": false,
+  "assumptions": "Calibrated VCO slope and known loaded RC dynamics; ADC/UBX model as in parent run. No tracking across unresolved UTC labels. Supply-to-frequency noise and unmodeled tuning nonlinearity are excluded.",
+  "cases": [
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405447,
+      "science_error_before_rms_hz": 15.767921887731163,
+      "science_error_after_rms_hz": 15.746481866129944
+    },
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405447,
+      "science_error_before_rms_hz": 78.30871880965923,
+      "science_error_after_rms_hz": 78.2493564596592
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279579862838408,
+      "science_error_before_rms_hz": 0.3971746287977474,
+      "science_error_after_rms_hz": 0.3305285438708873
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279579862838408,
+      "science_error_before_rms_hz": 1.1166280064420548,
+      "science_error_after_rms_hz": 1.134527345184747
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 0.26157335686728317,
+      "science_error_after_rms_hz": 0.12784396887046753
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 0.2846824085866004,
+      "science_error_after_rms_hz": 0.13135589244293414
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405447,
+      "science_error_before_rms_hz": 30.583390708665,
+      "science_error_after_rms_hz": 30.589544171840338
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405447,
+      "science_error_before_rms_hz": 86.11779285788306,
+      "science_error_after_rms_hz": 86.09943260218559
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279579862838408,
+      "science_error_before_rms_hz": 1.0590497906375222,
+      "science_error_after_rms_hz": 0.44642077367477245
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279579862838408,
+      "science_error_before_rms_hz": 1.983335217783139,
+      "science_error_after_rms_hz": 1.7921058311309508
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 0.9317416142146994,
+      "science_error_after_rms_hz": 0.12219910385633191
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 0.9155652481090636,
+      "science_error_after_rms_hz": 0.1383762395167228
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405433,
+      "science_error_before_rms_hz": 61.80961105610952,
+      "science_error_after_rms_hz": 61.692936458275014
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.0032796242049405433,
+      "science_error_before_rms_hz": 155.09065026259904,
+      "science_error_after_rms_hz": 155.24789974601902
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.00327957986283841,
+      "science_error_before_rms_hz": 1.9278400135717382,
+      "science_error_after_rms_hz": 0.8712429089784921
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.00327957986283841,
+      "science_error_before_rms_hz": 3.2086845198174405,
+      "science_error_after_rms_hz": 3.1697597545881755
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 1.6577094032799915,
+      "science_error_after_rms_hz": 0.14297705989808143
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.0,
+      "reference_estimate_error_rms_hz": 0.003279138931663134,
+      "science_error_before_rms_hz": 1.6362774642976323,
+      "science_error_after_rms_hz": 0.18750909522564074
+    },
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284807153702662,
+      "science_error_before_rms_hz": 15.767921887731163,
+      "science_error_after_rms_hz": 15.746484555050394
+    },
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284807153702662,
+      "science_error_before_rms_hz": 78.30871880965923,
+      "science_error_after_rms_hz": 78.24936487776186
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258875,
+      "science_error_before_rms_hz": 0.3971746287977474,
+      "science_error_after_rms_hz": 0.3305288764818672
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258875,
+      "science_error_before_rms_hz": 1.1166280064420548,
+      "science_error_after_rms_hz": 1.1345244766814695
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 0.26157335686728317,
+      "science_error_after_rms_hz": 0.12785265342528065
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 0.2846824085866004,
+      "science_error_after_rms_hz": 0.13135236826531582
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284807153702662,
+      "science_error_before_rms_hz": 30.583390708665,
+      "science_error_after_rms_hz": 30.589562647465474
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284807153702662,
+      "science_error_before_rms_hz": 86.11779285788306,
+      "science_error_after_rms_hz": 86.09942963775241
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258875,
+      "science_error_before_rms_hz": 1.0590497906375222,
+      "science_error_after_rms_hz": 0.44642741197491365
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258875,
+      "science_error_before_rms_hz": 1.983335217783139,
+      "science_error_after_rms_hz": 1.7920856548115673
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 0.9317416142146994,
+      "science_error_after_rms_hz": 0.12220825235201345
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 0.9155652481090636,
+      "science_error_after_rms_hz": 0.13834813110136254
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.0032848071537026607,
+      "science_error_before_rms_hz": 61.80961105610952,
+      "science_error_after_rms_hz": 61.69294266176995
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.0032848071537026607,
+      "science_error_before_rms_hz": 155.09065026259904,
+      "science_error_after_rms_hz": 155.24789142061996
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258877,
+      "science_error_before_rms_hz": 1.9278400135717382,
+      "science_error_after_rms_hz": 0.871237650578455
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284762904258877,
+      "science_error_before_rms_hz": 3.2086845198174405,
+      "science_error_after_rms_hz": 3.1697606119871637
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 1.6577094032799915,
+      "science_error_after_rms_hz": 0.1429825760295063
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": -0.1,
+      "reference_estimate_error_rms_hz": 0.003284322893496275,
+      "science_error_before_rms_hz": 1.6362774642976323,
+      "science_error_after_rms_hz": 0.18755900082318677
+    },
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018673,
+      "science_error_before_rms_hz": 15.767921887731163,
+      "science_error_after_rms_hz": 15.746479177277012
+    },
+    {
+      "profile": "HF25",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018673,
+      "science_error_before_rms_hz": 78.30871880965923,
+      "science_error_after_rms_hz": 78.24934804156922
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533893,
+      "science_error_before_rms_hz": 0.3971746287977474,
+      "science_error_after_rms_hz": 0.3305282144993524
+    },
+    {
+      "profile": "HF25",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533893,
+      "science_error_before_rms_hz": 1.1166280064420548,
+      "science_error_after_rms_hz": 1.1345302146246983
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084205,
+      "science_error_before_rms_hz": 0.26157335686728317,
+      "science_error_after_rms_hz": 0.12783529211382574
+    },
+    {
+      "profile": "HF25",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084205,
+      "science_error_before_rms_hz": 0.2846824085866004,
+      "science_error_after_rms_hz": 0.1313594246890976
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018673,
+      "science_error_before_rms_hz": 30.583390708665,
+      "science_error_after_rms_hz": 30.58952569676413
+    },
+    {
+      "profile": "HF50",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018673,
+      "science_error_before_rms_hz": 86.11779285788306,
+      "science_error_after_rms_hz": 86.09943556681786
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533893,
+      "science_error_before_rms_hz": 1.0590497906375222,
+      "science_error_after_rms_hz": 0.44641417365445024
+    },
+    {
+      "profile": "HF50",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533893,
+      "science_error_before_rms_hz": 1.983335217783139,
+      "science_error_after_rms_hz": 1.792126016783468
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084205,
+      "science_error_before_rms_hz": 0.9317416142146994,
+      "science_error_after_rms_hz": 0.12219009508553119
+    },
+    {
+      "profile": "HF50",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084205,
+      "science_error_before_rms_hz": 0.9155652481090636,
+      "science_error_after_rms_hz": 0.1384044661844856
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018665,
+      "science_error_before_rms_hz": 61.80961105610952,
+      "science_error_after_rms_hz": 61.69293025562971
+    },
+    {
+      "profile": "meteor",
+      "width_us": 100,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032747600109018665,
+      "science_error_before_rms_hz": 155.09065026259904,
+      "science_error_after_rms_hz": 155.24790807175557
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533895,
+      "science_error_before_rms_hz": 1.9278400135717382,
+      "science_error_after_rms_hz": 0.8712482275704342
+    },
+    {
+      "profile": "meteor",
+      "width_us": 1000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.003274715625533895,
+      "science_error_before_rms_hz": 3.2086845198174405,
+      "science_error_after_rms_hz": 3.1697589137414375
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 20.0,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084196,
+      "science_error_before_rms_hz": 1.6577094032799915,
+      "science_error_after_rms_hz": 0.14297191105553517
+    },
+    {
+      "profile": "meteor",
+      "width_us": 10000,
+      "attenuation_db": 31.5,
+      "gain_error_fraction": 0.1,
+      "reference_estimate_error_rms_hz": 0.0032742742679084196,
+      "science_error_before_rms_hz": 1.6362774642976323,
+      "science_error_after_rms_hz": 0.1874594566288558
+    }
+  ]
+}
