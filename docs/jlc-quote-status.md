@@ -1,4 +1,12 @@
-# Current JLC quote — Rev C, 2026-11-23
+# JLC stock correction — 2026-11-23
+
+The cart reported C144198 out of stock for this five-board build: live Select Parts showed only four available. U5 has been replaced with MCP4725A1T-E/CH (C61423), with 690 in JLC assembly inventory at selection time. The revised BOM is uploaded, and all required components including JP1 headers are selected. Firmware C-0.4.3 supports both 0x60 (A0) and 0x62 (A1); 33 unit tests and the MicroPython compiler check passed. PCB DRC reports zero violations, unconnected items or schematic-parity issues. Native PCB changes are limited to the DAC value text; copper and the existing Gerber archive are unchanged.
+
+Revised quote: PCB $31.07 + assembly $315.68 = $346.75 displayed. Depaneling $3.31 is excluded, giving $350.06 ($70.01 per board) before delivery, tax and remark-review charges. A $66.20 rush charge appeared during cart editing; standard three-day PCB lead time was restored. Hainan uses SF Express outside Guangdong. No payment was made.
+
+The JLC-specific SMA rotation correction is included in the placement file. All five SMA threads were visually checked outward in the live preview: J1/J4 east, J2/J3 south, J5 west. U1 USB faces north, verified against the genuine module pinout. This is a preliminary preview check; JLC final placement/DFM and physical first-article tests remain required.
+
+# Previous JLC quote — Rev C, 2026-11-23
 
 [Open the saved JLC draft](https://cart.jlcpcb.com/smt-order/?pcbFileNo=0b8c3cd6f17641d3b02a37cb10f7fb73). Quote only: no order, payment, pre-order or manufacturing authorization.
 

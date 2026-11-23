@@ -1433,7 +1433,7 @@
     },
     {
       "ref": "U5",
-      "value": "MCP4725A0",
+      "value": "MCP4725A1",
       "fp": "SOT23_6_U5",
       "x": 38,
       "y": 24,
@@ -1506,7 +1506,7 @@
           "label": "A0"
         }
       ],
-      "mpn": "MCP4725A0T-E/CH",
+      "mpn": "MCP4725A1T-E/CH",
       "maker": "Microchip",
       "section": "Reference",
       "cost": 1.1,
@@ -1514,7 +1514,7 @@
         1.6,
         2.9
       ],
-      "note": "",
+      "note": "C61423; A1 address option, A0 pin grounded: I2C 0x62. Same electrical MCP4725 core and SOT-23-6 pinout as A0 option.",
       "assembly": "SMT"
     },
     {

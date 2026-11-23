@@ -24,3 +24,11 @@ including pin 1, header height and module USB orientation. These assembly aliase
 must not be treated as independent SMT placements during automated assembly.
 
 This upload is for an assembly-only quote. Customer performs USB-C firmware loading and RF/timing qualification after receipt; no custom factory programming or function test is requested.
+
+## Connector rotations
+
+The JLC C7498154 model uses the opposite zero-angle direction to the native footprint. The JLC-only CPL therefore adds 180° to J1–J5: **J1 180°, J2 90°, J3 90°, J4 180°, J5 0°**. Positions do not change. Threads must point east for J1/J4, south for J2/J3 and west for J5. Do not copy these library-specific angles back into the native PCB or generic CPL.
+
+**U1 stays at 0°: USB-C points north**, toward the case opening. Native module pin 1 (5 V) is at the northwest end, and GP0 is at the northeast end. The generic JLC block is not a detailed module model; use the genuine Waveshare pinout and ASSEMBLY.md.
+
+U5 now uses MCP4725A1T-E/CH, C61423. Same footprint and orientation; firmware C-0.4.3 supports its 0x62 address. The former C144198 has insufficient JLC assembly stock for five boards.

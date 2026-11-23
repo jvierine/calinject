@@ -1,6 +1,24 @@
 """Portable UBX framing and Calinject servo. Runs under MicroPython and CPython."""
 import struct
 
+class MCP4725:
+    """Reviewed A0/A1 address options, with the external A0 pin grounded.
+
+    Microchip DS20002039F sections 6.1.1, 7.2 and ordering information.
+    One DAC is required. Missing/ambiguous devices fail before RF is enabled.
+    """
+    def __init__(self,i2c):
+        found=[a for a in i2c.scan() if a in (0x60,0x62)]
+        if len(found)!=1:raise ValueError('Expected one MCP4725 at 0x60 or 0x62')
+        self.i2c=i2c;self.address=found[0]
+
+    def write(self,code):
+        if not isinstance(code,int) or not 0<=code<=4095:
+            raise ValueError('DAC code must be an integer in 0..4095')
+        # Fast write: normal power, no EEPROM writes or endurance consumption.
+        if self.i2c.writeto(self.address,bytes((code>>8,code&255)))!=2:
+            raise OSError('Incomplete DAC write')
+
 def packet(cls, ident, payload=b''):
     body=bytes((cls,ident))+struct.pack('<H',len(payload))+payload
     a=b=0

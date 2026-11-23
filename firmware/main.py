@@ -11,7 +11,7 @@ def led_write(color):
     pixel[0]=color;pixel.write()
 led=StatusLED(led_write,time.ticks_diff)
 boot_ms=time.ticks_ms();led.set(GREEN)
-from protocol import Parser,packet,valset,CONFIG,timepulse,Servo
+from protocol import Parser,packet,valset,CONFIG,timepulse,Servo,MCP4725
 from telemetry import Telemetry
 import settings
 try:
@@ -62,6 +62,7 @@ try:
     smc.active(1);smg.active(1)
     uart=UART(0,baudrate=9600,tx=Pin(0),rx=Pin(1),rxbuf=4096)
     i2c=I2C(1,sda=Pin(2),scl=Pin(3),freq=100000)
+    dac_device=MCP4725(i2c)
     le=Pin(7,Pin.OUT,value=0);clk=Pin(6,Pin.OUT,value=0);dat=Pin(5,Pin.OUT,value=0)
     adc=ADC(29);parser=Parser();servo=Servo();width_us=100;mode='burst';att=63
     manual=False;pending=None;last_pps=None;seq=0;config_ok=False;nav=None
@@ -73,7 +74,8 @@ try:
     telemetry=Telemetry(sys.stdout.buffer,writable,binary=True)
 
     def emit(x):
-        x['firmware']='C-0.4.1'
+        x['firmware']='C-0.4.3'
+        x['dac_address']=dac_device.address
         x['telemetry_dropped']=telemetry.dropped
         telemetry.enqueue(json.dumps(x))
 
@@ -84,7 +86,7 @@ try:
             clk(0);dat((att>>bit)&1);time.sleep_us(2);clk(1);time.sleep_us(2)
         clk(0);le(1);time.sleep_us(2);le(0)
 
-    def dac():i2c.writeto(0x60,bytes(((servo.code>>8)&15,servo.code&255)))
+    def dac():dac_device.write(servo.code)
 
     def mute_gate():
         global pending,armed_seq

@@ -4,23 +4,23 @@
   "currency": "USD",
   "quantity": 5,
   "revision": "C",
-  "url": "https://cart.jlcpcb.com/smt-order/?pcbFileNo=0b8c3cd6f17641d3b02a37cb10f7fb73",
-  "status": "Saved draft, quote only; no order/payment",
+  "url": "https://cart.jlcpcb.com/smt-order/?pcbFileNo=aef47253379f41df85d937150ad5efcc",
+  "status": "Cart edit saved; prototype manufacture requires final JLC file/placement confirmation; not paid",
   "scope": "Fully electrically assembled, unprogrammed. Customer performs USB firmware loading and custom qualification.",
   "bom_rows_confirmed": 45,
   "unique_purchasing_items": 40,
   "placements_per_board": 95,
   "pcb": 31.07,
-  "assembly": 309.74,
-  "displayed_total": 340.81,
+  "assembly": 315.68,
+  "displayed_total": 346.75,
   "excluded_depanel": 3.31,
-  "total_with_depanel": 344.12,
-  "per_board_with_depanel": 68.824,
+  "total_with_depanel": 350.06,
+  "per_board_with_depanel": 70.012,
   "shipping_tax_review_adjustments": "Not included/finalized",
   "breakdown": {
     "setup": 25.75,
     "stencil": 8.27,
-    "components": 210.17,
+    "components": 216.11,
     "feeders": 52.7,
     "smt_assembly": 3.15,
     "placement_confirmation": 0.45,
@@ -28,5 +28,12 @@
     "manual_assembly": 5.13,
     "packaging": 0.51
   },
-  "uploaded_assembly_zip_sha256": "a24ade2f6665e62de4f6ce020e97d408d6bbe986d1c363443c0a6257dd0f1428"
+  "uploaded_assembly_zip_sha256": "a464b883350907e14871fc2b15241765749d6914f1dff503181f6915b75bb053",
+  "dac": {
+    "ref": "U5",
+    "mpn": "MCP4725A1T-E/CH",
+    "lcsc": "C61423",
+    "jlc_stock_at_selection": 690,
+    "firmware": "C-0.4.3"
+  }
 }

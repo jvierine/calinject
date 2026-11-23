@@ -1,0 +1,37 @@
+{
+  "convention": "JLC model rotation offsets relative to native KiCad footprint; do not apply to Gerbers/native PCB",
+  "reason": "JLC C7498154 preview points threads along local -X at zero degrees; native footprint points local +X",
+  "source": "JLC preview supplied 2026-11-23; exact SMA-KWE mechanical drawing",
+  "parts": {
+    "J1": {
+      "mpn": "SMA-KWE",
+      "jlcpcb_part": "C7498154",
+      "rotation_offset_deg": 180,
+      "expected_direction": "east"
+    },
+    "J2": {
+      "mpn": "SMA-KWE",
+      "jlcpcb_part": "C7498154",
+      "rotation_offset_deg": 180,
+      "expected_direction": "south"
+    },
+    "J3": {
+      "mpn": "SMA-KWE",
+      "jlcpcb_part": "C7498154",
+      "rotation_offset_deg": 180,
+      "expected_direction": "south"
+    },
+    "J4": {
+      "mpn": "SMA-KWE",
+      "jlcpcb_part": "C7498154",
+      "rotation_offset_deg": 180,
+      "expected_direction": "east"
+    },
+    "J5": {
+      "mpn": "SMA-KWE",
+      "jlcpcb_part": "C7498154",
+      "rotation_offset_deg": 180,
+      "expected_direction": "west"
+    }
+  }
+}

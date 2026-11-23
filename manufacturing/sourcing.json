@@ -91,6 +91,15 @@
       "url": "https://jlcpcb.com/partdetail/Lian_XinTechnology-SMAKWE/C7498154",
       "stock_source": "LCSC catalogue snapshot; confirm in JLC assembly matching",
       "stock": 8809
+    },
+    "U5": {
+      "mpn": "MCP4725A1T-E/CH",
+      "lcsc": "C61423",
+      "stock": 690,
+      "stock_source": "JLC Select Parts live Chrome 2026-11-23",
+      "url": "https://jlcpcb.com/partdetail/MicrochipTech-MCP4725A1T_ECH/C61423",
+      "replacement_for": "MCP4725A0T-E/CH C144198 (only 4 JLC stock for 5 boards)",
+      "compatibility": "Same SOT-23-6 pinout, 12-bit DAC core, 2.7\u20135.5 V supply and fast-write format; grounded A0 pin gives I2C address 0x62 instead of 0x60. Firmware detects A0/A1 options."
     }
   },
   "materials": {

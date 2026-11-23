@@ -57,7 +57,8 @@ cap('C8','ANT_BIAS',82,27,'GNSS');cap('C9','ANT_BIAS',86,27,'GNSS','1n')
 # RF ESD diode, 0201 package.
 add('D1','PESD5V0F1BL','DFN1006_2',78,21,[pad(1,-.35,0,.45,.6,'ANT_RF'),pad(2,.35,0,.45,.6,'GND')],'PESD5V0F1BL,315','Nexperia','GNSS',.12,body=(1.,.6))
 # Reference: DAC -> two RC poles -> tunable oscillator.
-sot('U5','MCP4725A0',['DAC_OUT','GND','3V3A','I2C_SDA','I2C_SCL','GND'],38,24,'Reference','MCP4725A0T-E/CH',1.1)
+sot('U5','MCP4725A1',['DAC_OUT','GND','3V3A','I2C_SDA','I2C_SCL','GND'],38,24,'Reference','MCP4725A1T-E/CH',1.1)
+parts[-1]['maker']='Microchip';parts[-1]['note']='C61423; A1 option, A0 pin grounded: I2C 0x62.'
 cap('C10','3V3A',38,20,'Reference')
 chip('R2','4k7','I2C_SDA','3V3D',29,25,'Controller',rot=90,mpn='RC0603FR-074K7L')
 chip('R3','4k7','I2C_SCL','3V3D',32,25,'Controller',rot=90,mpn='RC0603FR-074K7L')

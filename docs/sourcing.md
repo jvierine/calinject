@@ -50,3 +50,9 @@ Primary references: [KDS family](https://www.kds.info/products/dsa321sdn-2/),
 [SMA drawing](https://datasheet.lcsc.com/datasheet/pdf/6bc515fc4ae516d1b058a713f986108e.pdf?productCode=C7498154),
 [JLC headers](https://jlcpcb.com/parts/2nd/Connectors/Pin_Headers_3127?Manufacturer=FG),
 and [JLC shunts](https://jlcpcb.com/parts/2nd/Connectors/Shunts_Jumpers_3129).
+
+## DAC replacement, 2026-11-23
+
+JLC Select Parts showed only four C144198 against five required. Selected **MCP4725A1T-E/CH, C61423**, with 690 in live JLC assembly stock at selection time. Same SOT-23-6 pinout, 12-bit DAC, supply range and fast-write protocol. Only the factory address option changes: grounded A0 gives 0x62 rather than 0x60. Firmware C-0.4.3 detects both options; test cases cover missing/ambiguous DACs and both write addresses. Stock is not reserved until JLC confirms the order.
+
+Source: [Microchip DS20002039F, sections 6.1.1 and 7.2, and product identification](https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP4725-12-Bit-Digital-to-Analog-Converter-with-EEPROM-Memory-DS20002039.pdf); [JLC C61423](https://jlcpcb.com/partdetail/MicrochipTech-MCP4725A1T_ECH/C61423).

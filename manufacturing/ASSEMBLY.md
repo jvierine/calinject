@@ -39,3 +39,13 @@ Provide proposed final BOM, availability, actual stackup, placement orientation 
 Firmware and test files are included for the customer's use. Follow `firmware/README.md` to load MicroPython and all five application files, including `status_led.py`. Qualify one received board with `docs/acceptance.md` before relying on the batch for measurements. Normal factory continuity checks do not qualify RF isolation or absolute timing.
 
 Status indication uses the genuine RP2040-Zero's existing GP16 WS2812 RGB LED; do not fit an additional LED or change carrier wiring. The customer tests USB-C power-only operation and the RGB indicator after programming.
+
+## JLC-specific orientation check
+
+The JLC CPL compensates C7498154 by +180° relative to native KiCad: J1/J4 180° (threads east), J2/J3 90° (threads south), J5 0° (threads west). All SMA signal-pin centers remain unchanged. The four ground pins and central signal pin are rotationally symmetric; no copper change is needed. Do not use the old uncorrected JLC CPL. Verify the actual component pins and mechanical envelope, not just a generic 3D model.
+
+U1 remains 0°, **USB-C facing north/outward through the case opening**. The module's northwest pin is 5 V, northeast pin GP0. Do not rotate U1 by the SMA correction. Confirm USB opening alignment and connector mating depth on the first article.
+
+## U5 stock substitution, 2026-11-23
+
+Fit **Microchip MCP4725A1T-E/CH, C61423** instead of C144198. This is the same SOT-23-6 DAC pinout and electrical core, with a different factory I2C address. Pad 6 stays grounded; the new address is 0x62. No copper, placement or rotation change is required. Customer firmware C-0.4.3 supports both A0 and A1 options. Do not omit U5.

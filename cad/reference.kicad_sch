@@ -1,7 +1,7 @@
 (kicad_sch (version 20250114) (generator "eeschema") (uuid "bc78f9be-2de7-5e2e-835b-7a12719423a2") (paper "A3") (title_block (title "CALINJECT / Reference") (date "2026-11-23") (rev "C"))
 (lib_symbols (symbol "Calinject:U5" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "U" (at 0 7.62 0) (effects (font (size 1.0 1.0))))
-(property "Value" "MCP4725A0" (at 0 10.16 0) (effects (font (size 1.0 1.0))))
+(property "Value" "MCP4725A1" (at 0 10.16 0) (effects (font (size 1.0 1.0))))
 (symbol "U5_0_1" (rectangle (start -10.16 -5.08) (end 10.16 5.08) (stroke (width 0.2) (type default)) (fill (type background))))
 (symbol "U5_1_1"
 (pin output line (at -15.24 2.54 0) (length 5.08) (name "VOUT" (effects (font (size .9 .9)))) (number "1" (effects (font (size .9 .9)))))
@@ -132,7 +132,7 @@
 )
 (symbol (lib_id "Calinject:U5") (at 50.8 55.88 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c7bb59a1-5694-5189-be0a-0af60db46bd4")
 (property "Reference" "U5" (at 50.8 46.300000000000004 0) (effects (font (size 1 1))))
-(property "Value" "MCP4725A0" (at 50.8 48.800000000000004 0) (effects (font (size 1 1))))
+(property "Value" "MCP4725A1" (at 50.8 48.800000000000004 0) (effects (font (size 1 1))))
 (property "Footprint" "Calinject:SOT23_6_U5" (at 50.8 62.96 0) (effects (font (size 1 1)) (hide yes)))
 (pin "1" (uuid "91d2c1b0-e79f-5c76-be46-253f3bbf8d78"))
 (pin "2" (uuid "b68e588c-890b-59d1-b2c8-b2802d7cc311"))

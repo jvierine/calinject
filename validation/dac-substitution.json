@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-23",
+  "change": "U5 MCP4725A0 to MCP4725A1, C61423",
+  "pcb_geometry_and_copper_unchanged": true,
+  "jlc_stock_at_selection": 690,
+  "old_jlc_stock": 4,
+  "firmware": "C-0.4.3",
+  "addresses_supported": [
+    96,
+    98
+  ],
+  "unit_tests_passed": 33,
+  "firmware_compiled": true,
+  "on_device_test": false,
+  "gerber_archive_sha256": "ab6dc3be98725234e36925019c18a6ac8090136fae86514fb7fba34dc5b14ef4",
+  "uploaded_assembly_zip_sha256": "a464b883350907e14871fc2b15241765749d6914f1dff503181f6915b75bb053",
+  "uploaded_assembly_zip_bytes": 1240468
+}

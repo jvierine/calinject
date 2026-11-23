@@ -14,7 +14,7 @@
 			)
 		)
 	)
-	(property "Value" "MCP4725A0"
+	(property "Value" "MCP4725A1"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)

@@ -1,0 +1,44 @@
+{
+  "revision": "C",
+  "status": "Local file checks pass; confirm live JLC preview separately",
+  "connectors": {
+    "J1": {
+      "x_mm": 86.4,
+      "y_mm": -15,
+      "rotation_deg": 180,
+      "threads": "east"
+    },
+    "J2": {
+      "x_mm": 12,
+      "y_mm": -61.4,
+      "rotation_deg": 90,
+      "threads": "south"
+    },
+    "J3": {
+      "x_mm": 78,
+      "y_mm": -61.4,
+      "rotation_deg": 90,
+      "threads": "south"
+    },
+    "J4": {
+      "x_mm": 86.4,
+      "y_mm": -43,
+      "rotation_deg": 180,
+      "threads": "east"
+    },
+    "J5": {
+      "x_mm": 3.6,
+      "y_mm": -44,
+      "rotation_deg": 0,
+      "threads": "west"
+    }
+  },
+  "usb_c": {
+    "reference": "U1",
+    "rotation_deg": 0,
+    "direction": "north",
+    "pinout": "5V northwest; GP0 northeast"
+  },
+  "placement_count": 95,
+  "cpl_sha256": "c68111e83655c2a3fd60acc1e8f8244188ee6890fcf9f3d9eb3d6f2220089387"
+}

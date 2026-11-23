@@ -6,6 +6,7 @@ const root=process.env.CALINJECT_ROOT ? new URL('file://'+process.env.CALINJECT_
 const data=JSON.parse(await fs.readFile(new URL('cad/design.json',root),'utf8'));
 const sourcing=JSON.parse(await fs.readFile(new URL('manufacturing/sourcing.json',root),'utf8'));
 const jlc=process.argv.includes('--jlc');
+const offsets=jlc?JSON.parse(await fs.readFile(new URL('manufacturing/jlc-rotation-offsets.json',root),'utf8')).parts:{};
 const out=jlc?'manufacturing/jlc-turnkey':'manufacturing';
 await fs.mkdir(new URL(out+'/',root),{recursive:true});
 let parts=data.parts.filter(p=>!['PCB','MECHANICAL'].includes(p.assembly));
@@ -31,7 +32,12 @@ if(jlc){
  bom[0][7]='JLCPCB Part #';
  for(const row of bom.slice(1))row[1]=row[4];
 }
-for(const p of parts.filter(p=>jlc||p.assembly==='SMT'))cpl.push([p.ref,p.x,-p.y,'Top',p.rot]);
+for(const p of parts.filter(p=>jlc||p.assembly==='SMT')){
+ const correction=offsets[p.ref];
+ if(correction&&correction.mpn!==p.mpn)throw Error('Rotation correction MPN mismatch '+p.ref);
+ const rotation=(p.rot+(correction?.rotation_offset_deg||0))%360;
+ cpl.push([p.ref,p.x,-p.y,'Top',rotation]);
+}
 if(jlc){
  const refs=bom.slice(1).flatMap(r=>r[0].split(','));
  if(refs.length!==95||new Set(refs).size!==95||cpl.length!==96||refs.some(r=>!cpl.some(c=>c[0]===r)))throw Error('Incomplete turnkey assembly mapping');
@@ -51,6 +57,12 @@ for(const [name,rows,widths] of [['BOM',bom,[60,25,28,25,42,12,20,15]],['CPL',cp
  }
  if(name==='CPL')sh.getRange(`B2:C${rows.length}`).setNumberFormat('0.000');
  wb.recalculate();console.log((await wb.inspect({kind:'table',range:`${name}!A1:H5`,tableMaxRows:5,tableMaxCols:8,maxChars:2000})).ndjson);
+ if(name==='BOM'){
+  const row=rows.findIndex(r=>r[0]==='U5')+1;
+  console.log((await wb.inspect({kind:'table',range:`BOM!A${row}:H${row}`,tableMaxRows:1,tableMaxCols:8,maxChars:2000})).ndjson);
+  const image=await wb.render({sheetName:name,range:`A${row}:H${row}`,scale:1,format:'png'});
+  await fs.writeFile(new URL(`validation/${jlc?'jlc-':''}dac-bom-preview.png`,root),new Uint8Array(await image.arrayBuffer()));
+ }
  console.log((await wb.inspect({kind:'match',searchTerm:'#REF!|#VALUE!|#DIV/0!',options:{useRegex:true,maxResults:20}})).ndjson);
  const preview=await wb.render({sheetName:name,range:name==='BOM'?'A1:H13':'A1:E15',scale:1,format:'png'});
  await fs.writeFile(new URL(`validation/${jlc?'jlc-':''}${name.toLowerCase()}-preview.png`,root),new Uint8Array(await preview.arrayBuffer()));
