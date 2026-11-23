@@ -27,6 +27,8 @@ For a 100 µs isolated pilot sampled at 2 MS/s, 500 synthetic trials per SNR giv
 
 This uses the supplied phase-slope estimator and complex white Gaussian noise. Receiver filtering, interference, pilot uncertainty and sample-rate error are excluded. Average independent frequency estimates or increase burst width for finer tracking. The 10 MHz servo's modeled error also multiplies by harmonic number. Neither sample rate nor RF frequency is known exactly.
 
+See [longer bursts and averaging](averaging.md) for the 0.1/1/10 ms comparison, 10–30 dB SNR sweep, and receiver-drift tradeoff.
+
 ## What remains to measure
 
 The 220 Ω/22 pF pulse-shaping network has a simulated RC threshold delay of 1.9–6.0 ns when the threshold is swept from 30% to 70% of supply. This excludes Schmitt input capacitance, actual thresholds, gate propagation and PCB loading. It cannot certify the proposed 7–12 ns output pulse width or the harmonic envelope.

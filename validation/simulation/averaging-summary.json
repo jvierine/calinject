@@ -1,0 +1,334 @@
+{
+  "sample_rate_hz": 2000000.0,
+  "trials_per_case": 1200,
+  "burst_period_s": 1,
+  "rows": [
+    {
+      "width_us": 100,
+      "snr_db": 10,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 85.66656920524417,
+      "bias_hz": -2.4538835679734925,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 10,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 25.34615708342283,
+      "bias_hz": -2.4538835679734916,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 10,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 10.424058470472039,
+      "bias_hz": -2.4538835679734925,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 20,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 27.17151877193442,
+      "bias_hz": 0.6259915416441845,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 20,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 9.037382399006379,
+      "bias_hz": 0.6259915416441845,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 20,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 3.2236589117202454,
+      "bias_hz": 0.6259915416441846,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 30,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 8.569883381745822,
+      "bias_hz": 0.22146463782716183,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 30,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 2.754558332040494,
+      "bias_hz": 0.22146463782716186,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 100,
+      "snr_db": 30,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 1.3055230696641782,
+      "bias_hz": 0.22146463782716186,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 10,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 2.8175312705483635,
+      "bias_hz": 0.11117337758409425,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 10,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 0.842723088563118,
+      "bias_hz": 0.11117337758409425,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 10,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.34139350711915445,
+      "bias_hz": 0.11117337758409426,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 20,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 0.8538476466543484,
+      "bias_hz": -0.009845946548733385,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 20,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 0.2704371293527307,
+      "bias_hz": -0.009845946548733383,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 20,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.09494033894033858,
+      "bias_hz": -0.009845946548733386,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 30,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 0.27169783939077286,
+      "bias_hz": 0.012201520649211185,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 30,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 0.09530461978533242,
+      "bias_hz": 0.01220152064921118,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 1000,
+      "snr_db": 30,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.03301360793224707,
+      "bias_hz": 0.012201520649211185,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 10,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 7.015276185100041,
+      "bias_hz": -0.1079474244121578,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0025
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 10,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 2.2200980074488297,
+      "bias_hz": -0.1079474244121578,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0025
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 10,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.5511432762278776,
+      "bias_hz": -0.10794742441215781,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0025
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 20,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 0.028385671465962218,
+      "bias_hz": 0.0011131616918404082,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 20,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 0.009055568088513757,
+      "bias_hz": 0.001113161691840408,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 20,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.0034604055858847935,
+      "bias_hz": 0.0011131616918404084,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 30,
+      "bursts_averaged": 1,
+      "independent_groups": 1200,
+      "rms_error_hz": 0.00873462806057202,
+      "bias_hz": 7.986656011477559e-05,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 30,
+      "bursts_averaged": 10,
+      "independent_groups": 120,
+      "rms_error_hz": 0.002774369483617544,
+      "bias_hz": 7.986656011477559e-05,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    },
+    {
+      "width_us": 10000,
+      "snr_db": 30,
+      "bursts_averaged": 60,
+      "independent_groups": 20,
+      "rms_error_hz": 0.001004714364679478,
+      "bias_hz": 7.986656011477555e-05,
+      "single_burst_error_over_one_fft_bin_fraction": 0.0
+    }
+  ],
+  "linear_drift": [
+    {
+      "width_us": 100,
+      "bursts_averaged": 1,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 0.0,
+      "current_time_rms_hz": 8.569883381745823,
+      "midpoint_time_rms_hz": 8.569883381745823,
+      "expected_current_time_bias_hz": -0.0
+    },
+    {
+      "width_us": 100,
+      "bursts_averaged": 10,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 4.5,
+      "current_time_rms_hz": 2.8925470570815417,
+      "midpoint_time_rms_hz": 2.831937825646081,
+      "expected_current_time_bias_hz": -0.9
+    },
+    {
+      "width_us": 100,
+      "bursts_averaged": 60,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 29.5,
+      "current_time_rms_hz": 5.765612018246261,
+      "midpoint_time_rms_hz": 1.366056485544147,
+      "expected_current_time_bias_hz": -5.9
+    },
+    {
+      "width_us": 1000,
+      "bursts_averaged": 1,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 0.0,
+      "current_time_rms_hz": 0.27169783939077286,
+      "midpoint_time_rms_hz": 0.27169783939077286,
+      "expected_current_time_bias_hz": -0.0
+    },
+    {
+      "width_us": 1000,
+      "bursts_averaged": 10,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 4.5,
+      "current_time_rms_hz": 0.892783844228685,
+      "midpoint_time_rms_hz": 0.09296532503969317,
+      "expected_current_time_bias_hz": -0.9
+    },
+    {
+      "width_us": 1000,
+      "bursts_averaged": 60,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 29.5,
+      "current_time_rms_hz": 5.8886979537212065,
+      "midpoint_time_rms_hz": 0.03983673189934557,
+      "expected_current_time_bias_hz": -5.9
+    },
+    {
+      "width_us": 10000,
+      "bursts_averaged": 1,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 0.0,
+      "current_time_rms_hz": 0.00873462806057202,
+      "midpoint_time_rms_hz": 0.00873462806057202,
+      "expected_current_time_bias_hz": -0.0
+    },
+    {
+      "width_us": 10000,
+      "bursts_averaged": 10,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 4.5,
+      "current_time_rms_hz": 0.8999571340593353,
+      "midpoint_time_rms_hz": 0.00272579369247407,
+      "expected_current_time_bias_hz": -0.9
+    },
+    {
+      "width_us": 10000,
+      "bursts_averaged": 60,
+      "drift_hz_per_s": 0.2,
+      "age_of_estimate_s": 29.5,
+      "current_time_rms_hz": 5.900001684812596,
+      "midpoint_time_rms_hz": 0.00110591258063053,
+      "expected_current_time_bias_hz": -5.9
+    }
+  ],
+  "limits": "Ideal isolated tone; excludes receiver filtering, sample-rate error, reference error, interference and oscillator phase noise. 60-burst static results have only 20 independent groups."
+}
