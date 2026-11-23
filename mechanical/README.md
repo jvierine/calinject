@@ -1,6 +1,6 @@
 # Printed enclosure
 
-The base and lid are provided as STL and plain 3MF geometry, in millimetres and ready in their print orientations. The 3MF files are models, not Bambu printer profiles or sliced jobs. Import both into Bambu Studio, select your H2D and installed nozzle/material, and slice locally.
+The base and lid are provided as STL and plain 3MF geometry, in millimetres and ready in their print orientations. The 3MF files are models, not Bambu printer profiles or sliced jobs. Import the base and lid into Bambu Studio, select your H2D and installed nozzle/material, and slice locally.
 
 Suggested starting settings: PETG, 0.4 mm nozzle, 0.20 mm layers, four walls and 20% infill. Print the base floor down and the lid's outer face down; the locating lip points upward. No supports should be necessary apart from a short USB opening bridge. Check the slicer's bridge preview. PLA is also suitable indoors, but is less tolerant of heat.
 
@@ -15,3 +15,5 @@ The USB opening is 14 mm wide × 8.5 mm high (8–16.5 mm above the outside base
 Plastic provides no RF shielding. Optional conductive foil needs insulation and a deliberate ground connection; it is not part of the qualified design. Do not place exposed foil against pads or leads.
 
 `enclosure.py` is the editable parametric source. Rebuild with `conda run -n base python mechanical/enclosure.py`. The exported parts fit readily within the H2D build area.
+
+The lid now has a **7.2 mm RGB status window** above the onboard LED, between BOOT and RESET. An optional `status-diffuser.stl` / `.3mf` cap is included. Print it in translucent or natural PETG/PLA, flange down, and retain its flange inside the lid with a tiny adhesive dot. Check optical visibility and alignment on the first article. Opaque filament blocks the indicator. No additional PCB LED or wiring is required.

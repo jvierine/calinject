@@ -43,3 +43,18 @@ Separate 10 MHz OUT and 1 PPS OUT connectors have nominal 50 Ω source impedance
 Record the USB status log with the SDR data, but do not use USB arrival time as a precision sample timestamp. Follow the [SDR calibration workflow](../host/README.md) for explicit epoch association, fixed-delay calibration, sample-rate fitting and frequency estimation. The 0.1–1 µs timing target requires receiver-specific measurements and a recording without unaccounted dropped samples.
 
 For longer calibration bursts, send `{"cmd":"width","us":1000}` for 1 ms or `{"cmd":"width","us":10000}` for 10 ms. These occupy 0.1% and 1% of each second respectively. The default remains 100 µs. See [simulated averaging and drift performance](averaging.md); longer bursts and averaging improve noise precision but do not remove reference error or receiver-delay bias.
+
+## USB-C power and standalone operation
+
+Use the same USB-C port for either a computer connection or a regulated **5 V USB-C supply** (500 mA or greater capacity). No USB host or data cable is needed for operation. A higher-current 5 V source is fine; the board draws what it needs. No USB-PD voltage negotiation is used. A wall supply avoids power-bank automatic shutoff; verify a power bank stays on with this load. Verify USB-C-to-C power in the factory test.
+
+Configure width, attenuation and reference enables over USB, then send `{"cmd":"save"}`. Disconnect and power it from the supply: it restores those settings, configures GNSS and runs the onboard servo and PPS gating. No computer performs the servo. Default operation also works without prior configuration: 100 µs bursts, LOW range as assembled, maximum attenuation, servo on, separate reference outputs disabled. Absolute UTC association of an SDR recording still needs an independently known second or GNSS telemetry; identical one-second markers alone cannot identify the calendar second. Offline software reference tracking needs the recorded counts/DAC telemetry, which this release does not log internally.
+
+| Indicator | Meaning |
+|---|---|
+| Solid green | Startup / GNSS configuration loading |
+| Solid amber | Acquiring valid GPS timing or accumulating frequency-servo evidence |
+| Brief green flash each PPS | Valid timing and servo TRACKING (three 64 s windows within 0.15 Hz); frequency tracking, not PPS phase lock |
+| Blinking red | Lost valid PPS, configuration failure after 30 s, counter/DAC fault, or fatal firmware error |
+
+Green PPS flashes last approximately 100 ms so they are visible. The LED follows the software's observation of PPS; it is not a precision timing output and does not change the requested RF burst length. The red fault indication takes priority. Recoverable GPS faults reacquire automatically; a fatal peripheral exception mutes the gate, disables reference buffers and blinks red until reset. This indication cannot diagnose a dead power supply or failed processor/LED.

@@ -3,7 +3,7 @@
 Target: genuine Waveshare RP2040-Zero, MicroPython RP2, 125 MHz system clock. Factory assembler performs initial programming. No soldering is needed to update firmware later.
 
 1. With the lid removed, hold BOOT and connect USB-C. Load the stable UF2 for [WAVESHARE_RP2040_ZERO](https://micropython.org/download/WAVESHARE_RP2040_ZERO/). Version 1.29.0 is the selected baseline; the firmware still needs an on-device first-article test.
-2. Install `mpremote` in the host Python environment. Copy `firmware/protocol.py`, `firmware/telemetry.py`, `firmware/settings.py` and `firmware/main.py` to the device filesystem using `mpremote connect PORT fs cp ... :protocol.py` and `:main.py`, then reset.
+2. Install `mpremote` in the host Python environment. Copy `firmware/protocol.py`, `firmware/telemetry.py`, `firmware/settings.py`, `firmware/status_led.py` and `firmware/main.py` to the device filesystem using `mpremote connect PORT fs cp ... :protocol.py` and `:main.py`, then reset.
 3. Connect an active 3.3 V GPS antenna with a clear sky view. Check USB `status` and the GNSS configuration ACK. The frequency servo takes several minutes to establish TRACKING.
 4. Run the first-article procedure in `docs/acceptance.md`. Save the firmware version and board serial number with the results.
 
@@ -14,6 +14,7 @@ conda run -n base python -m pip install mpremote
 conda run -n base python -m mpremote connect PORT fs cp firmware/protocol.py :protocol.py
 conda run -n base python -m mpremote connect PORT fs cp firmware/telemetry.py :telemetry.py
 conda run -n base python -m mpremote connect PORT fs cp firmware/settings.py :settings.py
+conda run -n base python -m mpremote connect PORT fs cp firmware/status_led.py :status_led.py
 conda run -n base python -m mpremote connect PORT fs cp firmware/main.py :main.py
 conda run -n base python -m mpremote connect PORT reset
 ```

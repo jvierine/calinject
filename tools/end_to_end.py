@@ -14,6 +14,22 @@ from calibration import match_template,fit_clock,tone_frequency,tone_frequency_r
 from tracking import FrequencyTrack
 from protocol import Servo,Parser,packet,timepulse
 OUT=ROOT/'validation/end-to-end';OUT.mkdir(exist_ok=True)
+# Fail closed if a later BOM changes the parts/topology represented here.
+DESIGN=json.loads((ROOT/'cad/design.json').read_text())
+PARTS={p['ref']:p for p in DESIGN['parts']}
+assert DESIGN['revision']=='C'
+assert PARTS['Y1']['mpn']=='1XTV10000MDA'
+assert all(PARTS[r]['mpn']=='SN74LVC2G125DCTR' for r in ['U10','U11'])
+assert PARTS['U8']['mpn']=='74LVC2G08DC,125'
+assert all(PARTS[r]['value']=='100' for r in ['R24','R25','R28','R29'])
+def component_value(ref):
+    text=PARTS[ref]['value']
+    for mark,scale in [('k',1e3),('u',1e-6),('n',1e-9)]:
+        if mark in text:
+            a,b=text.split(mark);return float(a+'.'+(b or '0'))*scale
+    return float(text)
+FILTER_R=component_value('R4');FILTER_C=component_value('C11')
+assert FILTER_R==component_value('R5') and FILTER_C==component_value('C12')
 RNG=np.random.default_rng(20261125)
 F0=10e6
 OFFSETS=np.array([10,100,1000,10000,100000.])
@@ -21,7 +37,7 @@ TYP=np.array([-85,-115,-135,-140,-143.])
 SOURCE='https://atta.szlcsc.com/upload/public/pdf/source/20190315/C253701_69B1AE3584D7A6F1B7B612113CD52085.pdf'
 ASSUMPTIONS=dict(source=SOURCE,phase_noise_typ_dbc_hz=TYP.tolist(),phase_noise_max_dbc_hz=(TYP+5).tolist(),offset_hz=OFFSETS.tolist(),phase_noise_below_10hz='Not specified: replaced by explicit slow FM/temperature stress model',above_100khz='Flat extrapolation to analysis Nyquist; not a specification',edge_jitter_rms_ps=[20,100],edge_jitter_note='Assumed independent timing error per 10MHz edge; not a comparator or board guarantee',adc_aperture_jitter_ps=10,pps_jitter_rms_ns=20,gate_sync_quantization_ns=8,first_pulse_delay_ns=[0,100],fixed_delay_us=12.345,noise_dbm_per_analysis_sample=-96,receiver_filters='Generic linear-phase 350kHz channel, NOT measured RTL/RX888 responses',rtl_lo_phase_noise_dbc_hz=[-65,-90,-110,-125,-130],rtl_lo_phase_noise_note='Illustrative sensitivity model, not an RTL-SDR specification',clock_ppm_initial=3,clock_drift_ppm_per_s=.002,rtl_lo_error_hz=100,rtl_lo_drift_hz_per_s=.02,oversampling=32,analysis_sample_rate_hz=1e6,burst_epochs=64)
 
-ASSUMPTIONS.update(oscillator='KDS 1XTV10000MDA',phase_noise_curve_status='ASSUMED sensitivity mask anchored at the KDS -135dBc/Hz maximum point at1kHz. All other offsets and +5dB stress are assumptions, not manufacturer limits.',control_input_ohm=500000,nominal_tuning_hz_per_volt=100,tuning_range_hz_per_volt=[80,150])
+ASSUMPTIONS.update(board_revision=DESIGN['revision'],filter_resistance_ohm=FILTER_R,filter_capacitance_f=FILTER_C,oscillator='KDS 1XTV10000MDA',phase_noise_curve_status='ASSUMED sensitivity mask anchored at the KDS -135dBc/Hz maximum point at1kHz. All other offsets and +5dB stress are assumptions, not manufacturer limits.',control_input_ohm=500000,nominal_tuning_hz_per_volt=100,tuning_range_hz_per_volt=[80,150])
 
 def phase_psd(freq,mask=TYP,edge_ps=0,low=10):
     """One-sided rad^2/Hz: S_phi = 2 * 10**(L/10)."""
@@ -45,7 +61,7 @@ class Plant:
     Counter captures include quantization, rollover and PPS time jitter.
     """
     def __init__(self,seconds=2400,kv=100.,load=500e3,initial_offset_hz=0.):
-        self.r=1000.;self.c=4.7e-6;self.load=load;self.kv=kv
+        self.r=FILTER_R;self.c=FILTER_C;self.load=load;self.kv=kv
         self.A=np.array([[-2/(self.r*self.c),1/(self.r*self.c)],[1/(self.r*self.c),-(1/self.r+1/self.load)/self.c]])
         self.B=np.array([1/(self.r*self.c),0.]);self.E=expm(self.A)
         self.inv=np.linalg.inv(self.A);self.eig=np.sort(np.linalg.eigvals(self.A))

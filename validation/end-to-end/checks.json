@@ -1,6 +1,8 @@
 {
   "scope": "Assertions on specified behavioral scenarios, not hardware qualification",
   "checks": {
+    "passive_and_cable_models": true,
+    "standalone_control_loop": true,
     "normal_markers_under_1us": true,
     "normal_average_clock_error_under_0_01ppm": true,
     "sample_drop_flagged": true,

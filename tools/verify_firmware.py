@@ -12,13 +12,13 @@ native.PIO=type('PIO',(),dict(SHIFT_LEFT=0,SHIFT_RIGHT=1,JOIN_NONE=0,OUT_LOW=0))
 micro=types.ModuleType('micropython');micro.const=lambda n:n
 sys.modules['_rp2']=native;sys.modules['micropython']=micro
 rp2=types.ModuleType('verified_rp2_assembler');exec(compile(raw,URL,'exec'),rp2.__dict__)
-tree=ast.parse((ROOT/'firmware/main.py').read_text());functions=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ['counter','burst']]
+tree=ast.parse((ROOT/'firmware/main.py').read_text());functions=[n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name in ['counter','burst']]
 env={'rp2':rp2};exec(compile(ast.Module(body=functions,type_ignores=[]),'<actual-firmware-pio>','exec'),env)
 programs={name:[int(x) for x in env[name][0]] for name in ['counter','burst']}
 assert sum(map(len,programs.values()))<=32
 out=ROOT/'validation/firmware-mpy';out.mkdir(exist_ok=True)
 compiler_version=subprocess.check_output([sys.executable,'-m','mpy_cross','--version'],text=True).strip()
-for name in ['main','protocol','telemetry','settings']:
+for name in ['main','protocol','telemetry','settings','status_led']:
  subprocess.run([sys.executable,'-m','mpy_cross','-o',str(out/(name+'.mpy')),str(ROOT/'firmware'/(name+'.py'))],check=True)
 report=dict(compiler=compiler_version,pio_assembler_url=URL,pio_assembler_sha256=hashlib.sha256(raw).hexdigest(),
  programs=programs,total_pio_words=sum(map(len,programs.values())),on_device_execution=False,

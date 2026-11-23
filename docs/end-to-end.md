@@ -62,7 +62,7 @@ The science signal is an isolated −86 dBm tone 150 kHz above the selected harm
 
 The background is −96 dBm per 1 MHz equivalent channel before filtering. LOW range and electronic attenuation of 20 or 31.5 dB give different pilot SNRs at each harmonic. Pilot levels come from the ideal 10 ns pulse model, not a measured RF transfer function. Prior 7/10/12 ns pulse-width sensitivity, passive SPICE and cable-driver simulations remain separate checks linked from the simulation/layout reports.
 
-The oscillator thermal scenario uses a 0.25 Hz sinusoidal deviation with a 900 s period plus a 0.0008 Hz-per-square-root-second random walk. This scenario does not span the full datasheet temperature-stability range. The ADC clock starts 3 ppm fast and drifts by 0.002 ppm/s; the tuner LO starts 100 Hz off and drifts by 0.02 Hz/s. Generic tuner phase noise is explicitly assumed. The two-pole DAC filter includes the specified minimum 100 kΩ control-input load, giving a 0.9804 DC gain; commissioning must measure Hz/code at the actual oscillator. GPS jitter is assumed 20 ns RMS, PIO synchronization is quantized in 8 ns steps, and the first RF pulse has a 0–100 ns phase-dependent delay. Fixed path delay is assumed known and subtracted.
+The oscillator thermal scenario uses a 0.25 Hz sinusoidal deviation with a 900 s period plus a 0.0008 Hz-per-square-root-second random walk. This scenario does not span the full datasheet temperature-stability range. The ADC clock starts 3 ppm fast and drifts by 0.002 ppm/s; the tuner LO starts 100 Hz off and drifts by 0.02 Hz/s. Generic tuner phase noise is explicitly assumed. The two-pole DAC filter includes the specified minimum 500 kΩ control-input load, giving a 0.9960 DC gain; commissioning must measure Hz/code at the actual oscillator. GPS jitter is assumed 20 ns RMS, PIO synchronization is quantized in 8 ns steps, and the first RF pulse has a 0–100 ns phase-dependent delay. Fixed path delay is assumed known and subtracted.
 
 The core run has 23 cases: three receiver profiles × three widths × two attenuations, plus GPS loss, sample loss, overload, and two phase-noise sensitivities. Every normal case spans 64 possible PPS epochs, including a GPS-invalid interval. The paired check repeats sensitivity cases with identical random noise so parameter changes can be distinguished from Monte Carlo scatter. Numerical timing convergence is checked at 16×, 32× and 64× waveform oversampling.
 
@@ -90,3 +90,31 @@ conda run -n base python -m unittest discover -s tests -v
 ```
 
 HDF5 stores synthetic samples, marker positions, reference counts, DAC states, recovered frequencies, phase corrections, spectra and assumptions. JSON summaries accompany the arrays in `validation/end-to-end/`. These artifacts contain no bench data. [Earlier simulations](simulation.md) · [Averaging tradeoff](averaging.md) · [Layout and power review](layout-review.md) · [Hardware acceptance](acceptance.md).
+
+
+## USB-C standalone firmware and RGB indicator
+
+The delivered control loop is executed with modeled peripherals, including USB absent, uninitialized, stalled, disconnected and reconnected. It restores actual saved settings, processes UBX messages, runs the real servo, queues hardware gate descriptors and drives the actual status logic. This is not execution on an RP2040 or a real USB stack. PIO instruction assembly is verified separately.
+
+| Scenario | Bursts | Final servo | Checks |
+|---|---:|---|---|
+| power only defaults | 258 | TRACKING | PASS |
+| usb uninitialized | 258 | TRACKING | PASS |
+| host stalled | 258 | TRACKING | PASS |
+| power only saved | 258 | TRACKING | PASS |
+| power only long pulse | 258 | TRACKING | PASS |
+| corrupt settings fallback | 258 | TRACKING | PASS |
+| host disconnect | 258 | TRACKING | PASS |
+| no gps fix | 0 | HOLDOVER | PASS |
+| host connected | 258 | TRACKING | PASS |
+| host reconnect | 258 | TRACKING | PASS |
+| gnss loss recovery | 253 | ACQUIRE | PASS |
+| pps loss recovery | 251 | ACQUIRE | PASS |
+| config failure | 0 | HOLDOVER | PASS |
+| fatal i2c | 257 | ACQUIRE | PASS |
+
+Power comes through the existing 5 V USB-C connector. No host is required. Safe defaults and saved 1 ms / 900 ms pulse settings run autonomously. The no-host CDC model includes bounded overwrite retention, matching the selected MicroPython implementation; an uninitialized zero-progress stream and a stalled host are also checked. Raw binary one-byte telemetry writes avoid cooked newline expansion. USB/LED timing and power behavior still need first-article checks.
+
+Solid green means startup, amber means acquisition, 100 ms green flashes mark observed PPS while the servo reports TRACKING, and red blinks indicate faults. LED updates occur only when color changes and use the onboard GP16 WS2812; no extra LED component or PIO state machine is added. The model budgets 100 µs of CPU occupancy per LED write while PIO continues independently. Real LED-induced supply/EM interference is not modeled.
+
+The default no-host case generates 258 bursts in 260 simulated seconds. GPS/PPS loss, missing configuration ACK, corrupted saved settings and fatal I2C error are exercised. Fatal error mutes the gate and disables reference outputs; GPS faults recover automatically. The case has a viewing window and optional translucent diffuser. See [standalone operation and LED meanings](operation.md#usb-c-power-and-standalone-operation). Standalone operation does not store GNSS count/DAC telemetry internally or remove the integer-second ambiguity of identical PPS bursts.

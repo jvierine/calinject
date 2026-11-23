@@ -23,8 +23,11 @@ for ref in ['J1','J2','J3','J4','J5']:
  c.setFont('Helvetica-Bold',9);c.drawCentredString(x,y,p['value']);c.setFont('Helvetica',8);c.drawCentredString(x,y-3*mm,ref)
 x,y=xy(17,-4);c.setLineWidth(3);c.line(x-6*mm,y,x+6*mm,y);c.setFont('Helvetica-Bold',9);c.drawCentredString(x,y+4*mm,'USB-C')
 x,y=xy(12,34);c.setLineWidth(1);c.circle(x,y,2.4*scale*mm);c.setFont('Helvetica',8);c.drawString(x+4*mm,y-2*mm,'LEVEL')
+x,y=xy(17,15.8);c.circle(x,y,3.6*scale*mm);c.setFont('Helvetica-Bold',8);c.drawString(x+6*mm,y,'STATUS')
 c.setFont('Helvetica',10)
 lines=[
+'USB-C: 5 V power; works with a wall supply and no computer.',
+'STATUS: green startup; amber acquiring; green PPS tracking; red fault.',
 'GPS ANT: active 3.3 V antenna, normally up to 20 mA.',
 'RF IN: from the existing antenna bias board; DC blocked.',
 'TO SDR: injected receiver signal; DC blocked.',
@@ -34,5 +37,5 @@ lines=[
 'Reference clock phase is not locked to PPS. Read USB validity/servo status.',
 'LOW/HIGH range shunts and initial BOOT programming are inside the case.',
 ]
-for i,line in enumerate(lines):c.drawString(20*mm,(124-i*8)*mm,line)
+for i,line in enumerate(lines):c.drawString(20*mm,(124-i*7)*mm,line)
 c.showPage();c.save()

@@ -57,6 +57,17 @@ for ref,side,p in ports:
 lid-=box(OX+17-7,-1,8.0,14,OY+2,8.5)
 # Trimmer and controller BOOT/RESET access. These are tool holes, not decorative vents.
 lid-=cyl(OX+12,OY+34,lid_bottom-2,2.4,H)
+# RGB LED is between BOOT and RESET on the USB-facing module surface.
+# A 7.2mm viewing aperture accommodates the approximate package-center position
+# from the manufacturer's front-view drawing; inspect first article alignment.
+led_x=OX+17;led_y=OY+15.8
+lid-=cyl(led_x,led_y,H-wall-.1,3.6,wall+.2)
+lid-=cyl(led_x,led_y,H-wall-.1,4.6,.9)
+# Optional translucent PETG/PLA cap, inserted from inside, retained with a tiny
+# dot of adhesive at the flange. Geometry has clearance; it is not a press fit.
+diffuser=cyl(led_x,led_y,H-wall+.1,4.5,.7)+cyl(led_x,led_y,H-wall+.7,3.5,1.7)
+assert (lid ^ diffuser).volume()<1e-5,'Diffuser/lid collision'
+diffuser_print=diffuser.translate((-led_x,-led_y,-(H-wall+.1)))
 # Initial BOOT programming is done with lid removed.
 # Both pieces export in print orientation: external broad face flat on the bed.
 # Lid is inverted for support-free printing, with alignment lip pointing upward.
@@ -69,7 +80,7 @@ def export(s,name):
  (OUT/(name+'.3mf')).write_bytes(trimesh.exchange.threemf.export_3MF(trimesh.Scene(t)))
  return dict(name=name,watertight=bool(t.is_watertight),volume_mm3=float(t.volume),bounds_mm=t.bounds.tolist(),triangles=len(t.faces))
 assert (base ^ lid).volume()<1e-5, 'Case halves interfere'
-res=[export(base,'base'),export(lid_print,'lid')]
+res=[export(base,'base'),export(lid_print,'lid'),export(diffuser_print,'status-diffuser')]
 res.append(dict(assembled_intersection_mm3=(base ^ lid).volume()))
 # Conservative solid proxies check wall clearance without claiming a full
 # component STEP assembly. Connector dimensions come from C7498154's drawing.

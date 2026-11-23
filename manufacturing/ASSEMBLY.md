@@ -35,3 +35,5 @@ J4 is 10 MHz OUT and J5 is 1 PPS OUT. Separate buffers default disabled in firmw
 Follow `firmware/README.md` and `docs/acceptance.md`. Program and qualify one first article before completing the other four boards. Confirm factory test capability and cost in the quotation. Continuity testing alone does not qualify RF directionality or absolute timing.
 
 Provide proposed final BOM, availability, actual stackup, placement orientation preview, programming plan, test plan and itemized price before an order is placed. This package does not authorize procurement or manufacture. Initial programming and all assembly must be included; the end user receives complete electrically assembled units.
+
+Status indication uses the genuine RP2040-Zero's existing GP16 WS2812 RGB LED; do not fit an additional LED or change carrier wiring. Program **all five** application files including `status_led.py`. Test the board from USB-C power without a computer and verify startup green, acquisition amber, green PPS flashes in TRACKING and blinking red on faults. Check USB-C-to-C power with an ordinary 5 V source.

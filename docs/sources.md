@@ -15,3 +15,10 @@ Consulted during Rev B/C development, 2026-11-23. Manufacturer PDFs remain at th
 - [Bourns 3362](https://www.bourns.com/docs/Product-Datasheets/3362.pdf): trimmer dimensions.
 - [BAT WIRELESS SMA drawing](https://datasheet.lcsc.com/datasheet/pdf/ca832414c3d29ba9bc255fc7a4361c9c.pdf?productCode=C496549): BWSMA-KE-Z001, female center contact, 5.08 mm ground-pin spacing. Its $1.20 allowance is not a verified quote.
 - [PCBWay assembly](https://www.pcbway.com/pcb-assembly.html) and [capabilities](https://www.pcbway.com/assembly-capabilities.html): proposed full-turnkey supplier. Acceptance of this BOM, programming and test scope still requires their review.
+
+## Standalone power and status LED
+
+- [Genuine Waveshare module schematic](https://files.waveshare.com/upload/4/4c/RP2040_Zero.pdf): USB-C 5 V supply and CC resistors; onboard RGB WS2812 on GP16.
+- [Manufacturer front/back layout](https://www.waveshare.com/w/upload/1/1f/900px-RP2040-Zero-details-7.jpg): LED between BOOT and RESET on the USB-facing side.
+- [MicroPython 1.29 CDC polling/transmit source](https://github.com/micropython/micropython/blob/v1.29.0/shared/tinyusb/mp_usbd_cdc.c): disconnected writes may be reported writable; model bounded retention and zero-progress cases rather than assuming POLLOUT detects a host.
+- [MicroPython 1.29 stdio source](https://github.com/micropython/micropython/blob/v1.29.0/shared/runtime/sys_stdio_mphal.c): raw stdout.buffer avoids cooked newline expansion.

@@ -48,7 +48,7 @@ class AnalysisTest(unittest.TestCase):
 # Instruction-level simulator obtains the actual PIO program bodies from source.
 # GPIO synchronization delays/metastability and analogue edges require bench tests.
 def program(name):
- tree=ast.parse((ROOT/'firmware/main.py').read_text());fn=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name==name)
+ tree=ast.parse((ROOT/'firmware/main.py').read_text());fn=next(n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name==name)
  inst=[];labels={}
  env={n:n for n in ['x','null','isr','osr','pins','gpio','pin','x_dec','block','noblock']}
  for op in ['mov','wait','jmp','push','pull','set']:

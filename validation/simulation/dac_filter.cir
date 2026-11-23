@@ -4,6 +4,7 @@ R1 src mid 1000.0
 C1 mid 0 4.7e-06
 R2 mid out 1000.0
 C2 out 0 4.7e-06
+Rload out 0 500k
 .control
 set wr_singlescale
 set wr_vecnames

@@ -31,6 +31,16 @@ class TransportTest(unittest.TestCase):
   s=Sink();t=Telemetry(s,s.writable,max_frame=8)
   self.assertFalse(t.enqueue('x'*8));self.assertFalse(t.enqueue('é'));self.assertFalse(t.frames)
 
+class RawTransportTest(unittest.TestCase):
+ def test_newline_is_one_raw_byte(self):
+  class Raw:
+   def __init__(self):self.data=b''
+   def write(self,b):
+    assert isinstance(b,bytes) and len(b)==1
+    self.data+=b;return 1
+  raw=Raw();t=Telemetry(raw,lambda:True,binary=True);t.enqueue('{}');t.pump()
+  self.assertEqual(raw.data,b'{}\n')
+
 class SettingsTest(unittest.TestCase):
  def test_round_trip_and_atomic_temp_file(self):
   with tempfile.TemporaryDirectory() as d:

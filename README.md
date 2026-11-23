@@ -16,6 +16,8 @@ What it does:
 - Provides separate **10 MHz** and **1 PPS** SMA reference outputs.
 - Reports GPS and frequency-servo status over USB. Firmware updates also use USB.
 
+Runs from a **5 V USB-C supply without a computer**. Saved settings restore automatically. Its RGB LED is solid green during startup, amber while acquiring, flashes green on PPS once frequency tracking is established, and blinks red on faults.
+
 Connect it **after your antenna bias board and before the SDR**, with a separate active GPS antenna and USB-C power. The receiver ports block DC; disable the SDR's own bias tee. See the [connector guide](docs/port-guide.pdf).
 
 The aim is **five factory-assembled boards**, with no user soldering or winding. Parts are estimated at **about $47 per board**; the under-$100 assembled target still needs a complete factory quote. The first assembled board needs RF and timing tests before building the rest.

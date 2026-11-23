@@ -52,9 +52,9 @@ with h5py.File(OUT/'results.h5','w') as f:
         # The 100nF series capacitor limits the low-end return loss to ~30dB.
         result['checks'][label+'_pad']={'loss_db_min':float(loss.min()),'loss_db_max':float(loss.max()),'return_loss_db_min':float(rl.min()),'return_loss_target_db':25,'pass':bool(np.all((loss>19.8)&(loss<20.2)) and rl.min()>25)}
         g=f.create_group(label+'_pad');g['frequency_hz']=hz;g['loss_db']=loss;g['return_loss_db']=rl
-    d=spice('dac_filter',f'V1 src 0 PULSE(0 1 1m 1n 1n 1 2)\nR1 src mid {value("R4")}\nC1 mid 0 {value("C11")}\nR2 mid out {value("R5")}\nC2 out 0 {value("C12")}', 'tran 50u 150m','v(out)')
-    t,y=d[:,0],d[:,1]; settling=float(t[np.flatnonzero(abs(y-1)>.001)[-1]]-.001)
-    result['checks']['dac_filter']={'settling_to_0_1_percent_s':settling,'servo_update_s':64,'pass':bool(settling<.2)}
+    d=spice('dac_filter',f'V1 src 0 PULSE(0 1 1m 1n 1n 1 2)\nR1 src mid {value("R4")}\nC1 mid 0 {value("C11")}\nR2 mid out {value("R5")}\nC2 out 0 {value("C12")}\nRload out 0 500k', 'tran 50u 150m','v(out)')
+    t,y=d[:,0],d[:,1];dc_gain=1/(1+(value("R4")+value("R5"))/500000);settling=float(t[np.flatnonzero(abs(y-dc_gain)>.001*dc_gain)[-1]]-.001)
+    result['checks']['dac_filter']={'control_input_load_ohm':500000,'dc_gain':dc_gain,'settling_to_0_1_percent_s':settling,'servo_update_s':64,'pass':bool(settling<.2)}
     g=f.create_group('dac_filter');g['time_s']=t;g['voltage_v']=y
     # Ballasted dual output buffers driving a lossless 2m/50ohm cable. Driver
     # resistance is a sensitivity sweep, not an IBIS/transistor chip model.
@@ -79,7 +79,7 @@ with h5py.File(OUT/'results.h5','w') as f:
     # random walk and initially inaccurate pull-slope calibration.
     rng=np.random.default_rng(20261123);tails=[];tracking=[];limits=0
     for trial in range(100):
-        actual_slope=rng.uniform(.064,.097);zero=rng.uniform(1400,2300)
+        actual_slope=rng.uniform(80,150)*(3.3/4096)/(1+(value("R4")+value("R5"))/500000);zero=rng.uniform(1400,2300)
         s=Servo();phase=float(2**32-100);s.step(int(phase)&0xffffffff,True)
         jitter_prev=0.;thermal=0.;err=[]
         for second in range(7200):
@@ -91,7 +91,7 @@ with h5py.File(OUT/'results.h5','w') as f:
             err.append(hz-1e7)
             limits+=s.state=='DAC_LIMIT'
         tails.append(np.sqrt(np.mean(np.square(err[-1800:]))));tracking.append(s.state=='TRACKING')
-    result['checks']['servo']={'trials':100,'duration_s_each':7200,'pps_jitter_rms_ns':20,'tail_frequency_rms_hz_worst':float(max(tails)),'tracking_at_end':int(sum(tracking)),'dac_limit_samples':limits,'pass':bool(max(tails)<.15 and all(tracking) and limits==0)}
+    result['checks']['servo']={'tuning_hz_per_volt_sweep':[80,150],'control_input_ohm':500000,'trials':100,'duration_s_each':7200,'pps_jitter_rms_ns':20,'tail_frequency_rms_hz_worst':float(max(tails)),'tracking_at_end':int(sum(tracking)),'dac_limit_samples':limits,'pass':bool(max(tails)<.15 and all(tracking) and limits==0)}
     f['servo_tail_rms_hz']=tails
     # 100us isolated complex pilot, white Gaussian noise, known sample rate.
     # This intentionally excludes receiver filter/group delay and pilot drift.

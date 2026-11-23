@@ -2,9 +2,9 @@
 No waiting for host space and no print/flush calls in the control loop.
 """
 class Telemetry:
-    def __init__(self,stream,writable,max_frames=8,max_frame=2048):
+    def __init__(self,stream,writable,max_frames=8,max_frame=2048,binary=False):
         self.stream=stream;self.writable=writable;self.max_frames=max_frames
-        self.max_frame=max_frame;self.frames=[];self.offset=0;self.dropped=0
+        self.binary=binary;self.max_frame=max_frame;self.frames=[];self.offset=0;self.dropped=0
     def enqueue(self,line):
         frame=line+'\n'
         if len(frame)>self.max_frame or any(ord(c)>127 for c in frame):
@@ -21,7 +21,9 @@ class Telemetry:
         while self.frames and sent<budget and self.writable():
             # RP2 CDC POLLOUT guarantees at least one free byte, not enough for
             # a whole JSON record. A single writer uses that space immediately.
-            try:n=self.stream.write(self.frames[0][self.offset:self.offset+1])
+            try:
+                byte=self.frames[0][self.offset:self.offset+1]
+                n=self.stream.write(byte.encode('ascii') if self.binary else byte)
             except OSError:break
             if not n:break
             self.offset+=1;sent+=1

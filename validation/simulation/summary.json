@@ -16,7 +16,9 @@
       "pass": true
     },
     "dac_filter": {
-      "settling_to_0_1_percent_s": 0.086896775,
+      "control_input_load_ohm": 500000,
+      "dc_gain": 0.9960159362549801,
+      "settling_to_0_1_percent_s": 0.086596775,
       "servo_update_s": 64,
       "pass": true
     },
@@ -85,10 +87,15 @@
       "qualification": "Not a pulse-width guarantee: gate propagation, input capacitance and actual thresholds excluded"
     },
     "servo": {
+      "tuning_hz_per_volt_sweep": [
+        80,
+        150
+      ],
+      "control_input_ohm": 500000,
       "trials": 100,
       "duration_s_each": 7200,
       "pps_jitter_rms_ns": 20,
-      "tail_frequency_rms_hz_worst": 0.06392430489822547,
+      "tail_frequency_rms_hz_worst": 0.06289969104036591,
       "tracking_at_end": 100,
       "dac_limit_samples": 0,
       "pass": true

@@ -20,7 +20,7 @@
   {
     "name": "lid",
     "watertight": true,
-    "volume_mm3": 20696.29096643333,
+    "volume_mm3": 20578.303644586864,
     "bounds_mm": [
       [
         0.0,
@@ -33,7 +33,25 @@
         8.399999618530273
       ]
     ],
-    "triangles": 3820
+    "triangles": 4208
+  },
+  {
+    "name": "status-diffuser",
+    "watertight": true,
+    "volume_mm3": 105.80453104493711,
+    "bounds_mm": [
+      [
+        -4.5,
+        -4.5,
+        0.0
+      ],
+      [
+        4.5,
+        4.5,
+        2.299999952316284
+      ]
+    ],
+    "triangles": 380
   },
   {
     "assembled_intersection_mm3": 2.3285516149347822e-14

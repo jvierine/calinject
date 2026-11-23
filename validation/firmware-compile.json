@@ -31,15 +31,17 @@
   "total_pio_words": 20,
   "on_device_execution": false,
   "sources": {
-    "main.py": "198adc9809b3264f9ae0b410fe9d4eecd2954f3a5a99acc2ec437dbf44759155",
+    "main.py": "fa4367b99c01429e79560cf38215bdd5f2676383d0bcf9cb2efeadf7ae7fbfd6",
     "protocol.py": "b40772342aef3b5a6995c069672a9bdc59bca1037b7ee974e0b06cc061ceb6d1",
     "settings.py": "bc57643a4f9ebf661bfc6c19f25d601fe2a562b5a66eff8f642fa193947c9811",
-    "telemetry.py": "c581f263985ba8e9ef687eefdd1d7f0bdef230d7c9126e59e470cce1b361dc5d"
+    "status_led.py": "b31e287ae584d6f38ced02c8d096fbb86e2818d120fb22f8c198b23a54ed0b39",
+    "telemetry.py": "f9a7136a4a919a530850945411526fdf3e80cc8fa175100df1bf4c1941713075"
   },
   "compiled": {
-    "main.mpy": "0818212e28b14300739292e595a24b0d1e44c29cc868625c71a43fb20030a989",
+    "main.mpy": "cb18f7c3e1eaea7974eb44947129ddc8854b413627d76bccb3bb924c8e3fb0db",
     "protocol.mpy": "075e2be4e8e0d11766f706875fad68ffcb00cbecebf7c077bb291cd8647aaf88",
     "settings.mpy": "80838ef34a407b442f514a09cbb114ef7ddf7d22bb2955e070da3e776c36486a",
-    "telemetry.mpy": "7a4929b2b7eaa0cfca3a4e225a50bbcf17570eedba2b21d6be23ee037bfbd2f1"
+    "status_led.mpy": "0e278cbb2a12605ae5c4bc2d64897ef5acd20d4fd26a0e06a9883b1256e60172",
+    "telemetry.mpy": "f26b5712f04893927e4ba5b34bf3521eb3b9cde9f0ee7e8892a0e2b8a48849e3"
   }
 }
