@@ -29,6 +29,10 @@ The coupler preferentially injects toward the SDR. It does not provide perfect a
 
 ## Files
 
+![PCB layout: top copper red, bottom copper blue, pads gold](docs/board-layout.png)
+
+[Scalable SVG layout](docs/board-layout.svg). The illustration uses the actual routed Rev A board, with internal ground planes hidden for clarity. It still includes the original directional coupler; the proposed cheaper combiner revision has not been implemented.
+
 - [KiCad project](cad/calinject.kicad_pro), editable schematic, PCB and local libraries in `cad/`.
 - [Schematic PDF](docs/schematic.pdf), [assembly drawing](docs/assembly-top.pdf).
 - [Connector/case guide](docs/port-guide.pdf), including both dedicated reference outputs.
