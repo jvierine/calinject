@@ -12,7 +12,7 @@ GPS-timed calibration bursts for SDR recordings: recover sample timing, estimate
 
 Connect **antenna bias board → RF IN → TO SDR → receiver**. Add an active GPS antenna and 5 V USB-C power. The receiver path blocks DC and is specified for **0.5–70 MHz**, with about **3.2 dB loss**. Calibration leakage toward the antenna is finite; it must be measured on the first board.
 
-**Status:** five assembled, unprogrammed Rev C prototypes ordered from JLCPCB on 23 November 2026. Checkout payment was **$388.14 for five** (about $78 each); separately reviewed services may add charges. MAX-M10S remains the GNSS receiver. Hardware and printed-case performance are not yet verified.
+Parts and board cost about **$80 per unit in small quantities**.
 
 ![Simulated timing and frequency recovery versus calibration burst length](docs/burst-recovery.png)
 
