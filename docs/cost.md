@@ -2,7 +2,7 @@
 
 Currency: USD. Planning date: 2026-11-23. Quantity: five fully assembled, programmed boards, starting with one factory-qualified first article. No supplier has issued a quote.
 
-The component-manifest estimate is **$59.97 per board**, or **$299.85 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
+The component-manifest estimate is **$60.13 per board**, or **$300.65 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
 
 | Major item | Per-board allowance |
 |---|---:|

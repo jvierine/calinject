@@ -11,6 +11,9 @@
   "manufacturing_consistency_errors": [],
   "hardware_tests_performed": false,
   "case_fit_printed": false,
-  "component_estimate_usd_per_board": 59.97,
-  "board_sha256": "ed41c5a6f68ce4be3c2e198ca33d423db477577f7b930afa03cdc18b1526f2a3"
+  "component_estimate_usd_per_board": 60.13,
+  "board_sha256": "c3adfdaf79556abfe4d1c8a071691c3b49bd490b8aab9641205fc8faf4c34e84",
+  "layout_review": "docs/layout-review.md",
+  "ground_vias": 254,
+  "cable_simulation": "validation/simulation/summary.json"
 }

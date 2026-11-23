@@ -59,3 +59,7 @@ Calibrate constant path delay using known pulses. Test repeatability after recei
 ## Files returned by assembler
 
 For each serial number return inspection results, power measurements, firmware identifier, measured tuning slope and level table. Return first-article VNA Touchstone files, oscilloscope captures and timing/servo logs. Use HDF5 for numeric measurement datasets, JSON for configuration and PDFs for signed inspection reports. Do not ship with failed or missing first-article qualification represented as passed.
+
+## Additional power and cable checks
+
+Measure both reference outputs with representative 50 Ω and high-impedance instruments and 0.5–5 m coax cables. Capture edge overshoot/undershoot, channel sharing, and propagation delay. Do not infer actual buffer current from the ideal resistive simulation. Check LDO stability and start-up, GNSS acquisition/transmit load transients, and quiet-rail ripple with both reference outputs loaded and USB active. Record oscillator frequency/jitter and muted receiver spurs under those conditions; a failing result requires a revised filtered supply or shielding solution before the remaining boards are assembled. See the layout review for the shared analog/fast-logic rail and lack of ferrite isolation.

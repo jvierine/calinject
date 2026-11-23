@@ -1,0 +1,328 @@
+{
+  "copper_layers": 4,
+  "zones": [
+    {
+      "layers": [
+        "In1.Cu"
+      ],
+      "net": "GND"
+    },
+    {
+      "layers": [
+        "In2.Cu"
+      ],
+      "net": "GND"
+    }
+  ],
+  "ground_vias": 254,
+  "signal_vias": [
+    {
+      "net": "REFPPS_OE_N",
+      "position_mm": [
+        20.959,
+        43.7982
+      ],
+      "nearest_ground_transition_mm": 1.829966669095371
+    },
+    {
+      "net": "DELAY_N",
+      "position_mm": [
+        57.7718,
+        40.75
+      ],
+      "nearest_ground_transition_mm": 1.4708576715644521
+    },
+    {
+      "net": "PPS",
+      "position_mm": [
+        49.4575,
+        18.3878
+      ],
+      "nearest_ground_transition_mm": 1.4182894944262947
+    },
+    {
+      "net": "U11_A",
+      "position_mm": [
+        18.2427,
+        44.1211
+      ],
+      "nearest_ground_transition_mm": 1.4121832211154468
+    },
+    {
+      "net": "U11_A",
+      "position_mm": [
+        20.418,
+        42.986
+      ],
+      "nearest_ground_transition_mm": 1.4000188570158583
+    },
+    {
+      "net": "I2C_SDA",
+      "position_mm": [
+        33.2802,
+        26.6039
+      ],
+      "nearest_ground_transition_mm": 1.3737209505572807
+    },
+    {
+      "net": "ATT_DATA",
+      "position_mm": [
+        26.2296,
+        43.0
+      ],
+      "nearest_ground_transition_mm": 1.3528338885465572
+    },
+    {
+      "net": "CLK10",
+      "position_mm": [
+        73.1172,
+        32.2405
+      ],
+      "nearest_ground_transition_mm": 1.245843525487848
+    },
+    {
+      "net": "3V3A",
+      "position_mm": [
+        29.4895,
+        46.9464
+      ],
+      "nearest_ground_transition_mm": 0.9483318037480313
+    },
+    {
+      "net": "VCTRL",
+      "position_mm": [
+        52.2023,
+        28.754
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764298
+    },
+    {
+      "net": "BURST_GATE",
+      "position_mm": [
+        50.8198,
+        36.9448
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764298
+    },
+    {
+      "net": "ATT_CLK",
+      "position_mm": [
+        28.0483,
+        42.0834
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764293
+    },
+    {
+      "net": "3V3A",
+      "position_mm": [
+        36.912,
+        20.9943
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764293
+    },
+    {
+      "net": "PPS",
+      "position_mm": [
+        52.0,
+        18.2033
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764293
+    },
+    {
+      "net": "I2C_SCL",
+      "position_mm": [
+        31.0874,
+        25.0483
+      ],
+      "nearest_ground_transition_mm": 0.8500130410764285
+    },
+    {
+      "net": "REF10_OE_N",
+      "position_mm": [
+        28.2763,
+        32.4357
+      ],
+      "nearest_ground_transition_mm": 0.8500120562680294
+    },
+    {
+      "net": "BURST_GATE",
+      "position_mm": [
+        60.4173,
+        41.2813
+      ],
+      "nearest_ground_transition_mm": 0.8500000000000014
+    },
+    {
+      "net": "CLK10",
+      "position_mm": [
+        64.735,
+        36.5016
+      ],
+      "nearest_ground_transition_mm": 0.8499999999999943
+    },
+    {
+      "net": "DELAY_N",
+      "position_mm": [
+        65.131,
+        41.7634
+      ],
+      "nearest_ground_transition_mm": 0.8499913310152067
+    },
+    {
+      "net": "PPS",
+      "position_mm": [
+        20.6505,
+        44.7651
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842947
+    },
+    {
+      "net": "VCTRL",
+      "position_mm": [
+        58.2983,
+        34.85
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842915
+    },
+    {
+      "net": "PPS",
+      "position_mm": [
+        56.5532,
+        13.6501
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842915
+    },
+    {
+      "net": "ATT_IN",
+      "position_mm": [
+        36.3931,
+        39.6781
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842869
+    },
+    {
+      "net": "COUPLED",
+      "position_mm": [
+        46.5184,
+        57.7736
+      ],
+      "nearest_ground_transition_mm": 0.8499906881842869
+    },
+    {
+      "net": "U10_A",
+      "position_mm": [
+        85.4021,
+        34.3487
+      ],
+      "nearest_ground_transition_mm": 0.8499812997942944
+    },
+    {
+      "net": "REFPPS_OE_N",
+      "position_mm": [
+        17.7719,
+        43.25
+      ],
+      "nearest_ground_transition_mm": 0.8499812997942944
+    },
+    {
+      "net": "U10_A",
+      "position_mm": [
+        78.9517,
+        36.0987
+      ],
+      "nearest_ground_transition_mm": 0.8499577518912376
+    },
+    {
+      "net": "ATT_LE",
+      "position_mm": [
+        26.3875,
+        45.145
+      ],
+      "nearest_ground_transition_mm": 0.8499577518912363
+    },
+    {
+      "net": "ATT_IN",
+      "position_mm": [
+        29.8498,
+        42.3632
+      ],
+      "nearest_ground_transition_mm": 0.8499577518912297
+    },
+    {
+      "net": "I2C_SDA",
+      "position_mm": [
+        34.4879,
+        25.3962
+      ],
+      "nearest_ground_transition_mm": 0.8341666320346376
+    }
+  ],
+  "decoupling": [
+    {
+      "ic": "U2",
+      "capacitor": "C29",
+      "nearest_supply_pad_mm": 1.7999989999999997,
+      "capacitor_ground_via_mm": 0.7999999999999972
+    },
+    {
+      "ic": "U3",
+      "capacitor": "C4",
+      "nearest_supply_pad_mm": 5.26711495982383,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U4",
+      "capacitor": "C31",
+      "nearest_supply_pad_mm": 1.800000000000275,
+      "capacitor_ground_via_mm": 0.7999997202499549
+    },
+    {
+      "ic": "U5",
+      "capacitor": "C32",
+      "nearest_supply_pad_mm": 1.8000399932782034,
+      "capacitor_ground_via_mm": 0.8000000000006221
+    },
+    {
+      "ic": "Y1",
+      "capacitor": "C13",
+      "nearest_supply_pad_mm": 1.9629378492453597,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U6",
+      "capacitor": "C16",
+      "nearest_supply_pad_mm": 1.978004044485244,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U7",
+      "capacitor": "C18",
+      "nearest_supply_pad_mm": 2.5500000000000016,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U8",
+      "capacitor": "C19",
+      "nearest_supply_pad_mm": 1.3124404748406682,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U9",
+      "capacitor": "C21",
+      "nearest_supply_pad_mm": 1.892749323074764,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U10",
+      "capacitor": "C27",
+      "nearest_supply_pad_mm": 2.441823089414953,
+      "capacitor_ground_via_mm": 0.75
+    },
+    {
+      "ic": "U11",
+      "capacitor": "C33",
+      "nearest_supply_pad_mm": 1.4999674996482406,
+      "capacitor_ground_via_mm": 0.6364012993394971
+    }
+  ]
+}

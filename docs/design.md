@@ -55,7 +55,7 @@ A receiver mismatch adds reflected leakage through the sum port. Keep the matche
 
 ## Reference outputs
 
-J4 provides the continuous comparator-derived 10 MHz square wave; J5 provides the GNSS 10 ms PPS. They are independent of injection width and attenuation. Each output uses an SN74LVC2G125's two channels, each through 49.9 Ω, followed by a common 24.9 Ω resistor. The individual ballast resistors prevent direct tying of CMOS outputs and share a 50 Ω load. Nominal source resistance is 49.85 Ω plus driver impedance.
+J4 provides the continuous comparator-derived 10 MHz square wave; J5 provides the GNSS 10 ms PPS. They are independent of injection width and attenuation. Each output uses an SN74LVC2G125's two channels, each through 100 Ω, followed by a common zero-ohm link. The individual ballast resistors prevent direct tying of CMOS outputs and share a 50 Ω load. Nominal source resistance is 50 Ω plus driver impedance.
 
 Expected highs are about 3.3 V into high impedance or 1.65 V into 50 Ω, with a near-zero low. A 50 Ω input requiring a 2 V TTL high needs a different external driver; a sine-only clock input may need filtering. Drive one input/cable per output. Do not connect another signal source or DC bias. Disabled outputs have a 1 MΩ bleed and are not matched terminations.
 
@@ -68,3 +68,5 @@ The 90 × 65 mm board has four layers, two inner ground planes and ordinary plat
 The nominal stack uses 0.20 mm outer dielectrics and 0.36 mm RF traces. The fabricator must confirm actual materials, pressed thickness and impedance, especially the 1.575 GHz GPS path. Digital leakage can bypass the gate/attenuator despite these layout improvements; measure muted spectra with USB and reference cables connected. The printed case is not an RF shield.
 
 The factory installs and programs the RP2040-Zero module and all THT parts. Separate regulators power GPS and reference/RF circuitry. GPS ANT supplies protected 3.3 V bias for a compatible antenna normally drawing at most 20 mA. The receiver ports are DC blocked; keep the existing antenna bias board ahead of RF IN and disable the SDR bias tee. See [factory instructions](../manufacturing/ASSEMBLY.md), [acceptance tests](acceptance.md) and [sources](sources.md).
+
+For the cable-driver, decoupling, power-isolation and ground-stitching audit, see [layout review](layout-review.md).

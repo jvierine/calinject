@@ -116,21 +116,21 @@ chip('R22','1M','RF_OUT','GND',72,60,'RF path',mpn='RC0603FR-071ML')
 add('RV1','10k LEVEL','Bourns_3362P',12,34,[pad(1,-2.54,0,1.8,1.8,'3V3D','thru_hole',.9),pad(2,0,2.54,1.8,1.8,'LEVEL_ADC','thru_hole',.9),pad(3,2.54,0,1.8,1.8,'GND','thru_hole',.9)],'3362P-1-103LF','Bourns','Controller',.6,body=(6.6,6.6),assembly='THT')
 cap('C26','LEVEL_ADC',18,36,'Controller')
 # Dedicated reference outputs. Two equal, independently ballasted buffer outputs
-# share each load: 49.9 || 49.9 + 24.9 = 49.85 ohm nominal source resistance.
+# share each load: 100 || 100 + 0 = 50 ohm nominal source resistance.
 # This keeps each gate near 16.5mA with a 50-ohm load at 3.3V. Never tie CMOS
 # outputs directly together. Disabled output is high impedance (1M bleed).
 for r,name,x,y,source,oe in [('U10','10 MHz',83,34,'CLK10','REF10_OE_N'),('U11','1 PPS',18,44,'PPS','REFPPS_OE_N')]:
  ns=[oe,source,r+'_B','GND',source,r+'_A',oe,'3V3A']
  coords=[(-1.4,-.75+.5*i) for i in range(4)]+[(1.4,.75-.5*i) for i in range(4)]
- add(r,'SN74LVC2G125','VSSOP8_DCU',x,y,[pad(i+1,*pt,1.,.3,ns[i]) for i,pt in enumerate(coords)],'SN74LVC2G125DCUR','Texas Instruments','Reference outputs',.35,body=(2.3,2.),note='Parallel channels through individual49.9ohm resistors. OE high disables both. DC-coupled.')
-chip('R24','49R9','U10_A','REF10_SUM',79,37,'Reference outputs',mpn='RC0603FR-0749R9L')
-chip('R25','49R9','U10_B','REF10_SUM',84,36.6,'Reference outputs',mpn='RC0603FR-0749R9L')
-chip('R26','24R9','REF10_SUM','REF10_OUT',84,38.2,'Reference outputs',mpn='RC0603FR-0724R9L')
+ add(r,'SN74LVC2G125','VSSOP8_DCU',x,y,[pad(i+1,*pt,1.,.3,ns[i]) for i,pt in enumerate(coords)],'SN74LVC2G125DCUR','Texas Instruments','Reference outputs',.35,body=(2.3,2.),note='Parallel channels through individual100ohm resistors. OE high disables both. DC-coupled.')
+chip('R24','100','U10_A','REF10_SUM',79,37,'Reference outputs',mpn='RC0603FR-07100RL')
+chip('R25','100','U10_B','REF10_SUM',84,36.6,'Reference outputs',mpn='RC0603FR-07100RL')
+chip('R26','0','REF10_SUM','REF10_OUT',84,38.2,'Reference outputs',mpn='RC0603FR-070RL')
 chip('R27','10k','REF10_OE_N','3V3A',79,33,'Reference outputs',mpn='RC0603FR-0710KL')
 cap('C27','3V3A',87,31.6,'Reference outputs')
-chip('R28','49R9','U11_A','REFPPS_SUM',23,44,'Reference outputs',mpn='RC0603FR-0749R9L')
-chip('R29','49R9','U11_B','REFPPS_SUM',18,47,'Reference outputs',mpn='RC0603FR-0749R9L')
-chip('R30','24R9','REFPPS_SUM','REFPPS_OUT',14,47,'Reference outputs',mpn='RC0603FR-0724R9L')
+chip('R28','100','U11_A','REFPPS_SUM',23,44,'Reference outputs',mpn='RC0603FR-07100RL')
+chip('R29','100','U11_B','REFPPS_SUM',18,47,'Reference outputs',mpn='RC0603FR-07100RL')
+chip('R30','0','REFPPS_SUM','REFPPS_OUT',14,47,'Reference outputs',mpn='RC0603FR-070RL')
 chip('R31','10k','REFPPS_OE_N','3V3A',23,41,'Reference outputs',mpn='RC0603FR-0710KL')
 cap('C28','3V3A',18,40,'Reference outputs')
 sma('J4','10 MHz OUT',84,43,'REF10_OUT','Reference outputs')
@@ -140,6 +140,11 @@ chip('R33','1M','REFPPS_OUT','GND',8,50,'Reference outputs',mpn='RC0603FR-071ML'
 # Test pads at accessible positions; no connector capacitance on oscillator sine output.
 for i,(name,net,x,y) in enumerate([('PPS','PPS',52,17),('10M','TCXO_COUNT',44,32),('GATE','BURST_GATE',47,35),('VC','VCTRL',56,27),('GND','GND',49,17),('3V3','3V3A',38,16)],1):
  add('TP'+str(i),name,'TestPoint',x,y,[pad(1,0,0,1.4,1.4,net)],'TESTPOINT','PCB','Test',0,body=(1.4,1.4),assembly='PCB')
+# Additional local IC bypassing after layout audit.
+cap('C29','3V3A',37.600000,8.050000,'Power',rot=0)
+cap('C31','3V3G',61.700000,16.400000,'Power',rot=90)
+cap('C32','3V3A',34.461300,24.484100,'Power',rot=180)
+cap('C33','3V3A',17.850000,41.951000,'Power',rot=180)
 # Pin labels are explicit in schematics and independent of footprint orientation.
 labels={
 'U1':module_names,'U2':['IN','GND','EN','NC','OUT'],'U3':['IN','GND','EN','NC','OUT'],

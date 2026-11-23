@@ -4,7 +4,7 @@
 
 | Rev A finding | Rev B action and evidence |
 |---|---|
-| Cost change not implemented | ADP-2-1+ SMT combiner is in native CAD/BOM/CPL/routing. Parts estimate is $59.97. Operating band/loss/levels are updated. |
+| Cost change not implemented | ADP-2-1+ SMT combiner is in native CAD/BOM/CPL/routing. Parts estimate is $60.13. Operating band/loss/levels are updated. |
 | Clock leakage/layout risk | Oscillator/comparator area compacted; comb/attenuator bypass capacitors moved closer; 16 additional ground-stitching vias separate the clock area and receiver path. Fixed pad increased to 20 dB for weak markers. Actual muted leakage remains a first-article measurement. |
 | Nonstandard pad layers | SMD pads now use only F.Cu/F.Mask/F.Paste. Rotated footprint body/courtyard geometry corrected. Native DRC/parity checks and fabrication exports regenerated. |
 | Blocking USB logging | Bounded telemetry queue, per-byte writable checks, bounded output/input work per control-loop pass; tests exercise stopped/slow readers, partial frames and overflow. No blocking print/flush remains in the loop. |

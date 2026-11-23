@@ -1,0 +1,16 @@
+Calinject cable_1000000_0
+V1 a 0 PULSE(0 3.3 20n 1n 1n 100n 250n)
+V2 b 0 PULSE(0 3.3 21n 1n 1n 100n 250n)
+R1 a sum 100.0
+R2 b sum 100.0
+R3 sum tx 0.001
+T1 tx 0 rx 0 Z0=50 TD=10n
+Rl rx 0 1000000.0
+.control
+set wr_singlescale
+set wr_vecnames
+tran .1n 250n
+wrdata /Users/jvi019/src/calinject/validation/simulation/cable_1000000_0.txt v(rx) i(V1) i(V2)
+quit
+.endc
+.end

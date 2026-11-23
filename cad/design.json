@@ -4332,7 +4332,7 @@
     },
     {
       "ref": "R24",
-      "value": "49R9",
+      "value": "100",
       "fp": "R_0603_R24",
       "x": 79,
       "y": 37,
@@ -4361,7 +4361,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0749R9L",
+      "mpn": "RC0603FR-07100RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -4374,7 +4374,7 @@
     },
     {
       "ref": "R25",
-      "value": "49R9",
+      "value": "100",
       "fp": "R_0603_R25",
       "x": 84,
       "y": 36.6,
@@ -4403,7 +4403,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0749R9L",
+      "mpn": "RC0603FR-07100RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -4416,7 +4416,7 @@
     },
     {
       "ref": "R26",
-      "value": "24R9",
+      "value": "0",
       "fp": "R_0603_R26",
       "x": 84,
       "y": 38.2,
@@ -4445,7 +4445,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0724R9L",
+      "mpn": "RC0603FR-070RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -4542,7 +4542,7 @@
     },
     {
       "ref": "R28",
-      "value": "49R9",
+      "value": "100",
       "fp": "R_0603_R28",
       "x": 23,
       "y": 44,
@@ -4571,7 +4571,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0749R9L",
+      "mpn": "RC0603FR-07100RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -4584,7 +4584,7 @@
     },
     {
       "ref": "R29",
-      "value": "49R9",
+      "value": "100",
       "fp": "R_0603_R29",
       "x": 18,
       "y": 47,
@@ -4613,7 +4613,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0749R9L",
+      "mpn": "RC0603FR-07100RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -4626,7 +4626,7 @@
     },
     {
       "ref": "R30",
-      "value": "24R9",
+      "value": "0",
       "fp": "R_0603_R30",
       "x": 14,
       "y": 47,
@@ -4655,7 +4655,7 @@
           "label": "2"
         }
       ],
-      "mpn": "RC0603FR-0724R9L",
+      "mpn": "RC0603FR-070RL",
       "maker": "Yageo",
       "section": "Reference outputs",
       "cost": 0.04,
@@ -5169,6 +5169,174 @@
       ],
       "note": "",
       "assembly": "PCB"
+    },
+    {
+      "ref": "C29",
+      "value": "100n",
+      "fp": "C_0603_C29",
+      "x": 37.599999999999994,
+      "y": 8.05,
+      "rot": 0,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C31",
+      "value": "100n",
+      "fp": "C_0603_C31",
+      "x": 61.7,
+      "y": 16.4,
+      "rot": 90,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3G",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C32",
+      "value": "100n",
+      "fp": "C_0603_C32",
+      "x": 34.461299999999994,
+      "y": 24.4841,
+      "rot": 180,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
+    },
+    {
+      "ref": "C33",
+      "value": "100n",
+      "fp": "C_0603_C33",
+      "x": 17.849999999999998,
+      "y": 41.951,
+      "rot": 180,
+      "pads": [
+        {
+          "n": "1",
+          "x": -0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "3V3A",
+          "kind": "smd",
+          "drill": null,
+          "label": "1"
+        },
+        {
+          "n": "2",
+          "x": 0.8,
+          "y": 0,
+          "w": 0.9,
+          "h": 0.95,
+          "net": "GND",
+          "kind": "smd",
+          "drill": null,
+          "label": "2"
+        }
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "maker": "Murata",
+      "section": "Power",
+      "cost": 0.04,
+      "body": [
+        1.6,
+        0.8
+      ],
+      "note": "",
+      "assembly": "SMT"
     }
   ],
   "ground_vias": [

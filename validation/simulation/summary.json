@@ -20,6 +20,61 @@
       "servo_update_s": 64,
       "pass": true
     },
+    "reference_cables": {
+      "cable_delay_ns": 10,
+      "channel_skew_ns": 1,
+      "cases": [
+        {
+          "load_ohm": 50,
+          "assumed_driver_resistance_ohm": 0,
+          "steady_high_v": 1.6499834999999996,
+          "peak_v": 1.6499835,
+          "min_v": -4.85717762e-22,
+          "peak_per_channel_current_ma": 24.7499175
+        },
+        {
+          "load_ohm": 50,
+          "assumed_driver_resistance_ohm": 5,
+          "steady_high_v": 1.6097403900000007,
+          "peak_v": 1.60974039,
+          "min_v": -1.86238095e-18,
+          "peak_per_channel_current_ma": 23.7629877
+        },
+        {
+          "load_ohm": 50,
+          "assumed_driver_resistance_ohm": 15,
+          "steady_high_v": 1.5348694399999998,
+          "peak_v": 1.53486944,
+          "min_v": -3.71196173e-18,
+          "peak_per_channel_current_ma": 22.0221733
+        },
+        {
+          "load_ohm": 1000000.0,
+          "assumed_driver_resistance_ohm": 0,
+          "steady_high_v": 3.2998350000000003,
+          "peak_v": 3.299835,
+          "min_v": 0.0,
+          "peak_per_channel_current_ma": 24.7499175
+        },
+        {
+          "load_ohm": 1000000.0,
+          "assumed_driver_resistance_ohm": 5,
+          "steady_high_v": 3.2997289899666677,
+          "peak_v": 3.29982674,
+          "min_v": 0.0,
+          "peak_per_channel_current_ma": 23.7629877
+        },
+        {
+          "load_ohm": 1000000.0,
+          "assumed_driver_resistance_ohm": 15,
+          "steady_high_v": 3.2985042697666667,
+          "peak_v": 3.29980734,
+          "min_v": 0.0,
+          "peak_per_channel_current_ma": 22.0221733
+        }
+      ],
+      "qualification": "Source-terminated, DC-coupled outputs. Ideal lossless line and resistive drivers; ringing with real cables/ICs needs measurement."
+    },
     "pulse_rc": {
       "threshold_fraction_sweep": [
         0.3,

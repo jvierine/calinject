@@ -20,6 +20,6 @@ test_stalled_host_is_bounded_and_does_not_write (test_transport.TransportTest.te
 test_write_checks_capacity_for_every_byte (test_transport.TransportTest.test_write_checks_capacity_for_every_byte) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 0.582s
+Ran 20 tests in 0.528s
 
 OK

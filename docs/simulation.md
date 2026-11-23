@@ -43,3 +43,5 @@ conda run -n base python -m unittest discover -s tests -v
 ```
 
 The generated SPICE decks, solver logs, JSON summary and HDF5 numeric results are in `validation/simulation/`. Ngspice 47 was used for the recorded run. No hardware changes were made as a result of these checks.
+
+The [cable and layout review](layout-review.md) adds transmission-line simulations of the reference outputs, including channel skew and driver-resistance sensitivity. These use the revised 100 Ω individual ballast resistors and a 1 mΩ model for the zero-ohm common link.

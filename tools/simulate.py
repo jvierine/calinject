@@ -56,6 +56,17 @@ with h5py.File(OUT/'results.h5','w') as f:
     t,y=d[:,0],d[:,1]; settling=float(t[np.flatnonzero(abs(y-1)>.001)[-1]]-.001)
     result['checks']['dac_filter']={'settling_to_0_1_percent_s':settling,'servo_update_s':64,'pass':bool(settling<.2)}
     g=f.create_group('dac_filter');g['time_s']=t;g['voltage_v']=y
+    # Ballasted dual output buffers driving a lossless 2m/50ohm cable. Driver
+    # resistance is a sensitivity sweep, not an IBIS/transistor chip model.
+    cables=[]
+    for load in [50,1e6]:
+        for driver in [0,5,15]:
+            name='cable_%s_%s'%(int(load),driver)
+            d=spice(name,f'V1 a 0 PULSE(0 3.3 20n 1n 1n 100n 250n)\nV2 b 0 PULSE(0 3.3 21n 1n 1n 100n 250n)\nR1 a sum {value("R24")+driver}\nR2 b sum {value("R25")+driver}\nR3 sum tx {max(value("R26"),.001)}\nT1 tx 0 rx 0 Z0=50 TD=10n\nRl rx 0 {load}', 'tran .1n 250n','v(rx) i(V1) i(V2)')
+            high=d[(d[:,0]>70e-9)&(d[:,0]<100e-9),1]
+            row=dict(load_ohm=load,assumed_driver_resistance_ohm=driver,steady_high_v=float(np.mean(high)),peak_v=float(max(d[:,1])),min_v=float(min(d[:,1])),peak_per_channel_current_ma=float(np.max(abs(d[:,2:]))*1e3))
+            cables.append(row);g=f.create_group(name);g['time_s']=d[:,0];g['received_v']=d[:,1];g['channel_current_a']=d[:,2:]
+    result['checks']['reference_cables']={'cable_delay_ns':10,'channel_skew_ns':1,'cases':cables,'qualification':'Source-terminated, DC-coupled outputs. Ideal lossless line and resistive drivers; ringing with real cables/ICs needs measurement.'}
     # RC threshold timing, before unknown Schmitt propagation delay/loading.
     d=spice('pulse_rc',f'V1 src 0 PULSE(0 3.3 10n .2n .2n 50n 100n)\nR1 src out {value("R10")}\nC1 out 0 {value("C17")}', 'tran .05n 300n','v(src) v(out)')
     g=f.create_group('pulse_rc');g['time_s']=d[:,0];g['input_v']=d[:,1];g['rc_v']=d[:,2]
