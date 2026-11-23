@@ -1,6 +1,6 @@
 # Connections and host control
 
-These instructions apply to the current Rev A coupler board. The proposed lower-cost combiner board has not been implemented.
+These instructions apply to the Rev B transformer-combiner board.
 
 ## Inline connection
 
@@ -19,7 +19,7 @@ Both receiver-path ports block DC. Keep the existing antenna bias board on the a
 Receiving antenna / bias board ────────────→ combiner antenna input → SDR
 ```
 
-Terminate RF IN in 50 Ω rather than leaving it open. Account for the external combiner's loss when setting the actual calibration level. Neither the current coupler nor an isolated hybrid combiner guarantees zero antenna leakage; their finite isolation and the actual receiver match matter.
+Terminate RF IN in 50 Ω rather than leaving it open. Account for the external combiner's loss when setting the actual calibration level. The combiner has finite branch isolation; use a low calibration level and measure leakage with the actual receiver. Its specified signal-path band begins at 500 kHz, and antenna-path loss is approximately 3.2 dB.
 
 ## USB control
 
@@ -32,10 +32,11 @@ conda run -n base python host/calinject.py PORT --send '{"cmd":"atten","db":31.5
 conda run -n base python host/calinject.py PORT --send '{"cmd":"width","us":100}'
 conda run -n base python host/calinject.py PORT --send '{"cmd":"ref10","enabled":true}'
 conda run -n base python host/calinject.py PORT --send '{"cmd":"refpps","enabled":true}'
+conda run -n base python host/calinject.py PORT --send '{"cmd":"save"}'
 conda run -n base python host/calinject.py PORT --log status.h5
 ```
 
-USB CDC carries newline-delimited JSON. Settings are RAM-only; restart restores default 100 µs bursts, maximum electronic attenuation, enabled servo and disabled reference outputs. The two internal range shunts provide an additional 20 dB pad and ship in LOW. See the [complete command list and programming instructions](../firmware/README.md).
+USB CDC carries newline-delimited JSON. Settings remain in RAM until an explicit `save` command. With no valid saved file, defaults are 100 µs bursts, maximum electronic attenuation, enabled servo and disabled reference outputs. A valid saved file restores the selected settings at startup. The two internal range shunts provide an additional 20 dB pad and ship in LOW. See the [complete command list and programming instructions](../firmware/README.md).
 
 Separate 10 MHz OUT and 1 PPS OUT connectors have nominal 50 Ω source impedance, with approximately 3.3 V into high impedance or 1.65 V into 50 Ω. The 10 MHz output is a square wave with no fixed phase relationship to PPS; PPS is a separate 10 ms GNSS pulse. Verify the external instrument's allowed voltage, waveform and termination before connection. See [reference output details](design.md#reference-outputs).
 

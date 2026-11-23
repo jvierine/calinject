@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "65ecf55d-3f5c-5ac2-85ea-159a11483526") (paper "A3") (title_block (title "CALINJECT / Comb") (date "2026-11-22") (rev "A"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "65ecf55d-3f5c-5ac2-85ea-159a11483526") (paper "A3") (title_block (title "CALINJECT / Comb") (date "2026-11-23") (rev "B"))
 (lib_symbols (symbol "Calinject:R10" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "R" (at 0 6.35 0) (effects (font (size 1.0 1.0))))
 (property "Value" "220" (at 0 8.89 0) (effects (font (size 1.0 1.0))))

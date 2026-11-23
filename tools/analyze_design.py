@@ -13,14 +13,14 @@ n=np.arange(1,8);width=np.array([7.,10.,12.]);duty=width*1e-2
 # Loaded voltage after 49.9ohm source with ideal 3.3V logic source.
 vpeak=1.65
 p=2*(vpeak*duty[:,None]*np.sinc(duty[:,None]*n))**2/50
-high=10*np.log10(p/1e-3)-10-1.3-19.5
+high=10*np.log10(p/1e-3)-20-1.3-3.2
 low=high-20
 with h5py.File(ROOT/'validation/ideal-levels.h5','w') as f:
  f.attrs['schema']='calinject-ideal-level-model-v1'
  f.attrs['model']='Ideal rectangular pulses into 50ohm; no measured hardware data'
  f.attrs['generator']='tools/analyze_design.py'
  f.attrs['loaded_pulse_peak_v']=vpeak
- f.attrs['fixed_pad_db']=10.;f.attrs['attenuator_insertion_db']=1.3;f.attrs['coupling_db']=19.5
+ f.attrs['fixed_pad_db']=20.;f.attrs['attenuator_insertion_db']=1.3;f.attrs['combiner_loss_db']=3.2
  f.create_dataset('frequency_hz',data=n*1e7)
  f.create_dataset('comb_pulse_width_ns',data=width)
  f.create_dataset('high_range_on_dbm',data=high)

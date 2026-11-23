@@ -65,7 +65,7 @@ def render():
   if label['text'] in ['U1','J1','J2','J3','J4','J5']:continue
   x,y=label['p'];ax.text(x,y,label['text'],color=dark,fontsize=8.5,ha='center',va='center',zorder=8,path_effects=[pe.withStroke(linewidth=2.3,foreground=pale)])
  # Functional port labels lie within the empty connector bodies / module area.
- for text,x,y,size in [('USB-C / RP2040',17,9,9),('GPS ANT',82,10.1,9),('RF IN',12,52,9),('TO SDR',78,52,9),('10 MHz OUT',81,46.8,9),('1 PPS OUT',7,39,9),('LEVEL',12,38.6,9),('CALINJECT · REV A · 90 × 65 mm',44,63.7,10)]:
+ for text,x,y,size in [('USB-C / RP2040',17,9,9),('GPS ANT',82,10.1,9),('RF IN',12,52,9),('TO SDR',78,52,9),('10 MHz OUT',81,46.8,9),('1 PPS OUT',7,39,9),('LEVEL',12,38.6,9),('CALINJECT · REV B · 90 × 65 mm',44,63.7,10)]:
   ax.text(x,y,text,color=dark,fontsize=size,fontweight='bold',ha='center',va='center',zorder=9,path_effects=[pe.withStroke(linewidth=2.6,foreground=pale)])
  fig.text(.50,.035,'Top view  ·  red: top copper  ·  blue: bottom copper  ·  gold: pads and vias',ha='center',color=dark,fontsize=10)
  for suffix in ['png','svg']:

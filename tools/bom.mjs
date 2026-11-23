@@ -8,7 +8,7 @@ const parts=data.parts.filter(p=>!['PCB','MECHANICAL'].includes(p.assembly));
 const groups=new Map();
 for(const p of parts){const key=p.mpn+'|'+p.value;const a=groups.get(key)||[];a.push(p);groups.set(key,a);}
 const bom=[['Designator','Comment','Footprint','Manufacturer','Manufacturer Part','Quantity','Assembly','LCSC Part #']];
-for(const g of groups.values()){let p=g[0];bom.push([g.map(x=>x.ref).join(','),p.value,p.fp.replace(/_[A-Z]+\d+$/,''),p.maker,p.ref==='JP1'?'68000-103HLF':p.mpn,p.ref==='JP1'?2:g.length,p.assembly,p.ref.startsWith('J')&&p.ref!='JP1'?'C496549':'']);}
+for(const g of groups.values()){let p=g[0];bom.push([g.map(x=>x.ref).join(','),p.value,p.fp.replace(/_[A-Z]+\d+$/,''),p.maker,p.ref==='JP1'?'68000-103HLF':p.mpn,p.ref==='JP1'?2:g.length,p.assembly,p.ref==='T1'?'C2683460':p.ref.startsWith('J')&&p.ref!='JP1'?'C496549':'']);}
 const cpl=[['Designator','Mid X (mm)','Mid Y (mm)','Layer','Rotation']];
 for(const p of parts.filter(p=>p.assembly==='SMT'))cpl.push([p.ref,p.x,-p.y,'Top',p.rot]);
 for(const [name,rows,widths] of [['BOM',bom,[60,25,28,25,42,12,20,15]],['CPL',cpl,[15,18,18,12,14]]]){

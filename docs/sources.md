@@ -1,8 +1,8 @@
 # Manufacturer and service references
 
-Consulted during Rev A development, 2026-11-22. Manufacturer PDFs remain at their original sources and are not redistributed. Prices are snapshots or estimates, not quotations.
+Consulted during Rev B development, 2026-11-23. Manufacturer PDFs remain at their original sources and are not redistributed. Prices are snapshots or estimates, not quotations.
 
-- [PDC-20-3+ datasheet](https://www.minicircuits.com/pdfs/PDC-20-3%2B.pdf) and [product/pricing](https://www.minicircuits.com/WebStore/dashboard.html?model=PDC-20-3%2B): 0.2–250 MHz coupler; $39.02 small-quantity reference.
+- [ADP-2-1+ datasheet](https://www.minicircuits.com/pdfs/ADP-2-1%2B.pdf), [JLC catalogue C2683460](https://jlcpcb.com/parts/2nd/RF_and_Wireless/RF_Power_Splitters__Combiners_2559), and [combiner isolation/matching](https://www.minicircuits.com/appdoc/AN10-006.html): Rev B transformer combiner and approximately $12.04 small-quantity allowance.
 - [MAX-M10S datasheet](https://content.u-blox.com/sites/default/files/MAX-M10S_DataSheet_UBX-20035208.pdf) and [M10 SPG 5.10 interface](https://content.u-blox.com/sites/default/files/u-blox-M10-SPG-5.10_InterfaceDescription_UBX-21035062.pdf): pins, power, PPS and UBX configuration.
 - [MAX-M10S distributor](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906): $11.42 price reference.
 - [ECS TXO32-S3](https://ecsxtal.com/store/pdf/ECS-TXO32-S3.pdf): tunable clipped-sine oscillator option and package.

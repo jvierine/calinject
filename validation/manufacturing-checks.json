@@ -1,0 +1,18 @@
+{
+  "revision": "B",
+  "board_sha256": "ed41c5a6f68ce4be3c2e198ca33d423db477577f7b930afa03cdc18b1526f2a3",
+  "components": 95,
+  "smt_placements": 77,
+  "through_vias": 103,
+  "checks": [
+    "manifest placement/value/net consistency",
+    "SMT pad copper/mask/paste layers",
+    "testpoint no-paste layers",
+    "ADP-2-1+ pin map",
+    "four-layer/all-through-via rules",
+    "minimum track width",
+    "CPL consistency",
+    "zero ERC/DRC/connectivity/parity findings"
+  ],
+  "errors": []
+}

@@ -1,0 +1,45 @@
+{
+  "compiler": "MicroPython v1.29.0 on 2026-08-29; mpy-cross emitting mpy v6.3",
+  "pio_assembler_url": "https://raw.githubusercontent.com/micropython/micropython/v1.29.0/ports/rp2/modules/rp2.py",
+  "pio_assembler_sha256": "5a9dc4e48ce272395768ac7273cf5e5ee48b36af5323f457c0d0c99e1ebcaf68",
+  "programs": {
+    "counter": [
+      41003,
+      8203,
+      8331,
+      68,
+      198,
+      1,
+      41161,
+      32768,
+      8203,
+      8331,
+      75,
+      200,
+      1
+    ],
+    "burst": [
+      32928,
+      40999,
+      8202,
+      8330,
+      57345,
+      69,
+      57344
+    ]
+  },
+  "total_pio_words": 20,
+  "on_device_execution": false,
+  "sources": {
+    "main.py": "25db8e09c69f7afad55fd1c03fc0f3b206c3d1b7cff2c7cf65e4e12ffc7cfdcf",
+    "protocol.py": "b40772342aef3b5a6995c069672a9bdc59bca1037b7ee974e0b06cc061ceb6d1",
+    "settings.py": "bc57643a4f9ebf661bfc6c19f25d601fe2a562b5a66eff8f642fa193947c9811",
+    "telemetry.py": "c581f263985ba8e9ef687eefdd1d7f0bdef230d7c9126e59e470cce1b361dc5d"
+  },
+  "compiled": {
+    "main.mpy": "0818212e28b14300739292e595a24b0d1e44c29cc868625c71a43fb20030a989",
+    "protocol.mpy": "075e2be4e8e0d11766f706875fad68ffcb00cbecebf7c077bb291cd8647aaf88",
+    "settings.mpy": "80838ef34a407b442f514a09cbb114ef7ddf7d22bb2955e070da3e776c36486a",
+    "telemetry.mpy": "7a4929b2b7eaa0cfca3a4e225a50bbcf17570eedba2b21d6be23ee037bfbd2f1"
+  }
+}

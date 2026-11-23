@@ -11,8 +11,15 @@ test_config_frame (test_core.ProtocolTest.test_config_frame) ... ok
 test_servo_count_fault (test_core.ProtocolTest.test_servo_count_fault) ... ok
 test_servo_simulated_convergence_and_loss (test_core.ProtocolTest.test_servo_simulated_convergence_and_loss) ... ok
 test_utc_flags (test_core.ProtocolTest.test_utc_flags) ... ok
+test_corrupt_or_unknown_schema_uses_safe_defaults (test_transport.SettingsTest.test_corrupt_or_unknown_schema_uses_safe_defaults) ... ok
+test_invalid_setting_cannot_replace_good_file (test_transport.SettingsTest.test_invalid_setting_cannot_replace_good_file) ... ok
+test_round_trip_and_atomic_temp_file (test_transport.SettingsTest.test_round_trip_and_atomic_temp_file) ... ok
+test_oversized_or_multibyte_frames_are_dropped_whole (test_transport.TransportTest.test_oversized_or_multibyte_frames_are_dropped_whole) ... ok
+test_partial_frame_survives_overflow_then_reconnect (test_transport.TransportTest.test_partial_frame_survives_overflow_then_reconnect) ... ok
+test_stalled_host_is_bounded_and_does_not_write (test_transport.TransportTest.test_stalled_host_is_bounded_and_does_not_write) ... ok
+test_write_checks_capacity_for_every_byte (test_transport.TransportTest.test_write_checks_capacity_for_every_byte) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.291s
+Ran 20 tests in 0.582s
 
 OK

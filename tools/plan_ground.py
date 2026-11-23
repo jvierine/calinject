@@ -22,4 +22,11 @@ for p,q,x,y,shape in pads:
    vias.append(dict(ref=p['ref'],pin=q['n'],x=vx,y=vy));found=True;break
   if found:break
  if not found:print('No ground via escape:',p['ref'],q['n'])
+# Ground stitching between the clock/pulse area and the receiver signal path.
+for vx in range(28,75,3):
+ vy=51.;copper=Point(vx,vy).buffer(.3)
+ if any(copper.distance(shape)<.2 for p,q,x,y,shape in pads if q['net']!='GND'):continue
+ if any(math.hypot(vx-hx,vy-hy)<.15+hd/2+.26 for hx,hy,hd in holes):continue
+ if any(math.hypot(vx-v['x'],vy-v['y'])<.65 for v in vias):continue
+ vias.append(dict(x=vx,y=vy))
 j['ground_vias']=vias;(ROOT/'cad/design.json').write_text(json.dumps(j,indent=2)+'\n');print('Ground vias',len(vias))

@@ -5,5 +5,6 @@
 *.stl binary
 *.3mf binary
 *.h5 binary
+*.mpy binary
 *.d356 -text -diff
 *.step -text -diff

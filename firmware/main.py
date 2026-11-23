@@ -1,10 +1,12 @@
-"""Calinject Rev A firmware for MicroPython RP2040 (Waveshare RP2040-Zero).
+"""Calinject Rev B firmware for MicroPython RP2040 (Waveshare RP2040-Zero).
 PIO owns edge counting and gate timing; Python/USB latency cannot move the gate.
 Prototype firmware: execute the documented logic-analyzer acceptance tests.
 """
 from machine import Pin,UART,I2C,ADC,freq,WDT
 import rp2,sys,select,time,json,os
 from protocol import Parser,packet,valset,CONFIG,timepulse,Servo
+from telemetry import Telemetry
+import settings
 freq(125000000)
 CLK=11;PPS=10;GATE=8
 # Never enable pull-down on PPS: MAX-M10S shares it with SAFEBOOT_N.
@@ -57,12 +59,15 @@ adc=ADC(29);parser=Parser();servo=Servo();width_us=100;mode='burst';att=63
 manual=False;pending=None;last_pps=None;seq=0;config_ok=False;nav=None
 last_count=None;last_valid_ms=None;cmd='';armed_seq=None;last_tp_key=None
 poll=select.poll();poll.register(sys.stdin,select.POLLIN)
+outpoll=select.poll();outpoll.register(sys.stdout,select.POLLOUT)
+def writable():
+    return any(event[1]&select.POLLOUT for event in outpoll.poll(0))
+telemetry=Telemetry(sys.stdout,writable)
 
 def emit(x):
-    # MicroPython USB stdout can stall with a disconnected/slow host. WDT then
-    # resets, gate descriptor starvation mutes; count records after restart have
-    # a different boot_id and MUST NOT be stitched into the old session.
-    print(json.dumps(x))
+    x['firmware']='B-0.2.0'
+    x['telemetry_dropped']=telemetry.dropped
+    telemetry.enqueue(json.dumps(x))
 
 def attenuation(code):
     global att
@@ -80,7 +85,13 @@ def mute_gate():
     pending=None;armed_seq=None
 
 boot_id=''.join('%02x'%x for x in os.urandom(8))
-attenuation(63);dac();uart.write(valset(CONFIG))
+saved,settings_loaded=settings.load()
+width_us=saved['width_us'];mode=saved['mode'];manual=saved['manual']
+servo.slope=saved['slope'];servo.code=saved['dac'];servo.enabled=saved['servo']
+attenuation(saved['atten_code']);dac()
+ref10_oe(0 if saved['ref10'] else 1);refpps_oe(0 if saved['refpps'] else 1)
+if mode=='continuous':smg.active(0);Pin(GATE,Pin.OUT,value=1)
+uart.write(valset(CONFIG))
 config_sent=time.ticks_ms();retries=0;wdt=WDT(timeout=8000)
 while True:
     now=time.ticks_ms();wdt.feed()
@@ -89,7 +100,9 @@ while True:
     fifo=smc.rx_fifo()
     if fifo>1:
         while smc.rx_fifo():smc.get()
-        servo.reset_window();mute_gate();last_pps=None
+        servo.reset_window()
+        if mode!='continuous':mute_gate()
+        last_pps=None
         emit({'event':'capture_overrun','boot_id':boot_id});continue
     if fifo:
         count=smc.get();seq+=1;interval=None if last_pps is None else time.ticks_diff(now,last_pps)
@@ -135,8 +148,10 @@ while True:
         # a permanent cutoff, at a slower rate after the initial attempts.
         config_ok=False;retries=0;config_sent=now;uart.write(valset(CONFIG))
         last_pps=None;emit({'event':'pps_timeout','boot_id':boot_id})
-    while poll.poll(0):
+    for _ in range(128):
+        if not any(event[1]&select.POLLIN for event in poll.poll(0)):break
         c=sys.stdin.read(1)
+        if not c:break
         if c in '\r\n':
             if not cmd:continue
             try:
@@ -173,6 +188,14 @@ while True:
                     x=int(obj['code'])
                     if not 700<=x<=3000:raise ValueError('DAC must be700..3000')
                     servo.enabled=False;servo.code=x;servo.reset_window();dac();emit({'ok':True})
+                elif op=='save':
+                    # Deliberately omit the next burst while flash is written.
+                    # PIO still counts clocks; control loop resumes after save.
+                    if mode!='continuous':mute_gate()
+                    settings.save(dict(width_us=width_us,mode=mode,atten_code=att,
+                        manual=manual,servo=servo.enabled,slope=servo.slope,dac=servo.code,
+                        ref10=not ref10_oe(),refpps=not refpps_oe()))
+                    emit({'ok':True,'settings_saved':True})
                 else:raise ValueError('unknown command')
             except Exception as e:emit({'error':str(e)})
             cmd=''
@@ -181,4 +204,5 @@ while True:
     if manual:
         new=round(adc.read_u16()*63/65535)
         if abs(new-att)>=2:attenuation(new)
+    telemetry.pump(64)
     time.sleep_ms(2)

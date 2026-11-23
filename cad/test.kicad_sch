@@ -1,4 +1,4 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "1f022ddc-f988-520e-8fc7-951e596c0589") (paper "A3") (title_block (title "CALINJECT / Test") (date "2026-11-22") (rev "A"))
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "1f022ddc-f988-520e-8fc7-951e596c0589") (paper "A3") (title_block (title "CALINJECT / Test") (date "2026-11-23") (rev "B"))
 (lib_symbols (symbol "Calinject:TP1" (pin_names (offset 0.7)) (in_bom yes) (on_board yes)
 (property "Reference" "T" (at 0 7.62 0) (effects (font (size 1.0 1.0))))
 (property "Value" "PPS" (at 0 10.16 0) (effects (font (size 1.0 1.0))))

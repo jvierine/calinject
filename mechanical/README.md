@@ -10,6 +10,8 @@ Use four M3 × 6 mm screws for the PCB and four M3 × 10 mm screws for the lid, 
 
 The meshes are watertight and the assembled base/lid solids do not intersect. Physical fit has not been printed or tested. Check SMA mating-nut clearance and USB-plug reach on a first print before printing all five cases. BOOT/RESET access requires removing the lid. The PCB STEP contains the board only, not a complete component clearance model.
 
+Rev B enlarges the USB opening to 14 mm wide × 8.5 mm high (8–16.5 mm above the outside base), allowing the cable housing to enter the recess around the module's connector. The board, standoffs and SMA locations are unchanged.
+
 Plastic provides no RF shielding. Optional conductive foil needs insulation and a deliberate ground connection; it is not part of the qualified design. Do not place exposed foil against pads or leads.
 
 `enclosure.py` is the editable parametric source. Rebuild with `conda run -n base python mechanical/enclosure.py`. The exported parts fit readily within the H2D build area.

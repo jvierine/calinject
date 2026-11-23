@@ -46,7 +46,7 @@ def library_symbol(p):
   s+=f'(pin {typ(p,pd)} line (at {x} {y} {a}) (length {ln}) (name {q(pd["label"])} (effects (font (size .9 .9)))) (number {q(pd["n"])} (effects (font (size .9 .9)))))\n'
  return s+'))\n'
 def sch_head(id,title,libs):
- return f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{id}") (paper "A3") (title_block (title {q(title)}) (date "2026-11-22") (rev "A"))\n(lib_symbols {libs})\n'
+ return f'(kicad_sch (version 20250114) (generator "eeschema") (uuid "{id}") (paper "A3") (title_block (title {q(title)}) (date "2026-11-23") (rev "B"))\n(lib_symbols {libs})\n'
 flags=[dict(ref='#FLG0'+str(i+1),value='PWR_FLAG',fp='',section='Power',pads=[dict(n='1',net=net,label='POWER')]) for i,net in enumerate(['GND','USB5F'])]
 parts=parts+flags
 sections=['Controller','Power','GNSS','Reference','Comb','Attenuator','RF path','Test','Reference outputs']

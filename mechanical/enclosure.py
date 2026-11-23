@@ -24,7 +24,7 @@ for x,y in [(4,4),(86,4),(4,61),(86,61)]:
  base-=cyl(OX+x,OY+y,.8,1.25,6.)
 # USB-C opening is generous enough for the genuine RP2040-Zero on 2.54mm headers.
 # PCB module USB points north. Connector face near boardy=0.25; cable plug can enter cavity.
-base-=box(OX+17-6,-1,10.0,12,OY+2,6.5)
+base-=box(OX+17-7,-1,8.0,14,OY+2,8.5)
 # Tongue locates the lid; outer lip fits inside walls with0.3mm radial clearance.
 lid=box(0,0,lid_bottom,W,D,H-lid_bottom)
 lip=box(wall+.3,wall+.3,lid_bottom-1.4,W-2*(wall+.3),D-2*(wall+.3),1.4)

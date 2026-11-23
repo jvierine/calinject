@@ -19,7 +19,10 @@ for p in d['parts']:
  for q in p['pads']:
   a=k.PAD(f);a.SetNumber(q['n']);a.SetSize(v(q['w'],q['h']));a.SetOrientationDegrees(p['rot']);a.SetShape(k.PAD_SHAPE_RECT if q['kind']=='smd' or q['n']=='1' else k.PAD_SHAPE_CIRCLE)
   t=math.radians(p['rot']);x=p['x']+q['x']*math.cos(t)+q['y']*math.sin(t);y=p['y']-q['x']*math.sin(t)+q['y']*math.cos(t);a.SetPosition(v(x,y))
-  if q['kind']=='smd':a.SetAttribute(k.PAD_ATTRIB_SMD);a.SetLayerSet(k.LSET.FrontMask())
+  if q['kind']=='smd':
+   a.SetAttribute(k.PAD_ATTRIB_SMD);ls=k.LSET()
+   for layer in ([k.F_Cu,k.F_Mask] if p['assembly']=='PCB' else [k.F_Cu,k.F_Mask,k.F_Paste]):ls.AddLayer(layer)
+   a.SetLayerSet(ls)
   else:
    a.SetAttribute(k.PAD_ATTRIB_NPTH if q['kind']=='np_thru_hole' else k.PAD_ATTRIB_PTH);a.SetDrillSize(v(q['drill'],q['drill']));a.SetLayerSet(k.LSET.AllCuMask());ls=a.GetLayerSet();ls.AddLayer(k.F_Mask);ls.AddLayer(k.B_Mask);a.SetLayerSet(ls)
   if q['net']:a.SetNet(nets[q['net']])
@@ -31,7 +34,9 @@ for p in d['parts']:
   if layer==k.F_CrtYd:
    xx=max(p['body'][0]/2,max(abs(q['x'])+q['w']/2 for q in p['pads']))+.25;yy=max(p['body'][1]/2,max(abs(q['y'])+q['h']/2 for q in p['pads']))+.25;pts=[(-xx,-yy),(xx,-yy),(xx,yy),(-xx,yy)]
   for i in range(4):
-   s=k.PCB_SHAPE(f);s.SetShape(k.SHAPE_T_SEGMENT);s.SetLayer(layer);s.SetWidth(mm(width));s.SetStart(v(p['x']+pts[i][0],p['y']+pts[i][1]));s.SetEnd(v(p['x']+pts[(i+1)%4][0],p['y']+pts[(i+1)%4][1]));f.Add(s)
+   t=math.radians(p['rot'])
+   transform=lambda pt:v(p['x']+pt[0]*math.cos(t)+pt[1]*math.sin(t),p['y']-pt[0]*math.sin(t)+pt[1]*math.cos(t))
+   s=k.PCB_SHAPE(f);s.SetShape(k.SHAPE_T_SEGMENT);s.SetLayer(layer);s.SetWidth(mm(width));s.SetStart(transform(pts[i]));s.SetEnd(transform(pts[(i+1)%4]));f.Add(s)
  b.Add(f)
 # Board outline.
 for a,z in [((0,0),(90,0)),((90,0),(90,65)),((90,65),(0,65)),((0,65),(0,0))]:
@@ -48,15 +53,17 @@ wire('ANT_RF',[pos('C7',2),pos('J1',1)],.36)
 wire('ATT_DATA_R',[pos('R17',2),pos('U9',3)],.2)
 wire('RF_OUT',[pos('R22',1),(71.2,56)],.2)
 wire('RF_IN',[pos('J2',1),pos('C24',1)],.36)
-wire('RF_FROM_ANT',[pos('C24',2),(29,56),(35,62),(50.54,62),pos('T1',4)],.36)
+wire('RF_FROM_ANT',[pos('C24',2),(32,54.46),pos('T1',3)],.36)
 wire('RF_TO_SDR',[pos('T1',1),(62,54.46),pos('C25',1)],.36)
+wire('T1_LINK',[pos('T1',2),pos('T1',5)],.3)
 wire('RF_OUT',[pos('C25',2),pos('J3',1)],.36)
 # Ground vias are validated against all pad and drill clearances by base-Python planner.
 for via in d.get('ground_vias',[]):
- pp=pos(via['ref'],via['pin']);vx,vy=via['x'],via['y']
- vi=k.PCB_VIA(b);vi.SetPosition(v(vx,vy));vi.SetWidth(mm(.6));vi.SetDrill(mm(.3));vi.SetViaType(k.VIATYPE_THROUGH);vi.SetLayerPair(k.F_Cu,k.B_Cu);vi.SetNet(nets['GND']);b.Add(vi);wire('GND',[pp,v(vx,vy)],.25)
+ pp=pos(via['ref'],via['pin']) if via.get('ref') else None;vx,vy=via['x'],via['y']
+ vi=k.PCB_VIA(b);vi.SetPosition(v(vx,vy));vi.SetWidth(mm(.6));vi.SetDrill(mm(.3));vi.SetViaType(k.VIATYPE_THROUGH);vi.SetLayerPair(k.F_Cu,k.B_Cu);vi.SetNet(nets['GND']);b.Add(vi)
+ if pp is not None:wire('GND',[pp,v(vx,vy)],.25)
 # Export before zones for autorouter. Ground vias allow cross-layer ground stitching.
-for txt,x,y,size in [('CALINJECT  REV A',40,63,.9),('GPS ANT 3V3',77,8,.8),('RF IN',12,51,.9),('TO SDR',79,51,.9),('USB-C',17,26,.8),('LEVEL',12,40,.8),('LOW / HIGH',64,51,.8),('10 MHz OUT',80,47.5,.8),('1 PPS OUT',7,39,.8)]:
+for txt,x,y,size in [('CALINJECT  REV B',40,63,.9),('GPS ANT 3V3',77,8,.8),('RF IN',12,51,.9),('TO SDR',79,51,.9),('USB-C',17,26,.8),('LEVEL',12,40,.8),('LOW / HIGH',64,51,.8),('10 MHz OUT',80,47.5,.8),('1 PPS OUT',7,39,.8)]:
  t=k.PCB_TEXT(b);t.SetText(txt);t.SetPosition(v(x,y));t.SetTextSize(v(size,size));t.SetTextThickness(mm(.12));t.SetLayer(k.F_SilkS);b.Add(t)
 b.SetFileName(str(root/'cad/calinject.kicad_pcb'));k.SaveBoard(b.GetFileName(),b)
 print('Saved',len(d['parts']),'components',len(nets),'nets')

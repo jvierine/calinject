@@ -5,6 +5,7 @@ root=pathlib.Path(os.environ.get('CALINJECT_ROOT',pathlib.Path(__file__).resolve
 if '--import' in sys.argv:print('SES import',k.ImportSpecctraSES(b,str(root/'cad/calinject.ses')))
 for track in b.GetTracks():
  if isinstance(track,k.PCB_VIA):track.SetViaType(k.VIATYPE_THROUGH);track.SetLayerPair(k.F_Cu,k.B_Cu)
+ elif track.GetWidth()<mm(.15):track.SetWidth(mm(.15))
 for layer in [k.In1_Cu,k.In2_Cu]:
  z=k.ZONE(b);z.SetLayer(layer);z.SetNet(b.FindNet('GND'));z.SetLocalClearance(mm(.2));z.SetThermalReliefGap(mm(.25));z.SetThermalReliefSpokeWidth(mm(.3));z.SetPadConnection(k.ZONE_CONNECTION_FULL)
  o=z.Outline();o.NewOutline()

@@ -16,7 +16,7 @@ Use the Gerber ZIP, separate PTH/NPTH Excellon drills and IPC-D-356 netlist. Do 
 
 ## Parts
 
-No substitutions for U4 GNSS, Y1 tunable clipped-sine TCXO, U6 comparator, U7/U8 comb logic, U9 attenuator, U10/U11 output buffers or T1 coupler without review. A fixed-frequency TCXO or CMOS-output oscillator is not a substitute for Y1. Preserve the PDC-20-3+ lower-band specification starting at 200 kHz.
+No substitutions for U4 GNSS, Y1 tunable clipped-sine TCXO, U6 comparator, U7/U8 comb logic, U9 attenuator, U10/U11 output buffers or T1 combiner without review. A fixed-frequency TCXO or CMOS-output oscillator is not a substitute for Y1. Use ADP-2-1+, JLC C2683460, specified from 500 kHz. T1 is SMT: sum pin1 goes to SDR, branch3 to antenna and branch4 to calibrator. Join pins2/5 and keep that link isolated from ground. Follow its 180-degree placement in the native PCB/CPL.
 
 Follow u-blox reflow/MSL instructions for U4. Keep its unused startup/control pins unconnected as drawn. Pin 1 is at the top-left in the local assembly drawing; RF pin 11 is on the opposite side. U9 has an exposed ground pad with reduced paste opening. Review solder-mask tenting and paste; inspect for solder loss into nearby through vias. Filled/capped vias are not assumed in the prototype cost.
 

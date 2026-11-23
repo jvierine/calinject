@@ -1,23 +1,21 @@
-# Five-board cost basis
+# Five-board Rev B cost basis
 
-Currency: USD. Planning date: 2026-11-22. Quantity: **five complete, programmed boards**, with one first article qualified before the remaining four. No supplier has quoted or accepted this design.
+Currency: USD. Planning date: 2026-11-23. Quantity: five fully assembled, programmed boards, starting with one factory-qualified first article. No supplier has issued a quote.
 
-The circuit-manifest component estimate is approximately **$86.95 per board**, or **$434.75 for five**, before supplementary module headers, sourcing losses, PCB fabrication, stencil/setup, mixed SMT/through-hole assembly, programming, RF qualification, shipping or tax. Some values are distributor small-quantity prices and others are engineering allowances; this is not a purchase-ready price list.
+The component-manifest estimate is **$59.97 per board**, or **$299.85 for five**. It excludes supplementary module headers, sourcing overhead/MOQs, PCB fabrication, stencil/setup, SMT/THT/module assembly, programming/test, shipping and tax. Some figures are small-quantity distributor references; others are engineering allowances.
 
-| Major component | Allowance per board |
+| Major item | Per-board allowance |
 |---|---:|
-| PDC-20-3+ coupler | $39.02 |
+| ADP-2-1+ SMT combiner | $12.04 |
 | Tunable ECS TCXO | $12.71 |
-| MAX-M10S GNSS | $11.42 |
+| MAX-M10S GPS | $11.42 |
 | PE4312 attenuator | $4.40 |
-| RP2040-Zero | $4.00 |
+| RP2040-Zero module | $4.00 |
 | Five SMA jacks | $6.00 |
-| Remaining components, including reference buffers | about $9.40 |
+| Other components | $9.40 |
 
-The under-$100 target leaves only about $13.05 per board for all non-component costs. **It is not demonstrated and is unlikely for five fully built units with substantial first-article RF/timing qualification.** Obtain an itemized quotation; do not treat a generic PCBA setup advertisement as a complete price. A reliable all-in estimate cannot be given without that quote. The dedicated reference-output addition accounts for about $3.58 of the parts estimate.
+Replacing the $39.02 Rev A coupler saves approximately **$26.98 per board**. The under-$100 assembled target now leaves about $40 per board for non-component costs. It is more plausible, but remains unconfirmed at five units. Obtain an itemized turnkey quote; quote one-time RF/timing qualification separately from repeat assembly/programming/test. There is no evidence for a firm all-in price yet.
 
-The cheaper ADCB-20-82+ coupler considered during development starts at 1 MHz. It was not selected because lower-HF operation is required. A custom bridge made from factory-wound transformers could reduce parts cost, but its directionality across 0.2–70 MHz needs another design and qualification cycle; no such unverified alternative is included in the manufacturing package. Hand-wound components are excluded.
+The tradeoffs are a specified 500 kHz lower limit and about 3.2 dB antenna-path loss. Isolation is finite, so use a weak calibration level and qualify actual antenna leakage. No hand-wound parts or user electrical assembly are required.
 
-The price scope excludes the external GPS antenna, USB/SMA cables, optional external combiner/terminator and receiver. Case printing is by the customer. Ask the factory to quote programming and per-board electrical testing separately from one-time RF/timing engineering. All assembly and initial programming must remain factory work.
-
-See [pricing and manufacturer references](sources.md) and the ready-to-use [quote request](../manufacturing/QUOTE_REQUEST.txt).
+External GPS antenna, USB/SMA cables, optional terminator/external combiner, receiver, case printing and case screws are outside this parts estimate. See [sources](sources.md) and the [quote request](../manufacturing/QUOTE_REQUEST.txt).

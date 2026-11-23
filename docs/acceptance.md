@@ -1,10 +1,10 @@
 # First-article and production acceptance
 
-Status: **not yet performed**. This procedure is part of the factory quotation, not evidence that a board has passed. Request a first article before producing the rest of the batch. No RF test result may be replaced by an ideal circuit simulation.
+Status: **first-article measurements not yet performed**. This procedure is part of the factory quotation, not evidence that a board has passed. Request a first article before producing the rest of the batch. No RF test result may be replaced by an ideal circuit simulation.
 
 ## Before applying power
 
-Inspect MPNs, pin-1 orientation, QFN soldering and the GNSS module. Check SMA center-to-ground resistance: the external ports have DC-blocking capacitors and 1 MΩ bleeders. The coupler may have an internal DC path to ground behind those capacitors. Inspect module/header soldering, both range shunts and case clearance. X-ray U9's exposed-pad solder joint if available.
+Inspect MPNs, pin-1 orientation, QFN soldering and the GNSS module. Check SMA center-to-ground resistance: the external ports have DC-blocking capacitors and 1 MΩ bleeders. The transformer combiner has internal DC paths behind those capacitors. Inspect module/header soldering, both range shunts and case clearance. X-ray U9's exposed-pad solder joint if available.
 
 ## Power and USB
 
@@ -12,7 +12,7 @@ Use a current-limited 5 V USB supply initially. Verify no rail short; check3V3A,
 
 At GPS ANT, measure bias voltage at no load and with a representative active antenna load. F2 is a 50 mA hold-current resettable fuse, not a precision current limiter. Select an antenna drawing at most 20 mA in normal operation; verify the voltage remaining after the fuse and choke meets its specification. The feed can lose about 0.4 V at 20 mA using the fuse's 20 Ω post-trip maximum resistance, before temperature/inductor effects. R1 is a zero-ohm link. Test a brief current-limited antenna short and recovery without damaging the receiver or resetting USB; verify GNSS reconfiguration/reacquisition if its rail momentarily collapses.
 
-Load the specified MicroPython UF2 and the two firmware files. Confirm a USB status response and successful GNSS RAM-configuration ACK. Package the board with both JP1 shunts in LOW and maximum electronic attenuation.
+Load the specified MicroPython UF2 and all four firmware files (main.py, protocol.py, telemetry.py, settings.py). Remove any old settings.json for the default factory test; save the measured slope only after commissioning. Confirm a USB status response and successful GNSS RAM-configuration ACK. Package the board with both JP1 shunts in LOW and maximum electronic attenuation.
 
 ## Oscillator and comb
 
@@ -24,17 +24,17 @@ Measure each10MHz harmonic with a spectrum analyzer at0,15.5,31.5dB settings, in
 
 Check aggregate comb peak level and out-of-band harmonics. The comb intentionally extends above70MHz; it is not a70MHz-low-pass output. Receiver front-end/anti-alias filtering remains necessary.
 
-## Coupler and receiver isolation
+## Combiner and receiver isolation
 
-Use a calibrated VNA with all unused ports terminated in50Ω. Measure RF IN→TO SDR insertion loss/return loss over the quoted operating band. Measure calibration-to-SDR and calibration-to-antenna transfer at10,20,30,40,50,60,70MHz using an RF fixture at the injection port. Directional difference is the difference of these two measured transfers, not just a component catalogue number.
+Use a calibrated VNA with all unused ports terminated in50Ω. Measure RF IN→TO SDR insertion loss/return loss over the quoted operating band. Measure calibration-to-SDR and calibration-to-antenna transfer at10,20,30,40,50,60,70MHz using an RF fixture at the calibration branch. Branch isolation must be measured with the sum port matched, not inferred from the drawing.
 
-Proposed first-article acceptance: mainline insertion loss≤1dB, input/output return loss≥15dB, and injection directivity≥20dB at all used harmonics. These are release criteria to measure, not established guarantees. Document any narrower qualified band rather than accepting a failing sample silently.
+Proposed first-article acceptance: antenna-to-SDR loss no greater than 4 dB over 0.5–70 MHz, input/output return loss at least 15 dB, and calibration-to-antenna branch isolation at least 20 dB at all used harmonics. Record the actual (approximately 3.2 dB) calibration-to-SDR loss separately. These are release criteria to measure, not established guarantees. Document any narrower qualified band rather than accepting a failing sample silently.
 
-Repeat with the actual SDR powered and configured. Measure calibration energy returning toward the antenna. Receiver return loss can dominate this measurement even if the coupler alone passes. If unacceptable, qualify a matching pad, buffer or different receiver interface and include its loss in the system budget.
+Repeat with the actual SDR powered and configured. Measure calibration energy returning toward the antenna. Receiver return loss can dominate this measurement even if the combiner alone passes. If unacceptable, qualify a matching pad, buffer or different receiver interface and include its loss in the system budget.
 
 ## Dedicated reference outputs
 
-Verify both SMA reference buffers are disabled at startup and after watchdog reset. Enable each separately with `ref10`/`refpps`; confirm their behavior is independent of injection width, mute/continuous modes and electronic attenuation. Check status reflects the requested enables. Do not require an untruncated pulse at an asynchronous enable transition.
+With settings.json absent, verify both SMA reference buffers are disabled at startup and after watchdog reset. Then explicitly save enabled reference settings and verify they restore after a power cycle; finally return to the safe factory defaults. Enable each separately with `ref10`/`refpps`; confirm their behavior is independent of injection width, mute/continuous modes and electronic attenuation. Check status reflects the requested enables. Do not require an untruncated pulse at an asynchronous enable transition.
 
 Measure 10 MHz OUT and 1 PPS OUT with high-impedance and 50 Ω inputs. Record high/low voltage, rise/fall time, ringing and source impedance; nominal high levels are 3.3 V high impedance and approximately 1.65 V into 50 Ω. Verify both buffer channels share current through their separate resistors and there is no thermal problem. Verify the 10 MHz frequency, duty cycle and jitter meet the intended instrument's input specification. PPS should be about 10 ms wide; measure rising-edge delay/jitter relative to GNSS PPS. Its width is independent of the 100 µs injection burst.
 
@@ -44,7 +44,7 @@ Repeat oscillator/servo and injection leakage measurements with both outputs ena
 
 Use clear-sky GNSS reception and a time-interval counter or oscilloscope referenced to an independent calibrated GPS source. A signal generator locked to the same oscillator being tested is not an independent timing standard.
 
-Check100µs default burst width and1,10,1000,10000,900000µs settings. Confirm one burst per valid second, including after USB disconnect/reconnect, slow host reading, power cycle and GNSS antenna loss. Verify mute and continuous modes, no unintended startup bursts, and at most the documented one already-armed burst during a late fault.
+Check100µs default burst width and1,10,1000,10000,900000µs settings. Check that no-reader/stalled-reader operation does not reset the MCU or interrupt reference outputs; telemetry loss must be counted without truncating subsequent complete JSON records. Confirm one burst per valid second, including after USB disconnect/reconnect, no reader for at least 30 minutes, a stalled reader, slow host reading, command flooding, power cycle and GNSS antenna loss. Verify mute and continuous modes, no unintended startup bursts, and at most the documented one already-armed burst during a late fault.
 
 Record PPS-to-gate delay and jitter. Record PPS-to-RF-envelope delay using a specified filter/template. The first comb pulse is phase-quantized by up to one100ns reference cycle. Confirm there are no extra-edge or whole-second association errors. Exercise corrupted/truncated UBX messages, delayed processing and count FIFO overflow if possible.
 

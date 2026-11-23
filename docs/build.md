@@ -1,4 +1,4 @@
-# Editing and reproducing Rev A
+# Editing and reproducing Rev B
 
 Use KiCad 10.0.8 or a compatible later KiCad 10 release. All schematic symbols and PCB footprints used by this design are included locally; no global library lookup is needed. Open `cad/calinject.kicad_pro`.
 
@@ -18,9 +18,11 @@ Set `KICAD_CLI` if `kicad-cli` is not on PATH. The exporter also recognizes the 
 
 `tools/design.py` defines circuit parts, pins, nets, placement, manufacturer part numbers, approximate costs and body dimensions. `tools/schematic.py` creates the editable hierarchical schematic and symbol library. `tools/plan_ground.py` plans ground escape vias. `tools/kicad_board.py` makes footprints, manual RF tracks and a Specctra DSN. **Regenerating the PCB destroys the existing routing.** Work on a branch/copy before regeneration.
 
-The development sequence is design → ground planner → board generator → FreeRouting → SES import/plane fill → layout finalization → schematic → export. The board generator exports two routing layers; final board layers are restored to four, with both inner layers reserved for ground. FreeRouting 2.5.0 was used. Its reported ground/open connections are resolved/checked after importing into KiCad and filling the planes; the final KiCad report is authoritative for connectivity. A final small placement adjustment to R25/R26 was made in the native PCB. The design source contains the same coordinates; the DSN/SES are intermediate development routing files and are not manufacturing inputs.
+The development sequence is design → ground planner → board generator → FreeRouting → SES import/plane fill → layout finalization → freeze_board.py → schematic → export. The board generator exports two routing layers; final board layers are restored to four, with both inner layers reserved for ground. FreeRouting 2.5.0 was used. Its reported ground/open connections are resolved/checked after importing into KiCad and filling the planes; the final KiCad report is authoritative for connectivity. `tools/freeze_board.py` applies final reviewed route clearance adjustments, assembly labels and nominal stack. The design source contains the final placement coordinates; the DSN/SES are intermediate development routing files and are not manufacturing inputs.
 
 Run `tools/finish_board.py --import` only on a fresh generated board; it adds planes. Run `tools/finalize_layout.py` once on that board; it assigns unused-pin nets and adds fabrication pin-1 marks. They are development steps, not idempotent frozen-board exporters.
+
+After those steps run `tools/freeze_board.py` with KiCad's bundled interpreter. It applies the final reviewed routing clearances, assembly-reference placement and native nominal stack, then refreshes the local footprint library. `tools/export.py` must pass after this step. For the current frozen board, simply export; do not rerun the router.
 
 The nominal native stack is four 35 µm copper layers with 0.20 mm outer dielectrics and a 1.04 mm central dielectric, plus two 0.01 mm masks, totaling 1.6 mm. The fabricator must confirm its real materials, pressed thicknesses and RF impedance before fabrication. The native design and assembly document must be updated together if the stack changes.
 
@@ -31,3 +33,5 @@ The nominal native stack is four 35 µm copper layers with 0.20 mm outer dielect
 `tools/package.py` packages the complete source/export tree and a smaller factory quotation package with SHA-256 manifests. Neither package proves measured hardware performance. The `validation/` reports cover software, CAD rules and enclosure mesh geometry only. The tests exercise UBX parsing, UTC flags, servo counting/fault handling, synthetic SDR timing/frequency fits and the actual PIO instruction bodies; they do not execute on physical RP2040 hardware.
 
 Manufacturer documents are linked in `docs/sources.md` and excluded from redistribution. External runtimes and packages retain their own licenses. Numeric model/test data use HDF5, metadata use JSON, and factory spreadsheets use XLSX.
+
+Rev B verification also includes `tools/verify_board.py` (KiCad interpreter), which checks manifest/CPL placement and nets, combiner pin mapping, pad layers, track/via rules and existing ERC/DRC reports. `tools/verify_firmware.py` runs from base conda with `mpy-cross==1.29.0.post2`; it compiles all four application files and assembles the actual PIO functions using a hash-pinned upstream MicroPython 1.29.0 assembler. The result is in `validation/firmware-compile.json`; it explicitly does not claim on-device execution. Source files remain the normal factory programming inputs; the compiled `.mpy` files are verification artifacts.

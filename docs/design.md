@@ -1,76 +1,70 @@
-# RF and timing design
+# Rev B RF and timing design
 
-Rev A is an unbuilt prototype for a batch of five fully assembled boards. The retained coupler is the factory-built Mini-Circuits PDC-20-3+. No custom winding is required. Its specified band starts at 200 kHz; the board does not pass DC and performance below 200 kHz is not claimed. The intended qualified signal-path band is 0.2–70 MHz, subject to first-article measurement.
+Rev B is a complete design package for a factory-assembled first article. It uses an ADP-2-1+ SMT transformer combiner, with a specified signal-path band of **0.5–70 MHz** and approximately **3.2 dB receive-path loss**. Its internal winding is supplied by the component manufacturer; no user winding or soldering is required. It replaces Rev A's expensive directional coupler. Operation below 500 kHz is not specified.
 
 ```mermaid
 flowchart LR
  GPS[Active GPS antenna] --> GNSS[MAX-M10S]
- GNSS -->|PPS| MCU[RP2040 PIO and USB serial]
+ GNSS -->|PPS| MCU[RP2040 PIO and USB]
  OSC[10 MHz VCTCXO] --> CMP[Comparator]
  CMP -->|edge count| MCU
- MCU --> DAC[MCP4725 and RC filter]
+ MCU --> DAC[DAC and RC filter]
  DAC --> OSC
- CMP --> COMB[Short-pulse comb]
- MCU -->|100 us default gate| COMB
- COMB --> ATT[10 dB pad and digital attenuator]
- ATT --> RANGE[Selectable 20 dB pad]
- RANGE --> CPL[Directional coupler]
- ANT[RF IN from antenna bias board] --> CPL
- CPL --> SDR[TO SDR]
+ CMP --> COMB[Short-pulse comb and burst gate]
+ MCU --> COMB
+ COMB --> ATT[20 dB fixed pad and digital attenuator]
+ ATT --> RANGE[Selectable additional 20 dB pad]
+ RANGE --> MIX[Isolated transformer combiner]
+ ANT[RF IN after antenna bias board] --> MIX
+ MIX --> SDR[TO SDR]
 ```
 
-## Reference and timing
+## Reference and burst timing
 
-The ECS tunable, temperature-compensated oscillator supplies 10 MHz. The MCP4725 adjusts its control voltage through two RC sections. The RP2040 counts oscillator edges between GPS PPS edges and applies a slow frequency correction every 64 seconds. This is a frequency servo, not a phase-locked reference. The nominal DAC step corresponds to approximately 0.081 Hz at 10 MHz; the actual pull slope must be measured. The nominal 64-second counting resolution is 1/64 Hz, before GPS jitter and oscillator fluctuations.
+The ECS tunable TCXO supplies 10 MHz; a comparator converts its clipped sine to logic. The MCP4725 adjusts its control voltage through two RC sections. RP2040 PIO counts oscillator edges between GPS PPS edges; a slow frequency servo corrects the DAC every 64 seconds. Nominal counting resolution is 1/64 Hz at 10 MHz, before GPS/oscillator fluctuations. This controls average frequency and does not phase-lock 10 MHz to PPS.
 
-The MAX-M10S provides a separate 10 ms logic PPS. The RP2040 PIO converts that edge to the requested RF gate width, default 100 µs. Width is adjustable from 1 to 900,000 µs; explicit continuous and mute modes are available. Software/USB scheduling does not set the gate edge. The first RF comb pulse can occur up to one 100 ns oscillator cycle after the gate opens. Receiver filtering, cable delays and GPS antenna delay must also be calibrated.
+GPS generates a 10 ms logic PPS. Another PIO state machine generates the requested injection gate, default 100 µs. Width is adjustable from 1 to 900,000 µs, with separate continuous/mute modes. A descriptor authorizes one burst; software starvation cannot create repeated autonomous bursts. The first comb pulse is quantized by up to one 100 ns clock period after the gate. Host scheduling does not set the gate edge.
 
-## Reference outputs
+The 0.1–1 µs end-to-end sample timing target requires measured antenna/cable, board and receiver/filter delays, adequate bandwidth/SNR, and a capture without unaccounted sample loss. Identical 1 Hz RF bursts do not encode the UTC date/second: associate them with logged GPS epochs and a known starting second or identifiable gap. See the host workflow.
 
-J4 provides the comparator's continuous 10 MHz square wave. J5 provides the GNSS logic PPS directly, with a 10 ms high pulse. Both are DC coupled, separately buffered and independent of the injection burst width and attenuation. Two SN74LVC2G125 packages isolate external loads: each uses its two channels through separate 49.9 Ω ballast resistors, followed by a common 24.9 Ω resistor. Nominal source resistance is 49.85 Ω plus driver impedance. Outputs are never directly tied together.
+## Harmonics and adjustable level
 
-Expected output levels are about 3.3 V high into high impedance, or 1.65 V high into a matched 50 Ω load, with a near-zero low. The load divides the voltage; a 50 Ω input requiring a 2 V TTL high is **not compatible without a suitable external driver**. A 10 MHz sine-wave-only reference input needs a filter or a different output stage. Confirm the instrument's allowed waveform, DC coupling and amplitude. These are nominal values requiring measurement, not guaranteed calibrated levels.
+R10/C17 and U7/U8 make nominal 7–12 ns pulses every 100 ns. Short pulses provide even and odd harmonics, unlike a 50%-duty square wave. The physical pulse width and harmonic envelope must be measured on the first article across supply/temperature. The ideal model is a design estimate, not a measured guarantee. No arbitrary-frequency synthesizer is included.
 
-Each SMA drives one receiver input/cable; use a reference distribution amplifier for several loads. Do not connect another signal source or DC bias to either output. A 1 MΩ resistor discharges the connector when the buffer is disabled; disabled does not mean a terminated 50 Ω port.
+Rev B increases the fixed pad to 20 dB using 61.9 Ω shunts and a 249 Ω series resistor. The PE4312 adds 0–31.5 dB electronic attenuation in 0.5 dB steps. Both internal range shunts select an additional 20 dB in LOW or bypass it in HIGH. The factory ships LOW with maximum electronic attenuation.
 
-USB commands `ref10` and `refpps` enable the outputs independently. Both start disabled, and reset/watchdog disables them. Enable changes are asynchronous and may produce a shortened first/last pulse: enable before acquisition and discard the transition. While enabled, PPS follows the GNSS hardware output even if UTC validity is lost, and 10 MHz continues during oscillator holdover. Use the USB validity/servo status to decide when the references are trustworthy. Neither output is synthesized by Python scheduling.
+Assuming a 10 ns rectangular pulse of 1.65 V loaded peak, 20 dB fixed loss, 1.3 dB PE4312 insertion loss and 3.2 dB combiner loss, nominal burst-on powers at TO SDR are:
 
-The 10 MHz servo regulates average frequency; it does not align clock phase to PPS. Loading/cable delay of each buffered output must be characterized separately. Continuous reference output can increase pickup in a sensitive receiver even when the injection gate is muted, so disable unused references and qualify leakage with the actual cables connected.
-
-The u-blox component timing specification is not the assembled board's timing accuracy. The requested 0.1–1 µs sample-time accuracy remains a system qualification target. Integer-second association must be established explicitly: identical 1 Hz bursts do not encode the UTC date or second. See the host instructions for resolving this ambiguity, clock drift and sample discontinuities.
-
-## Harmonics and level
-
-A delayed inverted clock ANDed with the original clock produces a short pulse each 100 ns. A 50%-duty square wave would suppress even harmonics; this short-pulse arrangement supplies both even and odd harmonics. The RC/logic pulse width is nominally about 7–12 ns and must be measured across supply and temperature. No arbitrary-frequency synthesizer is included. Changing the reference frequency would require hardware/firmware requalification.
-
-The following are **ideal estimates**, not calibrated output specifications. For a 10 ns, 1.65 V loaded pulse, a 10 dB fixed pad, 1.3 dB attenuator insertion loss and 19.5 dB coupler loss:
-
-| Setting | 10 MHz harmonic | 70 MHz harmonic |
+| Setting | 10 MHz | 70 MHz |
 |---|---:|---:|
-| HIGH, 0 dB electronic attenuation | about −31 dBm | about −39 dBm |
-| LOW, 0 dB electronic attenuation | about −51 dBm | about −59 dBm |
-| LOW, 31.5 dB electronic attenuation | about −82 dBm | about −91 dBm |
+| HIGH, 0 dB electronic attenuation | −24 dBm | −33 dBm |
+| LOW, 0 dB electronic attenuation | −44 dBm | −53 dBm |
+| LOW, 31.5 dB electronic attenuation | −76 dBm | −84 dBm |
 
-These are burst-on power per harmonic in a matched 50 Ω load. The other harmonics lie between these nominal endpoints for the assumed pulse shape. Actual driver impedance, pulse shape, PCB coupling and component losses change the values. The electronic range is 0–31.5 dB in 0.5 dB steps. Two internal shunts select an additional 20 dB. The factory ships LOW with maximum electronic attenuation. The front-access trimmer can control attenuation when enabled over USB.
+These are per-harmonic estimates into 50 Ω. Driver impedance, pulse width and actual component losses change them. At 100 µs per second, time-averaged power integrated over the burst sidebands is 40 dB below burst-on power. Individual resolved 1 Hz FFT teeth have different scaling. Gating creates sidebands; the comb also extends above 70 MHz, so receiver anti-alias filtering remains necessary.
 
 ![Ideal pulse-width sensitivity](ideal-levels.png)
 
-The plotted ideal model shows why comb pulse width must be measured, especially at the seventh harmonic. Its numeric values are supplied in `validation/ideal-levels.h5`.
+Numeric ideal model data are in `validation/ideal-levels.h5`.
 
-At 100 µs once per second, duty factor is 0.0001. Time-averaged power integrated over a burst's spectral sidebands is 40 dB below burst-on power. Individual resolved 1 Hz spectral teeth have different scaling; do not confuse a long FFT bin with integrated harmonic-band power. Gating intentionally creates sidebands, and the comb also extends above 70 MHz. Use the receiver's front-end filtering and measure off-state leakage. This is not a spurious-free signal generator.
+## Antenna leakage and matching
 
-## Directionality
+T1 sum pin1 goes to SDR; branch3 takes the antenna and branch4 takes calibration. Pins2/5 join together but remain isolated from ground. The chosen component's minimum branch isolation is 20 dB; typical data are about 30–34 dB at 10–60 MHz. With a matched SDR, that typical leakage is about 27–31 dB below the level reaching the SDR, after allowing for its approximately 3.2 dB combiner loss. Thus −70 dBm per harmonic at SDR corresponds to a typical −97 to −101 dBm toward the antenna. This is not a guaranteed board result; minimum isolation is less favorable.
 
-The coupler's package INPUT goes to the SDR and OUTPUT to the antenna. Reciprocity sends energy injected at its forward-coupled port toward INPUT. Its internal factory transformer construction provides broadband operation without user winding.
+A receiver mismatch adds reflected leakage through the sum port. Keep the matched receiver assumption explicit and measure the actual powered system. The board cannot guarantee zero antenna radiation. Standalone source use remains supported: terminate RF IN in 50 Ω and use TO SDR as the source output to another combiner, accounting for its additional loss.
 
-Finite directivity leaves some calibration at RF IN even with matched ports. More importantly, calibration reflected by a mismatched SDR travels back through the main line toward the antenna. For example, 10 dB receiver return loss can produce a returned signal only about 10 dB below the incident calibration, regardless of better intrinsic coupler directivity. The board cannot guarantee zero radiation into the antenna. Measure the actual powered receiver interface; adding a pad improves matching at the cost of receiver sensitivity.
+## Reference outputs
 
-For standalone generator use, terminate RF IN in 50 Ω and connect TO SDR to the external combiner. The output levels above then refer to TO SDR, before the external combiner's loss.
+J4 provides the continuous comparator-derived 10 MHz square wave; J5 provides the GNSS 10 ms PPS. They are independent of injection width and attenuation. Each output uses an SN74LVC2G125's two channels, each through 49.9 Ω, followed by a common 24.9 Ω resistor. The individual ballast resistors prevent direct tying of CMOS outputs and share a 50 Ω load. Nominal source resistance is 49.85 Ω plus driver impedance.
 
-## Physical design
+Expected highs are about 3.3 V into high impedance or 1.65 V into 50 Ω, with a near-zero low. A 50 Ω input requiring a 2 V TTL high needs a different external driver; a sine-only clock input may need filtering. Drive one input/cable per output. Do not connect another signal source or DC bias. Disabled outputs have a 1 MΩ bleed and are not matched terminations.
 
-The board is 90 × 65 mm, four layers, with two internal ground planes. GPS RF routing is short on the top layer. The nominal stack uses 0.20 mm outer dielectrics and 0.36 mm RF traces; the fabricator must confirm the actual impedance and stack. The remaining 10–70 MHz network is compact but still requires RF measurement. Digital clock and USB leakage can bypass the logical gate, particularly in the unshielded printed case.
+USB enables the outputs separately. Hardware pullups disable them during reset; explicitly saved settings can restore enables after boot. Enable before acquisition because asynchronous enable transitions may shorten the first/last pulse. Enabled PPS follows GNSS even when UTC is invalid; enabled 10 MHz continues in holdover. Use reported validity/servo state. There is no fixed 10 MHz phase relative to PPS.
 
-The RP2040-Zero is a purchased module installed and soldered by the factory. USB-C termination, USB circuitry and MCU clock are on that module. Separate linear regulators supply the GNSS and RF/reference sections. The GPS SMA provides protected 3.3 V bias for an active antenna drawing at most 20 mA normally. RF IN and TO SDR are separately DC blocked; they do not carry antenna bias through the board.
+## Layout and manufacture
 
-Component documents and pricing references are listed in [sources](sources.md). Electrical-rule checks test connectivity/rules; they do not verify these physical performance assumptions.
+The 90 × 65 mm board has four layers, two inner ground planes and ordinary plated through vias. Rev B compacts the weak oscillator/comparator section, moves bypass capacitors closer to the comb/attenuator loads, and adds ground stitching between clock circuitry and the receiver path. SMD pads use only F.Cu/F.Mask/F.Paste; body/courtyard geometry follows footprint rotation.
+
+The nominal stack uses 0.20 mm outer dielectrics and 0.36 mm RF traces. The fabricator must confirm actual materials, pressed thickness and impedance, especially the 1.575 GHz GPS path. Digital leakage can bypass the gate/attenuator despite these layout improvements; measure muted spectra with USB and reference cables connected. The printed case is not an RF shield.
+
+The factory installs and programs the RP2040-Zero module and all THT parts. Separate regulators power GPS and reference/RF circuitry. GPS ANT supplies protected 3.3 V bias for a compatible antenna normally drawing at most 20 mA. The receiver ports are DC blocked; keep the existing antenna bias board ahead of RF IN and disable the SDR bias tee. See [factory instructions](../manufacturing/ASSEMBLY.md), [acceptance tests](acceptance.md) and [sources](sources.md).

@@ -1,4 +1,4 @@
-"""Calinject Rev A circuit and mechanical source of truth. Units: mm.
+"""Calinject Rev B circuit and mechanical source of truth. Units: mm.
 Pad geometries must remain tied to the named manufacturer package drawings.
 """
 from pathlib import Path
@@ -68,46 +68,45 @@ cap('C13','3V3A',53,31,'Reference')
 chip('C14','1n','OSC_SINE','SINE_BIASED',62,32,'Reference','C',mpn='GRM1885C1H102JA01D')
 chip('R6','10k','3V3A','VREF_HALF',62,28,'Reference',mpn='RC0603FR-0710KL')
 chip('R7','10k','VREF_HALF','GND',66,28,'Reference',mpn='RC0603FR-0710KL')
-cap('C15','VREF_HALF',65,23,'Reference')
+cap('C15','VREF_HALF',65,25,'Reference')
 chip('R8','10k','SINE_BIASED','VREF_HALF',66,32,'Reference',rot=90,mpn='RC0603FR-0710KL')
 sot('U6','TLV3501',['VREF_HALF','GND','SINE_BIASED','3V3A','CLK10','GND'],71,32,'Reference','TLV3501AIDBVR',2.2)
-cap('C16','3V3A',75,31,'Reference')
+cap('C16','3V3A',73.5,34.8,'Reference')
 chip('R9','330','CLK10','TCXO_COUNT',41,35,'Controller',mpn='RC0603FR-07330RL')
 # Pulse width approx 7..12ns with 220R / 22pF and Schmitt inverter. Measure prototype.
-chip('R10','220','CLK10','DELAY_RC',72,38,'Comb',mpn='RC0603FR-07220RL')
-cap('C17','DELAY_RC',75,41,'Comb','22p',90)
+chip('R10','220','CLK10','DELAY_RC',66.5,36.5,'Comb',mpn='RC0603FR-07220RL')
+cap('C17','DELAY_RC',66.5,38.5,'Comb','22p')
 sot('U7','SN74LVC1G14',[None,'DELAY_RC','GND','DELAY_N','3V3A'],68,41,'Comb','SN74LVC1G14DBVR',.12)
-cap('C18','3V3A',64,41,'Comb')
+cap('C18','3V3A',71,37.8,'Comb')
 # DCU VSSOP8 pitch0.5: pins 1..4 down left,5..8 up right.
 np=['CLK10','DELAY_N','COMB_GATED','GND','COMB_RAW','BURST_GATE','COMB_RAW','3V3A']
 coords=[(-1.4,-.75+.5*i) for i in range(4)]+[(1.4,.75-.5*i) for i in range(4)]
 add('U8','SN74LVC2G08','VSSOP8_DCU',58,41,[pad(i+1,*p,1.,.3,np[i]) for i,p in enumerate(coords)],'SN74LVC2G08DCUR','Texas Instruments','Comb',.2,body=(2.,2.))
-cap('C19','3V3A',58,37,'Comb')
+cap('C19','3V3A',60.6,39,'Comb')
 chip('R11','100k','BURST_GATE','GND',53,38,'Comb',rot=90,mpn='RC0603FR-07100KL')
 chip('R12','49R9','COMB_GATED','DRIVE50',52,42,'Comb',mpn='RC0603FR-0749R9L')
 chip('C20','100n','DRIVE50','PAD_IN',48,42,'Comb','C',mpn='GRM188R71H104KA93D')
-# 10 dB 50-ohm PI pad: shunts96.5,series71.5. Keeps PE input benign at all harmonics.
-chip('R13','96R5','PAD_IN','GND',45,39,'Attenuator',rot=90,mpn='RC0603FR-0796R5L')
-chip('R14','71R5','PAD_IN','ATT_IN',43,42,'Attenuator',mpn='RC0603FR-0771R5L')
-chip('R15','96R5','ATT_IN','GND',40,39,'Attenuator',rot=90,mpn='RC0603FR-0796R5L')
+# 20 dB 50-ohm PI pad: shunts61.9,series249. Keeps PE input benign at all harmonics.
+chip('R13','61R9','PAD_IN','GND',45,39,'Attenuator',rot=90,mpn='RC0603FR-0761R9L')
+chip('R14','249','PAD_IN','ATT_IN',43,42,'Attenuator',mpn='RC0603FR-07249RL')
+chip('R15','61R9','ATT_IN','GND',40,39,'Attenuator',rot=90,mpn='RC0603FR-0761R9L')
 # PE4312 QFN20 4x4, 0.5 pitch, exposed2.6mm pad. Pins anticlockwise.
 pe=['ATT_C16','ATT_IN','ATT_DATA_R','ATT_CLK','ATT_LE','3V3A','GND','GND','3V3A','GND','GND','GND','3V3A','ATT_OUT','3V3A','3V3A','3V3A','GND','3V3A','3V3A']
 coords=[(-1.95,-1+.5*i,.8,.28) for i in range(5)]+[(-1+.5*i,1.95,.28,.8) for i in range(5)]+[(1.95,1-.5*i,.8,.28) for i in range(5)]+[(1-.5*i,-1.95,.28,.8) for i in range(5)]
 add('U9','PE4312','QFN20_4x4_EP',33,43,[pad(i+1,*p,pe[i]) for i,p in enumerate(coords)]+[pad(21,0,0,2.6,2.6,'GND')],'PE4312C-Z','pSemi','Attenuator',4.40,body=(4,4),note='Serial mode, parallel bits pulled high = 31.5 dB startup. 10k series on pins1,3.')
-cap('C21','3V3A',35,48,'Attenuator');cap('C22','3V3A',29,48,'Attenuator','1n')
+cap('C21','3V3A',33.2,46.8,'Attenuator');cap('C22','3V3A',29,48,'Attenuator','1n')
 chip('R16','10k','3V3A','ATT_C16',28,40,'Attenuator',mpn='RC0603FR-0710KL')
 chip('R17','10k','ATT_DATA','ATT_DATA_R',28,43,'Attenuator',mpn='RC0603FR-0710KL')
 chip('R18','100k','ATT_LE','GND',28,46,'Attenuator',mpn='RC0603FR-07100KL')
-# Directional coupler. Reciprocity: injection at COUPLED travels toward INPUT.
-# Therefore package INPUT goes to SDR and package OUTPUT goes to antenna.
+# Isolated transformer combiner. Sum to SDR; separate antenna/cal branches.
 chip('C23','100n','ATT_OUT','ATT_AC',40,48,'RF path','C',mpn='GRM188R71H104KA93D')
 chip('R19','61R9','PAD20_IN','GND',46,47,'RF path',rot=90,mpn='RC0603FR-0761R9L')
 chip('R20','249','PAD20_IN','PAD20_OUT',51,48,'RF path',mpn='RC0603FR-07249RL')
 chip('R23','61R9','PAD20_OUT','GND',56,47,'RF path',rot=90,mpn='RC0603FR-0761R9L')
 add('JP1','LEVEL RANGE','Range_2x3',64,47,[pad(1,-2.54,-1.27,1.8,1.8,'PAD20_IN','thru_hole',1.),pad(2,0,-1.27,1.8,1.8,'ATT_AC','thru_hole',1.),pad(3,2.54,-1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.),pad(4,-2.54,1.27,1.8,1.8,'PAD20_OUT','thru_hole',1.),pad(5,0,1.27,1.8,1.8,'COUPLED','thru_hole',1.),pad(6,2.54,1.27,1.8,1.8,'PAD_BYPASS','thru_hole',1.)],'2x 68000-103HLF + 2 shunts','Amphenol ICC','RF path',.2,body=(7.62,5.08),assembly='THT',note='Two shunts: LOW1-2 and4-5; HIGH2-3 and5-6. Never mix. LOW default. No pad branch attached in HIGH.')
-cpnets=['RF_TO_SDR','GND','COUPLED','RF_FROM_ANT','GND',None,'GND','GND']
-cpcoords=[(7.62,-2.54),(7.62,2.54),(2.54,-2.54),(2.54,2.54),(-2.54,-2.54),(-2.54,2.54),(-7.62,-2.54),(-7.62,2.54)]
-add('T1','PDC-20-3+','MiniCircuits_A01',48,57,[pad(i+1,*pt,1.7,1.7,cpnets[i],'thru_hole',1.0) for i,pt in enumerate(cpcoords)],'PDC-20-3+','Mini-Circuits','RF path',39.02,body=(20.32,10.16),assembly='THT',note='Package pin1 INPUT goes to SDR; pin4 OUTPUT goes to antenna. Manufacturer forward-coupled port used reciprocally.')
+cpnets=['RF_TO_SDR','T1_LINK','RF_FROM_ANT','COUPLED','T1_LINK','GND']
+cpcoords=[(-2.54,2.54),(0,2.54),(2.54,2.54),(2.54,-2.54),(0,-2.54),(-2.54,-2.54)]
+add('T1','ADP-2-1+','MiniCircuits_CD636',48,57,[pad(i+1,*pt,1.65,2.54,cpnets[i]) for i,pt in enumerate(cpcoords)],'ADP-2-1+','Mini-Circuits','RF path',12.04,rot=180,body=(7.87,5.59),note='JLC C2683460. Sum1 to SDR; branch3 antenna; branch4 cal. Join2/5 and isolate from ground. Specified0.5..400MHz.')
 sma('J2','RF IN',12,56,'RF_IN','RF path');sma('J3','TO SDR',78,56,'RF_OUT','RF path')
 chip('C24','1u 50V','RF_IN','RF_FROM_ANT',23,56,'RF path','C',size='0805',mpn='GRM21BR71H105KA12L')
 chip('C25','1u 50V','RF_TO_SDR','RF_OUT',67,56,'RF path','C',size='0805',mpn='GRM21BR71H105KA12L')
@@ -150,7 +149,7 @@ labels={
 'U8':['1A','1B','2Y','GND','2A','2B','1Y','VCC'],
 'U10':['1OE_N','1A','2Y','GND','2A','1Y','2OE_N','VCC'],
 'U11':['1OE_N','1A','2Y','GND','2A','1Y','2OE_N','VCC'],
-'T1':['INPUT_TO_SDR','GND','COUPLED','OUTPUT_FROM_ANT','GND','NC','GND','GND'],
+'T1':['SUM_TO_SDR','LINK','ANT_BRANCH','CAL_BRANCH','LINK','GND'],
 'U9':['C16','RF1','DATA','CLK','LE','VDD','PUP1','PUP2','VDD','GND','GND','VSS_EXT','P/S','RF2','C8','C4','C2','GND','C1','C0.5','EP']}
 for p in parts:
  p['fp'] += '_'+p['ref']
@@ -159,8 +158,13 @@ for p in parts:
  if p['ref'].startswith('F'):p['maker']='Littelfuse';p['cost']=.5
  if p['ref']=='L1':p['cost']=.12
  for i,pd in enumerate(p['pads']): pd['label']=labels.get(p['ref'],[str(q['n']) for q in p['pads']])[i]
+for p in parts:
+ if p['ref']=='Y1':p['x'],p['y']=64,34
+ if p['ref']=='C13':p['x'],p['y']=64,31.2
+ if p['ref']=='C14':p['x'],p['y']=67.6,34
+ if p['ref']=='R8':p['x'],p['y']=68.3,30
 def world(p,q):
  t=math.radians(p['rot']);return p['x']+q['x']*math.cos(t)+q['y']*math.sin(t),p['y']-q['x']*math.sin(t)+q['y']*math.cos(t)
 if __name__=='__main__':
- (ROOT/'cad/design.json').write_text(json.dumps(dict(revision='A',width_mm=90,height_mm=65,parts=parts),indent=2)+'\n')
+ (ROOT/'cad/design.json').write_text(json.dumps(dict(revision='B',width_mm=90,height_mm=65,parts=parts),indent=2)+'\n')
  print(len(parts),'components; estimated component sum',sum(p['cost'] for p in parts))
