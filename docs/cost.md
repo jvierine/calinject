@@ -1,3 +1,17 @@
+# Prototype batch cost
+
+Five fully assembled, unprogrammed Rev C boards were ordered from JLCPCB on 23 November 2026. Payment confirmation showed **$388.14 total**, or **$77.63 per board**. This is the amount paid for this batch, not a standing quotation for future orders.
+
+The checkout before payment processing showed $346.75 for PCB and assembly, $2.87 estimated delivery and $34.68 VAT. Payment processing added $3.84. JLC's order-history accounting redistributes these fees across the displayed merchandise, shipping and tax lines; the paid total remains $388.14.
+
+Depaneling ($3.31) and assembly-remark services were listed for separate review. Their final treatment remains subject to JLC confirmation. The customer loads firmware through USB-C and performs RF/GPS/timing qualification after receipt. GPS antenna, cables, printed case and screws are additional.
+
+The current DAC is **MCP4725A1T-E/CH, C61423**, replacing the stock-limited A0 address variant. MAX-M10S is retained. The board is a prototype; payment does not establish manufacturing completion or measured performance.
+
+## Earlier quotations
+
+The following draft quotations are retained as history and superseded by the paid batch above.
+
 # Five-board Rev C quote
 
 JLC's 2026-11-23 saved draft quotes **$340.81 for five fully assembled, unprogrammed boards**. Depaneling adds $3.31 outside the displayed total: **$344.12, or $68.82 per board**, before shipping, tax and any review adjustments. The customer loads firmware through USB-C and performs custom RF/GPS/timing tests.

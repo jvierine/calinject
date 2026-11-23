@@ -5,7 +5,7 @@
   "quantity": 5,
   "revision": "C",
   "url": "https://cart.jlcpcb.com/smt-order/?pcbFileNo=aef47253379f41df85d937150ad5efcc",
-  "status": "Cart edit saved; prototype manufacture requires final JLC file/placement confirmation; not paid",
+  "status": "Prototype order paid 2026-11-23; factory file/placement review and hardware qualification pending",
   "scope": "Fully electrically assembled, unprogrammed. Customer performs USB firmware loading and custom qualification.",
   "bom_rows_confirmed": 45,
   "unique_purchasing_items": 40,
@@ -35,5 +35,8 @@
     "lcsc": "C61423",
     "jlc_stock_at_selection": 690,
     "firmware": "C-0.4.3"
-  }
+  },
+  "paid_total": 388.14,
+  "paid_per_board": 77.628,
+  "paid_total_note": "Includes checkout shipping, VAT and payment processing; separately reviewed services may add charges"
 }

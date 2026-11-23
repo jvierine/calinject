@@ -8,7 +8,7 @@ The [end-to-end model](end-to-end.md) now connects reference tracking, phase noi
 | DAC two-section RC filter | Settles within 0.1% in 87 ms, well before the 64 s servo update |
 | Frequency servo, 100 simulated two-hour runs | All end in TRACKING, no DAC limits; worst final-half-hour RMS error 0.064 Hz at 10 MHz |
 | Sample-rate recovery, 120 s with missing markers | Injected +2.5 ppm recovered as +2.500129 ppm |
-| Firmware/PIO and USB tests | All 24 pass, including clock-edge counting, burst duration, starvation muting, and stalled USB output |
+| Firmware/PIO and USB tests | All 33 pass, including clock-edge counting, burst duration, starvation muting, and stalled USB output |
 
 The pad simulation uses the actual design resistor values, a 100 nF blocking capacitor, ideal components, and matched 50 Ω ports. Its 25 dB return-loss target is a subnetwork check; the full-board acceptance target is 15 dB. No PCB parasitics or active attenuator model is included. The selectable pad has a separate output capacitor in the full circuit; it is outside this isolated pad model.
 

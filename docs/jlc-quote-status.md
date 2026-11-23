@@ -1,3 +1,9 @@
+# Paid prototype order — 2026-11-23
+
+Five assembled, unprogrammed Rev C boards: JLC's payment-success page and order history confirm payment of **$388.14**. Production-file and parts-placement review were requested. Shipping and personal contact details are deliberately excluded from this public repository. Hardware qualification remains pending. See [cost](cost.md) for the payment and separately reviewed charges.
+
+The historical draft records below describe earlier quote states and do not describe current payment status.
+
 # JLC stock correction — 2026-11-23
 
 The cart reported C144198 out of stock for this five-board build: live Select Parts showed only four available. U5 has been replaced with MCP4725A1T-E/CH (C61423), with 690 in JLC assembly inventory at selection time. The revised BOM is uploaded, and all required components including JP1 headers are selected. Firmware C-0.4.3 supports both 0x60 (A0) and 0x62 (A1); 33 unit tests and the MicroPython compiler check passed. PCB DRC reports zero violations, unconnected items or schematic-parity issues. Native PCB changes are limited to the DAC value text; copper and the existing Gerber archive are unchanged.

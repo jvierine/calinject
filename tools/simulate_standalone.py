@@ -69,7 +69,9 @@ def simulate(name,duration_s=260,saved=None,usb='absent',fault=None):
             return out or None
     class I2C:
         def __init__(self,*a,**kw):pass
+        def scan(self):return [0x62]
         def writeto(self,address,b):
+            assert address==0x62, 'Current build uses MCP4725A1'
             if fault=='i2c' and clock.us>=210000000:raise OSError('modeled I2C failure')
             dac.append((clock.us,int.from_bytes(b,'big')));return len(b)
     class ADC:

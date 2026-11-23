@@ -1,27 +1,23 @@
 # Calinject
 
-A small USB-C powered board that adds GPS-timed calibration bursts to an SDR recording. Use the bursts to measure sample timing, sample rate and frequency drift.
+GPS-timed calibration bursts for SDR recordings: recover sample timing, estimate sample rate, and track frequency drift.
 
-![Calinject PCB layout](docs/board-layout.png)
+![Calinject Rev C PCB with horizontal SMA ports](docs/board-layout.png)
 
-**Prototype, not yet built or tested on hardware.** Rev C uses commonly stocked parts and horizontal SMA connectors through the sides of the case.
+- **10 MHz harmonic comb**, with calibration harmonics through 70 MHz.
+- **100 µs bursts by default**; pulse length and level adjustable over USB.
+- Separate **10 MHz and 1 PPS SMA outputs**.
+- **USB-C power**, firmware loading and status. Runs without a computer after programming; saved settings restore at startup.
+- Four-layer, 90 × 65 mm PCB and a printable case with horizontal SMA ports.
 
-**Ready for a factory first-article build:** the revised CAD checks and software tests pass. The antenna path is specified for **0.5–70 MHz**, with about **3.2 dB loss**.
+Connect **antenna bias board → RF IN → TO SDR → receiver**. Add an active GPS antenna and 5 V USB-C power. The receiver path blocks DC and is specified for **0.5–70 MHz**, with about **3.2 dB loss**. Calibration leakage toward the antenna is finite; it must be measured on the first board.
 
-What it does:
+**Status:** five assembled, unprogrammed Rev C prototypes ordered from JLCPCB on 23 November 2026. Checkout payment was **$388.14 for five** (about $78 each); separately reviewed services may add charges. MAX-M10S remains the GNSS receiver. Hardware and printed-case performance are not yet verified.
 
-- Generates a 10 MHz harmonic comb for HF and VHF receivers through 70 MHz.
-- Sends a short calibration burst each second: **100 µs by default**, adjustable over USB.
-- Lets you adjust the calibration level over USB or with a trimmer.
-- Provides separate **10 MHz** and **1 PPS** SMA reference outputs.
-- Reports GPS and frequency-servo status over USB. Firmware updates also use USB.
+![Simulated timing and frequency recovery versus calibration burst length](docs/burst-recovery.png)
 
-Runs from a **5 V USB-C supply without a computer**. Saved settings restore automatically. Its RGB LED is solid green during startup, amber while acquiring, flashes green on PPS once frequency tracking is established, and blinks red on faults.
+**Simulation, not measured performance:** longer bursts improve frequency estimation in the modeled receivers. Timing assumes known fixed delays and correctly associated UTC seconds. [Figures and assumptions](docs/figures.md).
 
-Connect it **after your antenna bias board and before the SDR**, with a separate active GPS antenna and USB-C power. The receiver ports block DC; disable the SDR's own bias tee. See the [connector guide](docs/port-guide.pdf).
+[Download files](https://github.com/jvierine/calinject/releases) · [USB programming](firmware/README.md) · [Controls and LED](docs/operation.md) · [Print the case](mechanical/README.md) · [Hardware acceptance](docs/acceptance.md)
 
-JLC's current quote is **about $70 per fully assembled board at five units**, before shipping, tax and review adjustments. We load the firmware ourselves through USB-C; no user soldering or winding. Qualify one received board before relying on the batch. See the [quote](docs/cost.md).
-
-[Download all files](https://github.com/jvierine/calinject/releases) · [Connect and control](docs/operation.md) · [USB programming](firmware/README.md) · [Using the calibration](host/README.md) · [Print the case](mechanical/README.md)
-
-Technical details: [design](docs/design.md), [simulations](docs/simulation.md), [end-to-end model](docs/end-to-end.md), [review](docs/review.md), [layout audit](docs/layout-review.md), [cost](docs/cost.md), [KiCad/build instructions](docs/build.md), [factory assembly](manufacturing/ASSEMBLY.md), [acceptance tests](docs/acceptance.md), and [SVG board drawing](docs/board-layout.svg).
+[Design](docs/design.md) · [Simulation details](docs/end-to-end.md) · [CAD/build](docs/build.md) · [Assembly](manufacturing/ASSEMBLY.md) · [Cost](docs/cost.md)
