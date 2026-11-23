@@ -1,0 +1,14 @@
+Calinject dac_filter
+V1 src 0 PULSE(0 1 1m 1n 1n 1 2)
+R1 src mid 1000.0
+C1 mid 0 4.7e-06
+R2 mid out 1000.0
+C2 out 0 4.7e-06
+.control
+set wr_singlescale
+set wr_vecnames
+tran 50u 150m
+wrdata /Users/jvi019/src/calinject/validation/simulation/dac_filter.txt v(out)
+quit
+.endc
+.end

@@ -22,4 +22,4 @@ The aim is **five factory-assembled boards**, with no user soldering or winding.
 
 [Download all files](https://github.com/jvierine/calinject/releases) · [Connect and control](docs/operation.md) · [USB programming](firmware/README.md) · [Using the calibration](host/README.md) · [Print the case](mechanical/README.md)
 
-Technical details: [design](docs/design.md), [review](docs/review.md), [cost](docs/cost.md), [KiCad/build instructions](docs/build.md), [factory assembly](manufacturing/ASSEMBLY.md), [acceptance tests](docs/acceptance.md), and [SVG board drawing](docs/board-layout.svg).
+Technical details: [design](docs/design.md), [simulations](docs/simulation.md), [review](docs/review.md), [cost](docs/cost.md), [KiCad/build instructions](docs/build.md), [factory assembly](manufacturing/ASSEMBLY.md), [acceptance tests](docs/acceptance.md), and [SVG board drawing](docs/board-layout.svg).

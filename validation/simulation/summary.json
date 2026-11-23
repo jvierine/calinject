@@ -1,0 +1,68 @@
+{
+  "models": "Passive SPICE and synthetic system models; not hardware measurements",
+  "checks": {
+    "fixed_pad": {
+      "loss_db_min": 19.95210906578557,
+      "loss_db_max": 19.95645617305686,
+      "return_loss_db_min": 29.85470620953784,
+      "return_loss_target_db": 25,
+      "pass": true
+    },
+    "range_pad": {
+      "loss_db_min": 19.95210906578557,
+      "loss_db_max": 19.95645617305686,
+      "return_loss_db_min": 29.85470620953784,
+      "return_loss_target_db": 25,
+      "pass": true
+    },
+    "dac_filter": {
+      "settling_to_0_1_percent_s": 0.086896775,
+      "servo_update_s": 64,
+      "pass": true
+    },
+    "pulse_rc": {
+      "threshold_fraction_sweep": [
+        0.3,
+        0.7
+      ],
+      "rc_delay_ns_min": 1.8750000000000002,
+      "rc_delay_ns_max": 5.974999999999999,
+      "qualification": "Not a pulse-width guarantee: gate propagation, input capacitance and actual thresholds excluded"
+    },
+    "servo": {
+      "trials": 100,
+      "duration_s_each": 7200,
+      "pps_jitter_rms_ns": 20,
+      "tail_frequency_rms_hz_worst": 0.06392430489822547,
+      "tracking_at_end": 100,
+      "dac_limit_samples": 0,
+      "pass": true
+    },
+    "single_burst_frequency": {
+      "burst_us": 100,
+      "sample_rate_hz": 2000000.0,
+      "snr_db": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "frequency_error_rms_hz": [
+        89.92231265106777,
+        27.68410144170353,
+        8.62345909058506,
+        2.715246690001319
+      ],
+      "qualification": "Finite precision per burst; average independent bursts or increase width for finer LO tracking"
+    },
+    "sample_clock": {
+      "marker_jitter_rms_ns": 100,
+      "seconds": 120,
+      "sample_rate_error_ppm_injected": 2.5,
+      "sample_rate_error_ppm_recovered": 2.5001294003956787,
+      "anchor_error_ns": -2.9788805059905243,
+      "pass": true
+    }
+  },
+  "all_asserted_checks_pass": true
+}

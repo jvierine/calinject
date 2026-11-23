@@ -1,0 +1,12 @@
+Calinject pulse_rc
+V1 src 0 PULSE(0 3.3 10n .2n .2n 50n 100n)
+R1 src out 220.0
+C1 out 0 2.1999999999999998e-11
+.control
+set wr_singlescale
+set wr_vecnames
+tran .05n 300n
+wrdata /Users/jvi019/src/calinject/validation/simulation/pulse_rc.txt v(src) v(out)
+quit
+.endc
+.end
