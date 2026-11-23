@@ -22,3 +22,9 @@ All 45 BOM rows match JLC inventory; no omissions or substitutions were accepted
 The under-$100 target looks achievable, but this is not a guaranteed delivered price. External GPS antenna, USB/SMA cables, optional terminator/combiner, receiver, case printing and screws are additional. The combiner adds about 3.2 dB receiver-path loss and has finite antenna isolation; those engineering tradeoffs remain unchanged.
 
 [Saved quote and review details](jlc-quote-status.md) · [Factory scope](../manufacturing/ASSEMBLY.md) · [USB-C programming](../firmware/README.md)
+
+## Smaller-batch comparison
+
+The live form rejects one assembled board and requires at least two for this build. The two-board comparison was $217.19 plus $2.32 depaneling: **$219.51 total, or $109.76 each**, before shipping, tax and review adjustments. The user selected five boards instead.
+
+SF Express outside Guangdong shows a preliminary $2.87 domestic estimate for Hainan. It is not a final checkout price: packed weight, address and any island surcharge remain to be confirmed. No order/payment has been placed.

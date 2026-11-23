@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-23",
+  "quantity": 2,
+  "currency": "USD",
+  "pcb": 31.07,
+  "assembly": 186.12,
+  "displayed_total": 217.19,
+  "excluded_depanel": 2.32,
+  "total_with_depanel": 219.51,
+  "per_board_with_depanel": 109.755,
+  "minimum_assembly_quantity": 2,
+  "one_board_rejected": true,
+  "shipping_estimate_outside_guangdong": 2.87,
+  "shipping_status": "Preliminary before final packed weight/address",
+  "status": "Comparison only; user selected five boards instead; no order/payment"
+}
