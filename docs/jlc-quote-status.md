@@ -1,3 +1,9 @@
+# Rev C quotation update — 2026-11-23
+
+The new Rev C Gerber archive was uploaded through Chrome. JLC processed it and detected a four-layer 65 × 90 mm board. The Rev C full-assembly BOM/CPL and factory package have been generated locally; matching them in the new draft and obtaining a complete assembled/programmed quote remain pending. No order or payment has been placed. Do not manufacture the older Rev B draft below.
+
+---
+
 > Historical Rev B upload. Rev C supersedes these files and requires a new Gerber/BOM/CPL upload. The prior draft must not be manufactured.
 
 # JLC quotation status — 2026-11-23
