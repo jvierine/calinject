@@ -1,0 +1,52 @@
+{
+  "scope": "EXPORTED_REPORT_AUDIT_ONLY",
+  "reports_pass": false,
+  "blockers": [
+    "erc: unreviewed ignored checks: footprint_filter, four_way_junction, simulation_model_issue, single_global_label",
+    "drc: unreviewed ignored checks: footprint_filters_mismatch, footprint_type_mismatch, missing_courtyard, track_not_centered_on_via, tuning_profile_track_geometries"
+  ],
+  "reports": {
+    "erc": {
+      "source": "calinject.kicad_sch",
+      "kicad_version": "10.0.8",
+      "counts": {
+        "violations": 0
+      },
+      "ignored_checks": [
+        "footprint_filter",
+        "four_way_junction",
+        "simulation_model_issue",
+        "single_global_label"
+      ]
+    },
+    "drc": {
+      "source": "calinject.kicad_pcb",
+      "kicad_version": "10.0.8",
+      "counts": {
+        "violations": 0,
+        "unconnected_items": 0,
+        "schematic_parity": 0
+      },
+      "ignored_checks": [
+        "footprint_filters_mismatch",
+        "footprint_type_mismatch",
+        "missing_courtyard",
+        "track_not_centered_on_via",
+        "tuning_profile_track_geometries"
+      ]
+    }
+  },
+  "explicit_ignored_check_allowances": [],
+  "does_not_establish": [
+    "report freshness",
+    "parity invocation enabled",
+    "electrical correctness",
+    "physical footprint suitability",
+    "fabrication readiness",
+    "measured performance"
+  ],
+  "report_sha256": {
+    "erc": "654769abb64f4950cf1bae1ca05a5afd9e99b3572df23d1ac79631391b0c54fb",
+    "drc": "e1cd1c30927c80df1473d4aa1f07b98ecf85df7ab7d7ae455aabe4ec95970a7c"
+  }
+}

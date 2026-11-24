@@ -1,0 +1,46 @@
+{
+  "scope": "EXPORTED_REPORT_AUDIT_ONLY",
+  "reports_pass": false,
+  "blockers": [
+    "erc: unreviewed ignored checks: footprint_filter, four_way_junction, simulation_model_issue, single_global_label",
+    "drc.violations: 8 finding(s), including warnings/exclusions"
+  ],
+  "reports": {
+    "erc": {
+      "source": "calinject.kicad_sch",
+      "kicad_version": "10.0.8",
+      "counts": {
+        "violations": 0
+      },
+      "ignored_checks": [
+        "footprint_filter",
+        "four_way_junction",
+        "simulation_model_issue",
+        "single_global_label"
+      ]
+    },
+    "drc": {
+      "source": "calinject.kicad_pcb",
+      "kicad_version": "10.0.8",
+      "counts": {
+        "violations": 8,
+        "unconnected_items": 0,
+        "schematic_parity": 0
+      },
+      "ignored_checks": []
+    }
+  },
+  "explicit_ignored_check_allowances": [],
+  "does_not_establish": [
+    "report freshness",
+    "parity invocation enabled",
+    "electrical correctness",
+    "physical footprint suitability",
+    "fabrication readiness",
+    "measured performance"
+  ],
+  "report_sha256": {
+    "erc": "5b2ca1d27e9c1d23df63014e8511b6fdcb92e9d8614a875f7a93222730aab569",
+    "drc": "0fa7a42b46ca6ad9186a7631e7bbebb708d15df91f411ba08ce01f7be780ed91"
+  }
+}

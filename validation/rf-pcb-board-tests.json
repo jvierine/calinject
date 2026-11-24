@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-24",
+  "design_commit": "beee529b4361149c92eaaa98706307be297940e0",
+  "fabrication_tag": "fabrication-revC-2026-11-23",
+  "fabrication_commit": "97830a06bd13f6005d6d1b55f701d71652623b5a",
+  "rf_pcb_design_commit": "d2e2873dafba4b0e1fd9b6a07ed3ba3068137cb7",
+  "tooling_tests": 29,
+  "calinject_unit_tests": 33,
+  "simulation_chain_exit_code": 0,
+  "simulation_assertions": {
+    "scope": "Assertions on specified behavioral scenarios, not hardware qualification",
+    "checks": {
+      "passive_and_cable_models": true,
+      "standalone_control_loop": true,
+      "normal_markers_under_1us": true,
+      "normal_average_clock_error_under_0_01ppm": true,
+      "sample_drop_flagged": true,
+      "overload_flagged": true,
+      "source_phase_normalization": true,
+      "steering_phase_continuity": true,
+      "numerical_32x_to_64x_under_25ns": true,
+      "reference_observer_error_under_0_03hz": true
+    },
+    "all_pass": true
+  },
+  "standalone_scenarios": 14,
+  "strict_audit_pass": false,
+  "physical_testing": false,
+  "manufacturing_inputs_unchanged": true,
+  "commands": [
+    "conda run -n base python /Users/jvi019/src/rf-pcb-design/tools/run_tests.py",
+    "conda run -n base python -m unittest discover -s tests -v",
+    "conda run -n base python tools/run_end_to_end.py",
+    "conda run -n base python tools/verify_firmware.py",
+    "conda run -n base python tools/verify_jlc_placement.py",
+    "kicad-cli sch erc --format json --severity-all",
+    "kicad-cli pcb drc --format json --severity-all --all-track-errors --schematic-parity --refill-zones"
+  ],
+  "input_sha256": {
+    "cad/calinject.kicad_pcb": "5fbac65121f08b2e75f1e243ba4ead9c656591c495ecba7cd365d55e1b422412",
+    "cad/calinject.kicad_pro": "5d04e5b00522c0c9f8daa4cfe1cb79b9e1c860b6c1315b37bf70cfb9b8a47b3e",
+    "manufacturing/calinject-revC-gerbers.zip": "ab6dc3be98725234e36925019c18a6ac8090136fae86514fb7fba34dc5b14ef4"
+  }
+}

@@ -9,20 +9,20 @@
     "tools/validate_end_to_end.py": "809cf29c330e7ae1f10c88aab5c7c2c1dcb1d68d981bcce9132edfdeaf8a7bc9",
     "tools/report_end_to_end.py": "4e923d4c8f71d85646019f33e5f755182af9580ccfed8bb206a80ae87a03ea1c",
     "tools/run_end_to_end.py": "c2dbfd7ff83524eec408bca0082d51381a833cf74191606eb0e98383c35dab41",
-    "firmware/main.py": "fa4367b99c01429e79560cf38215bdd5f2676383d0bcf9cb2efeadf7ae7fbfd6",
-    "firmware/protocol.py": "b40772342aef3b5a6995c069672a9bdc59bca1037b7ee974e0b06cc061ceb6d1",
+    "firmware/main.py": "0e0fd4458a6bb38b08865e02fb181439e553382d9e5896ed33f9b34398064937",
+    "firmware/protocol.py": "2af3449fd6acee7d3346db00b628c9da4a1b81926e4b86bcb7f34a1dc04e32be",
     "firmware/settings.py": "bc57643a4f9ebf661bfc6c19f25d601fe2a562b5a66eff8f642fa193947c9811",
     "firmware/telemetry.py": "f9a7136a4a919a530850945411526fdf3e80cc8fa175100df1bf4c1941713075",
     "firmware/status_led.py": "b31e287ae584d6f38ced02c8d096fbb86e2818d120fb22f8c198b23a54ed0b39",
-    "tools/simulate_standalone.py": "9d6192422f73dae747d9e61e014fac590c4f7e4a87a6917ab65a17edb87de5f6",
+    "tools/simulate_standalone.py": "30eb2898bdff2504e03ce1c1cd88b3a747232fceb09584aa4fc01a55af48d161",
     "host/calibration.py": "fe56a9413b2fbbe8f80eb17c428930252077a49cc262b5e5fe1e00353609503b",
     "host/tracking.py": "016b23f869e80d4e21fb1716ee8620b26c6ea60e846aa8fd0dffdc2ef38f67ff",
-    "cad/design.json": "57612fb9f63517b4225529e082a9d5179be1588bcba00aafa39e4a0438d37efd",
-    "cad/calinject.kicad_pcb": "02fb0ca302f5a3c33a1f4cf9b5ffafa0d55d694ab1f4ccf1b489f04ba0df286e"
+    "cad/design.json": "266ed33ab17ab41c9bd9ebb40a28857186f2340d98b82ae53f61c34e42001831",
+    "cad/calinject.kicad_pcb": "5fbac65121f08b2e75f1e243ba4ead9c656591c495ecba7cd365d55e1b422412"
   },
   "data_sha256": {
     "results.h5": "9041ddee57dd6556dfeaff1f2dc1a4d7e0a2d49f706184b59c8f0bf4764dfee8",
-    "standalone.h5": "75b35b16a17d982d420f77547ac124d52b2c93d4242dbb5a2f70574e1868c4e9",
+    "standalone.h5": "2db8ac068d97bf103ce4416449bc9b0462e696fa571a0790efa210e34a877340",
     "reference-tracking.h5": "aecb69799371bba21cb2402167ae7bd743e441de5e3271affb2c167a289c718b",
     "paired-validation.h5": "57111213d542fc2e397e95d5cef4215b5430c3636c9ed026c2e64ccf97eea43b",
     "broadband.h5": "77975d9ed93425cf52a76aa229419df37688675caf32cda2b6eabfded09ab1ee"

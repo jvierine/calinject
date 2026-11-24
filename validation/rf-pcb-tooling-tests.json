@@ -1,0 +1,20 @@
+{
+  "scope": "SKILL_TOOLING_VALIDATION_NOT_RF_BOARD_TESTING",
+  "tests_run": 29,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "passed": true,
+  "python_version": "3.13.1",
+  "source_sha256": {
+    "SKILL.md": "af17a5db104b542e54355c97735f54b83c5f780f2d43e58caf11daaef6a27ba1",
+    "references/cad-and-fabrication.md": "7b156a5b723cba520ecf503b3d2634d5d5dc0c6774fbb7838ce005701de99fe4",
+    "references/design-and-sourcing.md": "03e4d2d47e765023583b9c1fe8a4bf7948f650d207289e9ec78c4bb0232c0b85",
+    "references/signal-processing-and-simulation.md": "f1731e72f5c5e0d98283a956bc2eb1bb33b8becf636ad9b3a636a0bed5370ffd",
+    "references/testing-and-acceptance.md": "5c81e6189fbece9b0f65bc3b374ba37351edc5ad7f1cbdc46f6123dcaa30ed70",
+    "scripts/audit_kicad_reports.py": "bb305b1198f4f5dff9cb21ec8719053bee3d837a9f7fc557096c59fac74d8f3b",
+    "tests/test_native_kicad.py": "aac4accea76090d833fd57712805ce6e4146452b10a3302f500120b08ca4d5b1",
+    "tests/test_report_audit.py": "d5b76ee2c0dfe44251c70f215ce93d9228dc622fcead165e015b45679124f424",
+    "tests/test_skill_contract.py": "f40be9b2308ab9df25e5f2ea4b14dd353c6d136f2562f0e15f1cb4cb88e88373"
+  }
+}
