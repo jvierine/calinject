@@ -1,7 +1,7 @@
 {
   "convention": "JLC model rotation offsets relative to native KiCad footprint; do not apply to Gerbers/native PCB",
-  "reason": "JLC C7498154 preview points threads along local -X at zero degrees; native footprint points local +X",
-  "source": "JLC preview supplied 2026-11-23; exact SMA-KWE mechanical drawing",
+  "reason": "JLC package zero-angle differences corrected using the Rev C placement previews",
+  "source": "JLC SMA preview on 2026-11-23 and IC replacement preview on 2026-11-26",
   "parts": {
     "J1": {
       "mpn": "SMA-KWE",
@@ -32,6 +32,42 @@
       "jlcpcb_part": "C7498154",
       "rotation_offset_deg": 180,
       "expected_direction": "west"
+    },
+    "U2": {
+      "mpn": "AP2112K-3.3TRG1",
+      "rotation_offset_deg": 180
+    },
+    "U3": {
+      "mpn": "AP2112K-3.3TRG1",
+      "rotation_offset_deg": 180
+    },
+    "U5": {
+      "mpn": "MCP4725A1T-E/CH",
+      "rotation_offset_deg": 180
+    },
+    "U6": {
+      "mpn": "TLV3501AIDBVR",
+      "rotation_offset_deg": 180
+    },
+    "U7": {
+      "mpn": "SN74LVC1G14DBVR",
+      "rotation_offset_deg": 180
+    },
+    "U10": {
+      "mpn": "SN74LVC2G125DCTR",
+      "rotation_offset_deg": 180
+    },
+    "U11": {
+      "mpn": "SN74LVC2G125DCTR",
+      "rotation_offset_deg": 180
+    },
+    "U8": {
+      "mpn": "74LVC2G08DC,125",
+      "rotation_offset_deg": 270
+    },
+    "U9": {
+      "mpn": "PE4312C-Z",
+      "rotation_offset_deg": 270
     }
   }
 }

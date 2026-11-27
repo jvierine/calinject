@@ -46,7 +46,7 @@ with zipfile.ZipFile(ROOT/'manufacturing/jlc-turnkey/CPL.xlsx') as z:
   saved.append(values)
  assert saved==rows,'Saved workbook differs from placement JSON'
 result=dict(revision='C',status='Local file checks pass; confirm live JLC preview separately',
- connectors={r:dict(x_mm=cpl[r][1],y_mm=cpl[r][2],rotation_deg=cpl[r][4],threads=offsets[r]['expected_direction']) for r in offsets},
+ connectors={r:dict(x_mm=cpl[r][1],y_mm=cpl[r][2],rotation_deg=cpl[r][4],threads=offsets[r]['expected_direction']) for r in offsets if 'expected_direction' in offsets[r]},
  usb_c=dict(reference='U1',rotation_deg=0,direction='north',pinout='5V northwest; GP0 northeast'),
  placement_count=95,cpl_sha256=hashlib.sha256((ROOT/'manufacturing/jlc-turnkey/CPL.xlsx').read_bytes()).hexdigest())
 (ROOT/'validation/jlc-placement-checks.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
